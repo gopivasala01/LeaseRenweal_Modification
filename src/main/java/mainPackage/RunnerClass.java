@@ -177,6 +177,11 @@ public class RunnerClass
 			String updateSuccessStatus = "Update [Automation].LeaseInfo Set Status ='Failed', StatusID=3,NotAutomatedFields='"+failedReason+"',LeaseCompletionDate= getDate() where BuildingName like '%"+buildingAbbreviation+"%'";
 	    	DataBase.updateTable(updateSuccessStatus);
 		}
+		  try
+		  {
+			  driver.quit();
+		  }
+		  catch(Exception e) {}
 		  } 
 		  catch(Exception e)
 		  {
