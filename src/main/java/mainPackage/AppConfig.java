@@ -281,6 +281,44 @@ public class AppConfig
 		   return "";
 	   }
 	   
+	   public static String getCompanyCode(String company)
+		{
+			switch(company)
+			{
+			case "Austin":
+				return "Irvin";
+			case "Alabama":
+				return "AL";
+			case "Arizona":
+				return "AZ";
+			case "Arkansas":
+				return "AR";
+			case "Dallas/Fort Worth":
+				return "DFW";
+			case "Florida":
+				return "FL";
+			case "Georgia":
+				return "GA";
+			case "Indiana":
+				return "IN";
+			case "Little Rock":
+				return "LR";
+			case "North Carolina":
+				return "NC";
+			case "OKC":
+				return "OKC";
+			case "San Antonio":
+				return "SATX";
+			case "South Carolina":
+				return "SC";
+			case "Tennessee":
+				return "TN";
+			case "Tulsa":
+				return "TUL";
+				
+			}
+			return "";
+		}
 
 	}
 

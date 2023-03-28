@@ -119,7 +119,7 @@ public class PropertyWare
 						for(int j=0;j<leaseList.size();j++)
 						{
 							String lease = leaseList.get(j).getText();
-							if(lease.toLowerCase().contains(building.toLowerCase()))
+							if(lease.toLowerCase().contains(building.toLowerCase())&&lease.contains(":"))
 							{
 								try
 								{
@@ -129,7 +129,7 @@ public class PropertyWare
 								catch(Exception e) 
 								{}
 								
-								//RunnerClass.driver.findElement(By.xpath("(//*[@class='section'])["+(i+1)+"]/ul/li["+(j+1)+"]/a")).click();
+								RunnerClass.driver.findElement(By.xpath("(//*[@class='section'])["+(i+1)+"]/ul/li["+(j+1)+"]/a")).click();
 								leaseSelected = true;
 								break;
 							}
@@ -171,6 +171,7 @@ public class PropertyWare
 	
 	public static boolean downloadLeaseAgreement(String building, String ownerName) throws Exception
 	{
+		/*
 		try
 		{
 			RunnerClass.portfolioType = RunnerClass.driver.findElement(Locators.checkPortfolioType).getText();
@@ -198,7 +199,7 @@ public class PropertyWare
 			 RunnerClass.failedReason =  RunnerClass.failedReason+","+ "Unable to fetch Portfolio Type";
 		   // return false;  -- Commented this as we are not using Portfolio condition anywhere in the process
 		}
-		
+		*/
 		//RC details
 		
 		try
@@ -242,7 +243,7 @@ public class PropertyWare
 		{
 			for(int j=0;j<AppConfig.LeaseAgreementFileNames.length;j++)
 			{
-			 if(documents.get(i).getText().startsWith(AppConfig.LeaseAgreementFileNames[j]))
+			 if(documents.get(i).getText().startsWith(AppConfig.LeaseAgreementFileNames[j])&&documents.get(i).getText().contains(AppConfig.getCompanyCode(RunnerClass.company)))
 			 {
 			 	documents.get(i).click();
 				checkLeaseAgreementAvailable = true;
