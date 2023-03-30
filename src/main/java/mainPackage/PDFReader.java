@@ -218,6 +218,29 @@ public class PDFReader
 				    }
 				    
 				break;
+				
+			case "Chattanooga":
+				String pdfFormatType_Chattanooga = PDFReader.decidePDFFormat(market);
+				System.out.println("PDF Format Type = "+pdfFormatType_Chattanooga);
+				if(pdfFormatType_Chattanooga=="Format1")
+				{
+					if(PDFDataExtract.Chattanooga_Format1.chattanooga()==false)
+						return false;
+				}
+				
+				else 
+					if(pdfFormatType_Chattanooga=="Format2")
+				     {
+					if(PDFDataExtract.Chattanooga_Format2.chattanooga()==false)
+						return false;
+			        }
+				    else 
+				   {
+					RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+					return false;
+				    }
+				    
+				break;
 			}
 			
 			//Prepayment charge

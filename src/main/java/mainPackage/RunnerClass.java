@@ -104,7 +104,7 @@ public class RunnerClass
 		  RunnerClass.PDFFormatType = "";
 		  PDFReader.RCDetails= "";
 		  
-		  if(company.contains("Austin")||company.contains("California"))
+		  if(company.contains("Austin")||company.contains("California")||company.contains("Chattanooga"))
 	     {
 		  //Change the Status of the Lease to Started so that it won't run again in the Jenkins scheduling Process
 		  DataBase.insertData(buildingAbbreviation,"Started",6);

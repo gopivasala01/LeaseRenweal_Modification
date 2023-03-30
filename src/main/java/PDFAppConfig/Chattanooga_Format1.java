@@ -1,6 +1,6 @@
 package PDFAppConfig;
 
-public class Austin_Format1 
+public class Chattanooga_Format1 
 {
 	public static String AB_commencementDate_Prior = "follows: Commencement Date:";
 	public static String AB_commencementDate_After = " Expiration Date:";
@@ -25,7 +25,7 @@ public class Austin_Format1
 		
 		public static String AB_fullRentDate1_After = ".   Thereafter, Tenant will pay";
 		
-		public static String AB_adminFee_Prior = "Annual Lease Preparation Fee in the amount of $";
+		public static String AB_adminFee_Prior = "An annual lease preparation fee in the amount of $";
 		public static String AB_adminFee_After = "prior to the Commencement Date of this lease";
 		
 		public static String AB_earlyTerminationFee_Prior = "early termination fee to Landlord of ";
@@ -178,6 +178,7 @@ public class Austin_Format1
 		public static  String PDFFormat2ConfirmationText = "RESIDENTIAL LEASE AGREEMENT";
 		public static String serviceAnimalText = "SERVICE/SUPPORT ANIMAL AGREEMENT";
 		public static String HVACFilterAddendumTextAvailabilityCheck = "HVAC FILTER MAINTENANCE PROGRAM OPT-OUT ADDENDUM";
+
 
 
 }
