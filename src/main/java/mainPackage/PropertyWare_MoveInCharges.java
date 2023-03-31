@@ -37,6 +37,14 @@ public class PropertyWare_MoveInCharges
 				String endDate = RunnerClass.moveInCharges[i][3];
 				String description = RunnerClass.moveInCharges[i][4];
 				
+				if(amount.equalsIgnoreCase("Error")||amount=="0.00"||amount==null)
+				{
+					System.out.println("Issue in Adding Move in charge - "+description);
+					RunnerClass.failedReason =  RunnerClass.failedReason+","+"Issue in Adding Move in charge - "+description;
+					System.out.println(description+ " is not updated");
+					RunnerClass.statusID=1;
+					continue;
+				}
 				try
 				{
 				for(int k=0;k<existingMoveInCharges_ChargeCodes.size();k++)
@@ -53,15 +61,6 @@ public class PropertyWare_MoveInCharges
 				//Add new Charge if it is not there
 				if(availabilityCheck==false)
 				{
-					if(amount.equalsIgnoreCase("Error")||amount=="0.00")
-					{
-						System.out.println("Issue in Adding Move in charge - "+description);
-						RunnerClass.failedReason =  RunnerClass.failedReason+","+"Issue in Adding Move in charge - "+description;
-						System.out.println(description+ " is not updated");
-						RunnerClass.statusID=1;
-					}
-					
-					else
 						PropertyWare_MoveInCharges.addingMoveInCharge(chargeCode, amount, startDate, endDate, description);
 				}
 				

@@ -54,6 +54,8 @@ public class AppConfig
 			   return "4000 - Rent";
 		   case "Chattanooga":
 			   return "40010 - Rent Income";
+		   case "Chicago PFW":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -73,6 +75,8 @@ public class AppConfig
 		   case "Dallas/Fort Worth":
 			   return "4311 - Pet Rent";
 		   case "Chattanooga":
+			   return "40230 - Pet Rent";
+		   case "Chicago PFW":
 			   return "40230 - Pet Rent";
 			   
 		   }
@@ -94,6 +98,8 @@ public class AppConfig
 			   return "4303 - Tenant Admin Revenue";
 		   case "Chattanooga":
 			   return "4027 - z.Tenant Admin Fee - DNU";
+		   case "Chicago PFW":
+			   return "43030 - Tenant Admin Fee";
 			   
 		   }
 		   return "";
@@ -115,6 +121,8 @@ public class AppConfig
 			   return "4000 - Rent";
 		   case "Chattanooga":
 			   return "40010 - Rent Income";
+		   case "Chicago PFW":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -133,6 +141,8 @@ public class AppConfig
 		   case "Dallas/Fort Worth":
 			   return "4311 - Pet Rent";
 		   case "Chattanooga":
+			   return "40230 - Pet Rent";
+		   case "Chicago PFW":
 			   return "40230 - Pet Rent";
 		   }
 		   return "";
@@ -153,6 +163,8 @@ public class AppConfig
 			   return "4000 - Rent";
 		   case "Chattanooga":
 			   return "40010 - Rent Income";
+		   case "Chicago PFW":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -171,6 +183,8 @@ public class AppConfig
 		   case "Dallas/Fort Worth":
 			   return "4102 - Air Filter Fee";
 		   case "Chattanooga":
+			   return "43060 - Filter Fee";
+		   case "Chicago PFW":
 			   return "43060 - Filter Fee";
 		   }
 		   return "";
@@ -192,6 +206,8 @@ public class AppConfig
 			   return "4311 - Pet Rent";
 		   case "Chattanooga":
 			   return "44010 - Non - Refundable Pet Fee";
+		   case "Chicago PFW":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -212,6 +228,8 @@ public class AppConfig
 			   return "2017 - Prepayments";
 		   case "Chattanooga":
 			   return "20030 - Prepayments";
+		   case "Chicago PFW":
+			   return "20030 - Prepayments";
 		   }
 		   return "";
 	   }
@@ -231,6 +249,8 @@ public class AppConfig
 		   case "Dallas/Fort Worth":
 			   return "4318 - Resident Benefits Package";
 		   case "Chattanooga":
+			   return "43070 - Resident Benefit Package Fee";
+		   case "Chicago PFW":
 			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
@@ -253,6 +273,8 @@ public class AppConfig
 			   return "20020 - Security Deposit";
 		   case "California":
 			   return "20020 - Security Deposit";
+		   case "Chicago PFW":
+			   return "20020 - Security Deposit";
 		   }
 		   return "";
 	   }
@@ -273,6 +295,8 @@ public class AppConfig
 		   case "California":
 			   return "YES";
 		   case "Chattanooga":
+			   return "YES";
+		   case "Chicago PFW":
 			   return "YES";
 		   }
 		   return "";
@@ -295,6 +319,8 @@ public class AppConfig
 			   return "Yes";
 		   case "Chattanooga":
 			   return "Yes";
+		   case "Chicago PFW":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -314,6 +340,8 @@ public class AppConfig
 			   return "NO"; 
 		   case "Chattanooga":
 			   return "NO";
+		   case "Chicago PFW":
+			   return "No";
 		   }
 		   return "";
 	   }

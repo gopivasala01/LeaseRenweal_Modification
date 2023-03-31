@@ -239,7 +239,27 @@ public class PDFReader
 					RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
 					return false;
 				    }
-				    
+				break;
+			case "Chicago PFW":
+				String pdfFormatType_ChicagoPFW = PDFReader.decidePDFFormat(market);
+				System.out.println("PDF Format Type = "+pdfFormatType_ChicagoPFW);
+				if(pdfFormatType_ChicagoPFW=="Format1")
+				{
+					if(PDFDataExtract.ChicagoPFW_Format1.format1()==false)
+						return false;
+				}
+				
+				else 
+					if(pdfFormatType_ChicagoPFW=="Format2")
+				     {
+					if(PDFDataExtract.ChicagoPFW_Format2.format2()==false)
+						return false;
+			        }
+				    else 
+				   {
+					RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+					return false;
+				    }
 				break;
 			}
 			
@@ -292,6 +312,10 @@ public class PDFReader
 		        format1Text = PDFAppConfig.PDFFormatDecider.californiaPFW_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.californiaPFW_Format2;
 		        break;
+			case "Chicago pfw":
+		        format1Text = PDFAppConfig.PDFFormatDecider.ChicagoPFW_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.ChicagoPFW_Format2;
+		        break;
 		        
 			}
 			
@@ -306,11 +330,13 @@ public class PDFReader
 		    if(text.contains(format1Text))
 		    {
 		    	RunnerClass.PDFFormatType = "Format1";
+		    	System.out.println("PDF Format Type = "+RunnerClass.PDFFormatType);
 		    	return "Format1";
 		    }
 		    else if(text.contains(format2Text))
 		    {
-		    	RunnerClass.PDFFormatType = "Format1";
+		    	RunnerClass.PDFFormatType = "Format2";
+		    	System.out.println("PDF Format Type = "+RunnerClass.PDFFormatType);
 		    	return "Format2";
 		    }
 		    else return "Error";

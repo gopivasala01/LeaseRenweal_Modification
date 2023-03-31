@@ -31,6 +31,12 @@ public class PropertyWare_AutoCharges
 				String startDate = RunnerClass.autoCharges[i][2];
 				String endDate = RunnerClass.autoCharges[i][3];
 				String description = RunnerClass.autoCharges[i][4];
+				if(amount=="Error"||amount.trim().equals("0.00")||amount==null)
+				{
+					System.out.println(" issue in adding Auto Charge - "+description);
+					RunnerClass.failedReason = RunnerClass.failedReason+","+" issue in adding Auto Charge - "+description;
+					RunnerClass.statusID=1;
+				}
 				try
 				{
 				List<WebElement> existingAutoCharges = RunnerClass.driver.findElements(Locators.autoCharge_List);
@@ -58,13 +64,6 @@ public class PropertyWare_AutoCharges
 				{}
 				if(availabilityCheck==false)
 				{
-					if(amount=="Error"||amount.trim().equals("0.00"))
-					{
-						System.out.println(" issue in adding Auto Charge - "+description);
-						RunnerClass.failedReason = RunnerClass.failedReason+","+" issue in adding Auto Charge - "+description;
-						RunnerClass.statusID=1;
-					}
-					else
 					PropertyWare_AutoCharges.addingAnAutoCharge(chargeCode, amount, startDate,endDate, description);
 				}
 				

@@ -87,6 +87,8 @@ public class RunnerClass
 	
 	public static void main(String[] args) throws Exception 
 	{
+		String A = "OTB.LP.SAWY1856";
+		long count = A.chars().filter(ch -> ch == '.').count();
 		
 		//Get In Progress Leases
 		//Company,BuildingAbbreviation, LeaseNae
@@ -104,7 +106,7 @@ public class RunnerClass
 		  RunnerClass.PDFFormatType = "";
 		  PDFReader.RCDetails= "";
 		  
-		  if(company.contains("Austin")||company.contains("California")||company.contains("Chattanooga"))
+		  if(company.contains("Austin")||company.contains("California")||company.contains("Chattanooga")||company.contains("Chicago"))
 	     {
 		  //Change the Status of the Lease to Started so that it won't run again in the Jenkins scheduling Process
 		  DataBase.insertData(buildingAbbreviation,"Started",6);

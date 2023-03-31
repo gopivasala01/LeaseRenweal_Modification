@@ -10,7 +10,7 @@ import org.apache.pdfbox.text.PDFTextStripper;
 import mainPackage.PDFReader;
 import mainPackage.RunnerClass;
 
-public class CaliforniaPFW_Format1 
+public class ChicagoPFW_Format1 
 {
 	public static boolean petFlag;
 	public static String text="";
@@ -29,8 +29,8 @@ public class CaliforniaPFW_Format1
 	    System.out.println("------------------------------------------------------------------");
 	    try
 	    {
-	    	PDFReader.commencementDate = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_commencementDate_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_commencementDate_Prior.length());
-	    	PDFReader.commencementDate = PDFReader.commencementDate.substring(0, PDFReader.commencementDate.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_commencementDate_After)).trim();
+	    	PDFReader.commencementDate = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_commencementDate_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_commencementDate_Prior.length());
+	    	PDFReader.commencementDate = PDFReader.commencementDate.substring(0, PDFReader.commencementDate.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_commencementDate_After)).trim();
 	    	PDFReader.commencementDate = PDFReader.commencementDate.trim().replaceAll(" +", " ");
 	    }
 	    catch(Exception e)
@@ -41,8 +41,8 @@ public class CaliforniaPFW_Format1
 	    System.out.println("Commensement Date = "+PDFReader.commencementDate);
 	   try
 	    {
-		   String expirationDateWaw = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_expirationDate_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_expirationDate_Prior.length());
-		   PDFReader.expirationDate =expirationDateWaw.substring(0,expirationDateWaw.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_expirationDate_After)).trim();
+		   String expirationDateWaw = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_expirationDate_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_expirationDate_Prior.length());
+		   PDFReader.expirationDate =expirationDateWaw.substring(0,expirationDateWaw.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_expirationDate_After)).trim();
 		   PDFReader.expirationDate = PDFReader.expirationDate.trim().replaceAll(" +", " ");
 	    }
 	    catch(Exception e)
@@ -53,7 +53,7 @@ public class CaliforniaPFW_Format1
 	   System.out.println("Expiration Date = "+PDFReader.expirationDate);
 	   try
 	    {
-		    PDFReader.proratedRent = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_proratedRent_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_proratedRent_Prior.length(),text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_proratedRent_After));
+		    PDFReader.proratedRent = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_proratedRent_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_proratedRent_Prior.length(),text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_proratedRent_After));
 		    if(PDFReader.proratedRent.matches(".*[a-zA-Z]+.*"))
 		    {
 		    	PDFReader.proratedRent = "Error";
@@ -68,7 +68,7 @@ public class CaliforniaPFW_Format1
 	   System.out.println("Prorated Rent = "+PDFReader.proratedRent);
 	    try
 	    {
-		    PDFReader.proratedRentDate = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_proratedRentDate_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_proratedRentDate_Prior.length(),text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_proratedRentDate_After)).trim();
+		    PDFReader.proratedRentDate = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_proratedRentDate_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_proratedRentDate_Prior.length(),text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_proratedRentDate_After)).trim();
 	    }
 	    catch(Exception e)
 	    {
@@ -79,14 +79,14 @@ public class CaliforniaPFW_Format1
 	    /*
 	    try
 	    {
-		    PDFReader.monthlyRentDate = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_fullRentDate_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_fullRentDate_Prior.length(),text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_fullRentDate_After));
+		    PDFReader.monthlyRentDate = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_fullRentDate_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_fullRentDate_Prior.length(),text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_fullRentDate_After));
 		    System.out.println("Monthly Rent Date= "+PDFReader.monthlyRentDate.trim());
 	    }
 	    catch(Exception e)
 	    {
 	    	try
 	    	{
-	    		PDFReader.monthlyRentDate = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_fullRentDate_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_fullRentDate_Prior.length(),text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_fullRentDate1_After));
+	    		PDFReader.monthlyRentDate = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_fullRentDate_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_fullRentDate_Prior.length(),text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_fullRentDate1_After));
 			   	System.out.println("Monthly Rent Date= "+PDFReader.monthlyRentDate.trim());
 	    	}
 	    	catch(Exception e1)
@@ -97,10 +97,10 @@ public class CaliforniaPFW_Format1
 	    }*/
 	    try
 	    {
-		    PDFReader.monthlyRent = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_fullRent_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_fullRent_Prior.length()).trim().split(" ")[0].trim();//,text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_fullRent_After)).substring(1).replaceAll("[^.0-9]", "");;
+		    PDFReader.monthlyRent = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_fullRent_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_fullRent_Prior.length()).trim().split(" ")[0].trim();//,text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_fullRent_After)).substring(1).replaceAll("[^.0-9]", "");;
 		    if(RunnerClass.onlyDigits(PDFReader.monthlyRent.replace(".", "").replace(",", ""))==false)
 		    {
-		    	PDFReader.monthlyRent = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_fullRent2_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_fullRent2_Prior.length()).trim().split(" ")[0].trim();
+		    	PDFReader.monthlyRent = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_fullRent2_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_fullRent2_Prior.length()).trim().split(" ")[0].trim();
 		    }
 		    if(PDFReader.monthlyRent.contains("*"))
 		    {
@@ -123,7 +123,7 @@ public class CaliforniaPFW_Format1
 	    System.out.println("Monthly Rent "+PDFReader.monthlyRent.trim());
 	    try
 	    {
-		    PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_adminFee_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_adminFee_Prior.length()).trim().split(" ")[0];
+		    PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_adminFee_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_adminFee_Prior.length()).trim().split(" ")[0];
 		    if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
 		    {
 		    	PDFReader.adminFee = "Error";
@@ -137,12 +137,12 @@ public class CaliforniaPFW_Format1
 	    System.out.println("Admin Fee = "+PDFReader.adminFee.trim());
 	    
 	  //Resident Benefits Package 
-	    if(text.contains(PDFAppConfig.CaliforniaPFW_Format1.residentBenefitsPackageAddendumCheck))
+	    if(text.contains(PDFAppConfig.ChicagoPFW_Format1.residentBenefitsPackageAddendumCheck))
 	    {
 	    	PDFReader.residentBenefitsPackageAvailabilityCheck = true;
 	    	 try
 	 	    {
-	 		    PDFReader.residentBenefitsPackage = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB1_residentBenefitsPackage_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB1_residentBenefitsPackage_Prior.length()).split(" ")[0].replaceAll("[^0-9a-zA-Z.]", "");
+	 		    PDFReader.residentBenefitsPackage = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB1_residentBenefitsPackage_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB1_residentBenefitsPackage_Prior.length()).split(" ")[0].replaceAll("[^0-9a-zA-Z.]", "");
 	 		    if(PDFReader.residentBenefitsPackage.matches(".*[a-zA-Z]+.*"))
 	 		    {
 	 		    	PDFReader.residentBenefitsPackage = "Error";
@@ -154,20 +154,16 @@ public class CaliforniaPFW_Format1
 	 		    e.printStackTrace();
 	 	    }
 	    	 System.out.println("Resident Benefits Package  = "+PDFReader.residentBenefitsPackage.trim());
-	    	//PDFAppConfig.CaliforniaPFW_Format1.AB1_residentBenefitsPackage_Prior
+	    	//PDFAppConfig.ChicagoPFW_Format1.AB1_residentBenefitsPackage_Prior
 	    }
 	    else
 	    {
-		    if(text.contains(PDFAppConfig.CaliforniaPFW_Format1.HVACFilterAddendumTextAvailabilityCheck)==true)
-		    {
-		    	PDFReader.HVACFilterFlag =true;
-		    }
-		    else
+		    if(text.contains(PDFAppConfig.ChicagoPFW_Format1.HVACFilterAddendumTextAvailabilityCheck)==true||text.contains(PDFAppConfig.ChicagoPFW_Format1.HVACFilterAddendumTextAvailabilityCheck2)==true)
 		    {
 		    try
 		    {
-			   String[] airFilterFeeArray = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_airFilterFee_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_airFilterFee_Prior.length()).split(" ");
-			   PDFReader.airFilterFee = airFilterFeeArray[0];
+		    	PDFReader.airFilterFee = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_airFilterFee_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_airFilterFee_Prior.length()).trim().split(" ")[0];
+			   //PDFReader.airFilterFee = airFilterFeeArray[0];
 			   PDFReader.HVACFilterFlag =true;
 			   if(PDFReader.airFilterFee.matches(".*[a-zA-Z]+.*"))
 			    {
@@ -184,9 +180,9 @@ public class CaliforniaPFW_Format1
 	    }
 	    try
 	    {
-	    	String[] earlyTerminationRaw = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_earlyTerminationFee_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_earlyTerminationFee_Prior.length()).split(" ");
+	    	String[] earlyTerminationRaw = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_earlyTerminationFee_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_earlyTerminationFee_Prior.length()).split(" ");
 	    	
-		    PDFReader.earlyTermination = earlyTerminationRaw[0]+earlyTerminationRaw[1]; //text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_earlyTerminationFee_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_earlyTerminationFee_Prior.length(),text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_earlyTerminationFee_After));
+		    PDFReader.earlyTermination = earlyTerminationRaw[0]+earlyTerminationRaw[1]; //text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_earlyTerminationFee_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_earlyTerminationFee_Prior.length(),text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_earlyTerminationFee_After));
 	    }
 	    catch(Exception e)
 	    {
@@ -197,7 +193,11 @@ public class CaliforniaPFW_Format1
 	    try
 	    {
 	    	
-		    PDFReader.occupants = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_occupants_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_occupants_Prior.length(),text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_occupants_After));
+		    PDFReader.occupants = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_occupants_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_occupants_Prior.length(),text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_occupants_After));
+		    if(PDFReader.occupants.contains("DocuSign"))
+		    {
+		    	PDFReader.occupants = PDFReader.occupants.substring(0,PDFReader.occupants.indexOf("DocuSign"));
+		    }
 	    }
 	    catch(Exception e)
 	    {
@@ -208,7 +208,7 @@ public class CaliforniaPFW_Format1
 	    
 	    //Late charges 
 	    //Decide Late Fee Rule
-	   Austin_Format1.lateFeeRule();
+	   ChicagoPFW_Format1.lateFeeRule();
 	    
 	  //Prepayment Charge
   		if(PDFReader.portfolioType.contains("MCH"))
@@ -230,14 +230,14 @@ public class CaliforniaPFW_Format1
 	  		}
   			System.out.println("Prepayment Charge = "+PDFReader.prepaymentCharge);
   		 }
-	    petFlag = text.contains(PDFAppConfig.CaliforniaPFW_Format1.AB_petAgreementAvailabilityCheck);
+	    petFlag = text.contains(PDFAppConfig.ChicagoPFW_Format1.AB_petAgreementAvailabilityCheck);
 	    System.out.println("Pet Addendum Available = "+petFlag);
 	    if(petFlag ==true)
 	    {
 	    	PDFReader.petFlag = true;
 	    	try
 	    	{
-	    	PDFReader.petSecurityDeposit = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_securityDeposity_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_securityDeposity_Prior.length(),text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_securityDeposity_After));
+	    	PDFReader.petSecurityDeposit = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_securityDeposity_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_securityDeposity_Prior.length(),text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_securityDeposity_After));
 	    	if(PDFReader.petSecurityDeposit.matches(".*[a-zA-Z]+.*"))
 		    {
 		    	PDFReader.petSecurityDeposit = "Error";
@@ -263,7 +263,6 @@ public class CaliforniaPFW_Format1
 			    {
 			    	PDFReader.proratedPetRent = "Error";
 			    }
-			    else PDFReader.proratedPetRent = PDFReader.proratedPetRent.replaceAll("[^0-9]", "");
 			    }
 			    catch(Exception e)
 			    {
@@ -275,7 +274,7 @@ public class CaliforniaPFW_Format1
 	    	
 	    	try
 		    {
-	    		 PDFReader.petRent = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_petRent_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_petRent_Prior.length()).trim().split(" ")[0];
+	    		 PDFReader.petRent = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_petRent_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_petRent_Prior.length()).trim().split(" ")[0];
 	    		 if(PDFReader.petRent.contains(",for"))
 	    		 {
 	    			 PDFReader.petRent = PDFReader.petRent.split(",")[0].trim();
@@ -283,7 +282,7 @@ public class CaliforniaPFW_Format1
 	    		 else
 	    		 {
 		    		 if(PDFReader.petRent.matches(".*[a-zA-Z]+.*")==true)
-		    			 PDFReader.petRent = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_petRent1_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_petRent1_Prior.length()).trim().split(" ")[0];
+		    			 PDFReader.petRent = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_petRent1_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_petRent1_Prior.length()).trim().split(" ")[0];
 		    		 else 
 		    		 PDFReader.petRent = RunnerClass.extractNumber(PDFReader.petRent);
 	    		 }
@@ -293,7 +292,7 @@ public class CaliforniaPFW_Format1
 	    		try
 	    		{
 	    			e.printStackTrace();
-	    			PDFReader.petRent = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_petRent1_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_petRent1_Prior.length()).trim().split(" ")[0];
+	    			PDFReader.petRent = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_petRent1_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_petRent1_Prior.length()).trim().split(" ")[0];
 //					 System.out.println("Pet rent = "+PDFReader.petRent.trim());
 	    			if(PDFReader.petRent.matches(".*[a-zA-Z]+.*"))
 	    		    {
@@ -313,12 +312,12 @@ public class CaliforniaPFW_Format1
 		   /* 
 	    	try
     		{
-    			//String petFeeRaw1 = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_petFee_Prior));
-    			PDFReader.petFee = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_petFee_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_petFee_Prior.length()).trim().split(" ")[0].trim();
+    			//String petFeeRaw1 = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_petFee_Prior));
+    			PDFReader.petFee = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_petFee_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_petFee_Prior.length()).trim().split(" ")[0].trim();
     			//PDFReader.petFee =  petFeeRaw[petFeeRaw.length-2].trim();
     			//if(PDFReader.petFee.matches(".*[a-zA-Z]+.*"))
     			//{
-    				//PDFReader.petFee = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_petFee2_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_petFee2_Prior.length()).trim().split(" ")[0].trim();
+    				//PDFReader.petFee = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_petFee2_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_petFee2_Prior.length()).trim().split(" ")[0].trim();
     			//}
     			//System.out.println(petFeeRaw.length);
     		}
@@ -332,7 +331,7 @@ public class CaliforniaPFW_Format1
 	    	*/
 	    	// Get text between Type: word
 	    	
-	    	String typeSubString = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_typeWord_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_typeWord_Prior.length(),text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_typeWord_After));
+	    	String typeSubString = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_typeWord_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_typeWord_Prior.length(),text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_typeWord_After));
 	    	
 	    	String newText = typeSubString.replace("Type:","");
 		    int countOfTypeWordInText = ((typeSubString.length() - newText.length())/"Type:".length());
@@ -341,7 +340,7 @@ public class CaliforniaPFW_Format1
 		    
 		    for(int i =0;i<countOfTypeWordInText;i++)
 		    {
-		    	String type = typeSubString.substring(RunnerClass.nthOccurrence(typeSubString, "Type:", i+1)+PDFAppConfig.CaliforniaPFW_Format1.AB_pet1Type_Prior.length(),RunnerClass.nthOccurrence(typeSubString, "Breed:", i+1)).trim();
+		    	String type = typeSubString.substring(RunnerClass.nthOccurrence(typeSubString, "Type:", i+1)+PDFAppConfig.ChicagoPFW_Format1.AB_pet1Type_Prior.length(),RunnerClass.nthOccurrence(typeSubString, "Breed:", i+1)).trim();
 		    	if(type.contains("N/A")||type.contains("n/a"))
 		    		break;
 		    	System.out.println(type);
@@ -366,7 +365,7 @@ public class CaliforniaPFW_Format1
 		    
 		    try
 		    {
-		    	PDFReader.petOneTimeNonRefundableFee = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_petFeeOneTime_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_petFeeOneTime_Prior.length()).split(" ")[0];//,text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_petFeeOneTime_After));
+		    	PDFReader.petOneTimeNonRefundableFee = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_petFeeOneTime_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_petFeeOneTime_Prior.length()).split(" ")[0];//,text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_petFeeOneTime_After));
 		    	if(PDFReader.petOneTimeNonRefundableFee.matches(".*[a-zA-Z]+.*"))
     		    {
     		    	PDFReader.petOneTimeNonRefundableFee = "Error";
@@ -384,12 +383,12 @@ public class CaliforniaPFW_Format1
 	    //Service Animal Addendum check
 	    try
 	    {
-	    if(text.contains(PDFAppConfig.CaliforniaPFW_Format1.serviceAnimalText))
+	    if(text.contains(PDFAppConfig.ChicagoPFW_Format1.serviceAnimalText))
 	    {
 	    	PDFReader.serviceAnimalFlag = true;
     		System.out.println("Service Animal Addendum is available");
     		
-            String typeSubString = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_serviceAnimal_typeWord_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_serviceAnimal_typeWord_Prior.length(),text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_serviceAnimal_typeWord_After));
+            String typeSubString = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_serviceAnimal_typeWord_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_serviceAnimal_typeWord_Prior.length(),text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_serviceAnimal_typeWord_After));
 	    	
 	    	String newText = typeSubString.replace("Type:","");
 		    int  countOftypeWords_ServiceAnimal = ((typeSubString.length() - newText.length())/"Type:".length());
@@ -400,7 +399,7 @@ public class CaliforniaPFW_Format1
 		    PDFReader.serviceAnimalPetWeight = new ArrayList();
 		    for(int i =0;i<countOftypeWords_ServiceAnimal;i++)
 		    {
-		    	String type = typeSubString.substring(RunnerClass.nthOccurrence(typeSubString, "Type:", i+1)+PDFAppConfig.CaliforniaPFW_Format1.AB_pet1Type_Prior.length(),RunnerClass.nthOccurrence(typeSubString, "Breed:", i+1)).trim();
+		    	String type = typeSubString.substring(RunnerClass.nthOccurrence(typeSubString, "Type:", i+1)+PDFAppConfig.ChicagoPFW_Format1.AB_pet1Type_Prior.length(),RunnerClass.nthOccurrence(typeSubString, "Breed:", i+1)).trim();
 		    	if(type.contains("N/A")||type.contains("n/a"))
 		    		break;
 		    	System.out.println(type);
@@ -432,7 +431,7 @@ public class CaliforniaPFW_Format1
 	    
 	    try
 	    {
-	    	if(text.contains(PDFAppConfig.CaliforniaPFW_Format1.concessionAddendumText))
+	    	if(text.contains(PDFAppConfig.ChicagoPFW_Format1.concessionAddendumText))
 	    	{
 	    		PDFReader.concessionAddendumFlag = true;
 	    		System.out.println("Concession Addendum is available");
@@ -450,19 +449,19 @@ public class CaliforniaPFW_Format1
 		String lateFeeRuleText ="";
 		try
 		{
-		 lateFeeRuleText = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRuleText_Prior)+PDFAppConfig.CaliforniaPFW_Format1.lateFeeRuleText_Prior.length(),text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRuleText_After));
+		 lateFeeRuleText = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.lateFeeRuleText_Prior)+PDFAppConfig.ChicagoPFW_Format1.lateFeeRuleText_Prior.length(),text.indexOf(PDFAppConfig.ChicagoPFW_Format1.lateFeeRuleText_After));
 		}
 		catch(Exception e)
 		{
 			try
 			{
-			lateFeeRuleText = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRuleText_Prior)+PDFAppConfig.CaliforniaPFW_Format1.lateFeeRuleText_Prior.length(),text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRuleText_After2));
+			lateFeeRuleText = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.lateFeeRuleText_Prior)+PDFAppConfig.ChicagoPFW_Format1.lateFeeRuleText_Prior.length(),text.indexOf(PDFAppConfig.ChicagoPFW_Format1.lateFeeRuleText_After2));
 			}
 			catch(Exception e2)
 			{
 				try
 				{
-				lateFeeRuleText = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRuleText_Prior3)+PDFAppConfig.CaliforniaPFW_Format1.lateFeeRuleText_Prior3.length(),text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRuleText_After3));
+				lateFeeRuleText = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.lateFeeRuleText_Prior3)+PDFAppConfig.ChicagoPFW_Format1.lateFeeRuleText_Prior3.length(),text.indexOf(PDFAppConfig.ChicagoPFW_Format1.lateFeeRuleText_After3));
 				}
 				catch(Exception e3)
 				{
@@ -470,7 +469,7 @@ public class CaliforniaPFW_Format1
 				}
 			}
 		}
-		if(lateFeeRuleText.contains(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRule_whicheverIsGreater))
+		if(lateFeeRuleText.contains(PDFAppConfig.ChicagoPFW_Format1.lateFeeRule_whicheverIsGreater))
 		{
 			PDFReader.lateFeeRuleType = "GreaterOfFlatFeeOrPercentage";
 			RunnerClass.lateFeeType = "GreaterOfFlatFeeOrPercentage";
@@ -478,8 +477,8 @@ public class CaliforniaPFW_Format1
 		//Late charge day
 			try
 			{
-		   // PDFReader.lateChargeDay =  lateFeeRuleText.substring(lateFeeRuleText.indexOf(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRule_whicheverIsGreater_dueDay_Prior)+PDFAppConfig.CaliforniaPFW_Format1.lateFeeRule_whicheverIsGreater_dueDay_Prior.length()).trim().split(" ")[0];
-				PDFReader.lateChargeDay =  lateFeeRuleText.split(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRule_whicheverIsGreater_dueDay_After)[0].trim();
+		   // PDFReader.lateChargeDay =  lateFeeRuleText.substring(lateFeeRuleText.indexOf(PDFAppConfig.ChicagoPFW_Format1.lateFeeRule_whicheverIsGreater_dueDay_Prior)+PDFAppConfig.ChicagoPFW_Format1.lateFeeRule_whicheverIsGreater_dueDay_Prior.length()).trim().split(" ")[0];
+				PDFReader.lateChargeDay =  lateFeeRuleText.split(PDFAppConfig.ChicagoPFW_Format1.lateFeeRule_whicheverIsGreater_dueDay_After)[0].trim();
 				PDFReader.lateChargeDay =PDFReader.lateChargeDay.substring(PDFReader.lateChargeDay.lastIndexOf(" ")+1);
 		    PDFReader.lateChargeDay =  PDFReader.lateChargeDay.replaceAll("[^0-9]", "");
 			}
@@ -492,7 +491,7 @@ public class CaliforniaPFW_Format1
 		//Late Fee Percentage
 			try
 			{
-		    PDFReader.lateFeePercentage =  lateFeeRuleText.substring(lateFeeRuleText.indexOf(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRule_whicheverIsGreater_lateFeePercentage)+PDFAppConfig.CaliforniaPFW_Format1.lateFeeRule_whicheverIsGreater_lateFeePercentage.length()).trim().split(" ")[0];
+		    PDFReader.lateFeePercentage =  lateFeeRuleText.substring(lateFeeRuleText.indexOf(PDFAppConfig.ChicagoPFW_Format1.lateFeeRule_whicheverIsGreater_lateFeePercentage)+PDFAppConfig.ChicagoPFW_Format1.lateFeeRule_whicheverIsGreater_lateFeePercentage.length()).trim().split(" ")[0];
 		    PDFReader.lateFeePercentage = PDFReader.lateFeePercentage.replaceAll("[^0-9]", "");
 			}
 			catch(Exception e)
@@ -504,7 +503,7 @@ public class CaliforniaPFW_Format1
          //Late Fee Amount
          try
          {
-         String lateFeeAmount  = lateFeeRuleText.substring(lateFeeRuleText.indexOf(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRule_whicheverIsGreater_lateFeeAmount)+PDFAppConfig.CaliforniaPFW_Format1.lateFeeRule_whicheverIsGreater_lateFeeAmount.length()).trim().split(" ")[0];
+         String lateFeeAmount  = lateFeeRuleText.substring(lateFeeRuleText.indexOf(PDFAppConfig.ChicagoPFW_Format1.lateFeeRule_whicheverIsGreater_lateFeeAmount)+PDFAppConfig.ChicagoPFW_Format1.lateFeeRule_whicheverIsGreater_lateFeeAmount.length()).trim().split(" ")[0];
          PDFReader.flatFeeAmount = lateFeeAmount.replaceAll("[^.0-9]", "");
          }
          catch(Exception e)
@@ -516,7 +515,7 @@ public class CaliforniaPFW_Format1
          return true;
 		}
 		else 
-		if(lateFeeRuleText.contains(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRule_mayNotExceedMoreThan30Days))
+		if(lateFeeRuleText.contains(PDFAppConfig.ChicagoPFW_Format1.lateFeeRule_mayNotExceedMoreThan30Days))
 		{
 			PDFReader.lateFeeRuleType = "initialFeePluPerDayFee";
 			//RunnerClass.lateFeeRuleType = "Initial Fee + Per Day Fee";
@@ -524,7 +523,7 @@ public class CaliforniaPFW_Format1
 			PDFReader.lateFeeType ="initialFeePluPerDayFee"; 
 	         try
 	 	    {
-	 		    PDFReader.lateChargeFee = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_lateFee_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_lateFee_Prior.length()).trim().split(" ")[0];
+	 		    PDFReader.lateChargeFee = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_lateFee_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_lateFee_Prior.length()).trim().split(" ")[0];
 	 		    //PDFReader.lateChargeFee =  PDFReader.lateChargeFee.substring(0,PDFReader.lateChargeFee.length()-1);
 	 	    }
 	 	    catch(Exception e)
@@ -537,7 +536,7 @@ public class CaliforniaPFW_Format1
 	 	    //Per Day Fee
 	 	    try
 	 	    {
-	 	    	PDFReader.lateFeeChargePerDay = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_additionalLateChargesPerDay_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_additionalLateChargesPerDay_Prior.length()).split(" ")[0].trim();//,text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_additionalLateChargesPerDay_After));
+	 	    	PDFReader.lateFeeChargePerDay = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_additionalLateChargesPerDay_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_additionalLateChargesPerDay_Prior.length()).split(" ")[0].trim();//,text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_additionalLateChargesPerDay_After));
 	 	    }
 	 	    catch(Exception e)
 	 	    {
@@ -549,7 +548,7 @@ public class CaliforniaPFW_Format1
 	 	    //Additional Late Charges Limit
 	 	    try
 	 	    {
-	 	    	PDFReader.additionalLateChargesLimit = text.substring(text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_additionalLateChargesLimit_Prior)+PDFAppConfig.CaliforniaPFW_Format1.AB_additionalLateChargesLimit_Prior.length()).trim().split(" ")[0]; //,text.indexOf(PDFAppConfig.CaliforniaPFW_Format1.AB_additionalLateChargesLimit_After));
+	 	    	PDFReader.additionalLateChargesLimit = text.substring(text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_additionalLateChargesLimit_Prior)+PDFAppConfig.ChicagoPFW_Format1.AB_additionalLateChargesLimit_Prior.length()).trim().split(" ")[0]; //,text.indexOf(PDFAppConfig.ChicagoPFW_Format1.AB_additionalLateChargesLimit_After));
 	 	    }
 	 	    catch(Exception e)
 	 	    {
@@ -573,7 +572,7 @@ public class CaliforniaPFW_Format1
 	 	    RunnerClass.dueDay_initialFee = PDFReader.lateChargeDay;
 	 	   return true;
 		}
-		else if(lateFeeRuleText.contains(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRule_mayNotExceedAmount)||lateFeeRuleText.contains(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRule_mayNotExceed375))
+		else if(lateFeeRuleText.contains(PDFAppConfig.ChicagoPFW_Format1.lateFeeRule_mayNotExceedAmount)||lateFeeRuleText.contains(PDFAppConfig.ChicagoPFW_Format1.lateFeeRule_mayNotExceed375))
 			{
 			PDFReader.lateFeeRuleType = "initialFeePluPerDayFee";
 			//RunnerClass.lateFeeRuleType = "Initial Fee + Per Day Fee";
@@ -633,7 +632,7 @@ public class CaliforniaPFW_Format1
 			return true;
 			}
 		else 
-			if(lateFeeRuleText.contains(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRule_totalDelinquentRentDueToTheTenantAccount))
+			if(lateFeeRuleText.contains(PDFAppConfig.ChicagoPFW_Format1.lateFeeRule_totalDelinquentRentDueToTheTenantAccount))
 			{
 				PDFReader.lateFeeRuleType = "GreaterOfFlatFeeOrPercentage";
 				RunnerClass.lateFeeType = "GreaterOfFlatFeeOrPercentage";
@@ -699,8 +698,77 @@ public class CaliforniaPFW_Format1
 		   }
 		   */
 			}
+			else if(lateFeeRuleText.contains(PDFAppConfig.ChicagoPFW_Format1.lateFeeRule_calendarDaysAfterTheDateDue))
+			{
+			PDFReader.lateFeeRuleType = "initialFeePluPerDayFee";
+			//RunnerClass.lateFeeRuleType = "Initial Fee + Per Day Fee";
+			
+			//Late Charge Day
+			try
+	 	    {
+			PDFReader.lateChargeDay = lateFeeRuleText.substring(lateFeeRuleText.indexOf("received by landlord within ")+"received by landlord within ".length()).trim().split(" ")[0];
+			PDFReader.lateChargeDay = PDFReader.lateChargeDay.replaceAll("[^0-9]", "");
+	 	    }
+			catch(Exception e)
+	 	    {
+	 	    	PDFReader.lateChargeDay =  "Error";	
+	 	    	e.printStackTrace();
+	 	    }
+	 	    System.out.println("Late Charge Due Day = "+PDFReader.lateChargeDay.trim());
+	 	   RunnerClass.dueDay_initialFee = PDFReader.lateChargeDay;
+	 	    // initial Late Charge
+	 	   try
+	 	    {
+			PDFReader.lateChargeFee = lateFeeRuleText.substring(lateFeeRuleText.indexOf("landlord the liquidated sum of $")+"landlord the liquidated sum of $".length()).trim().split(" ")[0];
+			PDFReader.lateChargeFee = PDFReader.lateChargeFee.replaceAll("[^0-9.]", "");
+	 	    }
+			catch(Exception e)
+	 	    {
+	 	    	PDFReader.lateChargeFee =  "Error";	
+	 	    	e.printStackTrace();
+	 	    }
+	 	    System.out.println("Late Charge Fee = "+PDFReader.lateChargeFee.trim());
+	 	   RunnerClass.initialFeeAmount = PDFReader.lateChargeFee;
+	 	    // Additional Late Charges
+			}
+		
+			else if(lateFeeRuleText.contains(PDFAppConfig.ChicagoPFW_Format1.AnyRentPaymentThatIsNotActuallyReceivedByLandlord))
+			{
+			PDFReader.lateFeeRuleType = "initialFeePluPerDayFee";
+			//RunnerClass.lateFeeRuleType = "Initial Fee + Per Day Fee";
+			
+			//Late Charge Day
+			try
+	 	    {
+			PDFReader.lateChargeDay = lateFeeRuleText.substring(lateFeeRuleText.indexOf("assessed a late charge on the ")+"assessed a late charge on the ".length()).trim().split(" ")[0];
+			PDFReader.lateChargeDay = PDFReader.lateChargeDay.replaceAll("[^0-9]", "");
+	 	    }
+			catch(Exception e)
+	 	    {
+	 	    	PDFReader.lateChargeDay =  "Error";	
+	 	    	e.printStackTrace();
+	 	    }
+	 	    System.out.println("Late Charge Due Day = "+PDFReader.lateChargeDay.trim());
+	 	   RunnerClass.dueDay_initialFee = PDFReader.lateChargeDay;
+	 	    // initial Late Charge
+	 	   try
+	 	    {
+			PDFReader.lateChargeFee = lateFeeRuleText.substring(lateFeeRuleText.indexOf("day of the month equal to ")+"day of the month equal to ".length()).trim().split(" ")[0];
+			PDFReader.lateChargeFee = PDFReader.lateChargeFee.replaceAll("[^0-9.%]", "");
+	 	    }
+			catch(Exception e)
+	 	    {
+	 	    	PDFReader.lateChargeFee =  "Error";	
+	 	    	e.printStackTrace();
+	 	    }
+	 	    System.out.println("Late Charge Fee = "+PDFReader.lateChargeFee.trim());
+	 	   RunnerClass.initialFeeAmount = PDFReader.lateChargeFee;
+	 	    // Additional Late Charges
+			}
+		
 		return true;		
 	}
+
 
 
 

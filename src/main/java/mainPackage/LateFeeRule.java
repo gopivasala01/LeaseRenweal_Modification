@@ -29,7 +29,8 @@ public class LateFeeRule
 		}
 		catch(Exception e)
 		{
-			DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Fee Rule"+'\n');
+			RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Late Fee Rule";
+			//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Fee Rule"+'\n');
 			return false;
 		}
 		Thread.sleep(500);
@@ -41,7 +42,8 @@ public class LateFeeRule
 		}
 		catch(Exception e)
 		{
-			DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Fee Due Day"+'\n');
+			RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Late Fee Due Day";
+			//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Fee Due Day"+'\n');
 		}
 		Thread.sleep(500);
 		try
@@ -55,7 +57,8 @@ public class LateFeeRule
 		}
 		catch(Exception e)
 		{
-			DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Flat Fee"+'\n');
+			RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Flat Fee";
+			//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Flat Fee"+'\n');
 		}
 		Thread.sleep(500);
 		try
@@ -70,7 +73,8 @@ public class LateFeeRule
 		}
 		catch(Exception e)
 		{
-			DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Percentage"+'\n');
+			RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Percentage";
+			//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Percentage"+'\n');
 		}
 		return true;
 	}
@@ -85,7 +89,8 @@ public class LateFeeRule
 		}
 		catch(Exception e)
 		{
-			DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Fee Rule"+'\n');
+			RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Late Fee Rule";
+			//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Fee Rule"+'\n');
 			return false;
 		}
 		Thread.sleep(500);
@@ -104,7 +109,8 @@ public class LateFeeRule
 		{
 			if(RunnerClass.dueDay_initialFee.equalsIgnoreCase("Error"))
 			{
-				DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Day"+'\n');
+				RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Late Charge Day";
+				//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Day"+'\n');
 				//temp=1;
 			}
 			else
@@ -116,7 +122,8 @@ public class LateFeeRule
 		}
 		catch(Exception e)
 		{
-			DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Day"+'\n');
+			RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Late Charge Day";
+			//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Day"+'\n');
 			//temp=1;
 		}
 		// Initial Fee
@@ -125,7 +132,8 @@ public class LateFeeRule
 		{
 			if(RunnerClass.initialFeeAmount.equalsIgnoreCase("Error"))
 			{
-				DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Fee"+'\n');
+				RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Late Charge Fee";
+				//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Fee"+'\n');
 				//temp=1;
 			}
 			else
@@ -141,7 +149,8 @@ public class LateFeeRule
 		}
 		catch(Exception e)
 		{
-			DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Fee"+'\n');
+			RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Late Charge Fee";
+			//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Fee"+'\n');
 			//temp=1;
 		}
 		Thread.sleep(500);
@@ -162,7 +171,8 @@ public class LateFeeRule
 		}
 		catch(Exception e)
 		{
-			DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Initial fee Dropdown"+'\n');
+			RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Initial fee Dropdown";
+			//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Initial fee Dropdown"+'\n');
 			//temp=1;
 		}
 		
@@ -172,7 +182,8 @@ public class LateFeeRule
 		{
 			if(RunnerClass.perDayFeeAmount.equalsIgnoreCase("Error"))
 			{
-				DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Fee Per Day"+'\n');
+				RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Late Charge Fee Per Day";
+				//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Fee Per Day"+'\n');
 				//temp=1;
 			}
 			else
@@ -189,7 +200,8 @@ public class LateFeeRule
 		catch(Exception e)
 		{
 			e.printStackTrace();
-			DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Fee Per Day"+'\n');
+			RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Late Charge Fee Per Day";
+			//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Fee Per Day"+'\n');
 			//temp=1;
 		}
         //Per Day Fee Dropdown
@@ -201,7 +213,8 @@ public class LateFeeRule
 		}
 		catch(Exception e)
 		{
-			DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Fee Per Day Dropdown"+'\n');
+			RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Late Charge Fee Per Day Dropdown";
+			//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Fee Per Day Dropdown"+'\n');
 			//temp=1;
 		}
 		if(RunnerClass.PDFFormatType.equalsIgnoreCase("Format1"))
@@ -218,7 +231,8 @@ public class LateFeeRule
 			}
 			catch(Exception e)
 			{
-				DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Fee Maximum dropdown"+'\n');
+				RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Late Fee Maximum dropdown";
+				//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Fee Maximum dropdown"+'\n');
 				//temp=1;
 			}
 			// Additional Late charges Limit
@@ -236,7 +250,8 @@ public class LateFeeRule
 			{
 				if(RunnerClass.additionalLateChargesLimit.equalsIgnoreCase("Error"))
 				{
-					DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Fee Limit"+'\n');
+					RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Late Charge Fee Limit";
+					//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Fee Limit"+'\n');
 					//temp=1;
 				}
 				else
@@ -252,7 +267,8 @@ public class LateFeeRule
 			}
 			catch(Exception e)
 			{
-				DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Fee Limit"+'\n');
+				RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Late Charge Fee Limit";
+				//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Late Charge Fee Limit"+'\n');
 				//temp=1;
 			}
 			Thread.sleep(500);
@@ -263,7 +279,8 @@ public class LateFeeRule
 			}
 			catch(Exception e)
 			{
-				DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Maximum Limit Dropdown 2"+'\n');
+				RunnerClass.failedReason = RunnerClass.failedReason+",Late Charges - Maximum Limit Dropdown 2";
+				//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Late Charges - Maximum Limit Dropdown 2"+'\n');
 				//temp=1;
 			}
 	    }
