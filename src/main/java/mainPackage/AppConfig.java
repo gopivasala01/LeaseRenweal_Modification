@@ -97,7 +97,7 @@ public class AppConfig
 		   case "Dallas/Fort Worth":
 			   return "4303 - Tenant Admin Revenue";
 		   case "Chattanooga":
-			   return "4027 - z.Tenant Admin Fee - DNU";
+			   return "43030 - Tenant Admin Fee";
 		   case "Chicago PFW":
 			   return "43030 - Tenant Admin Fee";
 			   

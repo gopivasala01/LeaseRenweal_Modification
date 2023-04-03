@@ -87,8 +87,6 @@ public class RunnerClass
 	
 	public static void main(String[] args) throws Exception 
 	{
-		String A = "OTB.LP.SAWY1856";
-		long count = A.chars().filter(ch -> ch == '.').count();
 		
 		//Get In Progress Leases
 		//Company,BuildingAbbreviation, LeaseNae

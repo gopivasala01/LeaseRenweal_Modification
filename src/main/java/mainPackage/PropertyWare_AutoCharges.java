@@ -31,11 +31,12 @@ public class PropertyWare_AutoCharges
 				String startDate = RunnerClass.autoCharges[i][2];
 				String endDate = RunnerClass.autoCharges[i][3];
 				String description = RunnerClass.autoCharges[i][4];
-				if(amount=="Error"||amount.trim().equals("0.00")||amount==null)
+				if(amount.trim().equals("Error")||amount.trim().equals("0.00")||amount==null)
 				{
 					System.out.println(" issue in adding Auto Charge - "+description);
 					RunnerClass.failedReason = RunnerClass.failedReason+","+" issue in adding Auto Charge - "+description;
 					RunnerClass.statusID=1;
+					continue;
 				}
 				try
 				{
