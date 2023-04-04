@@ -112,6 +112,11 @@ public class PropertyWare_AutoCharges
 			RunnerClass.driver.findElement(Locators.autoCharge_Amount).sendKeys(amount);
 			Thread.sleep(500);
 						
+			//End Date
+			RunnerClass.driver.findElement(Locators.autoCharge_EndDate).clear();
+			Thread.sleep(500);
+			RunnerClass.driver.findElement(Locators.autoCharge_EndDate).sendKeys(endDate);
+			
 			//Description
 			RunnerClass.driver.findElement(Locators.autoCharge_Description).sendKeys(description);
 			

@@ -123,7 +123,7 @@ public class Austin_Format1
 	    System.out.println("Monthly Rent "+PDFReader.monthlyRent.trim());
 	    try
 	    {
-		    PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.Austin_Format1.AB_adminFee_Prior)+PDFAppConfig.Austin_Format1.AB_adminFee_Prior.length()).trim().split(" ")[0];
+		    PDFReader.adminFee = text.toLowerCase().substring(text.toLowerCase().indexOf(PDFAppConfig.Austin_Format1.AB_adminFee_Prior.toLowerCase())+PDFAppConfig.Austin_Format1.AB_adminFee_Prior.length()).trim().split(" ")[0];
 		    if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
 		    {
 		    	PDFReader.adminFee = "Error";
