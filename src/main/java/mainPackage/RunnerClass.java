@@ -105,7 +105,7 @@ public class RunnerClass
 		  RunnerClass.PDFFormatType = "";
 		  PDFReader.RCDetails= "";
 		  
-		  if(company.contains("Austin")||company.contains("California")||company.contains("Chattanooga")||company.contains("Chicago"))
+		  if(company.contains("Austin")||company.contains("California")||company.contains("Chattanooga")||company.contains("Chicago")||company.contains("Colorado"))
 	     {
 		  //Change the Status of the Lease to Started so that it won't run again in the Jenkins scheduling Process
 		           DataBase.insertData(buildingAbbreviation,"Started",6);
@@ -154,10 +154,17 @@ public class RunnerClass
 				}
 				else 
 				{
+					if(PropertyWare.selectBuilding(company, completeBuildingAbbreviation)==true)
+			    	{
+			    		RunnerClass.processAfterBuildingIsSelected();
+			    	}
+			    	else
+			    	{
 					if(failedReason.charAt(0)==',')
 						failedReason = failedReason.substring(1);
 					String updateSuccessStatus = "Update [Automation].LeaseInfo Set Status ='Failed', StatusID=3,NotAutomatedFields='"+failedReason+"',LeaseCompletionDate= getDate() where BuildingName like '%"+buildingAbbreviation+"%'";
 			    	DataBase.updateTable(updateSuccessStatus);
+			    	}
 				}
 			}
 		    else 

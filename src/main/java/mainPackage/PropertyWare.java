@@ -405,13 +405,15 @@ public class PropertyWare
 		              for(int j=0;j<buildingAddresses.size();j++)
 		              {
 		            	  String address = buildingAddresses.get(j).getText();
-		            	  if(address.toLowerCase().equals(building.toLowerCase()))
+		            	  if(address.toLowerCase().endsWith(building.toLowerCase()))
 		            	  {
 		            		  buildingAddresses.get(j).click();
 		            		  checkBuildingIsClicked = true;
 		            		  break;
 		            	  }
 		              }
+		              if(checkBuildingIsClicked==true)
+		            	  break;
 					}
 				}
 				if(checkBuildingIsClicked==false)

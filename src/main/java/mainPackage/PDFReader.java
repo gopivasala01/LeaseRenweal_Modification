@@ -261,6 +261,29 @@ public class PDFReader
 					return false;
 				    }
 				break;
+				
+			case "Colorado Springs":
+				String pdfFormatType_ColoradoSprings = PDFReader.decidePDFFormat(market);
+				//System.out.println("PDF Format Type = "+pdfFormatType_ColoradoSprings);
+				if(pdfFormatType_ColoradoSprings=="Format1")
+				{
+					if(PDFDataExtract.ColoradoSprings_Format1.format1()==false)
+						return false;
+				}
+				
+				else 
+					if(pdfFormatType_ColoradoSprings=="Format2")
+				     {
+					if(PDFDataExtract.ColoradoSprings_Format2.format2()==false)
+						return false;
+			        }
+				    else 
+				   {
+					RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+					return false;
+				    }
+				    
+				break;
 			}
 			
 			//Prepayment charge
@@ -316,7 +339,10 @@ public class PDFReader
 		        format1Text = PDFAppConfig.PDFFormatDecider.ChicagoPFW_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.ChicagoPFW_Format2;
 		        break;
-		        
+			case "Colorado Springs":
+		        format1Text = PDFAppConfig.PDFFormatDecider.ColoradoSprings_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.ColoradoSprings_Format2;
+		        break; 
 			}
 			
 			File file = RunnerClass.getLastModified();
