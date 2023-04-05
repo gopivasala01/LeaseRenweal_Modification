@@ -81,11 +81,11 @@ public class PropertyWare_MoveInCharges
 			RunnerClass.statusID=1;
 			e.printStackTrace();
 			System.out.println("Issue in Adding Move in charges");
-			RunnerClass.failedReason =  RunnerClass.failedReason+","+"Issue in Adding Move in charges";
+			RunnerClass.failedReason =  RunnerClass.failedReason+","+" Issue in Adding Move in charges";
 			RunnerClass.driver.navigate().refresh();
 			RunnerClass.js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 			RunnerClass.driver.findElement(Locators.summaryTab).click();
-			return false;
+			return true;
 		}
 		
 	}

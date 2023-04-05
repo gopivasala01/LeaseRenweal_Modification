@@ -101,6 +101,11 @@ public class Locators
     
     public static By cancelLease = By.xpath("(//*[@class='primaryButtons'])[2]/input[2]");
     
+    public static By advancedSearch = By.linkText("Advanced Search >>");
+    public static By advancedSearch_buildingsSection = By.id("searchResultTable_buildings");
+    public static By advancedSearch_buildingAddresses = By.xpath("//*[@id='searchResultTable_buildings']/following::table[1]/tbody/tr/td[2]/a");
+    
+    
    
 
 

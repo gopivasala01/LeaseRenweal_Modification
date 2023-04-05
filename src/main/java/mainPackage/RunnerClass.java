@@ -59,6 +59,7 @@ public class RunnerClass
 	public static boolean listingAgent;
 	public static String currentTime;
 	public static int statusID;
+	public static String completeBuildingAbbreviation;
 	
 	// All fields required for Late Fee Rule
 	    public static String lateFeeRuleType;
@@ -107,14 +108,11 @@ public class RunnerClass
 		  if(company.contains("Austin")||company.contains("California")||company.contains("Chattanooga")||company.contains("Chicago"))
 	     {
 		  //Change the Status of the Lease to Started so that it won't run again in the Jenkins scheduling Process
-		  DataBase.insertData(buildingAbbreviation,"Started",6);
+		           DataBase.insertData(buildingAbbreviation,"Started",6);
 		  
-		  //if(buildingAbbreviation.split("-")[0].trim().contains(" "))
-			  //buildingAbbreviation = buildingAbbreviation;
-				//else 
+		            completeBuildingAbbreviation = buildingAbbreviation;  //This will be used when Building not found in first attempt
 					buildingAbbreviation = buildingAbbreviation.split("-")[0].trim();
           // Login to the PropertyWare		  
-		 
 		  try
 		  {
 		  //Login 
@@ -164,10 +162,17 @@ public class RunnerClass
 			}
 		    else 
 		    {
+		    	if(PropertyWare.selectBuilding(company, completeBuildingAbbreviation)==true)
+		    	{
+		    		RunnerClass.processAfterBuildingIsSelected();
+		    	}
+		    	else
+		    	{
 		    	if(failedReason.charAt(0)==',')
 					failedReason = failedReason.substring(1);
  		    	String updateSuccessStatus = "Update [Automation].LeaseInfo Set Status ='Failed', StatusID=3,NotAutomatedFields='"+failedReason+"',LeaseCompletionDate= getDate() where BuildingName like '%"+buildingAbbreviation+"%'";
 		    	DataBase.updateTable(updateSuccessStatus);
+		    	}
 		    }
 		}
 		else 
@@ -378,6 +383,48 @@ public class RunnerClass
 		   // System.out.println("Your numbers: " + myNumbers.toString());
 		    return myNumbers.toString();
 		}
+	    
+	    public static void processAfterBuildingIsSelected() throws Exception
+	    {
+	    	if(PropertyWare.downloadLeaseAgreement(buildingAbbreviation, ownerName)==true)
+			{
+				
+				if(PDFReader.readPDFPerMarket(company)==true)
+				{
+					PropertyWare_updateValues.configureValues();
+					PropertyWare_MoveInCharges.addMoveInCharges();
+					PropertyWare_AutoCharges.addingAutoCharges();
+					PropertyWare_OtherInformation.addOtherInformation();
+					
+					//Update Completed Status
+					if(failedReason=="")
+						failedReason="";
+					else if(failedReason.charAt(0)==',')
+						failedReason = failedReason.substring(1);
+					String updateSuccessStatus ="";
+					if(statusID==0)
+						updateSuccessStatus = "Update [Automation].LeaseInfo Set Status ='Completed', StatusID=4,NotAutomatedFields='"+failedReason+"',LeaseCompletionDate= getDate() where BuildingName like '%"+buildingAbbreviation+"%'";
+					else 
+						updateSuccessStatus = "Update [Automation].LeaseInfo Set Status ='Review', StatusID=5,NotAutomatedFields='"+failedReason+"',LeaseCompletionDate= getDate() where BuildingName like '%"+buildingAbbreviation+"%'";
+				    	DataBase.updateTable(updateSuccessStatus);
+				}
+				else 
+				{
+					if(failedReason.charAt(0)==',')
+					failedReason = failedReason.substring(1);
+					String updateSuccessStatus = "Update [Automation].LeaseInfo Set Status ='Failed', StatusID=3,NotAutomatedFields='"+failedReason+"',LeaseCompletionDate= getDate() where BuildingName like '%"+buildingAbbreviation+"%'";
+			    	DataBase.updateTable(updateSuccessStatus);
+				}
+				
+			}
+			else 
+			{
+				if(failedReason.charAt(0)==',')
+					failedReason = failedReason.substring(1);
+				String updateSuccessStatus = "Update [Automation].LeaseInfo Set Status ='Failed', StatusID=3,NotAutomatedFields='"+failedReason+"',LeaseCompletionDate= getDate() where BuildingName like '%"+buildingAbbreviation+"%'";
+		    	DataBase.updateTable(updateSuccessStatus);
+			}
+	    }
 		
 
 }

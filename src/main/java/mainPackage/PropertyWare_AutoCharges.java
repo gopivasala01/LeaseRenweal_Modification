@@ -82,7 +82,7 @@ public class PropertyWare_AutoCharges
 			  RunnerClass.failedReason = RunnerClass.failedReason+","+"Something went wrong in adding auto charges";
 			  System.out.println("Something went wrong in adding auto charges");
 			  RunnerClass.driver.navigate().refresh();
-			  return false;
+			  return true;
 	      }
 			
 		}
