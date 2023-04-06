@@ -284,6 +284,29 @@ public class PDFReader
 				    }
 				    
 				break;
+				
+				case "Kansas City":
+					String pdfFormatType_KansasCity = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_KansasCity);
+					if(pdfFormatType_KansasCity=="Format1")
+					{
+						if(PDFDataExtract.KansasCity_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_KansasCity=="Format2")
+					     {
+						if(PDFDataExtract.KansasCity_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
 			}
 			
 			//Prepayment charge
@@ -342,6 +365,10 @@ public class PDFReader
 			case "Colorado Springs":
 		        format1Text = PDFAppConfig.PDFFormatDecider.ColoradoSprings_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.ColoradoSprings_Format2;
+		        break; 
+			case "Kansas City":
+		        format1Text = PDFAppConfig.PDFFormatDecider.KansasCity_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.KansasCity_Format2;
 		        break; 
 			}
 			

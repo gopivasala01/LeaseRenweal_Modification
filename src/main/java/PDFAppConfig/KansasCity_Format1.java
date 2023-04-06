@@ -1,6 +1,6 @@
 package PDFAppConfig;
 
-public class ColoradoSprings_Format1 
+public class KansasCity_Format1 
 {
 	public static String AB_commencementDate_Prior = "follows: Commencement Date:";
 	public static String AB_commencementDate_After = " Expiration Date:";
@@ -34,7 +34,7 @@ public class ColoradoSprings_Format1
 		
 		
 		public static String AB_occupants_Prior = "the term of this Lease are:";
-		public static String AB_occupants_After = "Only two Tenants per bedroom";
+		public static String AB_occupants_After = "Only two Tenants per bedroom may";
 		
 		public static String AB_airFilterFee_Prior = "HVAC Filter Maintenance Program Fee of $";
 		public static String AB_airFilterFee_After = " per month (�HVAC Program Fee�)";
@@ -160,7 +160,6 @@ public class ColoradoSprings_Format1
 		
 		
 		public static String lateFeeRule_whicheverIsGreater= "whichever is greater";
-		public static String lateFeeRule_initialLateChargeNotToExceedTheGreaterAmount = "n initial late charge not to exceed the greater amount";
 		public static String lateFeeRule_tenantShallBeAssessed = "Tenant shall be assessed a late fee in the amount";
 		public static String lateFeeRule_mayNotExceedMoreThan30Days = "may not exceed more than 30 days";
 		public static String lateFeeRule_mayNotExceedAmount = "(initial and additional) may not exceed";
