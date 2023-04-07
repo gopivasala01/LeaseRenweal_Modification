@@ -156,7 +156,7 @@ public class PropertyWare_updateValues
 				}
 				else
 				{
-					if(PDFReader.portfolioType=="MCH"&&PDFReader.petFlag==true&&PDFReader.petSecurityDepositFlag==false)
+					if(PDFReader.petFlag==true&&PDFReader.petSecurityDepositFlag==false)
 					{
 						if(PDFReader.residentBenefitsPackageAvailabilityCheck==true)
 						{
