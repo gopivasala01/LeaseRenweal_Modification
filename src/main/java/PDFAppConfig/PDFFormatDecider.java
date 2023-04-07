@@ -12,7 +12,7 @@ public class PDFFormatDecider
 		public static String california_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT";
 		
 		// California PFW
-		public static String californiaPFW_Format1 = "The parties to this Lease are the owner of the Property";
+		public static String californiaPFW_Format1 = "The parties to this lease are";
 		public static String californiaPFW_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT";
 		
 		// Chattanooga

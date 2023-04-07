@@ -46,6 +46,8 @@ public class AppConfig
 			   return "4000 - Rent";
 		   case "California":
 			   return "40010 - Rent Income";
+		   case "California PFW":
+			   return "40010 - Rent Income";
 		   case "Alabama":
 			   return "4000 - Rent";
 		   case "North Carolina":
@@ -85,6 +87,8 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "California":
 			   return "40230 - Pet Rent";
+		   case "California PFW":
+			   return "40230 - Pet Rent";
 		   case "Colorado Springs":
 			   return "40230 - Pet Rent";
 		   case "Kansas City":
@@ -113,6 +117,8 @@ public class AppConfig
 			   return "43030 - Tenant Admin Fee";
 		   case "California":
 			   return "43030 - Tenant Admin Fee";
+		   case "California PFW":
+			   return "43030 - Tenant Admin Fee";
 		   case "Colorado Springs":
 			   return "43030 - Tenant Admin Fee";
 		   case "Kansas City":
@@ -129,6 +135,8 @@ public class AppConfig
 		   case "Austin":
 			   return "4000 - Rent";
 		   case "California":
+			   return "40010 - Rent Income";
+		   case "California PFW":
 			   return "40010 - Rent Income";
 		   case "Alabama":
 			   return "4000 - Rent";
@@ -167,6 +175,8 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "California":
 			   return "40230 - Pet Rent";
+		   case "California PFW":
+			   return "40230 - Pet Rent";
 		   case "Colorado Springs":
 			   return "40230 - Pet Rent";
 		   case "Kansas City":
@@ -181,6 +191,8 @@ public class AppConfig
 		   case "Austin":
 			   return "4000 - Rent";
 		   case "California":
+			   return "40010 - Rent Income";
+		   case "California PFW":
 			   return "40010 - Rent Income";
 		   case "Alabama":
 			   return "4000 - Rent";
@@ -219,6 +231,8 @@ public class AppConfig
 			   return "43060 - Filter Fee";
 		   case "California":
 			   return "43060 - Filter Fee";
+		   case "California PFW":
+			   return "43060 - Filter Fee";
 		   case "Colorado Springs":
 			   return "43060 - Filter Fee";
 		   case "Kansas City":
@@ -246,6 +260,8 @@ public class AppConfig
 		   case "Chicago PFW":
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "California":
+			   return "44010 - Non-Refundable Pet Fee";
+		   case "California PFW":
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Colorado Springs":
 			   return "44010 - Non-Refundable Pet Fee";
@@ -275,6 +291,8 @@ public class AppConfig
 			   return "20030 - Prepayments";
 		   case "California":
 			   return "20030 - Prepayments";
+		   case "California PFW":
+			   return "20030 - Prepayments";
 		   case "Colorado Springs":
 			   return "20030 - Prepayments";
 		   case "Kansas City":
@@ -290,6 +308,8 @@ public class AppConfig
 		   case "Austin":
 			   return "4318 - Resident Benefits Package";
 		   case "California":
+			   return "43070 - Resident Benefit Package Fee";
+		   case "California PFW":
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Alabama":
 			   return "4318 - Resident Benefits Package";
@@ -326,6 +346,8 @@ public class AppConfig
 			   return "20020 - Security Deposit";
 		   case "California":
 			   return "20020 - Security Deposit";
+		   case "California PFW":
+			   return "20020 - Security Deposit";
 		   case "Chicago PFW":
 			   return "20020 - Security Deposit";
 		   case "Colorado Springs":
@@ -350,6 +372,8 @@ public class AppConfig
 		   case "Dallas/Fort Worth":
 			   return "YES"; 
 		   case "California":
+			   return "YES";
+		   case "California PFW":
 			   return "YES";
 		   case "Chattanooga":
 			   return "YES";
@@ -378,6 +402,8 @@ public class AppConfig
 			   return "Yes"; 
 		   case "California":
 			   return "Yes";
+		   case "California PFW":
+			   return "Yes";
 		   case "Chattanooga":
 			   return "Yes";
 		   case "Chicago PFW":
@@ -396,6 +422,8 @@ public class AppConfig
 		   case "Austin":
 			   return "NO";
 		   case "California":
+			   return "NO";
+		   case "California PFW":
 			   return "NO";
 		   case "Alabama":
 			   return "NO";

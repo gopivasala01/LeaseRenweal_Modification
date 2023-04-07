@@ -163,6 +163,7 @@ public class CaliforniaPFW_Format1
 		public static String lateFeeRule_tenantShallBeAssessed = "Tenant shall be assessed a late fee in the amount";
 		public static String lateFeeRule_mayNotExceedMoreThan30Days = "may not exceed more than 30 days";
 		public static String lateFeeRule_mayNotExceedAmount = "(initial and additional) may not exceed";
+		public static String lateFeeRule_landlordTheLiquidatedSumOf = "landlord the liquidated sum of";
 		public static String lateFeeRule_mayNotExceed375 = "Additional late charges may not exceed $375";
 		public static String lateFeeRule_totalDelinquentRentDueToTheTenantAccount = "total delinquent rent due to the Tenant Account";
 		public static String lateFeeRule_whicheverIsGreater_dueDay_Prior = "Page 3 of 13:";

@@ -208,7 +208,7 @@ public class CaliforniaPFW_Format1
 	    
 	    //Late charges 
 	    //Decide Late Fee Rule
-	   Austin_Format1.lateFeeRule();
+	  CaliforniaPFW_Format1.lateFeeRule();
 	    
 	  //Prepayment Charge
   		if(PDFReader.portfolioType.contains("MCH"))
@@ -698,6 +698,67 @@ public class CaliforniaPFW_Format1
 			PDFReader.lateFeeType ="";
 		   }
 		   */
+			}
+			else if(lateFeeRuleText.contains(PDFAppConfig.CaliforniaPFW_Format1.lateFeeRule_landlordTheLiquidatedSumOf))
+			{
+			PDFReader.lateFeeRuleType = "initialFeePluPerDayFee";
+			//RunnerClass.lateFeeRuleType = "Initial Fee + Per Day Fee";
+			
+			//Late Charge Day
+			try
+	 	    {
+			PDFReader.lateChargeDay = lateFeeRuleText.substring(lateFeeRuleText.indexOf("tenant is not received by landlord within ")+"tenant is not received by landlord within ".length()).trim().split(" ")[0];
+			PDFReader.lateChargeDay = PDFReader.lateChargeDay.replaceAll("[^0-9]", "");
+	 	    }
+			catch(Exception e)
+	 	    {
+	 	    	PDFReader.lateChargeDay =  "Error";	
+	 	    	e.printStackTrace();
+	 	    }
+	 	    System.out.println("Late Charge Due Day = "+PDFReader.lateChargeDay.trim());
+	 	   RunnerClass.dueDay_initialFee = PDFReader.lateChargeDay;
+	 	    // initial Late Charge
+	 	   try
+	 	    {
+			PDFReader.lateChargeFee = lateFeeRuleText.substring(lateFeeRuleText.indexOf("landlord the liquidated sum of $")+"landlord the liquidated sum of $".length()).trim().split(" ")[0];
+			//PDFReader.lateChargeFee = PDFReader.lateChargeFee.replaceAll("[^0-9.]", "").substring(0, PDFReader.lateChargeFee.length()-1);
+	 	    }
+			catch(Exception e)
+	 	    {
+	 	    	PDFReader.lateChargeFee =  "Error";	
+	 	    	e.printStackTrace();
+	 	    }
+	 	    System.out.println("Late Charge Fee = "+PDFReader.lateChargeFee.trim());
+	 	   RunnerClass.initialFeeAmount = PDFReader.lateChargeFee;
+	 	   /*
+	 	    // Additional Late Charges
+	 	   try
+	 	    {
+			PDFReader.additionalLateCharges = lateFeeRuleText.substring(lateFeeRuleText.indexOf("additional late charges of $")+"additional late charges of $".length()).trim().split(" ")[0];
+			PDFReader.additionalLateCharges = PDFReader.additionalLateCharges.replaceAll("[^0-9.]", "");
+	 	    }
+			catch(Exception e)
+	 	    {
+	 	    	PDFReader.additionalLateCharges =  "Error";	
+	 	    	e.printStackTrace();
+	 	    }
+	 	    System.out.println("Additional Late Charges = "+PDFReader.additionalLateCharges.trim());
+	 	   RunnerClass.perDayFeeAmount = PDFReader.additionalLateCharges;
+	 	    //Additional Late Charges Limit
+	 	   try
+	 	    {
+			PDFReader.additionalLateChargesLimit = lateFeeRuleText.substring(lateFeeRuleText.indexOf("Additional late charges may not exceed $")+"Additional late charges may not exceed $".length()).trim().split(" ")[0];
+			PDFReader.additionalLateChargesLimit = PDFReader.additionalLateChargesLimit.replaceAll("[^0-9.]", "");
+	 	    }
+			catch(Exception e)
+	 	    {
+	 	    	PDFReader.additionalLateChargesLimit =  "Error";	
+	 	    	e.printStackTrace();
+	 	    }
+	 	    System.out.println("Additional Late Charges Limit = "+PDFReader.additionalLateChargesLimit.trim());
+	 	   RunnerClass.additionalLateChargesLimit = PDFReader.additionalLateChargesLimit;
+			*/
+			return true;
 			}
 		return true;		
 	}

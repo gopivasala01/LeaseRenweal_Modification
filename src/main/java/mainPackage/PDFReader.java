@@ -196,7 +196,7 @@ public class PDFReader
 				    
 				break;
 				
-			case "California pfw":
+			case "California PFW":
 				String pdfFormatType_CaliforniaPFW = PDFReader.decidePDFFormat(market);
 				System.out.println("PDF Format Type = "+pdfFormatType_CaliforniaPFW);
 				if(pdfFormatType_CaliforniaPFW=="Format1")
@@ -354,11 +354,11 @@ public class PDFReader
 		        format2Text = PDFAppConfig.PDFFormatDecider.california_Format2;
 		        break;
 		        
-			case "California pfw":
+			case "California PFW":
 		        format1Text = PDFAppConfig.PDFFormatDecider.californiaPFW_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.californiaPFW_Format2;
 		        break;
-			case "Chicago pfw":
+			case "Chicago PFW":
 		        format1Text = PDFAppConfig.PDFFormatDecider.ChicagoPFW_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.ChicagoPFW_Format2;
 		        break;
