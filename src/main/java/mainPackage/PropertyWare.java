@@ -282,7 +282,7 @@ public class PropertyWare
 		{
 			for(int j=0;j<AppConfig.LeaseAgreementFileNames.length;j++)
 			{
-			 if(documents.get(i).getText().startsWith(AppConfig.LeaseAgreementFileNames[j]))//&&documents.get(i).getText().contains(AppConfig.getCompanyCode(RunnerClass.company)))
+			 if(documents.get(i).getText().startsWith(AppConfig.LeaseAgreementFileNames[j])&&!documents.get(i).getText().contains("Termination"))//&&documents.get(i).getText().contains(AppConfig.getCompanyCode(RunnerClass.company)))
 			 {
 			 	documents.get(i).click();
 				checkLeaseAgreementAvailable = true;

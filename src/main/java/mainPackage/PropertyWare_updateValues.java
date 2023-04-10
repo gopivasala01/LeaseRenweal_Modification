@@ -24,6 +24,13 @@ public class PropertyWare_updateValues
 			//Clear all values Configuration table first
 			String query1 = "update  automation.LeaseCloseOutsChargeChargesConfiguration Set Amount=NULL, StartDate=NUll, EndDate=NUll, MoveInCharge=NULL, AutoCharge=NULL, autoCharge_StartDate=NULL";
 			DataBase.updateTable(query1);
+			
+			//If Concession Addendum Available, mention that in the comments
+			if(PDFReader.concessionAddendumFlag == true) 
+			{
+				RunnerClass.failedReason = RunnerClass.failedReason+",Concession Addendum is available";
+				//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Consession Addendum is available"+'\n');
+			}
 					
 			//Get all Required dates converted
 			PDFReader.startDate = RunnerClass.convertDate(PDFReader.commencementDate);

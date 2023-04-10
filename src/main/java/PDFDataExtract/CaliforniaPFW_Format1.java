@@ -263,7 +263,7 @@ public class CaliforniaPFW_Format1
 			    {
 			    	PDFReader.proratedPetRent = "Error";
 			    }
-			    else PDFReader.proratedPetRent = PDFReader.proratedPetRent.replaceAll("[^0-9]", "");
+			    else PDFReader.proratedPetRent = PDFReader.proratedPetRent.replaceAll("[^0-9.]", "");
 			    }
 			    catch(Exception e)
 			    {
