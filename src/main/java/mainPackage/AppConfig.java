@@ -3,7 +3,6 @@ package mainPackage;
 public class AppConfig 
 {
 		public static boolean saveButtonOnAndOff= true;
-		
 		public static String username= "mds0418@gmail.com";
 		public static String password="HomeRiver1#";
 		public static String URL="https://app.propertyware.com/pw/login.jsp";

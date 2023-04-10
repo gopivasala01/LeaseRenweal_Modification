@@ -201,9 +201,25 @@ public class ColoradoSprings_Format1
 	    }
 	    catch(Exception e)
 	    {
-		    PDFReader.occupants ="Error";	
+		   try
+		   {
+			   PDFReader.occupants = text.substring(text.indexOf(PDFAppConfig.ColoradoSprings_Format1.AB_occupants_Prior)+PDFAppConfig.ColoradoSprings_Format1.AB_occupants_Prior.length(),text.indexOf(PDFAppConfig.ColoradoSprings_Format1.AB_occupants_After2));
+		   }
+		   catch(Exception e2)
+		   {
+			   try
+			   {
+				   PDFReader.occupants = text.substring(text.indexOf(PDFAppConfig.ColoradoSprings_Format1.AB_occupants_Prior));
+				   PDFReader.occupants =  PDFReader.occupants.substring(0,  PDFReader.occupants.indexOf("B."));
+			   }
+			   catch(Exception e3)
+			   {
+	    	PDFReader.occupants ="Error";	
 		    e.printStackTrace();
+			   }
+		   }
 	    }
+	    
 	    System.out.println("Occupants = "+PDFReader.occupants.trim());
 	    
 	    //Late charges 

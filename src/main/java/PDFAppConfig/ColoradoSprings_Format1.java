@@ -35,6 +35,7 @@ public class ColoradoSprings_Format1
 		
 		public static String AB_occupants_Prior = "the term of this Lease are:";
 		public static String AB_occupants_After = "Only two Tenants per bedroom";
+		public static String AB_occupants_After2 = "B. Phone Numbers and Email:";
 		
 		public static String AB_airFilterFee_Prior = "HVAC Filter Maintenance Program Fee of $";
 		public static String AB_airFilterFee_After = " per month (�HVAC Program Fee�)";

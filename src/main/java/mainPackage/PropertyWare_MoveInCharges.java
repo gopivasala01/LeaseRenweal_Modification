@@ -52,17 +52,20 @@ public class PropertyWare_MoveInCharges
 					String autoChargeCodes = existingMoveInCharges_ChargeCodes.get(k).getText();
 					String autoChargeAmount = existingMoveInCharges_Amount.get(k).getText();
 					//Check if Prepayments Charge is already available even with different amount
+					if(!autoChargeAmount.equals(""))
+					{
 					if(autoChargeCodes.equals(AppConfig.getPrepaymentChargeCode(RunnerClass.company))&&chargeCode.contains(autoChargeCodes))
 					{
 						availabilityCheck = true;
 						System.out.println(description+" already available");
 						break;
 					}
-					if(chargeCode.contains(autoChargeCodes)&&(autoChargeAmount.replaceAll("[^0-9]", "").equals(amount.replaceAll("[^0-9]", ""))||autoChargeAmount.split(".")[0].equals(amount.split(".")[0])))
+					if(chargeCode.contains(autoChargeCodes)&&(autoChargeAmount.replaceAll("[^0-9]", "").contains(amount.replaceAll("[^0-9]", ""))))//||autoChargeAmount.split(".")[0].contains(amount.split(".")[0])))
 					{
 						availabilityCheck = true;
 						System.out.println(description+" already available");
 						break;
+					}
 					}
 				}
 				//Add new Charge if it is not there
