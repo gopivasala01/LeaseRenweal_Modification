@@ -307,6 +307,28 @@ public class PDFReader
 					    }
 					    
 					break;
+				case "Houston":
+					String pdfFormatType_Houston = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_Houston);
+					if(pdfFormatType_Houston=="Format1")
+					{
+						if(PDFDataExtract.Houston_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_Houston=="Format2")
+					     {
+						if(PDFDataExtract.Houston_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
 			}
 			
 			//Prepayment charge
@@ -369,6 +391,10 @@ public class PDFReader
 			case "Kansas City":
 		        format1Text = PDFAppConfig.PDFFormatDecider.KansasCity_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.KansasCity_Format2;
+		        break; 
+			case "Houston":
+		        format1Text = PDFAppConfig.PDFFormatDecider.Houston_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.Houston_Format2;
 		        break; 
 			}
 			

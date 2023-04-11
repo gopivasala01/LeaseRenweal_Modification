@@ -30,5 +30,9 @@ public class PDFFormatDecider
 		// Colorado Springs
 	    public static String KansasCity_Format1 = "The parties to this Lease are the owner of the Property";
 		public static String KansasCity_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT";
+		
+		// Houston
+		public static String Houston_Format1 = "The parties to this Lease are the owner of the Property";
+		public static String Houston_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT";
 
 }

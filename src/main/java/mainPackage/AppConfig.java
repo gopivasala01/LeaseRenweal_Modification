@@ -61,6 +61,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Kansas City":
 			   return "4700 - Rent";
+		   case "Houston":
+			   return "4000 - Rent";
 			   
 		   }
 		   return "";
@@ -92,6 +94,8 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "Kansas City":
 			   return "4311 - Pet Rent";
+		   case "Houston":
+			   return "4311 - Pet Rent";
 			   
 		   }
 		   return "";
@@ -122,6 +126,8 @@ public class AppConfig
 			   return "43030 - Tenant Admin Fee";
 		   case "Kansas City":
 			   return "4303 - Tenant Admin Revenue";
+		   case "Houston":
+			   return "4303 - Tenant Admin Revenue";
 			   
 		   }
 		   return "";
@@ -151,6 +157,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Kansas City":
 			   return "4700 - Rent";
+		   case "Houston":
+			   return "4000 - Rent";
 		   }
 		   return "";
 	   }
@@ -180,6 +188,8 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "Kansas City":
 			   return "4311 - Pet Rent";
+		   case "Houston":
+			   return "4311 - Pet Rent";
 		   }
 		   return "";
 	   }
@@ -207,6 +217,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Kansas City":
 			   return "4700 - Rent";
+		   case "Houston":
+			   return "4000 - Rent";
 		   }
 		   return "";
 	   }
@@ -235,6 +247,8 @@ public class AppConfig
 		   case "Colorado Springs":
 			   return "43060 - Filter Fee";
 		   case "Kansas City":
+			   return "4102 - Air Filter Fee";
+		   case "Houston":
 			   return "4102 - Air Filter Fee";
 		   }
 		   return "";
@@ -266,6 +280,8 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Kansas City":
 			   return  "4312 - Non-Refundable Pet Fee";
+		   case "Houston":
+			   return "4311 - Pet Rent";
 			   
 		   }
 		   return "";
@@ -296,6 +312,8 @@ public class AppConfig
 			   return "20030 - Prepayments";
 		   case "Kansas City":
 			   return "2017 - Prepayments";
+		   case "Houston":
+			   return "2017 - Prepayments";
 		   }
 		   return "";
 	   }
@@ -323,6 +341,8 @@ public class AppConfig
 		   case "Colorado Springs":
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Kansas City":
+			   return "4318 - Resident BenefitsPackage";
+		   case "Houston":
 			   return "4318 - Resident BenefitsPackage";
 		   }
 		   return "";
@@ -353,6 +373,8 @@ public class AppConfig
 			   return "20020 - Security Deposit";
 		   case "Kansas City":
 			   return "2010 - Security Deposit";
+		   case "Houston":
+			   return "2050 - Security Deposit";
 		   }
 		   return "";
 	   }
@@ -381,6 +403,8 @@ public class AppConfig
 		   case "Colorado Springs":
 			   return "YES";
 		   case "Kansas City":
+			   return "YES";
+		   case "Houston":
 			   return "YES";
 		   }
 		   return "";
@@ -411,6 +435,8 @@ public class AppConfig
 			   return "Yes";
 		   case "Kansas City":
 			   return "Yes";
+		   case "Houston":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -437,6 +463,8 @@ public class AppConfig
 		   case "Colorado Springs":
 			   return "NO";
 		   case "Kansas City":
+			   return "NO";
+		   case "Houston":
 			   return "NO";
 		   }
 		   return "";
@@ -482,6 +510,8 @@ public class AppConfig
 				return "";
 			case "Kansas City":
 				return "KC";
+			case "Houston":
+				return "Houston";
 				
 			}
 			return "";
