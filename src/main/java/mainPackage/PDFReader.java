@@ -140,7 +140,7 @@ public class PDFReader
 		    RunnerClass.minimumDue_GreaterOf ="";
 		    
 		    //Other information
-		    RCDetails = "";
+		    //RCDetails = "";
 		    earlyTermination = "";
 		    occupants = "";
 		    serviceAnimalFlag = false;
@@ -329,6 +329,29 @@ public class PDFReader
 					    }
 					    
 					break;
+					
+				case "Maine":
+					String pdfFormatType_Maine = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_Maine);
+					if(pdfFormatType_Maine=="Format1")
+					{
+						if(PDFDataExtract.Maine_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_Maine=="Format2")
+					     {
+						if(PDFDataExtract.Maine_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
 			}
 			
 			//Prepayment charge
@@ -395,6 +418,10 @@ public class PDFReader
 			case "Houston":
 		        format1Text = PDFAppConfig.PDFFormatDecider.Houston_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.Houston_Format2;
+		        break; 
+			case "Maine":
+		        format1Text = PDFAppConfig.PDFFormatDecider.Maine_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.Maine_Format2;
 		        break; 
 			}
 			

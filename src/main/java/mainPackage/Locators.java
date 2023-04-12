@@ -78,7 +78,7 @@ public class Locators
     public static By petAmount = By.xpath("//*[text()='Pet Rent Amount']/following::input[1]");
     public static By petAmount2 = By.xpath("//*[text()='Pet Rent Amount']/following::input[1]");
     public static By petDepositAmount = By.xpath("//*[text()='Pet Deposit Amount']/following::input[1]");
-    public static By tenantOneTimePetFee = By.xpath("//*[text()='Tenant One-time Pet Fee']/following::input[1]");
+    public static By tenantOneTimePetFee = By.xpath("//*[contains(text(),'ime Pet Fee')]/following::input[1]");
     public static By tenantOneTimePetFee2 = By.xpath("//*[text()='Tenant One-Time Pet Fee']/following::input[1]");
     public static By petSpecialProvisions = By.xpath("//*[text()='Pet Special Provisions']/following::input[1]");
     public static By lateFeeDueDay = By.name("entity.lateFee.dueDay");

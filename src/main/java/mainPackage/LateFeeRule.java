@@ -102,7 +102,7 @@ public class LateFeeRule
 		{
 			RunnerClass.dueDay_initialFee = "2";
 		}
-		else RunnerClass.dueDay_initialFee = String.valueOf(RunnerClass.dueDay_initialFee.trim().charAt(0));
+		else RunnerClass.dueDay_initialFee = String.valueOf(RunnerClass.dueDay_initialFee.trim().replaceAll("[^0-9]", ""));
 		}
 		catch(Exception e) {}
 		try

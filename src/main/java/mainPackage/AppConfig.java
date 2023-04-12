@@ -63,6 +63,8 @@ public class AppConfig
 			   return "4700 - Rent";
 		   case "Houston":
 			   return "4000 - Rent";
+		   case "Maine":
+			   return "40010 - Rent Income";
 			   
 		   }
 		   return "";
@@ -96,6 +98,8 @@ public class AppConfig
 			   return "4311 - Pet Rent";
 		   case "Houston":
 			   return "4311 - Pet Rent";
+		   case "Maine":
+			   return "40230 - Pet Rent";
 			   
 		   }
 		   return "";
@@ -128,6 +132,8 @@ public class AppConfig
 			   return "4303 - Tenant Admin Revenue";
 		   case "Houston":
 			   return "4303 - Tenant Admin Revenue";
+		   case "Maine":
+			   return "43030 - Tenant Admin Fee";
 			   
 		   }
 		   return "";
@@ -159,6 +165,8 @@ public class AppConfig
 			   return "4700 - Rent";
 		   case "Houston":
 			   return "4000 - Rent";
+		   case "Maine":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -190,6 +198,8 @@ public class AppConfig
 			   return "4311 - Pet Rent";
 		   case "Houston":
 			   return "4311 - Pet Rent";
+		   case "Maine":
+			   return "40230 - Pet Rent";
 		   }
 		   return "";
 	   }
@@ -219,6 +229,8 @@ public class AppConfig
 			   return "4700 - Rent";
 		   case "Houston":
 			   return "4000 - Rent";
+		   case "Maine":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -250,6 +262,8 @@ public class AppConfig
 			   return "4102 - Air Filter Fee";
 		   case "Houston":
 			   return "4102 - Air Filter Fee";
+		   case "Maine":
+			   return "43060 - Filter Fee";
 		   }
 		   return "";
 	   }
@@ -282,6 +296,8 @@ public class AppConfig
 			   return  "4312 - Non-Refundable Pet Fee";
 		   case "Houston":
 			   return "4311 - Pet Rent";
+		   case "Maine":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -314,6 +330,8 @@ public class AppConfig
 			   return "2017 - Prepayments";
 		   case "Houston":
 			   return "2017 - Prepayments";
+		   case "Maine":
+			   return "20030 - Prepayments";
 		   }
 		   return "";
 	   }
@@ -344,6 +362,8 @@ public class AppConfig
 			   return "4318 - Resident BenefitsPackage";
 		   case "Houston":
 			   return "4318 - Resident BenefitsPackage";
+		   case "Maine":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -375,6 +395,8 @@ public class AppConfig
 			   return "2010 - Security Deposit";
 		   case "Houston":
 			   return "2050 - Security Deposit";
+		   case "Maine":
+			   return "20020 - Security Deposit";
 		   }
 		   return "";
 	   }
@@ -405,6 +427,8 @@ public class AppConfig
 		   case "Kansas City":
 			   return "YES";
 		   case "Houston":
+			   return "YES";
+		   case "Maine":
 			   return "YES";
 		   }
 		   return "";
@@ -437,6 +461,8 @@ public class AppConfig
 			   return "Yes";
 		   case "Houston":
 			   return "Yes";
+		   case "Maine":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -465,6 +491,8 @@ public class AppConfig
 		   case "Kansas City":
 			   return "NO";
 		   case "Houston":
+			   return "NO";
+		   case "Maine":
 			   return "NO";
 		   }
 		   return "";
@@ -512,6 +540,8 @@ public class AppConfig
 				return "KC";
 			case "Houston":
 				return "Houston";
+			case "Maine":
+				return "ME";
 				
 			}
 			return "";

@@ -105,11 +105,10 @@ public class RunnerClass
 		  RunnerClass.PDFFormatType = "";
 		  PDFReader.RCDetails= "";
 		  
-		  if(company.contains("Austin")||company.contains("California")||company.contains("Chattanooga")||company.contains("Chicago")||company.contains("Colorado")||company.contains("Kansas City")||company.contains("Houston"))
+		  if(company.contains("Austin")||company.contains("California")||company.contains("Chattanooga")||company.contains("Chicago")||company.contains("Colorado")||company.contains("Kansas City")||company.contains("Houston")||company.contains("Maine"))
 	     {
 		  //Change the Status of the Lease to Started so that it won't run again in the Jenkins scheduling Process
 		           DataBase.insertData(buildingAbbreviation,"Started",6);
-		  
 		            completeBuildingAbbreviation = buildingAbbreviation;  //This will be used when Building not found in first attempt
 					buildingAbbreviation = buildingAbbreviation.split("-")[0].trim();
           // Login to the PropertyWare		  

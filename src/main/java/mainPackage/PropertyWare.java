@@ -210,6 +210,7 @@ public class PropertyWare
 	
 	public static boolean downloadLeaseAgreement(String building, String ownerName) throws Exception
 	{
+		PDFReader.RCDetails = "";
 		
 		try
 		{

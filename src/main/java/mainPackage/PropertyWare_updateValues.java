@@ -42,8 +42,8 @@ public class PropertyWare_updateValues
 			
 			//Update dates as per Move and Auto Charges
 			PropertyWare_updateValues.updateDates();
-			PropertyWare_updateValues.addingValuesToTable();
 			PropertyWare_updateValues.decideMoveInAndAutoCharges();
+			PropertyWare_updateValues.addingValuesToTable();
 			return true;
 			}
 
