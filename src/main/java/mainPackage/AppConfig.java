@@ -9,7 +9,7 @@ public class AppConfig
 		public static String[] Buildings= {"SABA2399"};
 		public static String[] Names= {"Baxter - Hernandez"};
 		
-	   public static String pendingRenewalLeases = "Select  Company,buildingName,OwnerName from Automation.LeaseInfo where Status = 'In Progress'";
+	    public static String pendingRenewalLeases = "Select  Company,buildingName,OwnerName from Automation.LeaseInfo where Status = 'In Progress'";
 			   //"Select  Company,buildingabbreviation,LeaseName from LeaseFact_dashboard where DATEDIFF(month, StartDate, GETDATE()) = 1 and Company ='Florida'  order by id asc";
 	   //public static String lastMonthLeases1 = "Select  Company,buildingabbreviation,LeaseName from LeaseFact_dashboard where DATEDIFF(month, StartDate, GETDATE()) = 1 and Company ='Alabama'  order by id asc";
 		//public static String lastMonthLeases = "Select  Company,buildingabbreviation,LeaseName from [Automation].[leaseAuditAutomation] where notes = 'Values did not match'";
@@ -65,6 +65,8 @@ public class AppConfig
 			   return "4000 - Rent";
 		   case "Maine":
 			   return "40010 - Rent Income";
+		   case "Savannah":
+			   return "4000 - Rent";
 			   
 		   }
 		   return "";
@@ -100,6 +102,8 @@ public class AppConfig
 			   return "4311 - Pet Rent";
 		   case "Maine":
 			   return "40230 - Pet Rent";
+		   case "Savannah":
+			   return "4311 - Pet Rent";
 			   
 		   }
 		   return "";
@@ -134,6 +138,8 @@ public class AppConfig
 			   return "4303 - Tenant Admin Revenue";
 		   case "Maine":
 			   return "43030 - Tenant Admin Fee";
+		   case "Savannah":
+			   return "4303 - Tenant Admin Revenue";
 			   
 		   }
 		   return "";
@@ -167,6 +173,8 @@ public class AppConfig
 			   return "4000 - Rent";
 		   case "Maine":
 			   return "40010 - Rent Income";
+		   case "Savannah":
+			   return "4000 - Rent";
 		   }
 		   return "";
 	   }
@@ -200,6 +208,8 @@ public class AppConfig
 			   return "4311 - Pet Rent";
 		   case "Maine":
 			   return "40230 - Pet Rent";
+		   case "Savannah":
+			   return "4311 - Pet Rent";
 		   }
 		   return "";
 	   }
@@ -231,6 +241,8 @@ public class AppConfig
 			   return "4000 - Rent";
 		   case "Maine":
 			   return "40010 - Rent Income";
+		   case "Savannah":
+			   return "4000 - Rent";
 		   }
 		   return "";
 	   }
@@ -264,6 +276,8 @@ public class AppConfig
 			   return "4102 - Air Filter Fee";
 		   case "Maine":
 			   return "43060 - Filter Fee";
+		   case "Savannah":
+			   return "4102 - Air Filter Fee";
 		   }
 		   return "";
 	   }
@@ -298,6 +312,8 @@ public class AppConfig
 			   return "4311 - Pet Rent";
 		   case "Maine":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Savannah":
+			   return "4005 - Pet Fee";
 			   
 		   }
 		   return "";
@@ -332,6 +348,8 @@ public class AppConfig
 			   return "2017 - Prepayments";
 		   case "Maine":
 			   return "20030 - Prepayments";
+		   case "Savannah":
+			   return "2017 - Prepayments";
 		   }
 		   return "";
 	   }
@@ -364,6 +382,8 @@ public class AppConfig
 			   return "4318 - Resident BenefitsPackage";
 		   case "Maine":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "Savannah":
+			   return "4318 - Resident Benefits Package";
 		   }
 		   return "";
 	   }
@@ -397,6 +417,8 @@ public class AppConfig
 			   return "2050 - Security Deposit";
 		   case "Maine":
 			   return "20020 - Security Deposit";
+		   case "Savannah":
+			   return "2050 - Security Deposit";
 		   }
 		   return "";
 	   }
@@ -429,6 +451,8 @@ public class AppConfig
 		   case "Houston":
 			   return "YES";
 		   case "Maine":
+			   return "YES";
+		   case "Savannah":
 			   return "YES";
 		   }
 		   return "";
@@ -463,6 +487,8 @@ public class AppConfig
 			   return "Yes";
 		   case "Maine":
 			   return "Yes";
+		   case "Savannah":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -493,6 +519,8 @@ public class AppConfig
 		   case "Houston":
 			   return "NO";
 		   case "Maine":
+			   return "NO";
+		   case "Savannah":
 			   return "NO";
 		   }
 		   return "";
@@ -542,6 +570,8 @@ public class AppConfig
 				return "Houston";
 			case "Maine":
 				return "ME";
+			case "Savannah":
+				return "SAV";
 				
 			}
 			return "";

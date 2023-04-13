@@ -39,6 +39,10 @@ public class PDFFormatDecider
 		public static String Maine_Format1 = "The parties to this Lease are the owner of the Property";
 		public static String Maine_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT";
 		
+		// Savannah
+		public static String Savannah_Format1 = "The parties to this lease are:";
+		public static String Savannah_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT";
+		
 		
 
 }

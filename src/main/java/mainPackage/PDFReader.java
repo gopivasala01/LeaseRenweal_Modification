@@ -352,6 +352,29 @@ public class PDFReader
 					    }
 					    
 					break;
+					
+				case "Savannah":
+					String pdfFormatType_Savannah = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_Savannah);
+					if(pdfFormatType_Savannah=="Format1")
+					{
+						if(PDFDataExtract.Savannah_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_Savannah=="Format2")
+					     {
+						if(PDFDataExtract.Savannah_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
 			}
 			
 			//Prepayment charge
@@ -422,6 +445,10 @@ public class PDFReader
 			case "Maine":
 		        format1Text = PDFAppConfig.PDFFormatDecider.Maine_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.Maine_Format2;
+		        break; 
+			case "Savannah":
+		        format1Text = PDFAppConfig.PDFFormatDecider.Savannah_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.Savannah_Format2;
 		        break; 
 			}
 			
