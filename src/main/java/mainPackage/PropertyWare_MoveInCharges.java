@@ -19,6 +19,8 @@ public class PropertyWare_MoveInCharges
 	    DataBase.getMoveInCharges();
 		
 		RunnerClass.driver.navigate().refresh();
+		//Pop up after clicking Lease Name
+		PropertyWare.intermittentPopUp();
 		RunnerClass.js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 		RunnerClass.driver.findElement(Locators.ledgerTab).click();
 		
@@ -145,6 +147,8 @@ public class PropertyWare_MoveInCharges
 		 RunnerClass.driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	        RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(10));
 	        RunnerClass.driver.navigate().refresh();
+	      //Pop up after clicking Lease Name
+			PropertyWare.intermittentPopUp();
 		return true;
 		}
 		catch(Exception e)

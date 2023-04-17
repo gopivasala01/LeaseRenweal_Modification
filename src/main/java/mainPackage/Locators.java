@@ -16,12 +16,12 @@ public class Locators
 	public static By selectSearchedLease = By.xpath("//*[@class='results']/descendant::li/a");
 	public static By getLeaseCDEType = By.xpath("//*[@id='summary']/table[1]/tbody/tr[3]/td");
     public static By leasesTab = By.xpath("//*[@class='tabbedSection']/a[4]");	
+    public static By popUpAfterClickingLeaseName = By.xpath("//*[@id='viewStickyNoteForm']");
     public static By RCDetails = By.xpath("//*[@id='customFieldGroupTBody1.ManagementTeam']/tr[2]/td[2]/div");
     public static By APMField = By.xpath("//*[text()='APM']/following::input[1]");
     public static By RC = By.xpath("//*[text()='RC']/following::input[1]");
     public static By leaseStartDate_PW = By.xpath("//*[@id='infoTable']/tbody/tr[3]/td[1]");
     public static By leaseEndDate_PW = By.xpath("//*[@id='infoTable']/tbody/tr[3]/td[2]");
-    public static By popUpAfterClickingLeaseName = By.id("viewStickyNoteForm");
     public static By popupClose = By.xpath("//*[@id='editStickyBtnDiv']/input[2]");
     public static By notesAndDocs = By.id("notesAndDocuments");
     public static By documentsList = By.xpath("//*[@id='documentHolderBody']/tr/td[1]/a"); 
@@ -91,6 +91,9 @@ public class Locators
     public static By maximumDatField = By.name("entity.lateFee.maxAmountAsString");
     public static By saveLease = By.xpath("(//*[@class='primaryButtons'])[2]/input[1]");
     public static By initialMonthlyRent = By.xpath("//*[text()='Initial Monthly Rent']/following::input[1]");
+    public static By initialPetRentAmount = By.xpath("//*[text()='Initial Pet Rent Amount']/following::input[1]");
+    public static By petRentAmount = By.xpath("//*[text()='Pet Rent Amount']/following::input[1]");
+    public static By currentMonthlyRent = By.xpath("//*[text()='Current Monthly Rent']/following::input[1]");
     public static By somethingWrongInSavingCharge = By.xpath("//*[text()='You must correct the following:']");
     
     public static By lateFeeType = By.name("entity.lateFee.feeType");

@@ -14,6 +14,8 @@ public class PropertyWare_AutoCharges
 	      {
 			DataBase.getAutoCharges();
 			RunnerClass.driver.navigate().refresh();
+			//Pop up after clicking Lease Name
+			PropertyWare.intermittentPopUp();
 			RunnerClass.driver.findElement(Locators.summaryTab).click();
 			RunnerClass.driver.findElement(Locators.summaryEditButton).click();
 			Thread.sleep(2000);

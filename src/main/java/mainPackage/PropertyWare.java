@@ -270,9 +270,13 @@ public class PropertyWare
 		    RunnerClass.failedReason =  RunnerClass.failedReason+","+  "Unable to Click Lease Onwer Name";
 			return false;
 		}
+		//Pop up after clicking Lease Name
+		PropertyWare.intermittentPopUp();
+		
 		RunnerClass.driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
         RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(15));
-		RunnerClass.js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+        RunnerClass.js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+
 		
 		RunnerClass.driver.findElement(Locators.notesAndDocs).click();
 		
@@ -430,6 +434,24 @@ public class PropertyWare
 		}
 		return true;
 	
+	}
+	
+	public static void intermittentPopUp()
+	{
+		//Pop up after clicking lease name
+				try
+				{
+					RunnerClass.driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+			        RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(5));
+					if(RunnerClass.driver.findElement(Locators.popUpAfterClickingLeaseName).isDisplayed())
+					{
+						RunnerClass.driver.findElement(Locators.popupClose).click();
+					}
+					RunnerClass.driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+			        RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(5));
+				}
+				catch(Exception e) {}
+				
 	}
 
 

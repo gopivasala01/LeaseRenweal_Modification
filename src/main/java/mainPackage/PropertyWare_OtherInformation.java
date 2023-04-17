@@ -16,6 +16,8 @@ public class PropertyWare_OtherInformation
 		RunnerClass.driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
         RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(15));
 		RunnerClass.driver.navigate().refresh();
+		//Pop up after clicking Lease Name
+		PropertyWare.intermittentPopUp();
 		RunnerClass.js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 		RunnerClass.driver.findElement(Locators.summaryEditButton).click();
 		
@@ -349,7 +351,57 @@ public class PropertyWare_OtherInformation
 				RunnerClass.failedReason = RunnerClass.failedReason+",Pet One Time Non-Refundable Fee";
 				//temp=1;
 			}
-		
+			
+			//Initial Pet Rent Amount
+			try
+			{
+				if(PDFReader.petRent.equalsIgnoreCase("Error"))
+				{
+					RunnerClass.failedReason = RunnerClass.failedReason+",Intial Pet Rent";
+					//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Intial Monthly Rent"+'\n');
+					//temp=1;
+				}
+				else
+				{
+				RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.initialPetRentAmount)).build().perform();
+				//RunnerClass.driver.findElement(Locators.initialMonthlyRent).clear();
+				RunnerClass.driver.findElement(Locators.initialPetRentAmount).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+				RunnerClass.driver.findElement(Locators.initialPetRentAmount).sendKeys(PDFReader.petRent);
+				
+				}
+			}
+			catch(Exception e)
+			{
+				DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Intial Monthly Rent"+'\n');
+				RunnerClass.failedReason = RunnerClass.failedReason+",Intial Pet Rent";
+				//temp=1;
+			}
+			
+			//Pet Rent Amount
+			try
+			{
+				if(PDFReader.petRent.equalsIgnoreCase("Error"))
+				{
+					RunnerClass.failedReason = RunnerClass.failedReason+",Pet Rent";
+					//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Intial Monthly Rent"+'\n');
+					//temp=1;
+				}
+				else
+				{
+				RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.petRentAmount)).build().perform();
+				//RunnerClass.driver.findElement(Locators.initialMonthlyRent).clear();
+				RunnerClass.driver.findElement(Locators.petRentAmount).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+				RunnerClass.driver.findElement(Locators.petRentAmount).sendKeys(PDFReader.petRent);
+				
+				}
+			}
+			catch(Exception e)
+			{
+				DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Intial Monthly Rent"+'\n');
+				RunnerClass.failedReason = RunnerClass.failedReason+",Pet Rent";
+				//temp=1;
+			}
+			
 		}
 			//Service Animal Information
 			if(PDFReader.serviceAnimalFlag==true)
@@ -449,6 +501,8 @@ public class PropertyWare_OtherInformation
 			}
 			}
 			
+			
+			
 
 		//Initial Monthly Payment
 		try
@@ -474,6 +528,31 @@ public class PropertyWare_OtherInformation
 			RunnerClass.failedReason = RunnerClass.failedReason+",Intial Monthly Rent";
 			//temp=1;
 		}
+		
+		//Current Monthly Rent
+				try
+				{
+					if(PDFReader.monthlyRent.equalsIgnoreCase("Error"))
+					{
+						RunnerClass.failedReason = RunnerClass.failedReason+",Current Monthly Rent";
+						//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Intial Monthly Rent"+'\n');
+						//temp=1;
+					}
+					else
+					{
+					RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.currentMonthlyRent)).build().perform();
+					//RunnerClass.driver.findElement(Locators.initialMonthlyRent).clear();
+					RunnerClass.driver.findElement(Locators.currentMonthlyRent).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+					RunnerClass.driver.findElement(Locators.currentMonthlyRent).sendKeys(PDFReader.monthlyRent);
+					
+					}
+				}
+				catch(Exception e)
+				{
+					DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Intial Monthly Rent"+'\n');
+					RunnerClass.failedReason = RunnerClass.failedReason+",Current Monthly Rent";
+					//temp=1;
+				}
 		
 		//Late Fee Rule
 		//OKC_InsertDataIntoPropertyWare.lateFeeRuleMethod(OKC_PropertyWare.lateFeeType);
