@@ -66,7 +66,7 @@ public class AppConfig
 		   case "Maine":
 			   return "40010 - Rent Income";
 		   case "Savannah":
-			   return "4000 - Rent";
+			   return "40010 - Rent Income";
 			   
 		   }
 		   return "";
@@ -103,7 +103,7 @@ public class AppConfig
 		   case "Maine":
 			   return "40230 - Pet Rent";
 		   case "Savannah":
-			   return "4311 - Pet Rent";
+			   return "40230 - Pet Rent";
 			   
 		   }
 		   return "";
@@ -174,7 +174,7 @@ public class AppConfig
 		   case "Maine":
 			   return "40010 - Rent Income";
 		   case "Savannah":
-			   return "4000 - Rent";
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -209,7 +209,7 @@ public class AppConfig
 		   case "Maine":
 			   return "40230 - Pet Rent";
 		   case "Savannah":
-			   return "4311 - Pet Rent";
+			   return "40230 - Pet Rent";
 		   }
 		   return "";
 	   }
@@ -242,7 +242,7 @@ public class AppConfig
 		   case "Maine":
 			   return "40010 - Rent Income";
 		   case "Savannah":
-			   return "4000 - Rent";
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -277,7 +277,7 @@ public class AppConfig
 		   case "Maine":
 			   return "43060 - Filter Fee";
 		   case "Savannah":
-			   return "4102 - Air Filter Fee";
+			   return "43060 - Filter Fee";
 		   }
 		   return "";
 	   }
@@ -313,7 +313,7 @@ public class AppConfig
 		   case "Maine":
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Savannah":
-			   return "4005 - Pet Fee";
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -349,7 +349,7 @@ public class AppConfig
 		   case "Maine":
 			   return "20030 - Prepayments";
 		   case "Savannah":
-			   return "2017 - Prepayments";
+			   return "20030 - Prepayments";
 		   }
 		   return "";
 	   }
@@ -383,7 +383,7 @@ public class AppConfig
 		   case "Maine":
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Savannah":
-			   return "4318 - Resident Benefits Package";
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -418,7 +418,7 @@ public class AppConfig
 		   case "Maine":
 			   return "20020 - Security Deposit";
 		   case "Savannah":
-			   return "2050 - Security Deposit";
+			   return "20020 - Security Deposit";
 		   }
 		   return "";
 	   }
