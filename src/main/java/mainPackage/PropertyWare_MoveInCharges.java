@@ -110,7 +110,16 @@ public class PropertyWare_MoveInCharges
 		Thread.sleep(2000);
 		//Account code
 		Select AutoChargesDropdown = new Select(RunnerClass.driver.findElement(Locators.accountDropdown));
+		try
+		{
 		AutoChargesDropdown.selectByVisibleText(accountCode);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Issue - "+description);
+			RunnerClass.driver.findElement(Locators.moveInChargeCancel).click();
+			return false;
+		}
 		//Reference
 		Thread.sleep(2000);
 		RunnerClass.driver.findElement(Locators.referenceName).sendKeys(description);
@@ -159,7 +168,7 @@ public class PropertyWare_MoveInCharges
 			RunnerClass.driver.findElement(Locators.summaryTab).click();
 			e.printStackTrace();
 			System.out.println("Issue in adding Move in Charge"+description);
-			RunnerClass.failedReason =  RunnerClass.failedReason+","+"Issue in adding Move in Charge - "+description;
+			RunnerClass.failedReason =  RunnerClass.failedReason+","+"Move in Charge - "+description;
 			return false;	
 		}
 	}

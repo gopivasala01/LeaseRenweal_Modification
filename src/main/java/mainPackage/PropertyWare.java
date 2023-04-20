@@ -121,9 +121,33 @@ public class PropertyWare
 				}
 				else
 				{
-				System.out.println("Building Not Found");
-			    RunnerClass.failedReason =  RunnerClass.failedReason+","+ "Building Not Found";
-				return false;
+					try
+					{
+					building = building.split("_")[1];
+					RunnerClass.driver.manage().timeouts().implicitlyWait(200,TimeUnit.SECONDS);
+					RunnerClass.driver.navigate().refresh();
+					RunnerClass.driver.findElement(Locators.dashboardsTab).click();
+					RunnerClass.driver.findElement(Locators.searchbox).clear();
+					RunnerClass.driver.findElement(Locators.searchbox).sendKeys(building);
+					RunnerClass.wait.until(ExpectedConditions.invisibilityOf(RunnerClass.driver.findElement(Locators.searchingLoader)));
+					try
+					{
+					RunnerClass.driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
+					if(RunnerClass.driver.findElement(Locators.noItemsFoundMessagewhenLeaseNotFound).isDisplayed())
+					{
+						System.out.println("Building Not Found");
+					    RunnerClass.failedReason =  RunnerClass.failedReason+","+ "Building Not Found";
+						return false;
+					}
+					}
+					catch(Exception e3) {}
+					}
+					catch(Exception e)
+					{
+				    System.out.println("Building Not Found");
+			        RunnerClass.failedReason =  RunnerClass.failedReason+","+ "Building Not Found";
+				    return false;
+					}
 				}
 			}
 			}

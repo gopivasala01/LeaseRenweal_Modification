@@ -47,12 +47,6 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "California PFW":
 			   return "40010 - Rent Income";
-		   case "Alabama":
-			   return "4000 - Rent";
-		   case "North Carolina":
-			   return "4000 - Rent";
-		   case "Dallas/Fort Worth":
-			   return "4000 - Rent";
 		   case "Chattanooga":
 			   return "40010 - Rent Income";
 		   case "Chicago PFW":
@@ -67,7 +61,22 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Savannah":
 			   return "40010 - Rent Income";
-			   
+		   case "North Carolina":
+			   return "40010 - Rent Income";
+		   case "Alabama":
+			   return "40010 - Rent Income";
+		   case "Arkansas":
+			   return "40010 - Rent Income";
+		   case "Dallas/Fort Worth":
+			   return "40010 - Rent Income";
+		   case "Indiana":
+			   return "40010 - Rent Income";
+		   case "Little Rock":
+			   return "40010 - Rent Income";
+		   case "San Antonio":
+			   return "40010 - Rent Income";
+		   case "Tulsa":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -81,11 +90,9 @@ public class AppConfig
 		   case "Florida":
 			   return "4311 - Pet Rent";
 		   case "Alabama":
-			   return "4311 - Pet Rent";
+			   return "40230 - Pet Rent";
 		   case "North Carolina":
-			   return "4311 - Pet Rent";
-		   case "Dallas/Fort Worth":
-			   return "4311 - Pet Rent";
+			   return "40230 - Pet Rent";
 		   case "Chattanooga":
 			   return "40230 - Pet Rent";
 		   case "Chicago PFW":
@@ -103,6 +110,18 @@ public class AppConfig
 		   case "Maine":
 			   return "40230 - Pet Rent";
 		   case "Savannah":
+			   return "40230 - Pet Rent";
+		   case "Arkansas":
+			   return "40230 - Pet Rent";
+		   case "Dallas/Fort Worth":
+			   return "40230 - Pet Rent";
+		   case "Indiana":
+			   return "40230 - Pet Rent";
+		   case "Little Rock":
+			   return "40230 - Pet Rent";
+		   case "San Antonio":
+			   return "40230 - Pet Rent";
+		   case "Tulsa":
 			   return "40230 - Pet Rent";
 			   
 		   }
@@ -117,11 +136,9 @@ public class AppConfig
 		   case "Florida":
 			   return "4303 - Tenant Admin Revenue";
 		   case "Alabama":
-			   return "4303 - Tenant Admin Revenue";
+			   return "43030 - Tenant Admin Fee";
 		   case "North Carolina":
-			   return "4303 - Tenant Admin Revenue";
-		   case "Dallas/Fort Worth":
-			   return "4303 - Tenant Admin Revenue";
+			   return "43030 - Tenant Admin Fee";
 		   case "Chattanooga":
 			   return "43030 - Tenant Admin Fee";
 		   case "Chicago PFW":
@@ -140,6 +157,18 @@ public class AppConfig
 			   return "43030 - Tenant Admin Fee";
 		   case "Savannah":
 			   return "4303 - Tenant Admin Revenue";
+		   case "Arkansas":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Dallas/Fort Worth":
+			   return "43030 - Tenant Admin Fee";
+		   case "Indiana":
+			   return "43030 - Tenant Admin Fee";
+		   case "Little Rock":
+			   return "43030 - Tenant Admin Fee";
+		   case "San Antonio":
+			   return "43030 - Tenant Admin Fee";
+		   case "Tulsa":
+			   return "43030 - Tenant Admin Fee";
 			   
 		   }
 		   return "";
@@ -155,12 +184,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "California PFW":
 			   return "40010 - Rent Income";
-		   case "Alabama":
-			   return "4000 - Rent";
 		   case "North Carolina":
-			   return "4000 - Rent";
-		   case "Dallas/Fort Worth":
-			   return "4000 - Rent";
+			   return "40010 - Rent Income";
 		   case "Chattanooga":
 			   return "40010 - Rent Income";
 		   case "Chicago PFW":
@@ -175,6 +200,20 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Savannah":
 			   return "40010 - Rent Income";
+		   case "Alabama":
+			   return "40010 - Rent Income";
+		   case "Arkansas":
+			   return "40010 - Rent Income";
+		   case "Dallas/Fort Worth":
+			   return "40010 - Rent Income";
+		   case "Indiana":
+			   return "40010 - Rent Income";
+		   case "Little Rock":
+			   return "40010 - Rent Income";
+		   case "San Antonio":
+			   return "40010 - Rent Income";
+		   case "Tulsa":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -187,11 +226,9 @@ public class AppConfig
 		   case "Florida":
 			   return "4311 - Pet Rent";
 		   case "Alabama":
-			   return "4311 - Pet Rent";
+			   return "40230 - Pet Rent";
 		   case "North Carolina":
-			   return "4311 - Pet Rent";
-		   case "Dallas/Fort Worth":
-			   return "4311 - Pet Rent";
+			   return "40230 - Pet Rent";
 		   case "Chattanooga":
 			   return "40230 - Pet Rent";
 		   case "Chicago PFW":
@@ -209,6 +246,18 @@ public class AppConfig
 		   case "Maine":
 			   return "40230 - Pet Rent";
 		   case "Savannah":
+			   return "40230 - Pet Rent";
+		   case "Arkansas":
+			   return "40230 - Pet Rent";
+		   case "Dallas/Fort Worth":
+			   return "40230 - Pet Rent";
+		   case "Indiana":
+			   return "40230 - Pet Rent";
+		   case "Little Rock":
+			   return "40230 - Pet Rent";
+		   case "San Antonio":
+			   return "40230 - Pet Rent";
+		   case "Tulsa":
 			   return "40230 - Pet Rent";
 		   }
 		   return "";
@@ -223,12 +272,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "California PFW":
 			   return "40010 - Rent Income";
-		   case "Alabama":
-			   return "4000 - Rent";
 		   case "North Carolina":
-			   return "4000 - Rent";
-		   case "Dallas/Fort Worth":
-			   return "4000 - Rent";
+			   return "40010 - Rent Income";
 		   case "Chattanooga":
 			   return "40010 - Rent Income";
 		   case "Chicago PFW":
@@ -243,6 +288,20 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Savannah":
 			   return "40010 - Rent Income";
+		   case "Alabama":
+			   return "40010 - Rent Income";
+		   case "Arkansas":
+			   return "40010 - Rent Income";
+		   case "Dallas/Fort Worth":
+			   return "40010 - Rent Income";
+		   case "Indiana":
+			   return "40010 - Rent Income";
+		   case "Little Rock":
+			   return "40010 - Rent Income";
+		   case "San Antonio":
+			   return "40010 - Rent Income";
+		   case "Tulsa":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -255,10 +314,8 @@ public class AppConfig
 		   case "Florida":
 			   return "4102 - Air Filter Fee";
 		   case "Alabama":
-			   return "4102 - Air Filter Fee";
+			   return "43060 - Filter Fee";
 		   case "North Carolina":
-			   return "4102 - Air Filter Fee";
-		   case "Dallas/Fort Worth":
 			   return "4102 - Air Filter Fee";
 		   case "Chattanooga":
 			   return "43060 - Filter Fee";
@@ -278,6 +335,18 @@ public class AppConfig
 			   return "43060 - Filter Fee";
 		   case "Savannah":
 			   return "43060 - Filter Fee";
+		   case "Arkansas":
+			   return "43060 - Filter Fee";
+		   case "Dallas/Fort Worth":
+			   return "43060 - Filter Fee";
+		   case "Indiana":
+			   return "43060 - Filter Fee";
+		   case "Little Rock":
+			   return "43060 - Filter Fee";
+		   case "San Antonio":
+			   return "43060 - Filter Fee";
+		   case "Tulsa":
+			   return "43060 - Filter Fee";
 		   }
 		   return "";
 	   }
@@ -291,11 +360,9 @@ public class AppConfig
 		   case "Florida":
 			   return "4311 - Pet Rent";
 		   case "Alabama":
-			   return "4311 - Pet Rent";
+			   return "44010 - Non-Refundable Pet Fee";
 		   case "North Carolina":
-			   return "4311 - Pet Rent";
-		   case "Dallas/Fort Worth":
-			   return "4311 - Pet Rent";
+			   return "44010 - Non-Refundable Pet Fee";
 		   case "Chattanooga":
 			   return "44010 - Non - Refundable Pet Fee";
 		   case "Chicago PFW":
@@ -314,6 +381,18 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Savannah":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Arkansas":
+			   return "44010 - Non-Refundable Pet Fee";
+		   case "Dallas/Fort Worth":
+			   return "44010 - Non-Refundable Pet Fee";
+		   case "Indiana":
+			   return "44010 - Non-Refundable Pet Fee";
+		   case "Little Rock":
+			   return "44010 - Non-Refundable Pet Fee";
+		   case "San Antonio":
+			   return "44010 - Non-Refundable Pet Fee";
+		   case "Tulsa":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -327,11 +406,9 @@ public class AppConfig
 		   case "Florida":
 			   return "2017 - Prepayments";
 		   case "Alabama":
-			   return "2017 - Prepayments";
+			   return "20030 - Prepayments";
 		   case "North Carolina":
-			   return "2017 - Prepayments";
-		   case "Dallas/Fort Worth":
-			   return "2017 - Prepayments";
+			   return "20030 - Prepayments";
 		   case "Chattanooga":
 			   return "20030 - Prepayments";
 		   case "Chicago PFW":
@@ -349,6 +426,18 @@ public class AppConfig
 		   case "Maine":
 			   return "20030 - Prepayments";
 		   case "Savannah":
+			   return "20030 - Prepayments";
+		   case "Arkansas":
+			   return "20030 - Prepayments";
+		   case "Dallas/Fort Worth":
+			   return "20030 - Prepayments";
+		   case "Indiana":
+			   return "20030 - Prepayments";
+		   case "Little Rock":
+			   return "20030 - Prepayments";
+		   case "San Antonio":
+			   return "20030 - Prepayments";
+		   case "Tulsa":
 			   return "20030 - Prepayments";
 		   }
 		   return "";
@@ -365,11 +454,9 @@ public class AppConfig
 		   case "California PFW":
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Alabama":
-			   return "4318 - Resident Benefits Package";
+			   return "43070 - Resident Benefit Package Fee";
 		   case "North Carolina":
-			   return "4318 - Resident Benefits Package";
-		   case "Dallas/Fort Worth":
-			   return "4318 - Resident Benefits Package";
+			   return "43070 - Resident Benefit Package Fee";
 		   case "Chattanooga":
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Chicago PFW":
@@ -384,6 +471,18 @@ public class AppConfig
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Savannah":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "Arkansas":
+			   return "43070 - Resident Benefits Package";
+		   case "Dallas/Fort Worth":
+			   return "43070 - Resident Benefit Package Fee";
+		   case "Indiana":
+			   return "43070 - Resident Benefit Package Fee";
+		   case "Little Rock":
+			   return "43070 - Resident Benefit Package Fee";
+		   case "San Antonio":
+			   return "43070 - Resident Benefit Package Fee";
+		   case "Tulsa":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -396,11 +495,9 @@ public class AppConfig
 		   case "Florida":
 			   return "2050 - Security Deposit";
 		   case "Alabama":
-			   return "2050 - Security Deposit";
+			   return "20020 - Security Deposit";
 		   case "North Carolina":
-			   return "2050 - Security Deposit";
-		   case "Dallas/Fort Worth":
-			   return "2050 - Security Deposit";
+			   return "20020 - Security Deposit";
 		   case "Chattanooga":
 			   return "20020 - Security Deposit";
 		   case "California":
@@ -418,6 +515,18 @@ public class AppConfig
 		   case "Maine":
 			   return "20020 - Security Deposit";
 		   case "Savannah":
+			   return "20020 - Security Deposit";
+		   case "Arkansas":
+			   return "20020 - Security Deposit";
+		   case "Dallas/Fort Worth":
+			   return "20020 - Security Deposit";
+		   case "Indiana":
+			   return "20020 - Security Deposit";
+		   case "Little Rock":
+			   return "20020 - Security Deposit";
+		   case "San Antonio":
+			   return "20020 - Security Deposit";
+		   case "Tulsa":
 			   return "20020 - Security Deposit";
 		   }
 		   return "";
@@ -454,6 +563,16 @@ public class AppConfig
 			   return "YES";
 		   case "Savannah":
 			   return "YES";
+		   case "Arkansas":
+			   return "YES";
+		   case "Indiana":
+			   return "YES";
+		   case "Little Rock":
+			   return "YES";
+		   case "San Antonio":
+			   return "YES";
+		   case "Tulsa":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -489,6 +608,16 @@ public class AppConfig
 			   return "Yes";
 		   case "Savannah":
 			   return "Yes";
+		   case "Arkansas":
+			   return "Yes";
+		   case "Indiana":
+			   return "Yes";
+		   case "Little Rock":
+			   return "Yes";
+		   case "San Antonio":
+			   return "Yes";
+		   case "Tulsa":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -507,7 +636,7 @@ public class AppConfig
 		   case "North Carolina":
 			   return "NO";
 		   case "Dallas/Fort Worth":
-			   return "NO"; 
+			   return "No"; 
 		   case "Chattanooga":
 			   return "NO";
 		   case "Chicago PFW":
@@ -521,6 +650,16 @@ public class AppConfig
 		   case "Maine":
 			   return "NO";
 		   case "Savannah":
+			   return "NO";
+		   case "Arkansas":
+			   return "NO";
+		   case "Indiana":
+			   return "NO";
+		   case "Little Rock":
+			   return "NO";
+		   case "San Antonio":
+			   return "NO";
+		   case "Tulsa":
 			   return "NO";
 		   }
 		   return "";
@@ -577,6 +716,7 @@ public class AppConfig
 			return "";
 		}
 
+	   
 	}
 
 
