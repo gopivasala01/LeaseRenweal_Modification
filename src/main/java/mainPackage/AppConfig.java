@@ -466,7 +466,7 @@ public class AppConfig
 		   case "Kansas City":
 			   return "4318 - Resident BenefitsPackage";
 		   case "Houston":
-			   return "4318 - Resident BenefitsPackage";
+			   return "4318 - Resident Benefits Package";
 		   case "Maine":
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Savannah":
@@ -621,6 +621,53 @@ public class AppConfig
 		   }
 		   return "";
 	   }
+	   
+	   public static String getEarlyTermination(String company)
+	   {
+		   switch(company)
+		   {
+		   case "Austin":
+			   return "Yes";
+		   case "Florida":
+			   return "Yes";
+		   case "Alabama":
+			   return "Yes";
+		   case "North Carolina":
+			   return "Yes";
+		   case "Dallas/Fort Worth":
+			   return "Yes"; 
+		   case "California":
+			   return "Yes";
+		   case "California PFW":
+			   return "Yes";
+		   case "Chattanooga":
+			   return "Yes";
+		   case "Chicago PFW":
+			   return "Yes";
+		   case "Colorado Springs":
+			   return "Yes";
+		   case "Kansas City":
+			   return "Yes";
+		   case "Houston":
+			   return "Yes";
+		   case "Maine":
+			   return "Yes";
+		   case "Savannah":
+			   return "Yes";
+		   case "Arkansas":
+			   return "Yes";
+		   case "Indiana":
+			   return "Yes";
+		   case "Little Rock":
+			   return "Yes";
+		   case "San Antonio":
+			   return "Yes";
+		   case "Tulsa":
+			   return "Yes";
+		   }
+		   return "";
+	   }
+	   
 	   public static String getNeedsNewLease(String company)
 	   {
 		   switch(company)

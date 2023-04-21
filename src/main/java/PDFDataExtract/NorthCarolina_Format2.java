@@ -109,8 +109,25 @@ public class NorthCarolina_Format2
 	    		  PDFReader.increasedRent_amount = increasedRentRaw.substring(increasedRentRaw.indexOf("shall be $")+"shall be $".length()).trim().split(" ")[0];
 	    		  System.out.println("Increased Rent - Amount = "+PDFReader.increasedRent_amount); 
 	    		}
-	    		else 
-	    		 {
+	    		else
+	    		{
+	    			increasedRent_ProviousRentEndDate = "Per the Landlord, Monthly Rent from "+PDFReader.commencementDate.trim()+" through ";
+	    			String endDateArray3[] = text.substring(text.indexOf(increasedRent_ProviousRentEndDate)+increasedRent_ProviousRentEndDate.length()).split(" ");
+		    		if(endDateArray3[2].trim().length()==4)//&&RunnerClass.onlyDigits(endDateArray2[2]))
+		    		 {
+		    		  PDFReader.increasedRent_previousRentEndDate = endDateArray3[0]+" "+endDateArray3[1]+" "+endDateArray3[2];
+		    		  System.out.println("Increased Rent - Previous rent end date = "+PDFReader.increasedRent_previousRentEndDate);
+		    		 
+		    		  String newRentStartDate[] = text.substring(text.indexOf(PDFAppConfig.NorthCarolina_Format2.increasedRent_newStartDate_Prior)+PDFAppConfig.NorthCarolina_Format2.increasedRent_newStartDate_Prior.length()).trim().split(" ");
+		    		  PDFReader.increasedRent_newStartDate = newRentStartDate[0]+" "+newRentStartDate[1]+" "+newRentStartDate[2];
+		    		  System.out.println("Increased Rent - New Rent Start date = "+PDFReader.increasedRent_newStartDate);
+		    		  
+		    		  String increasedRentRaw = text.substring(text.indexOf(PDFAppConfig.NorthCarolina_Format2.increasedRent_newStartDate_Prior)+PDFAppConfig.NorthCarolina_Format2.increasedRent_newStartDate_Prior.length()).trim();
+		    		  PDFReader.increasedRent_amount = increasedRentRaw.substring(increasedRentRaw.indexOf("shall be $")+"shall be $".length()).trim().split(" ")[0];
+		    		  System.out.println("Increased Rent - Amount = "+PDFReader.increasedRent_amount); 
+		    		}
+	    		   else 
+	    		    {
 	    			 String adding0toMonth = "0"+PDFReader.commencementDate.trim().split(" ")[1];
 	    			 String commeseDate = PDFReader.commencementDate.trim().replace(PDFReader.commencementDate.trim().split(" ")[1], adding0toMonth);
 	    			 increasedRent_ProviousRentEndDate = "Per the Landlord, Monthly Rent from "+commeseDate+" through ";
@@ -124,11 +141,20 @@ public class NorthCarolina_Format2
 		    		  PDFReader.increasedRent_newStartDate = newRentStartDate[0]+" "+newRentStartDate[1]+" "+newRentStartDate[2];
 		    		  System.out.println("Increased Rent - New Rent Start date = "+PDFReader.increasedRent_newStartDate);
 		    		  
+		    		  try
+		    		    {
 		    		  String increasedRentRaw = text.substring(text.indexOf(PDFAppConfig.NorthCarolina_Format2.increasedRent_newStartDate_Prior)+PDFAppConfig.NorthCarolina_Format2.increasedRent_newStartDate_Prior.length()).trim();
 		    		  PDFReader.increasedRent_amount = increasedRentRaw.substring(increasedRentRaw.indexOf("shall be $")+"shall be $".length()).trim().split(" ")[0];
-		    		  System.out.println("Increased Rent - Amount = "+PDFReader.increasedRent_amount); 
+		    		  System.out.println("Increased Rent - Amount = "+PDFReader.increasedRent_amount);
+		    		    }
+		    		  catch(Exception e)
+		    		    {
+		    		    	PDFReader.increasedRent_amount = "Error";
+		    		    	e.printStackTrace();
+		    		    }
 		    		 }
 	    		 }
+	    		}
 	    	}
 	    }
 	    catch(Exception e)
