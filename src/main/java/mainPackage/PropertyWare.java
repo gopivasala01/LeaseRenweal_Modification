@@ -181,7 +181,7 @@ public class PropertyWare
 							String lease = leaseList.get(j).getText();
 							if(lease.toLowerCase().contains(building.toLowerCase())&&lease.contains(":"))
 							{
-								/*
+								
 								try
 								{
 								RunnerClass.portfolioType = RunnerClass.driver.findElement(By.xpath("(//*[@class='section'])["+(i+1)+"]/ul/li["+(j+1)+"]/a")).getText().trim().split(":")[0];
@@ -189,7 +189,7 @@ public class PropertyWare
 								}
 								catch(Exception e) 
 								{}
-								*/
+								
 								RunnerClass.driver.findElement(By.xpath("(//*[@class='section'])["+(i+1)+"]/ul/li["+(j+1)+"]/a")).click();
 								leaseSelected = true;
 								break;
@@ -238,13 +238,13 @@ public class PropertyWare
 		
 		try
 		{
-			RunnerClass.portfolioType = RunnerClass.driver.findElement(Locators.checkPortfolioType).getText();
-			System.out.println("Portfolio Type = "+RunnerClass.portfolioType);
+			//RunnerClass.portfolioType = RunnerClass.driver.findElement(Locators.checkPortfolioType).getText();
+			//System.out.println("Portfolio Type = "+RunnerClass.portfolioType);
 		
 		int portfolioFlag =0;
 		for(int i=0;i<AppConfig.IAGClientList.length;i++)
 		{
-			if(RunnerClass.portfolioType.contains(mainPackage.AppConfig.IAGClientList[i]))
+			if(RunnerClass.portfolioType.startsWith(mainPackage.AppConfig.IAGClientList[i]))
 			{
 				portfolioFlag =1;
 				break;
@@ -301,6 +301,17 @@ public class PropertyWare
         RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(15));
         RunnerClass.js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 
+        //Start and End Dates in Property Ware
+        try
+        {
+        	RunnerClass.startDateInPW =RunnerClass.driver.findElement(Locators.leaseStartDate_PW).getText();
+			System.out.println("Lease Start Date in PW = "+RunnerClass.startDateInPW);
+			RunnerClass.endDateInPW =RunnerClass.driver.findElement(Locators.leaseEndDate_PW).getText();
+			System.out.println("Lease End Date in PW = "+RunnerClass.endDateInPW);
+        }
+        catch(Exception e)
+        {}
+        
 		
 		RunnerClass.driver.findElement(Locators.notesAndDocs).click();
 		

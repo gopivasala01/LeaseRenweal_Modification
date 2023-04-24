@@ -35,7 +35,7 @@ public class AppConfig
 		   
 		   public static String getMoveInCharges = "Select ChargeCode, Amount, StartDate,EndDate,Description from automation.LeaseCloseOutsChargeChargesConfiguration Where MoveInCharge =1";
 		   
-		   public static String[] IAGClientList = {"510","AVE","BTH","CAP","FOR","HRG","HS","MAN","MCH","OFF","PIN","RF","SFR3","TH","HH","Lofty.Ai"};
+		   public static String[] IAGClientList = {"510.","AVE.","BTH.","CAP.","FOR.","HRG.","HS.","MAN.","MCH.","OFF.","PIN.","RF.","SFR3.","TH.","HH.","Lofty.Ai"};
 		
 	   public static String getMonthlyRentChargeCode(String company)
 	   {
@@ -77,6 +77,13 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Tulsa":
 			   return "40010 - Rent Income";
+		   case "Georgia":
+			   return "40010 - Rent Income";
+		   case "OKC":
+			   return "40010 - Rent Income";
+		   case "South Carolina":
+			   return "40010 - Rent Income";
+			      
 		   }
 		   return "";
 	   }
@@ -122,6 +129,12 @@ public class AppConfig
 		   case "San Antonio":
 			   return "40230 - Pet Rent";
 		   case "Tulsa":
+			   return "40230 - Pet Rent";
+		   case "Georgia":
+			   return "40230 - Pet Rent";
+		   case "OKC":
+			   return "40230 - Pet Rent";
+		   case "South Carolina":
 			   return "40230 - Pet Rent";
 			   
 		   }
@@ -169,6 +182,12 @@ public class AppConfig
 			   return "43030 - Tenant Admin Fee";
 		   case "Tulsa":
 			   return "43030 - Tenant Admin Fee";
+		   case "Georgia":
+			   return "43030 - Tenant Admin Fee";
+		   case "OKC":
+			   return "43030 - Tenant Admin Fee";
+		   case "South Carolina":
+			   return "4303 - Tenant Admin Revenue";
 			   
 		   }
 		   return "";
@@ -213,6 +232,12 @@ public class AppConfig
 		   case "San Antonio":
 			   return "40010 - Rent Income";
 		   case "Tulsa":
+			   return "40010 - Rent Income";
+		   case "Georgia":
+			   return "40010 - Rent Income";
+		   case "OKC":
+			   return "40010 - Rent Income";
+		   case "South Carolina":
 			   return "40010 - Rent Income";
 		   }
 		   return "";
@@ -259,6 +284,12 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "Tulsa":
 			   return "40230 - Pet Rent";
+		   case "Georgia":
+			   return "40230 - Pet Rent";
+		   case "OKC":
+			   return "40230 - Pet Rent";
+		   case "South Carolina":
+			   return "40230 - Pet Rent";
 		   }
 		   return "";
 	   }
@@ -301,6 +332,12 @@ public class AppConfig
 		   case "San Antonio":
 			   return "40010 - Rent Income";
 		   case "Tulsa":
+			   return "40010 - Rent Income";
+		   case "Georgia":
+			   return "40010 - Rent Income";
+		   case "OKC":
+			   return "40010 - Rent Income";
+		   case "South Carolina":
 			   return "40010 - Rent Income";
 		   }
 		   return "";
@@ -346,6 +383,12 @@ public class AppConfig
 		   case "San Antonio":
 			   return "43060 - Filter Fee";
 		   case "Tulsa":
+			   return "43060 - Filter Fee";
+		   case "Georgia":
+			   return "43060 - Filter Fee";
+		   case "OKC":
+			   return "43060 - Filter Fee";
+		   case "South Carolina":
 			   return "43060 - Filter Fee";
 		   }
 		   return "";
@@ -393,6 +436,12 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Tulsa":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Georgia":
+			   return "44010 - Non-Refundable Pet Fee";
+		   case "OKC":
+			   return "44010 - Non-Refundable Pet Fee";
+		   case "South Carolina":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -439,6 +488,12 @@ public class AppConfig
 			   return "20030 - Prepayments";
 		   case "Tulsa":
 			   return "20030 - Prepayments";
+		   case "Georgia":
+			   return "20030 - Prepayments";
+		   case "OKC":
+			   return "20030 - Prepayments";
+		   case "South Carolina":
+			   return "20030 - Prepayments";
 		   }
 		   return "";
 	   }
@@ -482,6 +537,12 @@ public class AppConfig
 		   case "San Antonio":
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Tulsa":
+			   return "43070 - Resident Benefit Package Fee";
+		   case "Georgia":
+			   return "43070 - Resident Benefit Package Fee";
+		   case "OKC":
+			   return "43070 - Resident Benefits Package";
+		   case "South Carolina":
 			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
@@ -528,6 +589,12 @@ public class AppConfig
 			   return "20020 - Security Deposit";
 		   case "Tulsa":
 			   return "20020 - Security Deposit";
+		   case "Georgia":
+			   return "20020 - Security Deposit";
+		   case "OKC":
+			   return "20020 - Security Deposit";
+		   case "South Carolina":
+			   return "20020 - Security Deposit";
 		   }
 		   return "";
 	   }
@@ -572,6 +639,12 @@ public class AppConfig
 		   case "San Antonio":
 			   return "YES";
 		   case "Tulsa":
+			   return "YES";
+		   case "Georgia":
+			   return "YES";
+		   case "OKC":
+			   return "YES";
+		   case "South Carolina":
 			   return "YES";
 		   }
 		   return "";
@@ -618,6 +691,12 @@ public class AppConfig
 			   return "Yes";
 		   case "Tulsa":
 			   return "Yes";
+		   case "Georgia":
+			   return "Yes";
+		   case "OKC":
+			   return "Yes";
+		   case "South Carolina":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -635,7 +714,7 @@ public class AppConfig
 		   case "North Carolina":
 			   return "Yes";
 		   case "Dallas/Fort Worth":
-			   return "Yes"; 
+			   return "YES"; 
 		   case "California":
 			   return "Yes";
 		   case "California PFW":
@@ -659,11 +738,17 @@ public class AppConfig
 		   case "Indiana":
 			   return "Yes";
 		   case "Little Rock":
-			   return "Yes";
+			   return "YES";
 		   case "San Antonio":
 			   return "Yes";
 		   case "Tulsa":
 			   return "Yes";
+		   case "Georgia":
+			   return "YES";
+		   case "OKC":
+			   return "YES";
+		   case "South Carolina":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -708,6 +793,12 @@ public class AppConfig
 			   return "NO";
 		   case "Tulsa":
 			   return "NO";
+		   case "Georgia":
+			   return "NO";
+		   case "OKC":
+			   return "No";
+		   case "South Carolina":
+			   return "No";
 		   }
 		   return "";
 	   }

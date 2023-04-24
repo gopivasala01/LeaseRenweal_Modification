@@ -87,7 +87,7 @@ public class PropertyWare_OtherInformation
 				{
 					RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.earlyTermFee2x_textbox1)).build().perform();
 					RunnerClass.driver.findElement(Locators.earlyTermFee2x_textbox1).clear();
-					RunnerClass.driver.findElement(Locators.earlyTermFee2x_textbox1).sendKeys("Yes");
+					RunnerClass.driver.findElement(Locators.earlyTermFee2x_textbox1).sendKeys(AppConfig.getEarlyTermination(RunnerClass.company));
 				}
 				else
 				{
@@ -115,14 +115,14 @@ public class PropertyWare_OtherInformation
 					{
 						RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.earlyTermFee2x_textbox2)).build().perform();
 						RunnerClass.driver.findElement(Locators.earlyTermFee2x_textbox2).clear();
-						RunnerClass.driver.findElement(Locators.earlyTermFee2x_textbox2).sendKeys("Yes");
+						RunnerClass.driver.findElement(Locators.earlyTermFee2x_textbox2).sendKeys(AppConfig.getEarlyTermination(RunnerClass.company));
 					}
 					else
 					{
 					RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.earlyTermFee2x_2)).build().perform();
 					RunnerClass.driver.findElement(Locators.earlyTermFee2x_2).click();
 					Select earlyTermination_List = new Select(RunnerClass.driver.findElement(Locators.earlyTermination_List_2));
-					earlyTermination_List.selectByVisibleText("YES");
+					earlyTermination_List.selectByVisibleText(AppConfig.getEarlyTermination(RunnerClass.company));
 					}
 				}
 				else

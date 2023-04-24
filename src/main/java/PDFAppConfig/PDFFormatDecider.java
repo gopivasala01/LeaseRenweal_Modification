@@ -71,10 +71,20 @@ public class PDFFormatDecider
 		public static String LittleRock_Format1 = "The parties to this Lease are";
 		public static String LittleRock_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT";
 		
-		// Little Rock
+		// Tulsa
 		public static String Tulsa_Format1 = "This is a legally binding Contract";
 		public static String Tulsa_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT";
 		
+		//Georgia
+		public static String Georgia_Format1 = "The parties to this lease are";
+		public static String Georgia_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT";
 		
+		// OKC
+		public static String OKC_Format1 = "This is a legally binding Contract";
+		public static String OKC_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT";
+		
+		//South Carolina
+		public static String SouthCarolina_Format1 = "The parties to this lease are";
+		public static String SouthCarolina_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT";
 
 }

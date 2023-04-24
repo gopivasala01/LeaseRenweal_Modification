@@ -54,6 +54,7 @@ public class RunnerClass
 	public static String startDate;
 	public static String monthlyRentInPW;
 	public static String startDateInPW;
+	public static String endDateInPW;
 	public static String portfolioType;
 	public static boolean published;
 	public static boolean listingAgent;
@@ -105,7 +106,7 @@ public class RunnerClass
 		  RunnerClass.PDFFormatType = "";
 		  PDFReader.RCDetails= "";
 		  
-		  if(company.contains("Austin")||company.contains("California")||company.contains("Chattanooga")||company.contains("Chicago")||company.contains("Colorado")||company.contains("Kansas City")||company.contains("Houston")||company.contains("Maine")||company.contains("Savannah")||company.contains("North Carolina")||company.contains("Alabama")||company.contains("Arkansas")||company.contains("Dallas/Fort Worth")||company.contains("Indiana")||company.contains("Little Rock")||company.contains("San Antonio")||company.contains("Tulsa"))
+		  if(company.contains("Austin")||company.contains("California")||company.contains("Chattanooga")||company.contains("Chicago")||company.contains("Colorado")||company.contains("Kansas City")||company.contains("Houston")||company.contains("Maine")||company.contains("Savannah")||company.contains("North Carolina")||company.contains("Alabama")||company.contains("Arkansas")||company.contains("Dallas/Fort Worth")||company.contains("Indiana")||company.contains("Little Rock")||company.contains("San Antonio")||company.contains("Tulsa")||company.contains("Georgia")||company.contains("OKC")||company.contains("South Carolina"))
 	     {
 		  //Change the Status of the Lease to Started so that it won't run again in the Jenkins scheduling Process
 		           DataBase.insertData(buildingAbbreviation,"Started",6);
@@ -268,7 +269,30 @@ public class RunnerClass
 					}
 					catch(Exception e4)
 					{
-					return "";
+						try
+						{
+						SimpleDateFormat format1 = new SimpleDateFormat("MMMM dd. yyyy");
+					    SimpleDateFormat format2 = new SimpleDateFormat("MM/dd/yyyy");
+					    Date date = format1.parse(dateRaw.trim().replaceAll(" +", " "));
+					    System.out.println(format2.format(date));
+						return format2.format(date).toString();
+						}
+						catch(Exception e5)
+						{
+							try
+							{
+							SimpleDateFormat format1 = new SimpleDateFormat("MMMM dd ,yyyy");
+						    SimpleDateFormat format2 = new SimpleDateFormat("MM/dd/yyyy");
+						    Date date = format1.parse(dateRaw.trim().replaceAll(" +", " "));
+						    System.out.println(format2.format(date));
+							return format2.format(date).toString();
+							}
+							catch(Exception e6)
+							{
+							return "";
+							}
+						}
+						
 					}
 				}
 			}

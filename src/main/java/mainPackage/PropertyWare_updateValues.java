@@ -39,6 +39,27 @@ public class PropertyWare_updateValues
 			PDFReader.firstFullMonth = RunnerClass.firstDayOfMonth(PDFReader.startDate,1);
 			PDFReader.secondFullMonth = RunnerClass.firstDayOfMonth(PDFReader.startDate,2);
 			
+			//Compare Start and end Dates in PW with Lease Agreement
+			try
+			{
+				if(PDFReader.startDate.trim().equals(RunnerClass.startDateInPW.trim()))
+				System.out.println("Start is matched");
+				else 
+				{
+					System.out.println("Start is not matched");
+					RunnerClass.failedReason = RunnerClass.failedReason+",Start is not matched";
+				}
+				
+				if(PDFReader.endDate.trim().equals(RunnerClass.endDateInPW.trim()))
+					System.out.println("End is matched");
+					else 
+					{
+						System.out.println("End is not matched");
+						RunnerClass.failedReason = RunnerClass.failedReason+",End is not matched";
+					}
+			}
+			catch(Exception e)
+			{}
 			
 			//Update dates as per Move and Auto Charges
 			PropertyWare_updateValues.updateDates();
