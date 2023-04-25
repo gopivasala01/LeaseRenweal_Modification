@@ -54,9 +54,9 @@ public class AppConfig
 		   case "Colorado Springs":
 			   return "40010 - Rent Income";
 		   case "Kansas City":
-			   return "4700 - Rent";
+			   return "40010 - Rent Income";
 		   case "Houston":
-			   return "4000 - Rent";
+			   return "40010 - Rent Income";
 		   case "Maine":
 			   return "40010 - Rent Income";
 		   case "Savannah":
@@ -113,9 +113,9 @@ public class AppConfig
 		   case "Colorado Springs":
 			   return "40230 - Pet Rent";
 		   case "Kansas City":
-			   return "4311 - Pet Rent";
+			   return "40230 - Pet Rent";
 		   case "Houston":
-			   return "4311 - Pet Rent";
+			   return "40230 - Pet Rent";
 		   case "Maine":
 			   return "40230 - Pet Rent";
 		   case "Savannah":
@@ -167,9 +167,9 @@ public class AppConfig
 		   case "Colorado Springs":
 			   return "43030 - Tenant Admin Fee";
 		   case "Kansas City":
-			   return "4303 - Tenant Admin Revenue";
+			   return "43030 - Tenant Admin Fee";
 		   case "Houston":
-			   return "4303 - Tenant Admin Revenue";
+			   return "43030 - Tenant Admin Fee";
 		   case "Maine":
 			   return "43030 - Tenant Admin Fee";
 		   case "Savannah":
@@ -220,9 +220,9 @@ public class AppConfig
 		   case "Colorado Springs":
 			   return "40010 - Rent Income";
 		   case "Kansas City":
-			   return "4700 - Rent";
+			   return "40010 - Rent Income";
 		   case "Houston":
-			   return "4000 - Rent";
+			   return "40010 - Rent Income";
 		   case "Maine":
 			   return "40010 - Rent Income";
 		   case "Savannah":
@@ -275,9 +275,9 @@ public class AppConfig
 		   case "Colorado Springs":
 			   return "40230 - Pet Rent";
 		   case "Kansas City":
-			   return "4311 - Pet Rent";
+			   return "40230 - Pet Rent";
 		   case "Houston":
-			   return "4311 - Pet Rent";
+			   return "40230 - Pet Rent";
 		   case "Maine":
 			   return "40230 - Pet Rent";
 		   case "Savannah":
@@ -326,9 +326,9 @@ public class AppConfig
 		   case "Colorado Springs":
 			   return "40010 - Rent Income";
 		   case "Kansas City":
-			   return "4700 - Rent";
+			   return "40010 - Rent Income";
 		   case "Houston":
-			   return "4000 - Rent";
+			   return "40010 - Rent Income";
 		   case "Maine":
 			   return "40010 - Rent Income";
 		   case "Savannah":
@@ -381,9 +381,9 @@ public class AppConfig
 		   case "Colorado Springs":
 			   return "43060 - Filter Fee";
 		   case "Kansas City":
-			   return "4102 - Air Filter Fee";
+			   return "43060 - Filter Fee";
 		   case "Houston":
-			   return "4102 - Air Filter Fee";
+			   return "43060 - Filter Fee";
 		   case "Maine":
 			   return "43060 - Filter Fee";
 		   case "Savannah":
@@ -435,9 +435,9 @@ public class AppConfig
 		   case "Colorado Springs":
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Kansas City":
-			   return  "4312 - Non-Refundable Pet Fee";
+			   return  "44010 - Non-Refundable Pet Fee";
 		   case "Houston":
-			   return "4311 - Pet Rent";
+			   return "44010 - Non-Refundable Pet Fee";
 		   case "Maine":
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Savannah":
@@ -489,9 +489,9 @@ public class AppConfig
 		   case "Colorado Springs":
 			   return "20030 - Prepayments";
 		   case "Kansas City":
-			   return "2017 - Prepayments";
+			   return "20030 - Prepayments";
 		   case "Houston":
-			   return "2017 - Prepayments";
+			   return "20030 - Prepayments";
 		   case "Maine":
 			   return "20030 - Prepayments";
 		   case "Savannah":
@@ -543,9 +543,9 @@ public class AppConfig
 		   case "Colorado Springs":
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Kansas City":
-			   return "4318 - Resident BenefitsPackage";
+			   return "43070 - Resident Benefit Package Fee";
 		   case "Houston":
-			   return "4318 - Resident Benefits Package";
+			   return "43070 - Resident Benefit Package Fee";
 		   case "Maine":
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Savannah":
@@ -596,9 +596,9 @@ public class AppConfig
 		   case "Colorado Springs":
 			   return "20020 - Security Deposit";
 		   case "Kansas City":
-			   return "2010 - Security Deposit";
+			   return "20020 - Security Deposit";
 		   case "Houston":
-			   return "2050 - Security Deposit";
+			   return "20020 - Security Deposit";
 		   case "Maine":
 			   return "20020 - Security Deposit";
 		   case "Savannah":
@@ -740,43 +740,43 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "Yes";
+			   return "YES";
 		   case "Florida":
 			   return "YES";
 		   case "Alabama":
-			   return "Yes";
+			   return "YES";
 		   case "North Carolina":
-			   return "Yes";
+			   return "YES";
 		   case "Dallas/Fort Worth":
 			   return "YES"; 
 		   case "California":
-			   return "Yes";
+			   return "YES";
 		   case "California PFW":
-			   return "Yes";
+			   return "YES";
 		   case "Chattanooga":
-			   return "Yes";
+			   return "YES";
 		   case "Chicago PFW":
-			   return "Yes";
+			   return "YES";
 		   case "Colorado Springs":
-			   return "Yes";
+			   return "YES";
 		   case "Kansas City":
-			   return "Yes";
+			   return "YES";
 		   case "Houston":
-			   return "Yes";
+			   return "YES";
 		   case "Maine":
-			   return "Yes";
+			   return "YES";
 		   case "Savannah":
-			   return "Yes";
+			   return "YES";
 		   case "Arkansas":
-			   return "Yes";
+			   return "YES";
 		   case "Indiana":
-			   return "Yes";
+			   return "YES";
 		   case "Little Rock":
 			   return "YES";
 		   case "San Antonio":
 			   return "Yes";
 		   case "Tulsa":
-			   return "Yes";
+			   return "YES";
 		   case "Georgia":
 			   return "YES";
 		   case "OKC":
@@ -798,7 +798,7 @@ public class AppConfig
 		   case "California":
 			   return "NO";
 		   case "California PFW":
-			   return "NO";
+			   return "No";
 		   case "Alabama":
 			   return "NO";
 		   case "North Carolina":
@@ -828,7 +828,7 @@ public class AppConfig
 		   case "San Antonio":
 			   return "NO";
 		   case "Tulsa":
-			   return "NO";
+			   return "No";
 		   case "Georgia":
 			   return "NO";
 		   case "OKC":

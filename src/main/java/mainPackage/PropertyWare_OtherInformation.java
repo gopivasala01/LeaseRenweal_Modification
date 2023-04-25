@@ -14,7 +14,7 @@ public class PropertyWare_OtherInformation
 	public static boolean addOtherInformation()
 	{
 		RunnerClass.driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
-        RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(15));
+        RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(3));
 		RunnerClass.driver.navigate().refresh();
 		//Pop up after clicking Lease Name
 		PropertyWare.intermittentPopUp();

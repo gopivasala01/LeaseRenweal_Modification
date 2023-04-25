@@ -69,6 +69,7 @@ public class PDFReader
 	public static String lateFeeChargePerDay = "";
 	public static String additionalLateChargesLimit = "";
 	public static String additionalLateCharges = "";
+	public static String proratePetRentDescription = "";
 	
 	//Other Fields
 	public static String RCDetails = "";
@@ -112,6 +113,7 @@ public class PDFReader
 		    lateFeeChargePerDay = "";
 		    additionalLateChargesLimit = "";
 		    additionalLateCharges = "";
+		    proratePetRentDescription = "";
 		    
 		    //Runner Class Late Fee Variables
 		 // All fields required for Late Fee Rule
@@ -151,16 +153,16 @@ public class PDFReader
 			switch(market)
 			{
 			case "Austin":
-				String pdfFormatType_florida = PDFReader.decidePDFFormat(market);
-				System.out.println("PDF Format Type = "+pdfFormatType_florida);
-				if(pdfFormatType_florida=="Format1")
+				String pdfFormatType_Austin = PDFReader.decidePDFFormat(market);
+				System.out.println("PDF Format Type = "+pdfFormatType_Austin);
+				if(pdfFormatType_Austin=="Format1")
 				{
 					if(PDFDataExtract.Austin_Format1.austin()==false)
 						return false;
 				}
 				
 				else 
-					if(pdfFormatType_florida=="Format2")
+					if(pdfFormatType_Austin=="Format2")
 				     {
 					if(PDFDataExtract.Austin_Format2.austin()==false)
 						return false;

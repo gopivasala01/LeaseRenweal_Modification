@@ -99,7 +99,7 @@ public class PropertyWare_updateValues
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getTenentAdminReveueChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.adminFee+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=3";
 					break;
 				case 4: 
-					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getProratePetRentChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.proratedPetRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='' where ID=4";	
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getProratePetRentChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.proratedPetRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',Description = '"+PDFReader.proratePetRentDescription+"' where ID=4";	
 					break;
 				case 5:
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getpetSecurityDepositChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.petSecurityDeposit+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=5";
@@ -145,17 +145,22 @@ public class PropertyWare_updateValues
 			String autoCharges = "";
 			
 			//Decide Prepayment Charge
-			
+			PDFReader.proratePetRentDescription = "Prorate Pet Rent";
 			String prepaymentChargeOrMonthlyRent;
 			if(PropertyWare_updateValues.checkProratedRentDateIsInMoveInMonth()==true)
 			{
+				PDFReader.proratedRentDateIsInMoveInMonthFlag =true;
 				if(PDFReader.proratedRentDate.equalsIgnoreCase("n/a")||PDFReader.proratedRentDate.equalsIgnoreCase("na")||PDFReader.proratedRentDate.equalsIgnoreCase("N/A")||PDFReader.proratedRentDate.equalsIgnoreCase("NA"))
 				{
 					prepaymentChargeOrMonthlyRent = "2";
 					PDFReader.proratedPetRent = PDFReader.petRent;
+					PDFReader.proratePetRentDescription = "Pet Rent";
 				}
 				else
+				{
 					prepaymentChargeOrMonthlyRent = "12";
+					PDFReader.proratePetRentDescription = "Prorate Pet Rent";
+				}
 				
 			}
 			else 
