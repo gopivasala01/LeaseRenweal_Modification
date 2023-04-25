@@ -42,7 +42,7 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "4000 - Rent";
+			   return "40010 - Rent Income";
 		   case "California":
 			   return "40010 - Rent Income";
 		   case "California PFW":
@@ -84,7 +84,7 @@ public class AppConfig
 		   case "South Carolina":
 			   return "40010 - Rent Income";
 		   case "Florida":
-			   return "40010 - Rent Income";
+			   return "4000 - Rent";
 		   case "Tennessee":
 			   return "40010 - Rent Income";
 			      
@@ -97,7 +97,7 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "4311 - Pet Rent";
+			   return "40230 - Pet Rent";
 		   case "Alabama":
 			   return "40230 - Pet Rent";
 		   case "North Carolina":
@@ -151,7 +151,7 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "4303 - Tenant Admin Revenue";
+			   return "43030 - Tenant Admin Fee";
 		   case "Alabama":
 			   return "43030 - Tenant Admin Fee";
 		   case "North Carolina":
@@ -173,7 +173,7 @@ public class AppConfig
 		   case "Maine":
 			   return "43030 - Tenant Admin Fee";
 		   case "Savannah":
-			   return "4303 - Tenant Admin Revenue";
+			   return "43030 - Tenant Admin Fee";
 		   case "Arkansas":
 			   return "43030 - Tenant Admin Revenue";
 		   case "Dallas/Fort Worth":
@@ -191,9 +191,9 @@ public class AppConfig
 		   case "OKC":
 			   return "43030 - Tenant Admin Fee";
 		   case "South Carolina":
-			   return "4303 - Tenant Admin Revenue";
+			   return "43030 - Tenant Admin Fee";
 		   case "Florida":
-			   return "4303 - Tenant Admin Revenue";
+			   return "43030 - Tenant Admin Fee";
 		   case "Tennessee":
 			   return "43030 - Tenant Admin Fee";
 			   
@@ -206,7 +206,7 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "4000 - Rent";
+			   return "40010 - Rent Income";
 		   case "California":
 			   return "40010 - Rent Income";
 		   case "California PFW":
@@ -248,7 +248,7 @@ public class AppConfig
 		   case "South Carolina":
 			   return "40010 - Rent Income";
 		   case "Florida":
-			   return "40010 - Rent Income";
+			   return "4000 - Rent";
 		   case "Tennessee":
 			   return "40010 - Rent Income";
 		   }
@@ -259,7 +259,7 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "4311 - Pet Rent";
+			   return "40230 - Pet Rent";
 		   case "Alabama":
 			   return "40230 - Pet Rent";
 		   case "North Carolina":
@@ -312,7 +312,7 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "4000 - Rent";
+			   return "40010 - Rent Income";
 		   case "California":
 			   return "40010 - Rent Income";
 		   case "California PFW":
@@ -354,7 +354,7 @@ public class AppConfig
 		   case "South Carolina":
 			   return "40010 - Rent Income";
 		   case "Florida":
-			   return "40010 - Rent Income";
+			   return "4000 - Rent";
 		   case "Tennessee":
 			   return "40010 - Rent Income";
 		   }
@@ -365,11 +365,11 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "4102 - Air Filter Fee";
+			   return "43060 - Filter Fee";
 		   case "Alabama":
 			   return "43060 - Filter Fee";
 		   case "North Carolina":
-			   return "4102 - Air Filter Fee";
+			   return "43060 - Filter Fee";
 		   case "Chattanooga":
 			   return "43060 - Filter Fee";
 		   case "Chicago PFW":
@@ -419,7 +419,7 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "4311 - Pet Rent";
+			   return "44010 - Non-Refundable Pet Fee";
 		   case "Alabama":
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "North Carolina":
@@ -473,7 +473,7 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "2017 - Prepayments";
+			   return "20030 - Prepayments";
 		   case "Alabama":
 			   return "20030 - Prepayments";
 		   case "North Carolina":
@@ -527,7 +527,7 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "4318 - Resident Benefits Package";
+			   return "43070 - Resident Benefit Package Fee";
 		   case "California":
 			   return "43070 - Resident Benefit Package Fee";
 		   case "California PFW":
@@ -580,7 +580,7 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "2050 - Security Deposit";
+			   return "20020 - Security Deposit";
 		   case "Alabama":
 			   return "20020 - Security Deposit";
 		   case "North Carolina":

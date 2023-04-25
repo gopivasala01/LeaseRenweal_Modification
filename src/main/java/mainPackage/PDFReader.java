@@ -808,9 +808,10 @@ public class PDFReader
 		    if(text.contains(format1Text))
 		    {
 		    	RunnerClass.PDFFormatType = "Format1";
-		    	System.out.println("PDF Format Type = "+RunnerClass.PDFFormatType);
+		    	System.out.println("PDF Format Type  = "+RunnerClass.PDFFormatType);
 		    	return "Format1";
 		    }
+		    
 		    else if(text.contains(format2Text))
 		    {
 		    	RunnerClass.PDFFormatType = "Format2";
