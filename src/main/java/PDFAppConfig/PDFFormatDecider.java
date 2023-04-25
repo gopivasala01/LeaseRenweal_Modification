@@ -86,5 +86,13 @@ public class PDFFormatDecider
 		//South Carolina
 		public static String SouthCarolina_Format1 = "The parties to this lease are";
 		public static String SouthCarolina_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT";
+		
+		//Florida
+		public static String Florida_Format1 = "The parties to this lease are";
+		public static String Florida_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT";
+		
+		//Tennessee
+		public static String Tennessee_Format1 = "The parties to this Lease are";
+		public static String Tennessee_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT";
 
 }

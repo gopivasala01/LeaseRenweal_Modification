@@ -83,6 +83,10 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "South Carolina":
 			   return "40010 - Rent Income";
+		   case "Florida":
+			   return "40010 - Rent Income";
+		   case "Tennessee":
+			   return "40010 - Rent Income";
 			      
 		   }
 		   return "";
@@ -93,8 +97,6 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "4311 - Pet Rent";
-		   case "Florida":
 			   return "4311 - Pet Rent";
 		   case "Alabama":
 			   return "40230 - Pet Rent";
@@ -136,6 +138,10 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "South Carolina":
 			   return "40230 - Pet Rent";
+		   case "Florida":
+			   return "40230 - Pet Rent";
+		   case "Tennessee":
+			   return "40230 - Pet Rent";
 			   
 		   }
 		   return "";
@@ -145,8 +151,6 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "4303 - Tenant Admin Revenue";
-		   case "Florida":
 			   return "4303 - Tenant Admin Revenue";
 		   case "Alabama":
 			   return "43030 - Tenant Admin Fee";
@@ -188,6 +192,10 @@ public class AppConfig
 			   return "43030 - Tenant Admin Fee";
 		   case "South Carolina":
 			   return "4303 - Tenant Admin Revenue";
+		   case "Florida":
+			   return "4303 - Tenant Admin Revenue";
+		   case "Tennessee":
+			   return "43030 - Tenant Admin Fee";
 			   
 		   }
 		   return "";
@@ -239,6 +247,10 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "South Carolina":
 			   return "40010 - Rent Income";
+		   case "Florida":
+			   return "40010 - Rent Income";
+		   case "Tennessee":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -247,8 +259,6 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "4311 - Pet Rent";
-		   case "Florida":
 			   return "4311 - Pet Rent";
 		   case "Alabama":
 			   return "40230 - Pet Rent";
@@ -289,6 +299,10 @@ public class AppConfig
 		   case "OKC":
 			   return "40230 - Pet Rent";
 		   case "South Carolina":
+			   return "40230 - Pet Rent";
+		   case "Florida":
+			   return "40230 - Pet Rent";
+		   case "Tennessee":
 			   return "40230 - Pet Rent";
 		   }
 		   return "";
@@ -339,6 +353,10 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "South Carolina":
 			   return "40010 - Rent Income";
+		   case "Florida":
+			   return "40010 - Rent Income";
+		   case "Tennessee":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -347,8 +365,6 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "4102 - Air Filter Fee";
-		   case "Florida":
 			   return "4102 - Air Filter Fee";
 		   case "Alabama":
 			   return "43060 - Filter Fee";
@@ -390,6 +406,10 @@ public class AppConfig
 			   return "43060 - Filter Fee";
 		   case "South Carolina":
 			   return "43060 - Filter Fee";
+		   case "Florida":
+			   return "43060 - Filter Fee";
+		   case "Tennessee":
+			   return "43060 - Filter Fee";
 		   }
 		   return "";
 	   }
@@ -399,8 +419,6 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "4311 - Pet Rent";
-		   case "Florida":
 			   return "4311 - Pet Rent";
 		   case "Alabama":
 			   return "44010 - Non-Refundable Pet Fee";
@@ -442,6 +460,10 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "South Carolina":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Florida":
+			   return "44010 - Non-Refundable Pet Fee";
+		   case "Tennessee":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -451,8 +473,6 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "2017 - Prepayments";
-		   case "Florida":
 			   return "2017 - Prepayments";
 		   case "Alabama":
 			   return "20030 - Prepayments";
@@ -493,6 +513,10 @@ public class AppConfig
 		   case "OKC":
 			   return "20030 - Prepayments";
 		   case "South Carolina":
+			   return "20030 - Prepayments";
+		   case "Florida":
+			   return "20030 - Prepayments";
+		   case "Tennessee":
 			   return "20030 - Prepayments";
 		   }
 		   return "";
@@ -544,6 +568,10 @@ public class AppConfig
 			   return "43070 - Resident Benefits Package";
 		   case "South Carolina":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "Florida":
+			   return "43070 - Resident Benefit Package Fee";
+		   case "Tennessee":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -552,8 +580,6 @@ public class AppConfig
 		   switch(company)
 		   {
 		   case "Austin":
-			   return "2050 - Security Deposit";
-		   case "Florida":
 			   return "2050 - Security Deposit";
 		   case "Alabama":
 			   return "20020 - Security Deposit";
@@ -594,6 +620,10 @@ public class AppConfig
 		   case "OKC":
 			   return "20020 - Security Deposit";
 		   case "South Carolina":
+			   return "20020 - Security Deposit";
+		   case "Florida":
+			   return "20020 - Security Deposit";
+		   case "Tennessee":
 			   return "20020 - Security Deposit";
 		   }
 		   return "";
@@ -646,6 +676,8 @@ public class AppConfig
 			   return "YES";
 		   case "South Carolina":
 			   return "YES";
+		   case "Tennessee":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -697,6 +729,8 @@ public class AppConfig
 			   return "Yes";
 		   case "South Carolina":
 			   return "Yes";
+		   case "Tennessee":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -708,7 +742,7 @@ public class AppConfig
 		   case "Austin":
 			   return "Yes";
 		   case "Florida":
-			   return "Yes";
+			   return "YES";
 		   case "Alabama":
 			   return "Yes";
 		   case "North Carolina":
@@ -748,6 +782,8 @@ public class AppConfig
 		   case "OKC":
 			   return "YES";
 		   case "South Carolina":
+			   return "YES";
+		   case "Tennessee":
 			   return "YES";
 		   }
 		   return "";
@@ -798,6 +834,10 @@ public class AppConfig
 		   case "OKC":
 			   return "No";
 		   case "South Carolina":
+			   return "No";
+		   case "Florida":
+			   return "No";
+		   case "Tennessee":
 			   return "No";
 		   }
 		   return "";

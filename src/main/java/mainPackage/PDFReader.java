@@ -623,6 +623,52 @@ public class PDFReader
 					    
 					break;
 					
+				case "Florida":
+					String pdfFormatType_Florida = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_Florida);
+					if(pdfFormatType_Florida=="Format1")
+					{
+						if(PDFDataExtract.Florida_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_Florida=="Format2")
+					     {
+						if(PDFDataExtract.Florida_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
+					
+				case "Tennessee":
+					String pdfFormatType_Tennessee = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_Tennessee);
+					if(pdfFormatType_Tennessee=="Format1")
+					{
+						if(PDFDataExtract.Tennessee_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_Tennessee=="Format2")
+					     {
+						if(PDFDataExtract.Tennessee_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
+					
 			}
 			
 			//Prepayment charge
@@ -740,6 +786,12 @@ public class PDFReader
 			case "South Carolina":
 		        format1Text = PDFAppConfig.PDFFormatDecider.SouthCarolina_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.SouthCarolina_Format2;
+			case "Florida":
+		        format1Text = PDFAppConfig.PDFFormatDecider.Florida_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.Florida_Format2;
+			case "Tennessee":
+		        format1Text = PDFAppConfig.PDFFormatDecider.Tennessee_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.Tennessee_Format2;
 		        
 			}
 			
