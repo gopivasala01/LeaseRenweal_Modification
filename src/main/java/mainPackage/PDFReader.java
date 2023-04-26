@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 
+import PDFAppConfig.PDFFormatDecider;
+
 
 public class PDFReader 
 {
@@ -805,14 +807,15 @@ public class PDFReader
 			String text = new PDFTextStripper().getText(document);
 			text = text.replaceAll(System.lineSeparator(), " ");
 		    text = text.replaceAll(" +", " ");
-		    if(text.contains(format1Text))
+		    text = text.toLowerCase();
+		    if(text.contains(format1Text.toLowerCase())||text.contains(PDFFormatDecider.format1.toLowerCase()))
 		    {
 		    	RunnerClass.PDFFormatType = "Format1";
 		    	System.out.println("PDF Format Type  = "+RunnerClass.PDFFormatType);
 		    	return "Format1";
 		    }
 		    
-		    else if(text.contains(format2Text))
+		    else if(text.contains(format2Text.toLowerCase()))
 		    {
 		    	RunnerClass.PDFFormatType = "Format2";
 		    	System.out.println("PDF Format Type = "+RunnerClass.PDFFormatType);

@@ -70,6 +70,8 @@ public class PropertyWare_MoveInCharges
 					}
 					}
 				}
+				if(availabilityCheck==true)
+					continue;
 				//Add new Charge if it is not there
 				if(availabilityCheck==false)
 				{
@@ -140,7 +142,7 @@ public class PropertyWare_MoveInCharges
 		RunnerClass.driver.findElement(Locators.moveInChargeCancel).click();
 		else 
 		RunnerClass.driver.findElement(Locators.moveInChargeSaveButton).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		 RunnerClass.driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
 	        RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(2));
 		try
@@ -153,7 +155,7 @@ public class PropertyWare_MoveInCharges
 		}
 		catch(Exception e)
 		{}
-		 RunnerClass.driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		    RunnerClass.driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	        RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(10));
 	        RunnerClass.driver.navigate().refresh();
 	      //Pop up after clicking Lease Name
@@ -168,7 +170,7 @@ public class PropertyWare_MoveInCharges
 			RunnerClass.driver.findElement(Locators.summaryTab).click();
 			e.printStackTrace();
 			System.out.println("Issue in adding Move in Charge"+description);
-			RunnerClass.failedReason =  RunnerClass.failedReason+","+"Move in Charge - "+description;
+			RunnerClass.failedReason =  RunnerClass.failedReason+","+"Move in Charge - "+description+"In pop up";
 			return false;	
 		}
 	}

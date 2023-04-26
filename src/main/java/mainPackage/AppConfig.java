@@ -84,7 +84,7 @@ public class AppConfig
 		   case "South Carolina":
 			   return "40010 - Rent Income";
 		   case "Florida":
-			   return "4000 - Rent";
+			   return "40010 - Rent Income";
 		   case "Tennessee":
 			   return "40010 - Rent Income";
 			      
@@ -248,7 +248,7 @@ public class AppConfig
 		   case "South Carolina":
 			   return "40010 - Rent Income";
 		   case "Florida":
-			   return "4000 - Rent";
+			   return "40010 - Rent Income";
 		   case "Tennessee":
 			   return "40010 - Rent Income";
 		   }
@@ -354,7 +354,7 @@ public class AppConfig
 		   case "South Carolina":
 			   return "40010 - Rent Income";
 		   case "Florida":
-			   return "4000 - Rent";
+			   return "40010 - Rent Income";
 		   case "Tennessee":
 			   return "40010 - Rent Income";
 		   }
