@@ -161,9 +161,6 @@ public class Maine_Format1
 		    if(text.contains(PDFAppConfig.Maine_Format1.HVACFilterAddendumTextAvailabilityCheck)==true)
 		    {
 		    	PDFReader.HVACFilterFlag =true;
-		    }
-		    else
-		    {
 		    try
 		    {
 			   String[] airFilterFeeArray = text.substring(text.indexOf(PDFAppConfig.Maine_Format1.AB_airFilterFee_Prior)+PDFAppConfig.Maine_Format1.AB_airFilterFee_Prior.length()).split(" ");
@@ -179,8 +176,8 @@ public class Maine_Format1
 		    PDFReader.airFilterFee = "Error";
 		    e.printStackTrace();
 		    }
-		    }
 		    System.out.println("Air Filter Fee = "+PDFReader.airFilterFee.trim());
+		    }
 	    }
 	    try
 	    {
@@ -280,12 +277,24 @@ public class Maine_Format1
 			    {
 			    	PDFReader.proratedPetRent = "Error";
 			    }
+			    if(PDFReader.proratedPetRent.equals("Error"))
+			    {
+			    	String proratePetRentRaw = text.substring(text.indexOf("Tenant will pay Landlord monthly pet rent"));
+			    	PDFReader.proratedPetRent = proratePetRentRaw.substring(proratePetRentRaw.indexOf("Tenant will pay Landlord $")+"Tenant will pay Landlord $".length(),proratePetRentRaw.indexOf("as prorated pet")).trim().split(" ")[0];//.replaceAll("[a-ZA-Z,]", "");
+			    }
 			    }
 			    catch(Exception e)
 			    {
-			   
-			    PDFReader.proratedPetRent = "Error";	
-			    e.printStackTrace();
+			     try
+			     {
+				   String proratePetRentRaw = text.substring(text.indexOf("Tenant will pay Landlord monthly pet rent"));
+			    	PDFReader.proratedPetRent = proratePetRentRaw.substring(proratePetRentRaw.indexOf("Tenant will pay Landlord $")+"Tenant will pay Landlord $".length(),proratePetRentRaw.indexOf("as prorated pet")).trim().split(" ")[0];//.replaceAll("[a-ZA-Z,]", "");
+			     }
+			     catch(Exception e2)
+			     {
+			       PDFReader.proratedPetRent = "Error";	
+			       e.printStackTrace();
+			     }
 			    }
 	    	  System.out.println("Prorated Pet Rent = "+PDFReader.proratedPetRent.trim());
 	    	

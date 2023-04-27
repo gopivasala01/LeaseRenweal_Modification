@@ -36,7 +36,7 @@ public class PropertyWare_AutoCharges
 				if(amount.trim().equals("Error")||amount.trim().equals("0.00")||amount==null)
 				{
 					System.out.println(" issue in adding Auto Charge - "+description);
-					RunnerClass.failedReason = RunnerClass.failedReason+","+" issue in adding Auto Charge - "+description;
+					RunnerClass.failedReason = RunnerClass.failedReason+","+" Auto Charge - "+description;
 					RunnerClass.statusID=1;
 					continue;
 				}

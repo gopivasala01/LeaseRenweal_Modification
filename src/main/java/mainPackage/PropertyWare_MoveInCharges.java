@@ -87,6 +87,7 @@ public class PropertyWare_MoveInCharges
 					RunnerClass.failedReason =  RunnerClass.failedReason+","+"Issue in Adding Move in charges";
 					continue;
 		        }
+				 
 		}
 		return true;
 		}

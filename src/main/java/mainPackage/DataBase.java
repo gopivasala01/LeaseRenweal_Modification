@@ -123,7 +123,7 @@ public class DataBase
 		            	// Move to beginning
 		            	rs.beforeFirst();
 		            }
-		            System.out.println("No of buildings with status = "+rows);
+		            System.out.println("Auto Charges  = "+rows);
 		            RunnerClass.autoCharges = new String[rows][5];
 		           int  i=0;
 		            while(rs.next())
@@ -184,7 +184,7 @@ public class DataBase
 		            	// Move to beginning
 		            	rs.beforeFirst();
 		            }
-		            System.out.println("No of buildings with status = "+rows);
+		            System.out.println("Move In Charges = "+rows);
 		            RunnerClass.moveInCharges = new String[rows][5];
 		           int  i=0;
 		            while(rs.next())
