@@ -62,11 +62,13 @@ public class PropertyWare_MoveInCharges
 						System.out.println(description+" already available");
 						break;
 					}
+					/*
 					//If Amount doesn't have .00 at the end add it to check if it is already there
 					if(!amount.endsWith(".00"))
 						amount = amount+".00";
 					if(amount.endsWith(".0"))
 						amount = amount.replace(".0", "0.00");
+						*/
 					if(chargeCode.contains(autoChargeCodes)&&(autoChargeAmount.replaceAll("[^0-9]", "").contains(amount.replaceAll("[^0-9]", ""))))//||autoChargeAmount.split(".")[0].contains(amount.split(".")[0])))
 					{
 						availabilityCheck = true;
