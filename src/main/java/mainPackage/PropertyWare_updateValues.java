@@ -17,6 +17,7 @@ public class PropertyWare_updateValues
 	public static String autoCharge_startDate_MonthlyRent = ""; //For other portfolios, it should be added as second full month in Auto Charges 
 	public static String increasedRent_previousRentStartDate ="";
 	public static String endDate_ProrateRent = "";
+	public static String endDate_MonthlyRent_WhenIncreasedRentAvailable = "";
 	
 	//ConfigureValues
 		public static boolean configureValues() throws Exception
@@ -77,6 +78,10 @@ public class PropertyWare_updateValues
 				autoCharge_startDate_MonthlyRent = PDFReader.firstFullMonth;
 			else 
 				autoCharge_startDate_MonthlyRent = PDFReader.secondFullMonth;
+			if(PDFReader.incrementRentFlag==true)
+			{
+				endDate_MonthlyRent_WhenIncreasedRentAvailable = RunnerClass.convertDate(PDFReader.increasedRent_previousRentEndDate);
+			}
 			
 		}
 		
@@ -93,7 +98,7 @@ public class PropertyWare_updateValues
 					query = "Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getProrateRentChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.proratedRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='"+endDate_ProrateRent+"',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=1";
 					break;
 				case 2:
-					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getMonthlyRentChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.monthlyRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='"+PDFReader.increasedRent_previousRentEndDate+"',AutoCharge_StartDate='"+autoCharge_startDate_MonthlyRent+"' where ID=2";
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getMonthlyRentChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.monthlyRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='"+endDate_MonthlyRent_WhenIncreasedRentAvailable+"',AutoCharge_StartDate='"+autoCharge_startDate_MonthlyRent+"' where ID=2";
 					break;
 				case 3:
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getTenentAdminReveueChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.adminFee+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=3";

@@ -89,6 +89,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "New Mexico":
 			   return "40010 - Rent Income";
+		   case "Ohio":
+			   return "40010 - Rent Income";
 			      
 		   }
 		   return "";
@@ -146,6 +148,8 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "New Mexico":
 			   return "40230 - Pet Rent";
+		   case "Ohio":
+			   return "40230 - Pet Rent";
 			   
 		   }
 		   return "";
@@ -201,6 +205,8 @@ public class AppConfig
 		   case "Tennessee":
 			   return "43030 - Tenant Admin Fee";
 		   case "New Mexico":
+			   return "43030 - Tenant Admin Fee";
+		   case "Ohio":
 			   return "43030 - Tenant Admin Fee";
 			   
 		   }
@@ -259,6 +265,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "New Mexico":
 			   return "40010 - Rent Income";
+		   case "Ohio":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -313,6 +321,8 @@ public class AppConfig
 		   case "Tennessee":
 			   return "40230 - Pet Rent";
 		   case "New Mexico":
+			   return "40230 - Pet Rent";
+		   case "Ohio":
 			   return "40230 - Pet Rent";
 		   }
 		   return "";
@@ -369,6 +379,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "New Mexico":
 			   return "40010 - Rent Income";
+		   case "Ohio":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -423,6 +435,8 @@ public class AppConfig
 		   case "Tennessee":
 			   return "43060 - Filter Fee";
 		   case "New Mexico":
+			   return "43060 - Filter Fee";
+		   case "Ohio":
 			   return "43060 - Filter Fee";
 		   }
 		   return "";
@@ -480,6 +494,8 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "New Mexico":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Ohio":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -535,6 +551,8 @@ public class AppConfig
 		   case "Tennessee":
 			   return "20030 - Prepayments";
 		   case "New Mexico":
+			   return "20030 - Prepayments";
+		   case "Ohio":
 			   return "20030 - Prepayments";
 		   }
 		   return "";
@@ -592,6 +610,8 @@ public class AppConfig
 			   return "43070 - Resident Benefit Package Fee";
 		   case "New Mexico":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "Ohio":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -646,6 +666,8 @@ public class AppConfig
 		   case "Tennessee":
 			   return "20020 - Security Deposit";
 		   case "New Mexico":
+			   return "20020 - Security Deposit";
+		   case "Ohio":
 			   return "20020 - Security Deposit";
 		   }
 		   return "";
@@ -702,6 +724,8 @@ public class AppConfig
 			   return "YES";
 		   case "New Mexico":
 			   return "YES";
+		   case "Ohio":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -756,6 +780,8 @@ public class AppConfig
 		   case "Tennessee":
 			   return "Yes";
 		   case "New Mexico":
+			   return "Yes";
+		   case "Ohio":
 			   return "Yes";
 		   }
 		   return "";
@@ -813,6 +839,8 @@ public class AppConfig
 			   return "YES";
 		   case "New Mexico":
 			   return "YES";
+		   case "Ohio":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -868,6 +896,8 @@ public class AppConfig
 		   case "Tennessee":
 			   return "No";
 		   case "New Mexico":
+			   return "NO";
+		   case "Ohio":
 			   return "NO";
 		   }
 		   return "";

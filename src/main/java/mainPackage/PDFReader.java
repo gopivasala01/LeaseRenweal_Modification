@@ -696,6 +696,29 @@ public class PDFReader
 					    
 					break;
 					
+				case "Ohio":
+					String pdfFormatType_Ohio = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_Ohio);
+					if(pdfFormatType_Ohio=="Format1")
+					{
+						if(PDFDataExtract.Ohio_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_Ohio=="Format2")
+					     {
+						if(PDFDataExtract.Ohio_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
+					
 			}
 			
 			//Prepayment charge
@@ -822,6 +845,9 @@ public class PDFReader
 			case "New Mexico":
 		        format1Text = PDFAppConfig.PDFFormatDecider.NewMexico_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.NewMexico_Format2;
+			case "Ohio":
+		        format1Text = PDFAppConfig.PDFFormatDecider.Ohio_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.Ohio_Format2;
 		        
 			}
 			

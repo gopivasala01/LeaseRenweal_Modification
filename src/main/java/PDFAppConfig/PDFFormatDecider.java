@@ -101,5 +101,9 @@ public class PDFFormatDecider
 		//New Mexico
 		public static String NewMexico_Format1 = "The parties to this Lease are".toLowerCase();
 		public static String NewMexico_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT".toLowerCase();
+		
+		//Ohio
+		public static String Ohio_Format1 = "The parties to this Lease are".toLowerCase();
+		public static String Ohio_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT".toLowerCase();
 
 }
