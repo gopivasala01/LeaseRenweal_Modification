@@ -673,6 +673,29 @@ public class PDFReader
 					    
 					break;
 					
+				case "New Mexico":
+					String pdfFormatType_NewMexico = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_NewMexico);
+					if(pdfFormatType_NewMexico=="Format1")
+					{
+						if(PDFDataExtract.NewMexico_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_NewMexico=="Format2")
+					     {
+						if(PDFDataExtract.NewMexico_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
+					
 			}
 			
 			//Prepayment charge
@@ -796,6 +819,9 @@ public class PDFReader
 			case "Tennessee":
 		        format1Text = PDFAppConfig.PDFFormatDecider.Tennessee_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.Tennessee_Format2;
+			case "New Mexico":
+		        format1Text = PDFAppConfig.PDFFormatDecider.NewMexico_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.NewMexico_Format2;
 		        
 			}
 			
