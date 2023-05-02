@@ -235,6 +235,8 @@ public class PropertyWare
 	public static boolean downloadLeaseAgreement(String building, String ownerName) throws Exception
 	{
 		PDFReader.RCDetails = "";
+		RunnerClass.driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(5));
 		
 		try
 		{
@@ -280,7 +282,10 @@ public class PropertyWare
 		{
 		RunnerClass.js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 		Thread.sleep(2000);
+		if(RunnerClass.driver.findElement(Locators.leasesTab).getText().equals("Leases"))
 		RunnerClass.driver.findElement(Locators.leasesTab).click();
+		else 
+			RunnerClass.driver.findElement(Locators.leasesTab2).click();
 		RunnerClass.driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(5));
 		try

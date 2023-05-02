@@ -1,6 +1,8 @@
 package mainPackage;
 
 import java.io.File;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -89,7 +91,6 @@ public class RunnerClass
 	
 	public static void main(String[] args) throws Exception 
 	{
-		 
 		//Get In Progress Leases
 		//Company,BuildingAbbreviation, LeaseNae
 		DataBase.getBuildingsList();
@@ -413,6 +414,14 @@ public class RunnerClass
 		   // System.out.println("Your numbers: " + myNumbers.toString());
 		    return myNumbers.toString();
 		}
+	    	public static double round(double value, int places) 
+	    	{
+	    	    if (places < 0) throw new IllegalArgumentException();
+
+	    	    BigDecimal bd = BigDecimal.valueOf(value);
+	    	    bd = bd.setScale(places, RoundingMode.HALF_UP);
+	    	    return bd.doubleValue();
+	    	}
 	    
 	    public static void processAfterBuildingIsSelected() throws Exception
 	    {

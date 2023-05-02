@@ -116,6 +116,7 @@ public class PDFReader
 		    additionalLateChargesLimit = "";
 		    additionalLateCharges = "";
 		    proratePetRentDescription = "";
+		    proratedRentDateIsInMoveInMonthFlag = false;
 		    
 		    //Runner Class Late Fee Variables
 		 // All fields required for Late Fee Rule
@@ -724,7 +725,7 @@ public class PDFReader
 			//Prepayment charge
 			try
 			{
-				PDFReader.prepaymentCharge =String.valueOf(Double.parseDouble(PDFReader.monthlyRent.replace(",", "")) - Double.parseDouble(PDFReader.proratedRent.replace(",", ""))); 
+				PDFReader.prepaymentCharge =String.valueOf(RunnerClass.round((Double.parseDouble(PDFReader.monthlyRent.replace(",", "")) - Double.parseDouble(PDFReader.proratedRent.replace(",", ""))),2)); 
 			}
 			catch(Exception e)
 			{
