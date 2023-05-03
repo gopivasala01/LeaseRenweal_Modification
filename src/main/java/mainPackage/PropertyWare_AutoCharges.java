@@ -55,14 +55,15 @@ public class PropertyWare_AutoCharges
 					String autoChargeAmount = existingAutoChargeAmounts.get(k).getText();
 					//String autoChargeStartDate = startDates.get(k).getText();
 					//String autoChargeEndDate = endDates.get(k).getText();
-					try
+					
+					/*try
 					{
 						autoChargeAmount = autoChargeAmount.substring(1,autoChargeAmount.indexOf("."));
 						amount = amount.substring(0,amount.indexOf("."));
 					}
 					catch(Exception e)
-					{}
-					if(chargeCode.contains(autoChargeCodes.replaceAll(".", ""))&&autoChargeAmount.replaceAll("[^0-9]", "").equals(amount.replaceAll("[^0-9]", ""))||amount.trim().equals("0.00"))//&&(startDate.equals(autoChargeStartDate)||autoChargeEndDate.trim().equals("")))
+					{}*/
+					if(chargeCode.contains(autoChargeCodes.replaceAll(".", ""))&&autoChargeAmount.replaceAll("[^0-9]", "").contains(amount.replaceAll("[^0-9]", ""))||amount.trim().equals("0.00"))//&&(startDate.equals(autoChargeStartDate)||autoChargeEndDate.trim().equals("")))
 					{
 						availabilityCheck = true;
 						System.out.println(description+" already available");
