@@ -720,6 +720,29 @@ public class PDFReader
 					    
 					break;
 					
+				case "Pennsylvania":
+					String pdfFormatType_Pennsylvania = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_Pennsylvania);
+					if(pdfFormatType_Pennsylvania=="Format1")
+					{
+						if(PDFDataExtract.Pennsylvania_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_Pennsylvania=="Format2")
+					     {
+						if(PDFDataExtract.Pennsylvania_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
+					
 			}
 			
 			//Prepayment charge
