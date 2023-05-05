@@ -3,7 +3,7 @@ package PDFAppConfig;
 public class PDFFormatDecider 
 {
 	  public static String   format1 = "This is a legally binding Contract";	
-	
+	  public static String format1_2 = "The parties to this Single Family Residence";
 	
 		// Austin
 		public static String austin_Format1 = "The parties to this Lease are the owner of the Property".toLowerCase();

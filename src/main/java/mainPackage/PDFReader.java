@@ -884,7 +884,7 @@ public class PDFReader
 			text = text.replaceAll(System.lineSeparator(), " ");
 		    text = text.replaceAll(" +", " ");
 		    text = text.toLowerCase();
-		    if(text.contains(format1Text.toLowerCase())||text.contains(PDFFormatDecider.format1.toLowerCase()))
+		    if(text.contains(format1Text.toLowerCase())||text.contains(PDFFormatDecider.format1.toLowerCase())||text.contains(PDFFormatDecider.format1_2.toLowerCase()))
 		    {
 		    	RunnerClass.PDFFormatType = "Format1";
 		    	System.out.println("PDF Format Type  = "+RunnerClass.PDFFormatType);
