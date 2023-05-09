@@ -93,6 +93,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Pennsylvania":
 			   return "40010 - Rent Income";
+		   case "Lake Havasu":
+			   return "40010 - Rent Income";
 			      
 		   }
 		   return "";
@@ -154,6 +156,8 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "Pennsylvania":
 			   return "40230 - Pet Rent";
+		   case "Lake Havasu":
+			   return "40230 - Pet Rent";
 			   
 		   }
 		   return "";
@@ -213,6 +217,8 @@ public class AppConfig
 		   case "Ohio":
 			   return "43030 - Tenant Admin Fee";
 		   case "Pennsylvania":
+			   return "43030 - Tenant Admin Fee";
+		   case "Lake Havasu":
 			   return "43030 - Tenant Admin Fee";
 			   
 		   }
@@ -275,6 +281,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Pennsylvania":
 			   return "40010 - Rent Income";
+		   case "Lake Havasu":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -333,6 +341,8 @@ public class AppConfig
 		   case "Ohio":
 			   return "40230 - Pet Rent";
 		   case "Pennsylvania":
+			   return "40230 - Pet Rent";
+		   case "Lake Havasu":
 			   return "40230 - Pet Rent";
 		   }
 		   return "";
@@ -393,6 +403,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Pennsylvania":
 			   return "40010 - Rent Income";
+		   case "Lake Havasu":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -451,6 +463,8 @@ public class AppConfig
 		   case "Ohio":
 			   return "43060 - Filter Fee";
 		   case "Pennsylvania":
+			   return "43060 - Filter Fee";
+		   case "Lake Havasu":
 			   return "43060 - Filter Fee";
 		   }
 		   return "";
@@ -512,6 +526,8 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Pennsylvania":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Lake Havasu":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -571,6 +587,8 @@ public class AppConfig
 		   case "Ohio":
 			   return "20030 - Prepayments";
 		   case "Pennsylvania":
+			   return "20030 - Prepayments";
+		   case "Lake Havasu":
 			   return "20030 - Prepayments";
 		   }
 		   return "";
@@ -632,6 +650,8 @@ public class AppConfig
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Pennsylvania":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "Lake Havasu":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -690,6 +710,8 @@ public class AppConfig
 		   case "Ohio":
 			   return "20020 - Security Deposit";
 		   case "Pennsylvania":
+			   return "20020 - Security Deposit";
+		   case "Lake Havasu":
 			   return "20020 - Security Deposit";
 		   }
 		   return "";
@@ -750,6 +772,8 @@ public class AppConfig
 			   return "YES";
 		   case "Pennsylvania":
 			   return "YES";
+		   case "Lake Havasu":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -808,6 +832,8 @@ public class AppConfig
 		   case "Ohio":
 			   return "Yes";
 		   case "Pennsylvania":
+			   return "Yes";
+		   case "Lake Havasu":
 			   return "Yes";
 		   }
 		   return "";
@@ -869,6 +895,8 @@ public class AppConfig
 			   return "YES";
 		   case "Pennsylvania":
 			   return "YES";
+		   case "Lake Havasu":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -928,6 +956,8 @@ public class AppConfig
 		   case "Ohio":
 			   return "NO";
 		   case "Pennsylvania":
+			   return "No";
+		   case "Lake Havasu":
 			   return "No";
 		   }
 		   return "";

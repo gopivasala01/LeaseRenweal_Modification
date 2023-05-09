@@ -743,6 +743,29 @@ public class PDFReader
 					    
 					break;
 					
+				case "Lake Havasu":
+					String pdfFormatType_LakeHavasu = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_LakeHavasu);
+					if(pdfFormatType_LakeHavasu=="Format1")
+					{
+						if(PDFDataExtract.LakeHavasu_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_LakeHavasu=="Format2")
+					     {
+						if(PDFDataExtract.LakeHavasu_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
+					
 			}
 			
 			//Prepayment charge
@@ -872,6 +895,12 @@ public class PDFReader
 			case "Ohio":
 		        format1Text = PDFAppConfig.PDFFormatDecider.Ohio_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.Ohio_Format2;
+			case "Pennsylvania":
+		        format1Text = PDFAppConfig.PDFFormatDecider.Pennsylvania_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.Pennsylvania_Format2;
+			case "Lake Havasu":
+		        format1Text = PDFAppConfig.PDFFormatDecider.LakeHavasu_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.LakeHavasu_Format2;
 		        
 			}
 			

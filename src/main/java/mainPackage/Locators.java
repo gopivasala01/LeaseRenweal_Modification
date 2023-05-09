@@ -111,6 +111,8 @@ public class Locators
     public static By advancedSearch_buildingsSection = By.id("searchResultTable_buildings");
     public static By advancedSearch_buildingAddresses = By.xpath("//*[@id='searchResultTable_buildings']/following::table[1]/tbody/tr/td[2]/a");
     
+    public static By baseRent = By.xpath("//*[text()='Base Rent']/following::input[1]");
+    
     
    
 

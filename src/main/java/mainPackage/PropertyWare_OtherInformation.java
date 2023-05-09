@@ -25,7 +25,33 @@ public class PropertyWare_OtherInformation
 		{
 		//Other Fields
         Thread.sleep(2000);
-	
+	 
+        //Base Rent
+        try
+        {
+        	
+        	if(PDFReader.monthlyRent.equalsIgnoreCase("Error"))
+			{
+				RunnerClass.failedReason = RunnerClass.failedReason+",Intial Monthly Rent";
+				//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Intial Monthly Rent"+'\n');
+				//temp=1;
+			}
+			else
+			{
+			RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.baseRent)).build().perform();
+			//RunnerClass.driver.findElement(Locators.initialMonthlyRent).clear();
+			RunnerClass.driver.findElement(Locators.baseRent).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+			RunnerClass.driver.findElement(Locators.baseRent).sendKeys(PDFReader.monthlyRent);
+			
+			}
+		}
+		catch(Exception e)
+		{
+			DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Intial Monthly Rent"+'\n');
+			RunnerClass.failedReason = RunnerClass.failedReason+",Intial Monthly Rent";
+			//temp=1;
+		}
+        
 		// RC Field
 		try
 		{
@@ -94,7 +120,31 @@ public class PropertyWare_OtherInformation
 				RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.earlyTermFee2x)).build().perform();
 				RunnerClass.driver.findElement(Locators.earlyTermFee2x).click();
 				Select earlyTermination_List = new Select(RunnerClass.driver.findElement(Locators.earlyTermination_List));
+				try
+				{
 				earlyTermination_List.selectByVisibleText(AppConfig.getEarlyTermination(RunnerClass.company));
+				}
+				catch(Exception e)
+				{
+					try
+					{
+						earlyTermination_List.selectByVisibleText("YES");
+					}
+					catch(Exception e2)
+					{
+						try
+						{
+							earlyTermination_List.selectByVisibleText("Yes");
+						}
+						catch(Exception e3)
+						{
+							RunnerClass.failedReason = RunnerClass.failedReason+",Early Termination";
+							//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Early Termination"+'\n');
+							e2.printStackTrace();
+							//temp=1;
+						}
+					}
+				}
 				}
 			}
 			else
@@ -122,7 +172,31 @@ public class PropertyWare_OtherInformation
 					RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.earlyTermFee2x_2)).build().perform();
 					RunnerClass.driver.findElement(Locators.earlyTermFee2x_2).click();
 					Select earlyTermination_List = new Select(RunnerClass.driver.findElement(Locators.earlyTermination_List_2));
+					try
+					{
 					earlyTermination_List.selectByVisibleText(AppConfig.getEarlyTermination(RunnerClass.company));
+					}
+					catch(Exception ee)
+					{
+						try
+						{
+							earlyTermination_List.selectByVisibleText("YES");
+						}
+						catch(Exception e2)
+						{
+							try
+							{
+								earlyTermination_List.selectByVisibleText("Yes");
+							}
+							catch(Exception e3)
+							{
+								RunnerClass.failedReason = RunnerClass.failedReason+",Early Termination";
+								//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Early Termination"+'\n');
+								e2.printStackTrace();
+								//temp=1;
+							}
+						}
+					}
 					}
 				}
 				else
@@ -181,10 +255,22 @@ public class PropertyWare_OtherInformation
 			}
 			catch(Exception e)
 			{
-				RunnerClass.failedReason = RunnerClass.failedReason+",Enrolled in FilterEasy";
-				//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Enrolled in FilterEasy"+'\n');
-				//temp=1;
-				e.printStackTrace();
+				try
+				{
+				RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.enrolledInFilterEasy)).build().perform();
+				RunnerClass.driver.findElement(Locators.enrolledInFilterEasy).click();
+				Select enrolledInFilterEasyList = new Select(RunnerClass.driver.findElement(Locators.enrolledInFilterEasy_List));
+				if(PDFReader.HVACFilterFlag==false)
+				enrolledInFilterEasyList.selectByVisibleText("Yes");
+				else enrolledInFilterEasyList.selectByVisibleText("No");
+				}
+				catch(Exception e2)
+				{
+					RunnerClass.failedReason = RunnerClass.failedReason+",Enrolled in FilterEasy";
+					//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Enrolled in FilterEasy"+'\n');
+					//temp=1;
+					e.printStackTrace();
+				}
 			}
 			}
 		}
