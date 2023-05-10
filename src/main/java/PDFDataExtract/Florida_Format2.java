@@ -229,7 +229,18 @@ public class Florida_Format2
 		}
 	    }
 	    catch(Exception e) {}
-	    //Early Termination
+	    
+	  //Early Termination
+	    /*
+	    if(text.contains(PDFAppConfig.Florida_Format1.earlyTerminationAddendumAvailabilityCheck))
+	    {
+	    	PDFReader.earlyTermination = "two (2)";
+	    }
+	    else
+	    	PDFReader.earlyTermination = "Error";
+	    
+	    System.out.println("Early Termination = "+PDFReader.earlyTermination);
+	    */
 		try
 	    {
 	    	String[] earlyTerminationRaw = text.substring(text.indexOf(PDFAppConfig.Florida_Format2.earlyTermination_Prior)+PDFAppConfig.Florida_Format2.earlyTermination_Prior.length()).split(" ");
@@ -242,6 +253,7 @@ public class Florida_Format2
 	    	e.printStackTrace();
 	    }
 		System.out.println("Early Termination = "+PDFReader.earlyTermination);
+		
 	    // Checking Pet Addendum is available or not
 	    
 	    if(text.contains(PDFAppConfig.Florida_Format2.petAgreementAvailabilityCheck)==true)

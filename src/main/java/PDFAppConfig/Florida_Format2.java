@@ -94,6 +94,8 @@ public class Florida_Format2
 			+ "and late charges are paid in full. ";
 	public static String AB_additionalLateChargesLimit_Prior = "payment may not exceed more than";
 	public static String AB_additionalLateChargesLimit_After = "B. For the purposes of paying rent and late charges, the mailbox is not the agent for receipt for Landlord and the";
+	
+	public static String earlyTerminationAddendumAvailabilityCheck = "Early Termination Fee/Liquidated Damages Addendum";
 
 	
 

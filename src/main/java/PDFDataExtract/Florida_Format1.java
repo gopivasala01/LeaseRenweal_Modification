@@ -211,6 +211,17 @@ public class Florida_Format1
 		    }
 		    System.out.println("Air Filter Fee = "+PDFReader.airFilterFee.trim());
 	    }
+	    //Early Termination
+	    /*
+	    if(text.contains(PDFAppConfig.Florida_Format1.earlyTerminationAddendumAvailabilityCheck))
+	    {
+	    	PDFReader.earlyTermination = "two (2)";
+	    }
+	    else
+	    	PDFReader.earlyTermination = "Error";
+	    
+	    System.out.println("Early Termination  = "+PDFReader.earlyTermination.trim());
+	    */
 	    try
 	    {
 	    	String[] earlyTerminationRaw = text.substring(text.indexOf(PDFAppConfig.Florida_Format1.AB_earlyTerminationFee_Prior)+PDFAppConfig.Florida_Format1.AB_earlyTerminationFee_Prior.length()).split(" ");
@@ -223,6 +234,7 @@ public class Florida_Format1
 	    	e.printStackTrace();
 	    }
 	    System.out.println("Early Termination  = "+PDFReader.earlyTermination.trim());
+	    
 	    try
 	    {
 	    	

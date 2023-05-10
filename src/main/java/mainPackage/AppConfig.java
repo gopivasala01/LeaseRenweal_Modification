@@ -637,7 +637,7 @@ public class AppConfig
 		   case "Georgia":
 			   return "43070 - Resident Benefit Package Fee";
 		   case "OKC":
-			   return "43070 - Resident Benefits Package";
+			   return "43070 - Resident Benefit Package Fee";
 		   case "South Carolina":
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Florida":
