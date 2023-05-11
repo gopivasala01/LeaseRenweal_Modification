@@ -95,6 +95,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Lake Havasu":
 			   return "40010 - Rent Income";
+		   case "Saint Louis":
+			   return "40010 - Rent Income";
 			      
 		   }
 		   return "";
@@ -158,6 +160,8 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "Lake Havasu":
 			   return "40230 - Pet Rent";
+		   case "Saint Louis":
+			   return "40230 - Pet Rent";
 			   
 		   }
 		   return "";
@@ -219,6 +223,8 @@ public class AppConfig
 		   case "Pennsylvania":
 			   return "43030 - Tenant Admin Fee";
 		   case "Lake Havasu":
+			   return "43030 - Tenant Admin Fee";
+		   case "Saint Louis":
 			   return "43030 - Tenant Admin Fee";
 			   
 		   }
@@ -283,6 +289,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Lake Havasu":
 			   return "40010 - Rent Income";
+		   case "Saint Louis":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -343,6 +351,8 @@ public class AppConfig
 		   case "Pennsylvania":
 			   return "40230 - Pet Rent";
 		   case "Lake Havasu":
+			   return "40230 - Pet Rent";
+		   case "Saint Louis":
 			   return "40230 - Pet Rent";
 		   }
 		   return "";
@@ -405,6 +415,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Lake Havasu":
 			   return "40010 - Rent Income";
+		   case "Saint Louis":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -465,6 +477,8 @@ public class AppConfig
 		   case "Pennsylvania":
 			   return "43060 - Filter Fee";
 		   case "Lake Havasu":
+			   return "43060 - Filter Fee";
+		   case "Saint Louis":
 			   return "43060 - Filter Fee";
 		   }
 		   return "";
@@ -528,6 +542,8 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Lake Havasu":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Saint Louis":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -589,6 +605,8 @@ public class AppConfig
 		   case "Pennsylvania":
 			   return "20030 - Prepayments";
 		   case "Lake Havasu":
+			   return "20030 - Prepayments";
+		   case "Saint Louis":
 			   return "20030 - Prepayments";
 		   }
 		   return "";
@@ -652,6 +670,8 @@ public class AppConfig
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Lake Havasu":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "Saint Louis":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -712,6 +732,8 @@ public class AppConfig
 		   case "Pennsylvania":
 			   return "20020 - Security Deposit";
 		   case "Lake Havasu":
+			   return "20020 - Security Deposit";
+		   case "Saint Louis":
 			   return "20020 - Security Deposit";
 		   }
 		   return "";
@@ -774,6 +796,8 @@ public class AppConfig
 			   return "YES";
 		   case "Lake Havasu":
 			   return "YES";
+		   case "Saint Louis":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -834,6 +858,8 @@ public class AppConfig
 		   case "Pennsylvania":
 			   return "Yes";
 		   case "Lake Havasu":
+			   return "Yes";
+		   case "Saint Louis":
 			   return "Yes";
 		   }
 		   return "";
@@ -897,6 +923,8 @@ public class AppConfig
 			   return "YES";
 		   case "Lake Havasu":
 			   return "Yes";
+		   case "Saint Louis":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -959,6 +987,8 @@ public class AppConfig
 			   return "No";
 		   case "Lake Havasu":
 			   return "No";
+		   case "Saint Louis":
+			   return "NO";
 		   }
 		   return "";
 	   }

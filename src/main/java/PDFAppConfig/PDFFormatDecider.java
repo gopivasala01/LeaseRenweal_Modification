@@ -113,5 +113,9 @@ public class PDFFormatDecider
 		//Lake Havasu
 		public static String LakeHavasu_Format1 = "The parties to this Lease are".toLowerCase();
 		public static String LakeHavasu_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT".toLowerCase();
+		
+		//Saint Louis
+		public static String SaintLouis_Format1 = "The parties to this Lease are".toLowerCase();
+		public static String SaintLouis_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT".toLowerCase();
 
 }

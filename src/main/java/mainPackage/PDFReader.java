@@ -766,6 +766,29 @@ public class PDFReader
 					    
 					break;
 					
+				case "Saint Louis":
+					String pdfFormatType_SaintLouis = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_SaintLouis);
+					if(pdfFormatType_SaintLouis=="Format1")
+					{
+						if(PDFDataExtract.SaintLouis_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_SaintLouis=="Format2")
+					     {
+						if(PDFDataExtract.SaintLouis_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
+					
 			}
 			
 			//Prepayment charge
@@ -901,6 +924,9 @@ public class PDFReader
 			case "Lake Havasu":
 		        format1Text = PDFAppConfig.PDFFormatDecider.LakeHavasu_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.LakeHavasu_Format2;
+			case "SaintLouis":
+		        format1Text = PDFAppConfig.PDFFormatDecider.SaintLouis_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.SaintLouis_Format2;
 		        
 			}
 			
