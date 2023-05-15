@@ -234,6 +234,7 @@ public class PropertyWare
 	
 	public static boolean downloadLeaseAgreement(String building, String ownerName) throws Exception
 	{
+		PropertyWare.intermittentPopUp();
 		PDFReader.RCDetails = "";
 		RunnerClass.driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(5));
@@ -481,12 +482,24 @@ public class PropertyWare
 		//Pop up after clicking lease name
 				try
 				{
-					RunnerClass.driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-			        RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(5));
+					RunnerClass.driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+			        RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(3));
+			        try
+			        {
 					if(RunnerClass.driver.findElement(Locators.popUpAfterClickingLeaseName).isDisplayed())
 					{
 						RunnerClass.driver.findElement(Locators.popupClose).click();
 					}
+			        }
+			        catch(Exception e) {}
+			        try
+			        {
+					if(RunnerClass.driver.findElement(Locators.scheduledMaintanancePopUp).isDisplayed())
+					{
+						RunnerClass.driver.findElement(Locators.scheduledMaintanancePopUpOkButton).click();
+					}
+			        }
+			        catch(Exception e) {}
 					RunnerClass.driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 			        RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(5));
 				}

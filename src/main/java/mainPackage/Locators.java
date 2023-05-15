@@ -18,6 +18,8 @@ public class Locators
     public static By leasesTab = By.xpath("//*[@class='tabbedSection']/a[4]");	
     public static By leasesTab2 = By.xpath("(//a[text()='Leases'])[2]");
     public static By popUpAfterClickingLeaseName = By.xpath("//*[@id='viewStickyNoteForm']");
+    public static By scheduledMaintanancePopUp = By.xpath("//*[text()='Scheduled Maintenance Notification']");
+    public static By scheduledMaintanancePopUpOkButton = By.id("alertDoNotShow");
     public static By RCDetails = By.xpath("//*[@id='customFieldGroupTBody1.ManagementTeam']/tr[2]/td[2]/div");
     public static By APMField = By.xpath("//*[text()='APM']/following::input[1]");
     public static By RC = By.xpath("//*[text()='RC']/following::input[1]");
