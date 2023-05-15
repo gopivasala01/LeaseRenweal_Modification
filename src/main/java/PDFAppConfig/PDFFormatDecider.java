@@ -117,5 +117,9 @@ public class PDFFormatDecider
 		//Saint Louis
 		public static String SaintLouis_Format1 = "The parties to this Lease are".toLowerCase();
 		public static String SaintLouis_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT".toLowerCase();
+		
+		//Maryland
+		public static String Maryland_Format1 = "The parties to this Lease are".toLowerCase();
+		public static String Maryland_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT".toLowerCase();
 
 }

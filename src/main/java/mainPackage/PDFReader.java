@@ -789,6 +789,29 @@ public class PDFReader
 					    
 					break;
 					
+				case "Maryland":
+					String pdfFormatType_Maryland = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_Maryland);
+					if(pdfFormatType_Maryland=="Format1")
+					{
+						if(PDFDataExtract.Maryland_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_Maryland=="Format2")
+					     {
+						if(PDFDataExtract.Maryland_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
+					
 			}
 			
 			//Prepayment charge
@@ -927,6 +950,9 @@ public class PDFReader
 			case "SaintLouis":
 		        format1Text = PDFAppConfig.PDFFormatDecider.SaintLouis_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.SaintLouis_Format2;
+			case "Maryland":
+		        format1Text = PDFAppConfig.PDFFormatDecider.Maryland_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.Maryland_Format2;
 		        
 			}
 			
