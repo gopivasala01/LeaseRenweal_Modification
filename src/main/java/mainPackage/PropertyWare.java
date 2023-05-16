@@ -500,6 +500,12 @@ public class PropertyWare
 					}
 			        }
 			        catch(Exception e) {}
+			        try
+			        {
+			        if(RunnerClass.driver.findElement(Locators.scheduledMaintanancePopUpOkButton).isDisplayed())
+			        	RunnerClass.driver.findElement(Locators.scheduledMaintanancePopUpOkButton).click();
+			        }
+			        catch(Exception e) {}
 					RunnerClass.driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 			        RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(5));
 				}

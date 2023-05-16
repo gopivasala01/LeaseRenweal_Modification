@@ -100,6 +100,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Maryland":
 			   return "40010 - Rent Income";
+		   case "Virginia":
+			   return "40010 - Rent Income";
 			      
 		   }
 		   return "";
@@ -167,6 +169,8 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "Maryland":
 			   return "40230 - Pet Rent";
+		   case "Virginia":
+			   return "40230 - Pet Rent";
 			   
 		   }
 		   return "";
@@ -232,6 +236,8 @@ public class AppConfig
 		   case "Saint Louis":
 			   return "43030 - Tenant Admin Fee";
 		   case "Maryland":
+			   return "43030 - Tenant Admin Fee";
+		   case "Virginia":
 			   return "43030 - Tenant Admin Fee";
 			   
 		   }
@@ -300,6 +306,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Maryland":
 			   return "40010 - Rent Income";
+		   case "Virginia":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -364,6 +372,8 @@ public class AppConfig
 		   case "Saint Louis":
 			   return "40230 - Pet Rent";
 		   case "Maryland":
+			   return "40230 - Pet Rent";
+		   case "Virginia":
 			   return "40230 - Pet Rent";
 		   }
 		   return "";
@@ -430,6 +440,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Maryland":
 			   return "40010 - Rent Income";
+		   case "Virginia":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -494,6 +506,8 @@ public class AppConfig
 		   case "Saint Louis":
 			   return "43060 - Filter Fee";
 		   case "Maryland":
+			   return "43060 - Filter Fee";
+		   case "Virginia":
 			   return "43060 - Filter Fee";
 		   }
 		   return "";
@@ -561,6 +575,8 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Maryland":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Virginia":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -626,6 +642,8 @@ public class AppConfig
 		   case "Saint Louis":
 			   return "20030 - Prepayments";
 		   case "Maryland":
+			   return "20030 - Prepayments";
+		   case "Virginia":
 			   return "20030 - Prepayments";
 		   }
 		   return "";
@@ -693,6 +711,8 @@ public class AppConfig
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Maryland":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "Virginia":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -757,6 +777,8 @@ public class AppConfig
 		   case "Saint Louis":
 			   return "20020 - Security Deposit";
 		   case "Maryland":
+			   return "20020 - Security Deposit";
+		   case "Virginia":
 			   return "20020 - Security Deposit";
 		   }
 		   return "";
@@ -823,6 +845,8 @@ public class AppConfig
 			   return "YES";
 		   case "Maryland":
 			   return "YES";
+		   case "Virginia":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -887,6 +911,8 @@ public class AppConfig
 		   case "Saint Louis":
 			   return "Yes";
 		   case "Maryland":
+			   return "Yes";
+		   case "Virginia":
 			   return "Yes";
 		   }
 		   return "";
@@ -954,6 +980,8 @@ public class AppConfig
 			   return "Yes";
 		   case "Maryland":
 			   return "Yes";
+		   case "Virginia":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -1019,6 +1047,8 @@ public class AppConfig
 		   case "Saint Louis":
 			   return "NO";
 		   case "Maryland":
+			   return "NO";
+		   case "Virginia":
 			   return "NO";
 		   }
 		   return "";
