@@ -90,7 +90,7 @@ public class PropertyWare_updateValues
 			try
 			{
 			String query =null;
-			for(int i=1;i<=12;i++)
+			for(int i=1;i<=14;i++)
 			{
 				switch(i)
 				{
@@ -130,6 +130,11 @@ public class PropertyWare_updateValues
 				case 12: 
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getPrepaymentChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.monthlyRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=12";
 					break;	
+				case 13: 
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getResidentUtilityBillChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.prorateRUBS+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=13";
+					break;
+				case 14: 
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getResidentUtilityBillChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.RUBS+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=14";
 				}
 			}
 			DataBase.updateTable(query);
@@ -160,6 +165,7 @@ public class PropertyWare_updateValues
 					prepaymentChargeOrMonthlyRent = "2";
 					PDFReader.proratedPetRent = PDFReader.petRent;
 					PDFReader.proratePetRentDescription = "Pet Rent";
+					PDFReader.prorateRUBS = PDFReader.RUBS;
 				}
 				else
 				{
@@ -170,7 +176,12 @@ public class PropertyWare_updateValues
 			}
 			else 
 				prepaymentChargeOrMonthlyRent = "9";
-			
+			/*
+			//If Market is Boise, Utah, Idaho falls
+			if(RunnerClass.company.equals("Boise"))
+			PropertyWare_updateValues.specificMarketMoveInAndAutoChargesAssignment(moveInCharges, autoCharges, prepaymentChargeOrMonthlyRent);
+			else
+			{*/
 			if(RunnerClass.portfolioType=="MCH")
 			{
 				
@@ -182,6 +193,191 @@ public class PropertyWare_updateValues
 						if(PDFReader.incrementRentFlag == true)
 						autoCharges = "2,11,10";
 						else autoCharges = "2,11";
+					}
+					else
+					{
+					moveInCharges = "1,"+prepaymentChargeOrMonthlyRent+",3";
+					if(PDFReader.incrementRentFlag == true)
+					autoCharges = "2,7,10";
+					else autoCharges = "2,7";
+					}
+					//DataBase.assignChargeCodes(moveInCharges, autoCharges);	
+				}
+				else
+				{
+					if(PDFReader.petFlag==true&&PDFReader.petSecurityDepositFlag==false)
+					{
+						if(PDFReader.residentBenefitsPackageAvailabilityCheck==true)
+						{
+						moveInCharges = "1,"+prepaymentChargeOrMonthlyRent+",3,4,6,11";
+						if(PDFReader.incrementRentFlag == true)
+						autoCharges = "2,11,8,10";
+						else autoCharges = "2,11,8";
+						}
+						else
+						{
+							moveInCharges = "1,"+prepaymentChargeOrMonthlyRent+",3,4,6";
+							if(PDFReader.incrementRentFlag == true)
+							autoCharges = "2,7,8,10";
+							else autoCharges = "2,7,8";
+						}
+						//DataBase.assignChargeCodes(moveInCharges, autoCharges);
+					}
+				    else
+				    {
+						if(PDFReader.petFlag==true&&PDFReader.petSecurityDepositFlag==true)
+						{
+							if(PDFReader.residentBenefitsPackageAvailabilityCheck==true)
+							{
+								moveInCharges = "1,"+prepaymentChargeOrMonthlyRent+",3,4,5,11";
+								if(PDFReader.incrementRentFlag == true)
+								autoCharges = "2,11,8,10";
+								else autoCharges = "2,11,8";
+							}
+							else
+							{
+							moveInCharges = "1,"+prepaymentChargeOrMonthlyRent+",3,4,5";
+							if(PDFReader.incrementRentFlag == true)
+							autoCharges = "2,7,8,10";
+							else autoCharges = "2,7,8";
+							}
+							//DataBase.assignChargeCodes(moveInCharges, autoCharges);
+						}
+				    }
+				}
+				
+			}
+			//Other Portfolios
+			else 
+			{
+				
+				if(RunnerClass.portfolioType=="Others"&&PDFReader.petFlag==false)
+				{
+					if(PDFReader.proratedRentDateIsInMoveInMonthFlag == true)
+					{
+						if(PDFReader.residentBenefitsPackageAvailabilityCheck==true)
+						{
+							moveInCharges = "1,2,3,11";
+							autoCharges = "2,11";	
+						}
+						else
+						{
+						moveInCharges = "1,2,3";
+						autoCharges = "2,7";
+						}
+					}
+					else
+					{
+						if(PDFReader.residentBenefitsPackageAvailabilityCheck==true)
+						{
+					     moveInCharges = "2,3,11";
+					     autoCharges = "1,2,11";
+						}
+						else
+						{
+							moveInCharges = "2,3";
+						     autoCharges = "1,2,7";
+						}
+					}
+					//DataBase.assignChargeCodes(moveInCharges, autoCharges);
+					//DataBase.assignChargeCodes(moveInCharges, autoCharges);
+				}
+				else
+				{
+					if(PDFReader.petFlag==true&&PDFReader.petSecurityDepositFlag==false)
+					{
+						if(PDFReader.proratedRentDateIsInMoveInMonthFlag == true)
+						{
+							if(PDFReader.residentBenefitsPackageAvailabilityCheck==true)
+							{
+								moveInCharges = "1,2,3,4,6,11";
+								autoCharges = "2,11,8";
+							}
+							else
+							{
+							moveInCharges = "1,2,3,4,6";
+							autoCharges = "2,7,8";
+							}
+						}
+						else
+						{
+							if(PDFReader.residentBenefitsPackageAvailabilityCheck==true)
+							{
+								moveInCharges = "2,3,4,6,11";
+								autoCharges = "1,2,11,8";
+							}
+							else
+							{
+						      moveInCharges = "2,3,4,6";
+						      autoCharges = "1,2,7,8";
+							}
+						}
+						//DataBase.assignChargeCodes(moveInCharges, autoCharges);
+					}
+					else//(PDFReader.portfolioType=="Others"&&PDFReader.petFlag==true&&PDFReader.petSecurityDepositFlag==true)
+					{
+						if(PDFReader.residentBenefitsPackageAvailabilityCheck==true)
+						{
+							moveInCharges = "2,3,4,5,11";
+							autoCharges = "1,2,11,8";
+						}
+						else
+						{
+						moveInCharges = "2,3,4,5";
+						autoCharges = "1,2,7,8";
+						}
+						//DataBase.assignChargeCodes(moveInCharges, autoCharges);
+					}
+				}
+				
+			}
+			
+			//If Company is Boise
+			if(RunnerClass.company.equals("Boise")&&PDFReader.residentUtilityBillFlag==true)
+			{
+				moveInCharges = moveInCharges+",13";
+				autoCharges = autoCharges+",14";
+			}
+			DataBase.assignChargeCodes(moveInCharges, autoCharges);
+		}
+		
+		public static boolean checkProratedRentDateIsInMoveInMonth()
+		{
+			try
+			{
+			if(PDFReader.proratedRentDate.equalsIgnoreCase("n/a")||PDFReader.proratedRentDate.equalsIgnoreCase("na"))
+				return true;
+			if(PDFReader.proratedRentDate==null||PDFReader.proratedRentDate.equalsIgnoreCase("n/a")||PDFReader.proratedRentDate=="Error")
+				return false;
+			String proratedDate = RunnerClass.convertDate(PDFReader.proratedRentDate);
+			String proratedMonth = proratedDate.split("/")[0];
+			String moveInDate = RunnerClass.convertDate(PDFReader.commencementDate);
+			String moveInMonth = moveInDate.split("/")[0];
+			if(proratedMonth.equalsIgnoreCase(moveInMonth)||Double.parseDouble(PDFReader.proratedRent)<=200.00)
+			{
+				return true;
+			}
+			else return false;
+			}
+			catch(Exception e)
+			{
+				return false;
+			}
+		}
+		
+		public static void specificMarketMoveInAndAutoChargesAssignment(String moveInCharges,String autoCharges,String prepaymentChargeOrMonthlyRent)
+		{
+			if(RunnerClass.portfolioType=="MCH")
+			{
+				
+				if(PDFReader.petFlag==false)
+				{
+					if(PDFReader.residentBenefitsPackageAvailabilityCheck==true)
+					{
+						moveInCharges = "1,"+prepaymentChargeOrMonthlyRent+",3,11,13";
+						if(PDFReader.incrementRentFlag == true)
+						autoCharges = "2,11,10,14";
+						else autoCharges = "2,11,14";
 					}
 					else
 					{
@@ -319,31 +515,6 @@ public class PropertyWare_updateValues
 					}
 				}
 				
-			}
-			
-		}
-		
-		public static boolean checkProratedRentDateIsInMoveInMonth()
-		{
-			try
-			{
-			if(PDFReader.proratedRentDate.equalsIgnoreCase("n/a")||PDFReader.proratedRentDate.equalsIgnoreCase("na"))
-				return true;
-			if(PDFReader.proratedRentDate==null||PDFReader.proratedRentDate.equalsIgnoreCase("n/a")||PDFReader.proratedRentDate=="Error")
-				return false;
-			String proratedDate = RunnerClass.convertDate(PDFReader.proratedRentDate);
-			String proratedMonth = proratedDate.split("/")[0];
-			String moveInDate = RunnerClass.convertDate(PDFReader.commencementDate);
-			String moveInMonth = moveInDate.split("/")[0];
-			if(proratedMonth.equalsIgnoreCase(moveInMonth)||Double.parseDouble(PDFReader.proratedRent)<=200.00)
-			{
-				return true;
-			}
-			else return false;
-			}
-			catch(Exception e)
-			{
-				return false;
 			}
 		}
 		

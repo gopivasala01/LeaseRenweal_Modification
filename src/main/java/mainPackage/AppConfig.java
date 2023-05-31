@@ -102,6 +102,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Virginia":
 			   return "40010 - Rent Income";
+		   case "Boise":
+			   return "40010 - Rent Income";
 			      
 		   }
 		   return "";
@@ -171,6 +173,8 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "Virginia":
 			   return "40230 - Pet Rent";
+		   case "Boise":
+			   return "40230 - Pet Rent";
 			   
 		   }
 		   return "";
@@ -238,6 +242,8 @@ public class AppConfig
 		   case "Maryland":
 			   return "43030 - Tenant Admin Fee";
 		   case "Virginia":
+			   return "43030 - Tenant Admin Fee";
+		   case "Boise":
 			   return "43030 - Tenant Admin Fee";
 			   
 		   }
@@ -308,6 +314,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Virginia":
 			   return "40010 - Rent Income";
+		   case "Boise":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -374,6 +382,8 @@ public class AppConfig
 		   case "Maryland":
 			   return "40230 - Pet Rent";
 		   case "Virginia":
+			   return "40230 - Pet Rent";
+		   case "Boise":
 			   return "40230 - Pet Rent";
 		   }
 		   return "";
@@ -442,6 +452,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Virginia":
 			   return "40010 - Rent Income";
+		   case "Boise":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -508,6 +520,8 @@ public class AppConfig
 		   case "Maryland":
 			   return "43060 - Filter Fee";
 		   case "Virginia":
+			   return "43060 - Filter Fee";
+		   case "Boise":
 			   return "43060 - Filter Fee";
 		   }
 		   return "";
@@ -577,6 +591,8 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Virginia":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Boise":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -644,6 +660,8 @@ public class AppConfig
 		   case "Maryland":
 			   return "20030 - Prepayments";
 		   case "Virginia":
+			   return "20030 - Prepayments";
+		   case "Boise":
 			   return "20030 - Prepayments";
 		   }
 		   return "";
@@ -713,6 +731,8 @@ public class AppConfig
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Virginia":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "Boise":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -780,9 +800,81 @@ public class AppConfig
 			   return "20020 - Security Deposit";
 		   case "Virginia":
 			   return "20020 - Security Deposit";
+		   case "Boise":
+			   return "20020 - Security Deposit";
 		   }
 		   return "";
 	   }
+	   public static String getResidentUtilityBillChargeCode(String company)
+	   {
+		   switch(company)
+		   {
+		   case "Austin":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Alabama":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "North Carolina":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Chattanooga":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "California":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "California PFW":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Chicago PFW":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Colorado Springs":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Kansas City":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Houston":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Maine":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Savannah":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Arkansas":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Dallas/Fort Worth":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Indiana":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Little Rock":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "San Antonio":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Tulsa":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Georgia":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "OKC":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "South Carolina":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Florida":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Tennessee":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "New Mexico":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Ohio":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Pennsylvania":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Lake Havasu":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Saint Louis":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Maryland":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Virginia":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Boise":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   }
+		return "";
+	   }
+	   
 	   public static String getEnrolledINRBPForPMUse(String company)
 	   {
 		   switch(company)
@@ -846,6 +938,8 @@ public class AppConfig
 		   case "Maryland":
 			   return "YES";
 		   case "Virginia":
+			   return "YES";
+		   case "Boise":
 			   return "YES";
 		   }
 		   return "";
@@ -913,6 +1007,8 @@ public class AppConfig
 		   case "Maryland":
 			   return "Yes";
 		   case "Virginia":
+			   return "Yes";
+		   case "Boise":
 			   return "Yes";
 		   }
 		   return "";
@@ -982,6 +1078,8 @@ public class AppConfig
 			   return "Yes";
 		   case "Virginia":
 			   return "Yes";
+		   case "Boise":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -1049,6 +1147,8 @@ public class AppConfig
 		   case "Maryland":
 			   return "NO";
 		   case "Virginia":
+			   return "NO";
+		   case "Boise":
 			   return "NO";
 		   }
 		   return "";

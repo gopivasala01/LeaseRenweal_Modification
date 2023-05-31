@@ -32,7 +32,7 @@ public class PropertyWare_OtherInformation
         	
         	if(PDFReader.monthlyRent.equalsIgnoreCase("Error"))
 			{
-				RunnerClass.failedReason = RunnerClass.failedReason+",Intial Monthly Rent";
+				RunnerClass.failedReason = RunnerClass.failedReason+",Base Rent";
 				//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Intial Monthly Rent"+'\n');
 				//temp=1;
 			}
@@ -47,8 +47,8 @@ public class PropertyWare_OtherInformation
 		}
 		catch(Exception e)
 		{
-			DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Intial Monthly Rent"+'\n');
-			RunnerClass.failedReason = RunnerClass.failedReason+",Intial Monthly Rent";
+			DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Base Rent"+'\n');
+			RunnerClass.failedReason = RunnerClass.failedReason+",Base Rent";
 			//temp=1;
 		}
         
@@ -476,7 +476,7 @@ public class PropertyWare_OtherInformation
 			}
 			catch(Exception e)
 			{
-				DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Intial Monthly Rent"+'\n');
+				DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Intial Pet Monthly Rent"+'\n');
 				RunnerClass.failedReason = RunnerClass.failedReason+",Intial Pet Rent";
 				//temp=1;
 			}
@@ -501,7 +501,7 @@ public class PropertyWare_OtherInformation
 			}
 			catch(Exception e)
 			{
-				DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Intial Monthly Rent"+'\n');
+				DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Pet Rent Amount"+'\n');
 				RunnerClass.failedReason = RunnerClass.failedReason+",Pet Rent";
 				//temp=1;
 			}
@@ -653,7 +653,7 @@ public class PropertyWare_OtherInformation
 				}
 				catch(Exception e)
 				{
-					DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Intial Monthly Rent"+'\n');
+					DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Current Monthly Rent"+'\n');
 					RunnerClass.failedReason = RunnerClass.failedReason+",Current Monthly Rent";
 					//temp=1;
 				}

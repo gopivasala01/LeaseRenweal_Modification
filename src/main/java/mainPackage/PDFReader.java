@@ -72,6 +72,9 @@ public class PDFReader
 	public static String additionalLateChargesLimit = "";
 	public static String additionalLateCharges = "";
 	public static String proratePetRentDescription = "";
+	public static boolean residentUtilityBillFlag = false; 
+	public static String prorateRUBS = "";
+	public static String RUBS = "";
 	
 	//Other Fields
 	public static String RCDetails = "";
@@ -117,6 +120,10 @@ public class PDFReader
 		    additionalLateCharges = "";
 		    proratePetRentDescription = "";
 		    proratedRentDateIsInMoveInMonthFlag = false;
+		    residentUtilityBillFlag = false; 
+		    concessionAddendumFlag = false;
+		    prorateRUBS = "";
+			RUBS = "";
 		    
 		    //Runner Class Late Fee Variables
 		 // All fields required for Late Fee Rule
@@ -835,6 +842,29 @@ public class PDFReader
 					    
 					break;
 					
+				case "Boise":
+					String pdfFormatType_Boise = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_Boise);
+					if(pdfFormatType_Boise=="Format1")
+					{
+						if(PDFDataExtract.Boise_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_Boise=="Format2")
+					     {
+						if(PDFDataExtract.Boise_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
+					
 			}
 			
 			//Prepayment charge
@@ -979,6 +1009,9 @@ public class PDFReader
 			case "Virginia":
 		        format1Text = PDFAppConfig.PDFFormatDecider.Virginia_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.Virginia_Format2;
+			case "Boise":
+		        format1Text = PDFAppConfig.PDFFormatDecider.Boise_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.Boise_Format2;
 			}
 			
 			File file = RunnerClass.getLastModified();
