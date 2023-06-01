@@ -468,7 +468,6 @@ public class PropertyWare_OtherInformation
 				else
 				{
 				RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.initialPetRentAmount)).build().perform();
-				//RunnerClass.driver.findElement(Locators.initialMonthlyRent).clear();
 				RunnerClass.driver.findElement(Locators.initialPetRentAmount).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
 				RunnerClass.driver.findElement(Locators.initialPetRentAmount).sendKeys(PDFReader.petRent);
 				
@@ -493,7 +492,6 @@ public class PropertyWare_OtherInformation
 				else
 				{
 				RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.petRentAmount)).build().perform();
-				//RunnerClass.driver.findElement(Locators.initialMonthlyRent).clear();
 				RunnerClass.driver.findElement(Locators.petRentAmount).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
 				RunnerClass.driver.findElement(Locators.petRentAmount).sendKeys(PDFReader.petRent);
 				
@@ -619,10 +617,18 @@ public class PropertyWare_OtherInformation
 			}
 			else
 			{
-			RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.initialMonthlyRent)).build().perform();
-			//RunnerClass.driver.findElement(Locators.initialMonthlyRent).clear();
-			RunnerClass.driver.findElement(Locators.initialMonthlyRent).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
-			RunnerClass.driver.findElement(Locators.initialMonthlyRent).sendKeys(PDFReader.monthlyRent);
+				if(RunnerClass.company.equals("Boise"))
+				{
+					RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.monthlyRentAmount)).build().perform();
+					RunnerClass.driver.findElement(Locators.monthlyRentAmount).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+					RunnerClass.driver.findElement(Locators.monthlyRentAmount).sendKeys(PDFReader.monthlyRent);
+				}
+				else
+				{
+			        RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.initialMonthlyRent)).build().perform();
+			        RunnerClass.driver.findElement(Locators.initialMonthlyRent).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+			        RunnerClass.driver.findElement(Locators.initialMonthlyRent).sendKeys(PDFReader.monthlyRent);
+				}
 			
 			}
 		}

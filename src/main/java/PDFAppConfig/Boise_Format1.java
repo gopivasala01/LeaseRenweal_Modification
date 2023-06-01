@@ -168,7 +168,7 @@ public class Boise_Format1
 		
 		public static String concessionAddendumText ="This is a CONCESSION ADDENDUM to your Lease Agreement";
 		
-		public static String residentUtilityBillTextCheck = "Landlord maintains Trash"; 
+		public static String residentUtilityBillTextCheck = "SPECIAL PROVISIONS:"; 
 		public static String prorateRUBS_Prior = "Prorated fee of $";
 		public static String prorateRUBS_Prior2 = "RUBS fee of $";
 		public static String RUBS_Prior = "charge Tenant a flat fee of $";

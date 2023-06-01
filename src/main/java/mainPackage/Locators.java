@@ -100,6 +100,7 @@ public class Locators
     public static By petRentAmount = By.xpath("//*[text()='Pet Rent Amount']/following::input[1]");
     public static By currentMonthlyRent = By.xpath("//*[text()='Current Monthly Rent']/following::input[1]");
     public static By somethingWrongInSavingCharge = By.xpath("//*[text()='You must correct the following:']");
+    public static By monthlyRentAmount = By.xpath("//*[text()='Monthly Rent Amount']/following::input[1]");
     
     public static By lateFeeType = By.name("entity.lateFee.feeType");
     public static By flatFee = By.xpath("//*[text()='Flat Fee']/following::input[1]");
