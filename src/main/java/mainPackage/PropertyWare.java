@@ -16,6 +16,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -291,11 +292,12 @@ public class PropertyWare
         RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(5));
 		try
 		{
+			RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(By.partialLinkText(ownerName.trim()))).build().perform();
 		RunnerClass.driver.findElement(By.partialLinkText(ownerName.trim())).click();
 		}
 		catch(Exception e)
 		{
-			
+			e.printStackTrace();
 			System.out.println("Unable to Click Lease Owner Name");
 		    RunnerClass.failedReason =  RunnerClass.failedReason+","+  "Unable to Click Lease Onwer Name";
 			return false;
@@ -363,6 +365,53 @@ public class PropertyWare
 	
 	public static boolean selectBuilding(String company,String building)
 	{
+		try
+		{
+			//Get BuildingEntityID from LeaseFact_Dashboard table
+			String buildingEntityID = DataBase.getBuildingEntityID();
+			if(buildingEntityID.equals("Error"))
+			{
+				System.out.println("Building Not Found");
+			    RunnerClass.failedReason =  RunnerClass.failedReason+","+ "Building Not Found";
+				return false;
+			}
+			else
+			{
+			RunnerClass.driver.manage().timeouts().implicitlyWait(100,TimeUnit.SECONDS);
+	        RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(100));
+	        RunnerClass.driver.navigate().refresh();
+	        PropertyWare.intermittentPopUp();
+	        //if(PropertyWare.checkIfBuildingIsDeactivated()==true)
+	        	//return false;
+	        RunnerClass.driver.findElement(Locators.marketDropdown).click();
+	        String marketName = "HomeRiver Group - "+RunnerClass.company;
+	        Select marketDropdownList = new Select(RunnerClass.driver.findElement(Locators.marketDropdown));
+	        marketDropdownList.selectByVisibleText(marketName);
+	        String buildingPageURL = AppConfig.buildingPageURL+buildingEntityID;
+	        RunnerClass.driver.navigate().to(buildingPageURL);
+	        PropertyWare.intermittentPopUp();
+	        return true;
+			}
+	        /*
+	        String buildingAddress = RunnerClass.driver.findElement(Locators.buildingTitle).getText();
+	        if(buildingAddress.toLowerCase().contains(RunnerClass.address.substring(0,RunnerClass.address.lastIndexOf(" ")).toLowerCase()))
+	        return true;
+	        else
+	        {
+	        	System.out.println("Address it not matched");
+	        	RunnerClass.failedReason = "Address is not matched";
+	        	return false;
+	        }*/
+		}
+		catch(Exception e)
+		{
+			System.out.println("Building Not Found");
+		    RunnerClass.failedReason =  RunnerClass.failedReason+","+ "Building Not Found";
+			return false;
+		}
+		
+		
+		/*
 		RunnerClass.failedReason = "";
 		RunnerClass.driver.navigate().refresh();
 		boolean checkBuildingIsClicked = false;
@@ -474,7 +523,7 @@ public class PropertyWare
 			
 		}
 		return true;
-	
+	*/
 	}
 	
 	public static void intermittentPopUp()

@@ -129,5 +129,9 @@ public class PDFFormatDecider
 		//Boise
 		public static String Boise_Format1 = "The parties to this Lease are".toLowerCase();
 		public static String Boise_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT".toLowerCase();
+		
+		//Idaho Falls
+		public static String IdahoFalls_Format1 = "The parties to this Lease are".toLowerCase();
+		public static String IdahoFalls_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT".toLowerCase();
 
 }

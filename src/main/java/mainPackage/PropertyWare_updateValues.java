@@ -332,8 +332,8 @@ public class PropertyWare_updateValues
 				
 			}
 			
-			//If Company is Boise
-			if(RunnerClass.company.equals("Boise")&&PDFReader.residentUtilityBillFlag==true)
+			//If Company is Boise,Idaho Falls
+			if((RunnerClass.company.equals("Boise")||RunnerClass.company.equals("Idaho Falls"))&&PDFReader.residentUtilityBillFlag==true&&(!PDFReader.prorateRUBS.equals("Error")&&!PDFReader.RUBS.equals("Error")))
 			{
 				moveInCharges = moveInCharges+",13";
 				autoCharges = autoCharges+",14";

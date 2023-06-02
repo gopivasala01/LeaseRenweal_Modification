@@ -41,6 +41,7 @@ public class Locators
     public static By moveInChargeAmount = By.name("charge.editAmountAsString");
     public static By moveInChargeDate = By.name("charge.dateAsString");
     public static By moveInChargeSave = By.xpath("//*[@value='Save']");
+    public static By marketDropdown = By.id("switchAccountSelect");
     public static By moveInChargeCancel = By.xpath("//*[@value='Cancel']");
     public static By moveInChargeSaveButton = By.xpath("//*[@value='Save']");
     public static By summaryTab = By.xpath("//*[text()='Summary']");

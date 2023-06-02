@@ -18,6 +18,8 @@ public class AppConfig
 	    public static String downloadFilePath = "C:\\SantoshMurthyP\\Lease Audit Automation";
 	    public static String[] LeaseAgreementFileNames = {"REVISED_Lease_","Lease_"};
 	    
+	    public static String buildingPageURL = "https://app.propertyware.com/pw/properties/building_detail.do?entityID=";
+	    
 	    public static  String PDFFormatConfirmationText = "The parties to this lease are:";
 		public static  String PDFFormat2ConfirmationText = "THIS RESIDENTIAL LEASE AGREEMENT";
 		
@@ -35,6 +37,7 @@ public class AppConfig
 		   public static String getAutoCharges = "Select ChargeCode, Amount, autoCharge_StartDate,EndDate,Description from automation.LeaseCloseOutsChargeChargesConfiguration Where  AutoCharge=1";
 		   
 		   public static String getMoveInCharges = "Select ChargeCode, Amount, StartDate,EndDate,Description from automation.LeaseCloseOutsChargeChargesConfiguration Where MoveInCharge =1";
+		   
 		   
 		   public static String[] IAGClientList = {"510.","AVE.","BTH.","CAP.","FOR.","HRG.","HS.","MAN.","MCH.","OFF.","PIN.","RF.","SFR3.","TH.","HH.","Lofty.Ai","TA."};
 		
@@ -103,6 +106,8 @@ public class AppConfig
 		   case "Virginia":
 			   return "40010 - Rent Income";
 		   case "Boise":
+			   return "40010 - Rent Income";
+		   case "Idaho Falls":
 			   return "40010 - Rent Income";
 			      
 		   }
@@ -175,6 +180,8 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "Boise":
 			   return "40230 - Pet Rent";
+		   case "Idaho Falls":
+			   return "40230 - Pet Rent";
 			   
 		   }
 		   return "";
@@ -244,6 +251,8 @@ public class AppConfig
 		   case "Virginia":
 			   return "43030 - Tenant Admin Fee";
 		   case "Boise":
+			   return "43030 - Tenant Admin Fee";
+		   case "Idaho Falls":
 			   return "43030 - Tenant Admin Fee";
 			   
 		   }
@@ -316,6 +325,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Boise":
 			   return "40010 - Rent Income";
+		   case "Idaho Falls":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -384,6 +395,8 @@ public class AppConfig
 		   case "Virginia":
 			   return "40230 - Pet Rent";
 		   case "Boise":
+			   return "40230 - Pet Rent";
+		   case "Idaho Falls":
 			   return "40230 - Pet Rent";
 		   }
 		   return "";
@@ -454,6 +467,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Boise":
 			   return "40010 - Rent Income";
+		   case "Idaho Falls":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -522,6 +537,8 @@ public class AppConfig
 		   case "Virginia":
 			   return "43060 - Filter Fee";
 		   case "Boise":
+			   return "43060 - Filter Fee";
+		   case "Idaho Falls":
 			   return "43060 - Filter Fee";
 		   }
 		   return "";
@@ -593,6 +610,8 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Boise":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Idaho Falls":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -662,6 +681,8 @@ public class AppConfig
 		   case "Virginia":
 			   return "20030 - Prepayments";
 		   case "Boise":
+			   return "20030 - Prepayments";
+		   case "Idaho Falls":
 			   return "20030 - Prepayments";
 		   }
 		   return "";
@@ -733,6 +754,8 @@ public class AppConfig
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Boise":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "Idaho Falls":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -801,6 +824,8 @@ public class AppConfig
 		   case "Virginia":
 			   return "20020 - Security Deposit";
 		   case "Boise":
+			   return "20020 - Security Deposit";
+		   case "Idaho Falls":
 			   return "20020 - Security Deposit";
 		   }
 		   return "";
@@ -871,6 +896,8 @@ public class AppConfig
 			   return "44040 - Resident Utility Bill Serv Rev";
 		   case "Boise":
 			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Idaho Falls":
+			   return "42030 - Utility Reimbursement";
 		   }
 		return "";
 	   }
@@ -941,6 +968,8 @@ public class AppConfig
 			   return "YES";
 		   case "Boise":
 			   return "YES";
+		   case "Idaho Falls":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -1009,6 +1038,8 @@ public class AppConfig
 		   case "Virginia":
 			   return "Yes";
 		   case "Boise":
+			   return "Yes";
+		   case "Idaho Falls":
 			   return "Yes";
 		   }
 		   return "";
@@ -1080,6 +1111,8 @@ public class AppConfig
 			   return "Yes";
 		   case "Boise":
 			   return "Yes";
+		   case "Idaho Falls":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -1149,6 +1182,8 @@ public class AppConfig
 		   case "Virginia":
 			   return "NO";
 		   case "Boise":
+			   return "NO";
+		   case "Idaho Falls":
 			   return "NO";
 		   }
 		   return "";

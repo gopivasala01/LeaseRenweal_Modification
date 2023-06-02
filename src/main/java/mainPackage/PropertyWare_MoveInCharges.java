@@ -41,7 +41,7 @@ public class PropertyWare_MoveInCharges
 				String endDate = RunnerClass.moveInCharges[i][3];
 				String description = RunnerClass.moveInCharges[i][4];
 				
-				if(amount.equalsIgnoreCase("Error")||amount.equals("0.00")||amount==null||amount.trim().equals(""))
+				if(amount.equalsIgnoreCase("Error")||amount.equals("0.00")||amount==null||amount.trim().equals("")||amount.trim().matches(".*[a-zA-Z]+.*"))
 				{
 					System.out.println("Issue in Adding Move in charge - "+description);
 					RunnerClass.failedReason =  RunnerClass.failedReason+","+"Move in charge - "+description;
