@@ -1,5 +1,9 @@
 package mainPackage;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class PropertyWare_updateValues 
 {
@@ -40,6 +44,20 @@ public class PropertyWare_updateValues
 			PDFReader.firstFullMonth = RunnerClass.firstDayOfMonth(PDFReader.startDate,1);
 			PDFReader.secondFullMonth = RunnerClass.firstDayOfMonth(PDFReader.startDate,2);
 			
+			//Check if Move In Date is less than 5 days to the End Of the month, if yes, remove prepayment charge from IAG portfolios
+			try
+			{
+				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+				LocalDate date1 = LocalDate.parse(RunnerClass.getCurrentDate(), dtf);
+			    LocalDate date2 = LocalDate.parse( PDFReader.startDate, dtf);
+				long daysBetween = ChronoUnit.DAYS.between(date1, date2);
+				if(daysBetween<=5)
+					PDFReader.checkifMoveInDateIsLessThan5DaysToEOM = true;
+			}
+			catch(Exception e)
+			{
+				PDFReader.checkifMoveInDateIsLessThan5DaysToEOM = false;
+			}
 			//Compare Start and end Dates in PW with Lease Agreement
 			try
 			{
@@ -330,6 +348,12 @@ public class PropertyWare_updateValues
 					}
 				}
 				
+			}
+			
+			//If Move In Date is less than 5 days to the end of the month, remove prepayments charge from the move in charges
+			if(RunnerClass.portfolioType=="MCH"&&PDFReader.checkifMoveInDateIsLessThan5DaysToEOM==true)
+			{
+				moveInCharges = moveInCharges.replace(",9", "");
 			}
 			
 			//If Company is Boise,Idaho Falls

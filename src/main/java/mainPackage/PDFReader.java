@@ -76,6 +76,7 @@ public class PDFReader
 	public static String prorateRUBS = "";
 	public static String RUBS = "";
 	
+	public static boolean checkifMoveInDateIsLessThan5DaysToEOM =false;
 	//Other Fields
 	public static String RCDetails = "";
 	
@@ -124,6 +125,7 @@ public class PDFReader
 		    concessionAddendumFlag = false;
 		    prorateRUBS = "";
 			RUBS = "";
+			checkifMoveInDateIsLessThan5DaysToEOM = false;
 		    
 		    //Runner Class Late Fee Variables
 		 // All fields required for Late Fee Rule
