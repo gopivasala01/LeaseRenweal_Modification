@@ -717,7 +717,7 @@ public class AppConfig
 		   case "Savannah":
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Arkansas":
-			   return "43070 - Resident Benefits Package";
+			   return "43070 - Resident Benefit Package Fee";
 		   case "Dallas/Fort Worth":
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Indiana":

@@ -48,9 +48,9 @@ public class PropertyWare_updateValues
 			try
 			{
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-				LocalDate date1 = LocalDate.parse(RunnerClass.getCurrentDate(), dtf);
+				LocalDate date1 = LocalDate.parse(PDFReader.lastDayOfTheStartDate, dtf);
 			    LocalDate date2 = LocalDate.parse( PDFReader.startDate, dtf);
-				long daysBetween = ChronoUnit.DAYS.between(date1, date2);
+				long daysBetween = ChronoUnit.DAYS.between(date2, date1);
 				if(daysBetween<=5)
 					PDFReader.checkifMoveInDateIsLessThan5DaysToEOM = true;
 			}
