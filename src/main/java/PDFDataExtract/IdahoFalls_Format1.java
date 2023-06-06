@@ -286,6 +286,9 @@ public class IdahoFalls_Format1
 	    System.out.println("Pet Addendum Available = "+petFlag);
 	    if(petFlag ==true)
 	    {
+	    	//Check if the Pet rent charge is Pet Inspection Fee
+	    	if(text.contains(PDFAppConfig.IdahoFalls_Format1.petInspectionFee))
+	    		PDFReader.petInspectionFeeFlag = true;
 	    	PDFReader.petFlag = true;
 	    	try
 	    	{

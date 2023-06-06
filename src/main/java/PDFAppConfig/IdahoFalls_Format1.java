@@ -174,6 +174,8 @@ public class IdahoFalls_Format1
 		public static String prorateRUBS_Prior2 = "RUBS fee of $";
 		public static String RUBS_Prior = "charge Tenant a flat fee of $";
 		
+		public static String petInspectionFee = "pet inspection fee";
+		
 		public static String lateFeeRuleText_Prior = "LATE CHARGES:";
 		public static String lateFeeRuleText_After = "Returned Checks/NSF Fees:";
 		public static String lateFeeRuleText_After2 = "RETURNED CHECKS:";

@@ -181,7 +181,7 @@ public class AppConfig
 		   case "Boise":
 			   return "40230 - Pet Rent";
 		   case "Idaho Falls":
-			   return "40230 - Pet Rent";
+			   return "40230 - Pet Rent,43150 - Pet Inspection Fee";
 			   
 		   }
 		   return "";

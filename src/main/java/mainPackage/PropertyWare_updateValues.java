@@ -134,7 +134,15 @@ public class PropertyWare_updateValues
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getHVACAirFilterFeeChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.airFilterFee+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=7";
 					break;
 				case 8: 
-					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getPetRentChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.petRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=8";
+					String chargeCode=AppConfig.getPetRentChargeCode(RunnerClass.company);
+					if(RunnerClass.company.equals("Idaho Falls"))
+					{
+						if(PDFReader.petInspectionFeeFlag==true)
+						chargeCode = AppConfig.getPetRentChargeCode(RunnerClass.company).split(",")[1];
+						else
+						chargeCode = AppConfig.getPetRentChargeCode(RunnerClass.company).split(",")[0];
+					}
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+chargeCode+"',Amount = '"+PDFReader.petRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=8";
 					break;
 				case 9: 
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getPrepaymentChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.prepaymentCharge+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=9";
@@ -353,7 +361,10 @@ public class PropertyWare_updateValues
 			//If Move In Date is less than 5 days to the end of the month, remove prepayments charge from the move in charges
 			if(RunnerClass.portfolioType=="MCH"&&PDFReader.checkifMoveInDateIsLessThan5DaysToEOM==true)
 			{
+				if(moveInCharges.contains(",9"))
 				moveInCharges = moveInCharges.replace(",9", "");
+				if(moveInCharges.contains(",12"))
+					moveInCharges = moveInCharges.replace(",12", "");
 			}
 			
 			//If Company is Boise,Idaho Falls
