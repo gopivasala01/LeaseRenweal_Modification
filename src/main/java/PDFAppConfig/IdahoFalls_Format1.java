@@ -83,6 +83,7 @@ public class IdahoFalls_Format1
 		public static String AB_petFee2_Prior = "a total monthly rent amount of $";
 		public static String AB_petFee_After = "Tenant will pay Landlord $";
 		
+		public static String petInspectionFee_Prior = "pet inspection fee in the amount of $";
 		
 		public static String AB_petRent1_Prior = "(2) Tenant will pay Landlord monthly pet rent in the amount of $";
 		public static String AB_petRent1_After = " for each full month during \r\n"

@@ -287,9 +287,25 @@ public class IdahoFalls_Format1
 	    if(petFlag ==true)
 	    {
 	    	//Check if the Pet rent charge is Pet Inspection Fee
-	    	if(text.contains(PDFAppConfig.IdahoFalls_Format1.petInspectionFee))
-	    		PDFReader.petInspectionFeeFlag = true;
 	    	PDFReader.petFlag = true;
+	    	if(text.contains(PDFAppConfig.IdahoFalls_Format1.petInspectionFee))
+	    	{
+	    		try
+	    		{
+	    		PDFReader.petInspectionFeeFlag = true;
+	    		PDFReader.petRent = text.substring(text.indexOf(PDFAppConfig.IdahoFalls_Format1.petInspectionFee_Prior)+PDFAppConfig.IdahoFalls_Format1.petInspectionFee_Prior.length()).trim().split(" ")[0];
+	    		if(PDFReader.petRent.matches(".*[a-zA-Z]+.*"))
+			    {
+			    	PDFReader.petRent = "Error";
+			    }
+	    		}
+	    		catch(Exception e)
+	    		{
+	    			PDFReader.petRent = "Error";
+	    		}
+	    	}
+	    	else
+	    	{
 	    	try
 	    	{
 	    	PDFReader.petSecurityDeposit = text.substring(text.indexOf(PDFAppConfig.IdahoFalls_Format1.AB_securityDeposity_Prior)+PDFAppConfig.IdahoFalls_Format1.AB_securityDeposity_Prior.length(),text.indexOf(PDFAppConfig.IdahoFalls_Format1.AB_securityDeposity_After));
@@ -367,6 +383,7 @@ public class IdahoFalls_Format1
 			    	e1.printStackTrace();
 			    }
 		    }
+	    	}
 	    	System.out.println("Pet rent = "+PDFReader.petRent.trim());
 		    	//PDFReader.petRent = "Error";  
 		    	//e.printStackTrace();
