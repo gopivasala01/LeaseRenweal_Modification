@@ -109,6 +109,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Idaho Falls":
 			   return "40010 - Rent Income";
+		   case "Utah":
+			   return "40010 - Rent Income";
 			      
 		   }
 		   return "";
@@ -182,6 +184,8 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "Idaho Falls":
 			   return "40230 - Pet Rent,43150 - Pet Inspection Fee";
+		   case "Utah":
+			   return "40230 - Pet Rent,43150 - Pet Inspection Fee";
 			   
 		   }
 		   return "";
@@ -253,6 +257,8 @@ public class AppConfig
 		   case "Boise":
 			   return "43030 - Tenant Admin Fee";
 		   case "Idaho Falls":
+			   return "43030 - Tenant Admin Fee";
+		   case "Utah":
 			   return "43030 - Tenant Admin Fee";
 			   
 		   }
@@ -327,6 +333,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Idaho Falls":
 			   return "40010 - Rent Income";
+		   case "Utah":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -397,6 +405,8 @@ public class AppConfig
 		   case "Boise":
 			   return "40230 - Pet Rent";
 		   case "Idaho Falls":
+			   return "40230 - Pet Rent";
+		   case "Utah":
 			   return "40230 - Pet Rent";
 		   }
 		   return "";
@@ -469,6 +479,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Idaho Falls":
 			   return "40010 - Rent Income";
+		   case "Utah":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -539,6 +551,8 @@ public class AppConfig
 		   case "Boise":
 			   return "43060 - Filter Fee";
 		   case "Idaho Falls":
+			   return "43060 - Filter Fee";
+		   case "Utah":
 			   return "43060 - Filter Fee";
 		   }
 		   return "";
@@ -612,6 +626,8 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Idaho Falls":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Utah":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -683,6 +699,8 @@ public class AppConfig
 		   case "Boise":
 			   return "20030 - Prepayments";
 		   case "Idaho Falls":
+			   return "20030 - Prepayments";
+		   case "Utah":
 			   return "20030 - Prepayments";
 		   }
 		   return "";
@@ -756,6 +774,8 @@ public class AppConfig
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Idaho Falls":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "Utah":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -827,6 +847,8 @@ public class AppConfig
 			   return "20020 - Security Deposit";
 		   case "Idaho Falls":
 			   return "20020 - Security Deposit";
+		   case "Utah":
+			   return "20020 - Security Deposit";
 		   }
 		   return "";
 	   }
@@ -897,6 +919,8 @@ public class AppConfig
 		   case "Boise":
 			   return "44040 - Resident Utility Bill Serv Rev";
 		   case "Idaho Falls":
+			   return "42030 - Utility Reimbursement";
+		   case "Utah":
 			   return "42030 - Utility Reimbursement";
 		   }
 		return "";
@@ -970,6 +994,8 @@ public class AppConfig
 			   return "YES";
 		   case "Idaho Falls":
 			   return "YES";
+		   case "Utah":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -1040,6 +1066,8 @@ public class AppConfig
 		   case "Boise":
 			   return "Yes";
 		   case "Idaho Falls":
+			   return "Yes";
+		   case "Utah":
 			   return "Yes";
 		   }
 		   return "";
@@ -1113,6 +1141,8 @@ public class AppConfig
 			   return "Yes";
 		   case "Idaho Falls":
 			   return "Yes";
+		   case "Utah":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -1184,6 +1214,8 @@ public class AppConfig
 		   case "Boise":
 			   return "NO";
 		   case "Idaho Falls":
+			   return "NO";
+		   case "Utah":
 			   return "NO";
 		   }
 		   return "";

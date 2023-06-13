@@ -135,7 +135,7 @@ public class PropertyWare_updateValues
 					break;
 				case 8: 
 					String chargeCode=AppConfig.getPetRentChargeCode(RunnerClass.company);
-					if(RunnerClass.company.equals("Idaho Falls"))
+					if(RunnerClass.company.equals("Idaho Falls")||RunnerClass.company.equals("Utah"))
 					{
 						if(PDFReader.petInspectionFeeFlag==true)
 						chargeCode = AppConfig.getPetRentChargeCode(RunnerClass.company).split(",")[1];
@@ -368,7 +368,7 @@ public class PropertyWare_updateValues
 			}
 			
 			//If Company is Boise,Idaho Falls
-			if((RunnerClass.company.equals("Boise")||RunnerClass.company.equals("Idaho Falls"))&&PDFReader.residentUtilityBillFlag==true&&(!PDFReader.prorateRUBS.equals("Error")&&!PDFReader.RUBS.equals("Error")))
+			if((RunnerClass.company.equals("Boise")||RunnerClass.company.equals("Idaho Falls")||RunnerClass.company.equals("Utah"))&&PDFReader.residentUtilityBillFlag==true&&(!PDFReader.prorateRUBS.equals("Error")&&!PDFReader.RUBS.equals("Error")))
 			{
 				moveInCharges = moveInCharges+",13";
 				autoCharges = autoCharges+",14";

@@ -890,6 +890,28 @@ public class PDFReader
 					    }
 					    
 					break;
+				case "Utah":
+					String pdfFormatType_Utah = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_Utah);
+					if(pdfFormatType_Utah=="Format1")
+					{
+						if(PDFDataExtract.Utah_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_Utah=="Format2")
+					     {
+						if(PDFDataExtract.Utah_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
 					
 			}
 			
@@ -1041,6 +1063,9 @@ public class PDFReader
 			case "Idaho Falls":
 		        format1Text = PDFAppConfig.PDFFormatDecider.IdahoFalls_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.IdahoFalls_Format2;
+			case "Utah":
+		        format1Text = PDFAppConfig.PDFFormatDecider.Utah_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.Utah_Format2;
 			}
 			
 			File file = RunnerClass.getLastModified();

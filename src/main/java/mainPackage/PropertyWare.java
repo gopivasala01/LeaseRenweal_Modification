@@ -365,6 +365,7 @@ public class PropertyWare
 	
 	public static boolean selectBuilding(String company,String building)
 	{
+		RunnerClass.failedReason ="";
 		try
 		{
 			//Get BuildingEntityID from LeaseFact_Dashboard table

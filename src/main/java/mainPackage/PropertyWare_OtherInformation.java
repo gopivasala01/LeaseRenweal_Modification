@@ -617,7 +617,7 @@ public class PropertyWare_OtherInformation
 			}
 			else
 			{
-				if(RunnerClass.company.equals("Boise")||RunnerClass.company.equals("Idaho Falls"))
+				if(RunnerClass.company.equals("Boise")||RunnerClass.company.equals("Idaho Falls")||RunnerClass.company.equals("Utah"))
 				{
 					RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.monthlyRentAmount)).build().perform();
 					RunnerClass.driver.findElement(Locators.monthlyRentAmount).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
