@@ -16,7 +16,7 @@ public class AppConfig
 		//public static String lastMonthLeases = "Select  Company,buildingabbreviation,LeaseName from [Automation].[leaseAuditAutomation] where notes = 'Values did not match'";
 		public static String connectionUrl = "jdbc:sqlserver://azrsrv001.database.windows.net;databaseName=HomeRiverDB;user=service_sql02;password=xzqcoK7T;encrypt=true;trustServerCertificate=true;";
 	    public static String downloadFilePath = "C:\\SantoshMurthyP\\Lease Audit Automation";
-	    public static String[] LeaseAgreementFileNames = {"REVISED_Lease_","Lease_"};
+	    public static String[] LeaseAgreementFileNames = {"REVISED_Lease_","Lease_","_Lease"};
 	    
 	    public static String buildingPageURL = "https://app.propertyware.com/pw/properties/building_detail.do?entityID=";
 	    
@@ -111,6 +111,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Utah":
 			   return "40010 - Rent Income";
+		   case "Spokane":
+			   return "40010 - Rent Income";
 			      
 		   }
 		   return "";
@@ -186,6 +188,8 @@ public class AppConfig
 			   return "40230 - Pet Rent,43150 - Pet Inspection Fee";
 		   case "Utah":
 			   return "40230 - Pet Rent,43150 - Pet Inspection Fee";
+		   case "Spokane":
+			   return "40230 - Pet Rent";
 			   
 		   }
 		   return "";
@@ -259,6 +263,8 @@ public class AppConfig
 		   case "Idaho Falls":
 			   return "43030 - Tenant Admin Fee";
 		   case "Utah":
+			   return "43030 - Tenant Admin Fee";
+		   case "Spokane":
 			   return "43030 - Tenant Admin Fee";
 			   
 		   }
@@ -335,6 +341,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Utah":
 			   return "40010 - Rent Income";
+		   case "Spokane":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -407,6 +415,8 @@ public class AppConfig
 		   case "Idaho Falls":
 			   return "40230 - Pet Rent";
 		   case "Utah":
+			   return "40230 - Pet Rent";
+		   case "Spokane":
 			   return "40230 - Pet Rent";
 		   }
 		   return "";
@@ -481,6 +491,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Utah":
 			   return "40010 - Rent Income";
+		   case "Spokane":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -553,6 +565,8 @@ public class AppConfig
 		   case "Idaho Falls":
 			   return "43060 - Filter Fee";
 		   case "Utah":
+			   return "43060 - Filter Fee";
+		   case "Spokane":
 			   return "43060 - Filter Fee";
 		   }
 		   return "";
@@ -628,6 +642,8 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Utah":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Spokane":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -701,6 +717,8 @@ public class AppConfig
 		   case "Idaho Falls":
 			   return "20030 - Prepayments";
 		   case "Utah":
+			   return "20030 - Prepayments";
+		   case "Spokane":
 			   return "20030 - Prepayments";
 		   }
 		   return "";
@@ -776,6 +794,8 @@ public class AppConfig
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Utah":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "Spokane":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -848,6 +868,8 @@ public class AppConfig
 		   case "Idaho Falls":
 			   return "20020 - Security Deposit";
 		   case "Utah":
+			   return "20020 - Security Deposit";
+		   case "Spokane":
 			   return "20020 - Security Deposit";
 		   }
 		   return "";
@@ -922,6 +944,8 @@ public class AppConfig
 			   return "42030 - Utility Reimbursement";
 		   case "Utah":
 			   return "42030 - Utility Reimbursement";
+		   case "Spokane":
+			   return "44040 - Resident Utility Bill Serv Rev";
 		   }
 		return "";
 	   }
@@ -996,6 +1020,8 @@ public class AppConfig
 			   return "YES";
 		   case "Utah":
 			   return "YES";
+		   case "Spokane":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -1068,6 +1094,8 @@ public class AppConfig
 		   case "Idaho Falls":
 			   return "Yes";
 		   case "Utah":
+			   return "Yes";
+		   case "Spokane":
 			   return "Yes";
 		   }
 		   return "";
@@ -1143,6 +1171,8 @@ public class AppConfig
 			   return "Yes";
 		   case "Utah":
 			   return "Yes";
+		   case "Spokane":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -1216,6 +1246,8 @@ public class AppConfig
 		   case "Idaho Falls":
 			   return "NO";
 		   case "Utah":
+			   return "NO";
+		   case "Spokane":
 			   return "NO";
 		   }
 		   return "";

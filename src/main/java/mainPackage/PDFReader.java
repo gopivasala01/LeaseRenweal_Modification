@@ -913,6 +913,29 @@ public class PDFReader
 					    
 					break;
 					
+				case "Spokane":
+					String pdfFormatType_Spokane = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_Spokane);
+					if(pdfFormatType_Spokane=="Format1")
+					{
+						if(PDFDataExtract.Spokane_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_Spokane=="Format2")
+					     {
+						if(PDFDataExtract.Spokane_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
+					
 			}
 			
 			//Prepayment charge
@@ -1066,6 +1089,9 @@ public class PDFReader
 			case "Utah":
 		        format1Text = PDFAppConfig.PDFFormatDecider.Utah_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.Utah_Format2;
+			case "Spokane":
+		        format1Text = PDFAppConfig.PDFFormatDecider.Spokane_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.Spokane_Format2;
 			}
 			
 			File file = RunnerClass.getLastModified();
