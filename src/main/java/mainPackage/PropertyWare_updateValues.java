@@ -186,7 +186,7 @@ public class PropertyWare_updateValues
 			if(PropertyWare_updateValues.checkProratedRentDateIsInMoveInMonth()==true)
 			{
 				PDFReader.proratedRentDateIsInMoveInMonthFlag =true;
-				if(PDFReader.proratedRentDate.equalsIgnoreCase("n/a")||PDFReader.proratedRentDate.equalsIgnoreCase("na")||PDFReader.proratedRentDate.equalsIgnoreCase("N/A")||PDFReader.proratedRentDate.equalsIgnoreCase("NA"))
+				if(PDFReader.proratedRentDate.equalsIgnoreCase("n/a")||PDFReader.proratedRentDate.equalsIgnoreCase("na")||PDFReader.proratedRentDate.equalsIgnoreCase("N/A")||PDFReader.proratedRentDate.equalsIgnoreCase("NA")||PDFReader.proratedRentDate.equalsIgnoreCase("n/a."))
 				{
 					prepaymentChargeOrMonthlyRent = "2";
 					PDFReader.proratedPetRent = PDFReader.petRent;
@@ -380,7 +380,7 @@ public class PropertyWare_updateValues
 		{
 			try
 			{
-			if(PDFReader.proratedRentDate.equalsIgnoreCase("n/a")||PDFReader.proratedRentDate.equalsIgnoreCase("na"))
+			if(PDFReader.proratedRentDate.equalsIgnoreCase("n/a")||PDFReader.proratedRentDate.equalsIgnoreCase("na")||PDFReader.proratedRentDate.equalsIgnoreCase("n/a."))
 				return true;
 			if(PDFReader.proratedRentDate==null||PDFReader.proratedRentDate.equalsIgnoreCase("n/a")||PDFReader.proratedRentDate=="Error")
 				return false;
