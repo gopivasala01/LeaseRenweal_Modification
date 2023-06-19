@@ -935,6 +935,28 @@ public class PDFReader
 					    }
 					    
 					break;
+				case "Washington DC":
+					String pdfFormatType_WashingtonDC = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_WashingtonDC);
+					if(pdfFormatType_WashingtonDC=="Format1")
+					{
+						if(PDFDataExtract.WashingtonDC_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_WashingtonDC=="Format2")
+					     {
+						if(PDFDataExtract.WashingtonDC_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
 					
 			}
 			
@@ -1092,6 +1114,9 @@ public class PDFReader
 			case "Spokane":
 		        format1Text = PDFAppConfig.PDFFormatDecider.Spokane_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.Spokane_Format2;
+			case "Washington DC":
+		        format1Text = PDFAppConfig.PDFFormatDecider.WashingtonDC_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.WashingtonDC_Format2;
 			}
 			
 			File file = RunnerClass.getLastModified();

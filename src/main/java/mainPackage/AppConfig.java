@@ -113,6 +113,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Spokane":
 			   return "40010 - Rent Income";
+		   case "Washington DC":
+			   return "40010 - Rent Income";
 			      
 		   }
 		   return "";
@@ -190,6 +192,8 @@ public class AppConfig
 			   return "40230 - Pet Rent,43150 - Pet Inspection Fee";
 		   case "Spokane":
 			   return "40230 - Pet Rent";
+		   case "Washington DC":
+			   return "40230 - Pet Rent";
 			   
 		   }
 		   return "";
@@ -265,6 +269,8 @@ public class AppConfig
 		   case "Utah":
 			   return "43030 - Tenant Admin Fee";
 		   case "Spokane":
+			   return "43030 - Tenant Admin Fee";
+		   case "Washington DC":
 			   return "43030 - Tenant Admin Fee";
 			   
 		   }
@@ -343,6 +349,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Spokane":
 			   return "40010 - Rent Income";
+		   case "Washington DC":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -417,6 +425,8 @@ public class AppConfig
 		   case "Utah":
 			   return "40230 - Pet Rent";
 		   case "Spokane":
+			   return "40230 - Pet Rent";
+		   case "Washington DC":
 			   return "40230 - Pet Rent";
 		   }
 		   return "";
@@ -493,6 +503,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Spokane":
 			   return "40010 - Rent Income";
+		   case "Washington DC":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -567,6 +579,8 @@ public class AppConfig
 		   case "Utah":
 			   return "43060 - Filter Fee";
 		   case "Spokane":
+			   return "43060 - Filter Fee";
+		   case "Washington DC":
 			   return "43060 - Filter Fee";
 		   }
 		   return "";
@@ -644,6 +658,8 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Spokane":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Washington DC":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -719,6 +735,8 @@ public class AppConfig
 		   case "Utah":
 			   return "20030 - Prepayments";
 		   case "Spokane":
+			   return "20030 - Prepayments";
+		   case "Washington DC":
 			   return "20030 - Prepayments";
 		   }
 		   return "";
@@ -796,6 +814,8 @@ public class AppConfig
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Spokane":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "Washington DC":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -871,6 +891,8 @@ public class AppConfig
 			   return "20020 - Security Deposit";
 		   case "Spokane":
 			   return "20020 - Security Deposit";
+		   case "Washington DC":
+			   return "20020 - Security Deposit";
 		   }
 		   return "";
 	   }
@@ -945,6 +967,8 @@ public class AppConfig
 		   case "Utah":
 			   return "42030 - Utility Reimbursement";
 		   case "Spokane":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Washington DC":
 			   return "44040 - Resident Utility Bill Serv Rev";
 		   }
 		return "";
@@ -1022,6 +1046,8 @@ public class AppConfig
 			   return "YES";
 		   case "Spokane":
 			   return "YES";
+		   case "Washington DC":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -1096,6 +1122,8 @@ public class AppConfig
 		   case "Utah":
 			   return "Yes";
 		   case "Spokane":
+			   return "Yes";
+		   case "Washington DC":
 			   return "Yes";
 		   }
 		   return "";
@@ -1173,6 +1201,8 @@ public class AppConfig
 			   return "Yes";
 		   case "Spokane":
 			   return "Yes";
+		   case "Washington DC":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -1248,6 +1278,8 @@ public class AppConfig
 		   case "Utah":
 			   return "NO";
 		   case "Spokane":
+			   return "NO";
+		   case "Washington DC":
 			   return "NO";
 		   }
 		   return "";

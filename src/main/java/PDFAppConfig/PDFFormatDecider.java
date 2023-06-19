@@ -141,5 +141,9 @@ public class PDFFormatDecider
 		//Spokane
 		public static String Spokane_Format1 = "The parties to this Lease are".toLowerCase();
 		public static String Spokane_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT".toLowerCase();
+		
+		//Washington DC
+		public static String WashingtonDC_Format1 = "The parties to this Lease are".toLowerCase();
+		public static String WashingtonDC_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT".toLowerCase();
 
 }
