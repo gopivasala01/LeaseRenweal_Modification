@@ -272,6 +272,7 @@ public class DataBase
 		            con = DriverManager.getConnection(AppConfig.connectionUrl);
 		            String queryToGetBuildingEntityID = "Select top 1 BuildingEntityID from LeaseFact_Dashboard where Building like '%"+RunnerClass.buildingAbbreviation+"%'";
 		            stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+		            stmt.setQueryTimeout(100);
 		           // stmt = con.createStatement();
 		            rs = stmt.executeQuery(queryToGetBuildingEntityID);
 		            if(rs.next())
