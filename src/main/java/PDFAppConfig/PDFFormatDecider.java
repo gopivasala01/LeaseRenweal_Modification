@@ -145,5 +145,9 @@ public class PDFFormatDecider
 		//Washington DC
 		public static String WashingtonDC_Format1 = "The parties to this Lease are".toLowerCase();
 		public static String WashingtonDC_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT".toLowerCase();
+		
+		//Hawaii
+		public static String Hawaii_Format1 = "The parties to this Lease are".toLowerCase();
+		public static String Hawaii_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT".toLowerCase();
 
 }

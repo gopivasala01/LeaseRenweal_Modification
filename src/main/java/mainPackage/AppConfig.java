@@ -39,7 +39,7 @@ public class AppConfig
 		   public static String getMoveInCharges = "Select ChargeCode, Amount, StartDate,EndDate,Description from automation.LeaseCloseOutsChargeChargesConfiguration Where MoveInCharge =1";
 		   
 		   
-		   public static String[] IAGClientList = {"510.","AVE.","BTH.","CAP.","FOR.","HRG.","HS.","MAN.","MCH.","OFF.","PIN.","RF.","SFR3.","TH.","HH.","Lofty.Ai","TA."};
+		   public static String[] IAGClientList = {"510.","AVE.","BTH.","CAP.","FOR.","HRG.","HS.","MAN.","MCH.","OFF.","PIN.","RF.","SFR3.","TH.","HH.","Lofty.Ai","TA.","SA."};
 		
 	   public static String getMonthlyRentChargeCode(String company)
 	   {
@@ -114,6 +114,8 @@ public class AppConfig
 		   case "Spokane":
 			   return "40010 - Rent Income";
 		   case "Washington DC":
+			   return "40010 - Rent Income";
+		   case "Hawaii":
 			   return "40010 - Rent Income";
 			      
 		   }
@@ -194,6 +196,8 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "Washington DC":
 			   return "40230 - Pet Rent";
+		   case "Hawaii":
+			   return "40230 - Pet Rent";
 			   
 		   }
 		   return "";
@@ -271,6 +275,8 @@ public class AppConfig
 		   case "Spokane":
 			   return "43030 - Tenant Admin Fee";
 		   case "Washington DC":
+			   return "43030 - Tenant Admin Fee";
+		   case "Hawaii":
 			   return "43030 - Tenant Admin Fee";
 			   
 		   }
@@ -351,6 +357,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Washington DC":
 			   return "40010 - Rent Income";
+		   case "Hawaii":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -427,6 +435,8 @@ public class AppConfig
 		   case "Spokane":
 			   return "40230 - Pet Rent";
 		   case "Washington DC":
+			   return "40230 - Pet Rent";
+		   case "Hawaii":
 			   return "40230 - Pet Rent";
 		   }
 		   return "";
@@ -505,6 +515,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Washington DC":
 			   return "40010 - Rent Income";
+		   case "Hawaii":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -581,6 +593,8 @@ public class AppConfig
 		   case "Spokane":
 			   return "43060 - Filter Fee";
 		   case "Washington DC":
+			   return "43060 - Filter Fee";
+		   case "Hawaii":
 			   return "43060 - Filter Fee";
 		   }
 		   return "";
@@ -660,6 +674,8 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Washington DC":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Hawaii":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -737,6 +753,8 @@ public class AppConfig
 		   case "Spokane":
 			   return "20030 - Prepayments";
 		   case "Washington DC":
+			   return "20030 - Prepayments";
+		   case "Hawaii":
 			   return "20030 - Prepayments";
 		   }
 		   return "";
@@ -816,6 +834,8 @@ public class AppConfig
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Washington DC":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "Hawaii":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -893,6 +913,8 @@ public class AppConfig
 			   return "20020 - Security Deposit";
 		   case "Washington DC":
 			   return "20020 - Security Deposit";
+		   case "Hawaii":
+			   return "20020 - Security Deposit";
 		   }
 		   return "";
 	   }
@@ -969,6 +991,8 @@ public class AppConfig
 		   case "Spokane":
 			   return "44040 - Resident Utility Bill Serv Rev";
 		   case "Washington DC":
+			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Hawaii":
 			   return "44040 - Resident Utility Bill Serv Rev";
 		   }
 		return "";
@@ -1048,6 +1072,8 @@ public class AppConfig
 			   return "YES";
 		   case "Washington DC":
 			   return "YES";
+		   case "Hawaii":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -1124,6 +1150,8 @@ public class AppConfig
 		   case "Spokane":
 			   return "Yes";
 		   case "Washington DC":
+			   return "Yes";
+		   case "Hawaii":
 			   return "Yes";
 		   }
 		   return "";
@@ -1203,6 +1231,8 @@ public class AppConfig
 			   return "Yes";
 		   case "Washington DC":
 			   return "Yes";
+		   case "Hawaii":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -1281,6 +1311,8 @@ public class AppConfig
 			   return "NO";
 		   case "Washington DC":
 			   return "NO";
+		   case "Hawaii":
+			   return "No";
 		   }
 		   return "";
 	   }

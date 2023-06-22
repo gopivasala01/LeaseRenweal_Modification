@@ -958,6 +958,29 @@ public class PDFReader
 					    
 					break;
 					
+				case "Hawaii":
+					String pdfFormatType_Hawaii = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_Hawaii);
+					if(pdfFormatType_Hawaii=="Format1")
+					{
+						if(PDFDataExtract.Hawaii_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_Hawaii=="Format2")
+					     {
+						if(PDFDataExtract.Hawaii_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
+					
 			}
 			
 			//Prepayment charge
@@ -1117,6 +1140,9 @@ public class PDFReader
 			case "Washington DC":
 		        format1Text = PDFAppConfig.PDFFormatDecider.WashingtonDC_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.WashingtonDC_Format2;
+			case "Hawaii":
+		        format1Text = PDFAppConfig.PDFFormatDecider.Hawaii_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.Hawaii_Format2;
 			}
 			
 			File file = RunnerClass.getLastModified();
