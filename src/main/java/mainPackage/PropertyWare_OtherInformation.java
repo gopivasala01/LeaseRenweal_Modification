@@ -330,6 +330,7 @@ public class PropertyWare_OtherInformation
 			
 			//Pet Type
 			String petType = String.join(",", PDFReader.petType);
+			
 			try
 			{
 				RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.pet1Type)).build().perform();
