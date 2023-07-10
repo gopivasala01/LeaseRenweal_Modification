@@ -80,6 +80,7 @@ public class PDFReader
 	public static boolean petInspectionFeeFlag = false;
 	//Other Fields
 	public static String RCDetails = "";
+	public static boolean monthlyRentTaxFlag = false;
 	
 		public static boolean readPDFPerMarket(String market) throws Exception  
 		{
@@ -128,6 +129,7 @@ public class PDFReader
 			RUBS = "";
 			checkifMoveInDateIsLessThan5DaysToEOM = false;
 			petInspectionFeeFlag = false;
+			monthlyRentTaxFlag = false;
 		    
 		    //Runner Class Late Fee Variables
 		 // All fields required for Late Fee Rule
