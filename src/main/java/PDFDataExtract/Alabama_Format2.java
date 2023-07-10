@@ -137,6 +137,25 @@ public class Alabama_Format2
 	    	e.printStackTrace();
 	    }
 	    System.out.println("Monthly Rent = "+PDFReader.monthlyRent);//.substring(commensementDate.lastIndexOf(":")+1));
+	    
+	    //Monthly Rent Tax Check
+	    try
+	    {
+	    	PDFReader.monthlyRentTaxAmount = text.substring(text.indexOf(PDFAppConfig.Alabama_Format2.monthlyRentTaxAmount)+PDFAppConfig.Alabama_Format2.monthlyRentTaxAmount.length()).split(" ")[0].trim();
+	    	if(!PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase("0.00"))
+	    	{
+	    		PDFReader.monthlyRentTaxFlag = true;
+	    		PDFReader.totalMonthlyRentWithTax = text.substring(text.indexOf(PDFAppConfig.Alabama_Format2.totalMonthlyRent)+PDFAppConfig.Alabama_Format2.totalMonthlyRent.length()).split(" ")[0].trim();
+	    	}
+	    }
+	    catch(Exception e)
+	    {
+	    	PDFReader.monthlyRentTaxFlag = false;
+	    	PDFReader.monthlyRentTaxAmount = "";
+	    }
+	    System.out.println("Monthly Rent Tax Amount = "+PDFReader.monthlyRentTaxAmount);
+    	System.out.println("Monthly Rent Tax Amount = "+PDFReader.monthlyRentTaxFlag);
+    	System.out.println("Monthly Rent Tax Amount = "+PDFReader.totalMonthlyRentWithTax);
 	   
 	    try
 	    {

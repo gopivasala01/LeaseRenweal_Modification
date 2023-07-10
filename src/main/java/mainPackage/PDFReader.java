@@ -81,6 +81,8 @@ public class PDFReader
 	//Other Fields
 	public static String RCDetails = "";
 	public static boolean monthlyRentTaxFlag = false;
+	public static String monthlyRentTaxAmount = "";
+	public static String totalMonthlyRentWithTax = "";
 	
 		public static boolean readPDFPerMarket(String market) throws Exception  
 		{
@@ -130,6 +132,8 @@ public class PDFReader
 			checkifMoveInDateIsLessThan5DaysToEOM = false;
 			petInspectionFeeFlag = false;
 			monthlyRentTaxFlag = false;
+			monthlyRentTaxAmount = "";
+			totalMonthlyRentWithTax = "";
 		    
 		    //Runner Class Late Fee Variables
 		 // All fields required for Late Fee Rule

@@ -997,6 +997,85 @@ public class AppConfig
 		   }
 		return "";
 	   }
+	   public static String getMonthlyRentTaxCode(String company)
+	   {
+		   switch(company)
+		   {
+		   case "Austin":
+			   return "40051 - Rent-St. Clair";
+		   case "Alabama":
+			   return "40051 - Rent-St. Clair";
+		   case "North Carolina":
+			   return "40051 - Rent-St. Clair";
+		   case "Chattanooga":
+			   return "40051 - Rent-St. Clair";
+		   case "California":
+			   return "40051 - Rent-St. Clair";
+		   case "California PFW":
+			   return "40051 - Rent-St. Clair";
+		   case "Chicago PFW":
+			   return "40051 - Rent-St. Clair";
+		   case "Colorado Springs":
+			   return "40051 - Rent-St. Clair";
+		   case "Kansas City":
+			   return "40051 - Rent-St. Clair";
+		   case "Houston":
+			   return "40051 - Rent-St. Clair";
+		   case "Maine":
+			   return "40051 - Rent-St. Clair";
+		   case "Savannah":
+			   return "40051 - Rent-St. Clair";
+		   case "Arkansas":
+			   return "40051 - Rent-St. Clair";
+		   case "Dallas/Fort Worth":
+			   return "40051 - Rent-St. Clair";
+		   case "Indiana":
+			   return "40051 - Rent-St. Clair";
+		   case "Little Rock":
+			   return "40051 - Rent-St. Clair";
+		   case "San Antonio":
+			   return "40051 - Rent-St. Clair";
+		   case "Tulsa":
+			   return "40051 - Rent-St. Clair";
+		   case "Georgia":
+			   return "40051 - Rent-St. Clair";
+		   case "OKC":
+			   return "40051 - Rent-St. Clair";
+		   case "South Carolina":
+			   return "40051 - Rent-St. Clair";
+		   case "Florida":
+			   return "40051 - Rent-St. Clair";
+		   case "Tennessee":
+			   return "40051 - Rent-St. Clair";
+		   case "New Mexico":
+			   return "40051 - Rent-St. Clair";
+		   case "Ohio":
+			   return "40051 - Rent-St. Clair";
+		   case "Pennsylvania":
+			   return "40051 - Rent-St. Clair";
+		   case "Lake Havasu":
+			   return "40051 - Rent-St. Clair";
+		   case "Saint Louis":
+			   return "40051 - Rent-St. Clair";
+		   case "Maryland":
+			   return "40051 - Rent-St. Clair";
+		   case "Virginia":
+			   return "40051 - Rent-St. Clair";
+		   case "Boise":
+			   return "40051 - Rent-St. Clair";
+		   case "Idaho Falls":
+			   return "40051 - Rent-St. Clair";
+		   case "Utah":
+			   return "40051 - Rent-St. Clair";
+		   case "Spokane":
+			   return "40051 - Rent-St. Clair";
+		   case "Washington DC":
+			   return "40051 - Rent-St. Clair";
+		   case "Hawaii":
+			   return "40051 - Rent-St. Clair";
+		   }
+		return "";
+	   }
 	   
 	   public static String getEnrolledINRBPForPMUse(String company)
 	   {
