@@ -142,7 +142,11 @@ public class Alabama_Format2
 	    try
 	    {
 	    	PDFReader.monthlyRentTaxAmount = text.substring(text.indexOf(PDFAppConfig.Alabama_Format2.monthlyRentTaxAmount)+PDFAppConfig.Alabama_Format2.monthlyRentTaxAmount.length()).split(" ")[0].trim();
-	    	if(!PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase("0.00"))
+	    	if(PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase("0.00")||PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase("N/A")||PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase("n/a")||PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase("na")||PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase(""))
+	    	{
+	    		PDFReader.monthlyRentTaxFlag = false;
+	    	}
+	    	else
 	    	{
 	    		PDFReader.monthlyRentTaxFlag = true;
 	    		PDFReader.totalMonthlyRentWithTax = text.substring(text.indexOf(PDFAppConfig.Alabama_Format2.totalMonthlyRent)+PDFAppConfig.Alabama_Format2.totalMonthlyRent.length()).split(" ")[0].trim();
