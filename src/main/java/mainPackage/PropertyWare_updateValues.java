@@ -108,7 +108,7 @@ public class PropertyWare_updateValues
 			try
 			{
 			String query =null;
-			for(int i=1;i<=16;i++)
+			for(int i=1;i<=18;i++)
 			{
 				switch(i)
 				{
@@ -167,6 +167,12 @@ public class PropertyWare_updateValues
 					break;
 				case 16: 
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getMonthlyRentTaxCode(RunnerClass.company)+"',Amount = '"+PDFReader.monthlyRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=16";
+					break;
+				case 17: 
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getPetRentTaxCode(RunnerClass.company)+"',Amount = '"+PDFReader.proratedPetRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=17";
+					break;
+				case 18: 
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getProratePetRentTaxCode(RunnerClass.company)+"',Amount = '"+PDFReader.petRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=18";
 					break;
 				}
 			}
@@ -380,11 +386,18 @@ public class PropertyWare_updateValues
 				moveInCharges = moveInCharges+",13";
 				autoCharges = autoCharges+",14";
 			}
-			//Alabama tax Charge changing
+			//Alabama Monthly Rent tax Charge changing
 			if(RunnerClass.company.equals("Alabama")&&PDFReader.monthlyRentTaxFlag==true)
 			{
 				moveInCharges = moveInCharges.replace("1,", "15,");
 				autoCharges = autoCharges.replace("2,", "16,");
+			}
+			
+			//Alabama Pet Rent tax Charge changing
+			if(RunnerClass.company.equals("Alabama")&&PDFReader.petFlag==true&&PDFReader.petRentTaxFlag==true)
+			{
+				moveInCharges = moveInCharges.replace(",4", ",17");
+				autoCharges = autoCharges.replace(",8", ",18");
 			}
 			
 			DataBase.assignChargeCodes(moveInCharges, autoCharges);

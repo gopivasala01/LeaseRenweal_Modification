@@ -40,6 +40,9 @@ public class Alabama_Format2
 	public static String petRent_Prior = "Tenant will pay Landlord monthly pet rent in the amount of $";
 	public static String petRent_Prior2 = "as additional rent, a monthly fee of $";
 	
+	public static String petRentTaxAmount_Prior = "tax and administrative fees of $";
+	public static String totalPetRentAmountWithTax = "for a total of $";
+	
 	public static String petType_Prior = "Type:";
 	public static String petType_After = "Breed:";
 	

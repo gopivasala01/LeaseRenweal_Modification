@@ -16,7 +16,7 @@ public class Alabama_Format2
 	public static  boolean  format2() throws Exception
 	//public static void main(String[] args) throws Exception 
 	{
-		//File file = new File("C:\\Gopi\\Projects\\Property ware\\Lease Close Outs\\PDFS\\Tennessee\\Format 2\\Lease_031.22_05.23_1327_Everwood_Dr_Ashland_C_(1).pdf");
+		//File file = new File("C:\\SantoshMurthyP\\Lease Audit Automation\\Lease_423_424_2426_Folsom_St_AL_McCay_Gilmo (2).pdf");
 		File file = RunnerClass.getLastModified();
 		FileInputStream fis = new FileInputStream(file);
 		PDDocument document = PDDocument.load(fis);
@@ -313,6 +313,29 @@ public class Alabama_Format2
 		    	e1.printStackTrace();
 		    }
 	    	System.out.println("Pet rent= "+PDFReader.petRent.trim());
+	    	
+	    	//Pet Rent with Taxes
+	    	 try
+	 	    {
+	 	    	PDFReader.petRentTaxAmount = text.substring(text.indexOf(PDFAppConfig.Alabama_Format2.petRentTaxAmount_Prior)+PDFAppConfig.Alabama_Format2.petRentTaxAmount_Prior.length()).split(" ")[0].trim().replace(",", "");
+	 	    	if(PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("0.00")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("N/A")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("n/a")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("na")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase(""))
+	 	    	{
+	 	    		PDFReader.petRentTaxFlag = false;
+	 	    	}
+	 	    	else
+	 	    	{
+	 	    		PDFReader.petRentTaxFlag = true;
+	 	    		PDFReader.totalPetRentWithTax = text.substring(text.indexOf(PDFAppConfig.Alabama_Format2.petRentTaxAmount_Prior)).substring(text.substring(text.indexOf(PDFAppConfig.Alabama_Format2.petRentTaxAmount_Prior)).indexOf(PDFAppConfig.Alabama_Format2.totalPetRentAmountWithTax)+PDFAppConfig.Alabama_Format2.totalPetRentAmountWithTax.length()).split(" ")[0].trim();
+	 	    	}
+	 	    }
+	 	    catch(Exception e)
+	 	    {
+	 	    	PDFReader.petRentTaxFlag = false;
+	 	    	PDFReader.petRentTaxAmount = "";
+	 	    }
+	 	    System.out.println("Pet Rent Tax Amount = "+PDFReader.petRentTaxAmount);
+	     	System.out.println("Pet Rent Tax Amount = "+PDFReader.petRentTaxFlag);
+	     	System.out.println("Pet Rent Tax Amount = "+PDFReader.totalPetRentWithTax);
 	    	
 	    	//Pet Security Deposit -- Need to find the text of Pet Security Deposit for the format PDF, until then, it is commented
 	    	/*

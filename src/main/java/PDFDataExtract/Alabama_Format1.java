@@ -345,6 +345,31 @@ public class Alabama_Format1
 			    }
 		    }
 	    	System.out.println("Pet rent = "+PDFReader.petRent.trim());
+	    	
+	    	//Pet Rent with Taxes
+	    	 try
+	 	    {
+	 	    	PDFReader.petRentTaxAmount = text.substring(text.indexOf(PDFAppConfig.Alabama_Format2.petRentTaxAmount_Prior)+PDFAppConfig.Alabama_Format2.petRentTaxAmount_Prior.length()).split(" ")[0].trim().replace(",", "");
+	 	    	if(PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("0.00")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("N/A")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("n/a")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("na")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase(""))
+	 	    	{
+	 	    		PDFReader.petRentTaxFlag = false;
+	 	    	}
+	 	    	else
+	 	    	{
+	 	    		PDFReader.petRentTaxFlag = true;
+	 	    		PDFReader.totalPetRentWithTax = text.substring(text.indexOf(PDFAppConfig.Alabama_Format2.petRentTaxAmount_Prior)).substring(text.substring(text.indexOf(PDFAppConfig.Alabama_Format2.petRentTaxAmount_Prior)).indexOf(PDFAppConfig.Alabama_Format2.totalPetRentAmountWithTax)+PDFAppConfig.Alabama_Format2.totalPetRentAmountWithTax.length()).split(" ")[0].trim();
+	 	    	}
+	 	    }
+	 	    catch(Exception e)
+	 	    {
+	 	    	PDFReader.petRentTaxFlag = false;
+	 	    	PDFReader.petRentTaxAmount = "";
+	 	    }
+	 	    System.out.println("Pet Rent Tax Amount = "+PDFReader.petRentTaxAmount);
+	     	System.out.println("Pet Rent Tax Amount = "+PDFReader.petRentTaxFlag);
+	     	System.out.println("Pet Rent Tax Amount = "+PDFReader.totalPetRentWithTax);
+	    	
+	    	
 		    	//PDFReader.petRent = "Error";  
 		    	//e.printStackTrace();
 		   /* 

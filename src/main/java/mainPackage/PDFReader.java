@@ -84,6 +84,10 @@ public class PDFReader
 	public static String monthlyRentTaxAmount = "";
 	public static String totalMonthlyRentWithTax = "";
 	
+	public static boolean petRentTaxFlag = false;
+	public static String petRentTaxAmount = "";
+	public static String totalPetRentWithTax = "";
+	
 		public static boolean readPDFPerMarket(String market) throws Exception  
 		{
 			//Initialize all PDF data variables
@@ -134,6 +138,9 @@ public class PDFReader
 			monthlyRentTaxFlag = false;
 			monthlyRentTaxAmount = "";
 			totalMonthlyRentWithTax = "";
+			petRentTaxFlag = false;
+			petRentTaxAmount = "";
+			totalPetRentWithTax = "";
 		    
 		    //Runner Class Late Fee Variables
 		 // All fields required for Late Fee Rule
