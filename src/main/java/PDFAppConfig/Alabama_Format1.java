@@ -14,7 +14,7 @@ public class Alabama_Format1
 		public static String AB_proratedRent_Prior = "Tenant will pay Landlord $";
 		public static String AB_proratedRent_After = "as prorated";
 		
-		public static String AB_fullRent_Prior = "for a total monthly Rent of $";
+		public static String AB_fullRent_Prior = "monthly rent in the amount of $";
 		public static String AB_fullRent_After = " for each full month during";
 		
 		public static String AB_fullRent2_Prior = "Tenant will pay Landlord monthly rent in the amount of $";
