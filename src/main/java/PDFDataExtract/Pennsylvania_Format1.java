@@ -139,6 +139,39 @@ public class Pennsylvania_Format1
 	    	 e.printStackTrace();
 	    }
 	    System.out.println("Monthly Rent "+PDFReader.monthlyRent.trim());
+	    
+	  //Increased Rent Check
+	    try
+	    {
+	    	if(PDFReader.monthlyRent.contains("*")||text.contains(PDFAppConfig.Pennsylvania_Format2.monthlyRentAvailabilityCheck)==true)
+	    	{
+	    		PDFReader.incrementRentFlag = true;
+	    		PDFReader.monthlyRent = PDFReader.monthlyRent.replace("*", "");
+	    		System.out.println("Monthly Rent has Asterick *");
+	    		
+	    		//PDFReader.increasedRent_amount = text.substring(text.indexOf(". $")+". $".length()).trim().split(" ")[0];
+	    		String increasedRent_ProviousRentEndDate = "Per the Landlord, Monthly Rent from "+PDFReader.commencementDate.trim()+", through ";
+	    		 //String endDateArray[] = text.substring(text.indexOf(". $")+". $".length()).split(" ");
+	    		//if(endDateArray[2].trim().length()==4)//&&RunnerClass.onlyDigits(endDateArray[2]))
+	    		 //{
+	    		  PDFReader.increasedRent_previousRentEndDate = text.substring(text.indexOf(increasedRent_ProviousRentEndDate)+increasedRent_ProviousRentEndDate.length(),text.indexOf(" shall be $"));
+	    				  //endDateArray[0]+" "+endDateArray[1]+" "+endDateArray[2];
+	    		  System.out.println("Increased Rent - Previous rent end date = "+PDFReader.increasedRent_previousRentEndDate);
+	    		 
+	    		  String newRentStartDate[] = text.substring(text.indexOf(PDFAppConfig.Pennsylvania_Format2.increasedRent_newStartDate_Prior)+PDFAppConfig.Pennsylvania_Format2.increasedRent_newStartDate_Prior.length()).trim().split(" ");
+	    		  PDFReader.increasedRent_newStartDate = newRentStartDate[0]+" "+newRentStartDate[1]+" "+newRentStartDate[2];
+	    		  System.out.println("Increased Rent - New Rent Start date = "+PDFReader.increasedRent_newStartDate);
+	    		  
+	    		  String increasedRentRaw = text.substring(text.indexOf(PDFAppConfig.Pennsylvania_Format2.increasedRent_newStartDate_Prior)+PDFAppConfig.Pennsylvania_Format2.increasedRent_newStartDate_Prior.length()).trim();
+	    		  PDFReader.increasedRent_amount = increasedRentRaw.substring(increasedRentRaw.indexOf("shall be $")+"shall be $".length()).trim().split(" ")[0];
+	    		  System.out.println("Increased Rent - Amount = "+PDFReader.increasedRent_amount); 
+	    	}
+	    }
+	    catch(Exception e)
+	    {
+	    	
+	    }
+	    
 	    try
 	    {
 		    PDFReader.adminFee = text.toLowerCase().substring(text.toLowerCase().indexOf(PDFAppConfig.Pennsylvania_Format1.AB_adminFee_Prior.toLowerCase())+PDFAppConfig.Pennsylvania_Format1.AB_adminFee_Prior.length()).trim().split(" ")[0];

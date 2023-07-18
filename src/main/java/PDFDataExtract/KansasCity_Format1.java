@@ -122,6 +122,7 @@ public class KansasCity_Format1
 	    }
 	    System.out.println("Monthly Rent "+PDFReader.monthlyRent.trim());
 	    
+	    //Increased Rent Check
 	    try
 	    {
 	    	if(PDFReader.monthlyRent.contains("*")||text.contains(PDFAppConfig.KansasCity_Format2.monthlyRentAvailabilityCheck)==true)
