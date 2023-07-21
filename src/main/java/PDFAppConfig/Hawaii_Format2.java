@@ -96,7 +96,12 @@ public class Hawaii_Format2
 	public static String AB_additionalLateChargesLimit_After = "B. For the purposes of paying rent and late charges, the mailbox is not the agent for receipt for Landlord and the";
 
 	
-
+	public static String monthlyRentTaxAmount = "plus the additional amount of $";
+	public static String totalMonthlyRent = "for a total monthly Rent of $";
+	public static String totalMonthlyRent2 = "for a total of $";
+	
+	public static String petRentTaxAmount_Prior = "tax and administrative fees of $";
+	public static String totalPetRentAmountWithTax = "for a total of $";
 
 
 }

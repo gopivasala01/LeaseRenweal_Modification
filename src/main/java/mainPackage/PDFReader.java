@@ -88,6 +88,9 @@ public class PDFReader
 	public static String petRentTaxAmount = "";
 	public static String totalPetRentWithTax = "";
 	
+	public static String prorateRentGET = ""; //For Hawaii tax
+	public static String monthlyRentGET = ""; //For Hawaii tax
+	
 		public static boolean readPDFPerMarket(String market) throws Exception  
 		{
 			//Initialize all PDF data variables
@@ -141,6 +144,8 @@ public class PDFReader
 			petRentTaxFlag = false;
 			petRentTaxAmount = "";
 			totalPetRentWithTax = "";
+			prorateRentGET = ""; 
+			monthlyRentGET = ""; 
 		    
 		    //Runner Class Late Fee Variables
 		 // All fields required for Late Fee Rule
@@ -996,7 +1001,37 @@ public class PDFReader
 					
 			}
 			
-			//Prepayment charge
+			//Prepayment charge 
+			if((RunnerClass.company.equals("Alabama")||RunnerClass.company.equals("Hawaii")&&PDFReader.monthlyRentTaxFlag==true))
+			{
+				try
+				{
+					PDFReader.prepaymentCharge =String.valueOf(RunnerClass.round((Double.parseDouble(PDFReader.totalMonthlyRentWithTax.replace(",", "")) - Double.parseDouble(PDFReader.proratedRent.replace(",", ""))),2)); 
+				}
+				catch(Exception e)
+				{
+					PDFReader.prepaymentCharge ="Error";
+				}
+				
+				//Prorate Rent when Taxes available in Alabama and Hawaii
+				if(!PDFReader.proratedRent.equalsIgnoreCase("n/a")||!PDFReader.proratedRent.equalsIgnoreCase("na")||!PDFReader.proratedRent.equalsIgnoreCase("n/a.")||!PDFReader.proratedRent.equalsIgnoreCase("0.00"))
+				try
+				{
+					double rent = Double.parseDouble(PDFReader.monthlyRent.replace(",", ""));
+					double prorateRent = Double.parseDouble(PDFReader.proratedRent.replace(",", ""));
+					double  totalMonthlyRentWithTax= Double.parseDouble(PDFReader.totalMonthlyRentWithTax.replace(",", ""));
+					double prorateRentCalculated = RunnerClass.round(((rent*prorateRent)/totalMonthlyRentWithTax),2);
+					//For Hawaii Prorate Rent GET
+					prorateRentGET = String.valueOf(RunnerClass.round((prorateRent - prorateRentCalculated),2));
+					PDFReader.proratedRent =String.valueOf(RunnerClass.round(prorateRentCalculated,2)); 
+				}
+				catch(Exception e)
+				{
+					PDFReader.proratedRent ="Error";
+				}
+			}
+			else
+			{
 			try
 			{
 				PDFReader.prepaymentCharge =String.valueOf(RunnerClass.round((Double.parseDouble(PDFReader.monthlyRent.replace(",", "")) - Double.parseDouble(PDFReader.proratedRent.replace(",", ""))),2)); 
@@ -1005,7 +1040,26 @@ public class PDFReader
 			{
 				PDFReader.prepaymentCharge ="Error";
 			}
+			}
 			System.out.println("Prepayment Charge = "+PDFReader.prepaymentCharge);
+			
+			//Prorate pet Rent when Taxes available in Alabama and Hawaii
+			if((RunnerClass.company.equals("Alabama")||RunnerClass.company.equals("Hawaii")&&PDFReader.petRentTaxFlag==true))
+			{
+			if(!PDFReader.proratedPetRent.equalsIgnoreCase("n/a")||!PDFReader.proratedPetRent.equalsIgnoreCase("na")||!PDFReader.proratedPetRent.equalsIgnoreCase("n/a.")||!PDFReader.proratedPetRent.equalsIgnoreCase("0.00"))
+			try
+			{
+				double petRent = Double.parseDouble(PDFReader.petRent.replace(",", ""));
+				double proratePetRent = Double.parseDouble(PDFReader.proratedPetRent.replace(",", ""));
+				double  totalPetRentWithTax= Double.parseDouble(PDFReader.totalPetRentWithTax.replace(",", ""));
+				double prorateRentCalculated = (petRent*proratePetRent)/totalPetRentWithTax;
+				PDFReader.proratedPetRent =String.valueOf(RunnerClass.round(prorateRentCalculated,2)); 
+			}
+			catch(Exception e)
+			{
+				PDFReader.proratedPetRent ="Error";
+			}
+			}
 			
 			//Increased Rent New Start Date
 			

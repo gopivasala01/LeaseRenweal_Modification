@@ -116,7 +116,9 @@ public class AppConfig
 		   case "Washington DC":
 			   return "40010 - Rent Income";
 		   case "Hawaii":
+			   if(PDFReader.monthlyRentTaxFlag==false)
 			   return "40010 - Rent Income";
+			   else return "40061 - Rent - Kona";
 			      
 		   }
 		   return "";
@@ -358,10 +360,14 @@ public class AppConfig
 		   case "Washington DC":
 			   return "40010 - Rent Income";
 		   case "Hawaii":
-			   return "40010 - Rent Income";
+			   if(PDFReader.monthlyRentTaxFlag==false)
+				   return "40010 - Rent Income";
+				   else return "40061 - Rent - Kona";
 		   }
 		   return "";
 	   }
+	   
+	   
 	   public static String getProratePetRentChargeCode(String company)
 	   {
 		   switch(company)
@@ -516,7 +522,9 @@ public class AppConfig
 		   case "Washington DC":
 			   return "40010 - Rent Income";
 		   case "Hawaii":
-			   return "40010 - Rent Income";
+			   if(PDFReader.monthlyRentTaxFlag==false)
+				   return "40010 - Rent Income";
+				   else return "40061 - Rent - Kona";
 		   }
 		   return "";
 	   }
@@ -1072,7 +1080,167 @@ public class AppConfig
 		   case "Washington DC":
 			   return "40051 - Rent-St. Clair";
 		   case "Hawaii":
-			   return "40051 - Rent-St. Clair";
+			   return "40061 - Rent - Kona";
+		   }
+		return "";
+	   }
+	   
+	   public static String getProrateRentGETCode(String company)
+	   {
+		   switch(company)
+		   {
+		   case "Austin":
+			   return "42100 - GET Tenant Recovery";
+		   case "Alabama":
+			   return "42100 - GET Tenant Recovery";
+		   case "North Carolina":
+			   return "42100 - GET Tenant Recovery";
+		   case "Chattanooga":
+			   return "42100 - GET Tenant Recovery";
+		   case "California":
+			   return "42100 - GET Tenant Recovery";
+		   case "California PFW":
+			   return "42100 - GET Tenant Recovery";
+		   case "Chicago PFW":
+			   return "42100 - GET Tenant Recovery";
+		   case "Colorado Springs":
+			   return "42100 - GET Tenant Recovery";
+		   case "Kansas City":
+			   return "42100 - GET Tenant Recovery";
+		   case "Houston":
+			   return "42100 - GET Tenant Recovery";
+		   case "Maine":
+			   return "42100 - GET Tenant Recovery";
+		   case "Savannah":
+			   return "42100 - GET Tenant Recovery";
+		   case "Arkansas":
+			   return "42100 - GET Tenant Recovery";
+		   case "Dallas/Fort Worth":
+			   return "42100 - GET Tenant Recovery";
+		   case "Indiana":
+			   return "42100 - GET Tenant Recovery";
+		   case "Little Rock":
+			   return "42100 - GET Tenant Recovery";
+		   case "San Antonio":
+			   return "42100 - GET Tenant Recovery";
+		   case "Tulsa":
+			   return "42100 - GET Tenant Recovery";
+		   case "Georgia":
+			   return "42100 - GET Tenant Recovery";
+		   case "OKC":
+			   return "42100 - GET Tenant Recovery";
+		   case "South Carolina":
+			   return "42100 - GET Tenant Recovery";
+		   case "Florida":
+			   return "42100 - GET Tenant Recovery";
+		   case "Tennessee":
+			   return "42100 - GET Tenant Recovery";
+		   case "New Mexico":
+			   return "42100 - GET Tenant Recovery";
+		   case "Ohio":
+			   return "42100 - GET Tenant Recovery";
+		   case "Pennsylvania":
+			   return "42100 - GET Tenant Recovery";
+		   case "Lake Havasu":
+			   return "42100 - GET Tenant Recovery";
+		   case "Saint Louis":
+			   return "42100 - GET Tenant Recovery";
+		   case "Maryland":
+			   return "42100 - GET Tenant Recovery";
+		   case "Virginia":
+			   return "42100 - GET Tenant Recovery";
+		   case "Boise":
+			   return "42100 - GET Tenant Recovery";
+		   case "Idaho Falls":
+			   return "42100 - GET Tenant Recovery";
+		   case "Utah":
+			   return "42100 - GET Tenant Recovery";
+		   case "Spokane":
+			   return "42100 - GET Tenant Recovery";
+		   case "Washington DC":
+			   return "42100 - GET Tenant Recovery";
+		   case "Hawaii":
+			   return "42100 - GET Tenant Recovery";
+		   }
+		return "";
+	   }
+	   
+	   public static String getMonthlyRentGETCode(String company)
+	   {
+		   switch(company)
+		   {
+		   case "Austin":
+			   return "42100 - GET Tenant Recovery";
+		   case "Alabama":
+			   return "42100 - GET Tenant Recovery";
+		   case "North Carolina":
+			   return "42100 - GET Tenant Recovery";
+		   case "Chattanooga":
+			   return "42100 - GET Tenant Recovery";
+		   case "California":
+			   return "42100 - GET Tenant Recovery";
+		   case "California PFW":
+			   return "42100 - GET Tenant Recovery";
+		   case "Chicago PFW":
+			   return "42100 - GET Tenant Recovery";
+		   case "Colorado Springs":
+			   return "42100 - GET Tenant Recovery";
+		   case "Kansas City":
+			   return "42100 - GET Tenant Recovery";
+		   case "Houston":
+			   return "42100 - GET Tenant Recovery";
+		   case "Maine":
+			   return "42100 - GET Tenant Recovery";
+		   case "Savannah":
+			   return "42100 - GET Tenant Recovery";
+		   case "Arkansas":
+			   return "42100 - GET Tenant Recovery";
+		   case "Dallas/Fort Worth":
+			   return "42100 - GET Tenant Recovery";
+		   case "Indiana":
+			   return "42100 - GET Tenant Recovery";
+		   case "Little Rock":
+			   return "42100 - GET Tenant Recovery";
+		   case "San Antonio":
+			   return "42100 - GET Tenant Recovery";
+		   case "Tulsa":
+			   return "42100 - GET Tenant Recovery";
+		   case "Georgia":
+			   return "42100 - GET Tenant Recovery";
+		   case "OKC":
+			   return "42100 - GET Tenant Recovery";
+		   case "South Carolina":
+			   return "42100 - GET Tenant Recovery";
+		   case "Florida":
+			   return "42100 - GET Tenant Recovery";
+		   case "Tennessee":
+			   return "42100 - GET Tenant Recovery";
+		   case "New Mexico":
+			   return "42100 - GET Tenant Recovery";
+		   case "Ohio":
+			   return "42100 - GET Tenant Recovery";
+		   case "Pennsylvania":
+			   return "42100 - GET Tenant Recovery";
+		   case "Lake Havasu":
+			   return "42100 - GET Tenant Recovery";
+		   case "Saint Louis":
+			   return "42100 - GET Tenant Recovery";
+		   case "Maryland":
+			   return "42100 - GET Tenant Recovery";
+		   case "Virginia":
+			   return "42100 - GET Tenant Recovery";
+		   case "Boise":
+			   return "42100 - GET Tenant Recovery";
+		   case "Idaho Falls":
+			   return "42100 - GET Tenant Recovery";
+		   case "Utah":
+			   return "42100 - GET Tenant Recovery";
+		   case "Spokane":
+			   return "42100 - GET Tenant Recovery";
+		   case "Washington DC":
+			   return "42100 - GET Tenant Recovery";
+		   case "Hawaii":
+			   return "42100 - GET Tenant Recovery";
 		   }
 		return "";
 	   }

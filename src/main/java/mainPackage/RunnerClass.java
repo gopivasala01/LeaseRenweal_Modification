@@ -198,6 +198,7 @@ public class RunnerClass
 		  } 
 		  catch(Exception e)
 		  {
+			  e.printStackTrace();
 		  }
 		}
 		}

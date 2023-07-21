@@ -108,7 +108,7 @@ public class PropertyWare_updateValues
 			try
 			{
 			String query =null;
-			for(int i=1;i<=18;i++)
+			for(int i=1;i<=20;i++)
 			{
 				switch(i)
 				{
@@ -173,6 +173,12 @@ public class PropertyWare_updateValues
 					break;
 				case 18: 
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getProratePetRentTaxCode(RunnerClass.company)+"',Amount = '"+PDFReader.petRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=18";
+					break;
+				case 19: 
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getProrateRentGETCode(RunnerClass.company)+"',Amount = '"+PDFReader.prorateRentGET+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=19";
+					break;
+				case 20: 
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getMonthlyRentGETCode(RunnerClass.company)+"',Amount = '"+PDFReader.monthlyRentTaxAmount+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=20";
 					break;
 				}
 			}
@@ -398,6 +404,38 @@ public class PropertyWare_updateValues
 			{
 				moveInCharges = moveInCharges.replace(",4", ",17");
 				autoCharges = autoCharges.replace(",8", ",18");
+			}
+			
+			//Hawaii Monthly Rent tax Charge changing
+			if(RunnerClass.company.equals("Hawaii")&&PDFReader.monthlyRentTaxFlag==true)
+			{
+				String[] moveInCodes = moveInCharges.split(",");
+				for(int i=0;i<moveInCodes.length;i++)
+				{
+					String code = moveInCodes[i];
+					switch(code)
+					{
+					case "1":
+						moveInCharges = moveInCharges.replace("1,", "1,19,");
+						break;
+					case "2":
+						moveInCharges = moveInCharges.replace("2,", "2,20,");
+					}
+				}
+				String[] autoCodes = autoCharges.split(",");
+				for(int i=0;i<autoCodes.length;i++)
+				{
+					String code = autoCodes[i];
+					switch(code)
+					{
+					case "1":
+						autoCharges = autoCharges.replace("1,", "1,19,");
+						break;
+					case "2":
+						autoCharges = autoCharges.replace("2,", "2,20,");
+						break;
+					}
+				}
 			}
 			
 			DataBase.assignChargeCodes(moveInCharges, autoCharges);

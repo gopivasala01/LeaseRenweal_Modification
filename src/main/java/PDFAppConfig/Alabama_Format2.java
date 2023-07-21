@@ -100,6 +100,7 @@ public class Alabama_Format2
 	
 	public static String monthlyRentTaxAmount = "plus the additional amount of $";
 	public static String totalMonthlyRent = "for a total monthly Rent of $";
+	public static String totalMonthlyRent2 = "assessed, for a total of $";
 
 	
 

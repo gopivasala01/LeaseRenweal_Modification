@@ -138,6 +138,34 @@ public class Hawaii_Format2
 	    }
 	    System.out.println("Monthly Rent = "+PDFReader.monthlyRent);//.substring(commensementDate.lastIndexOf(":")+1));
 	   
+	  //Monthly Rent Tax Check
+	    try
+	    {
+	    	PDFReader.monthlyRentTaxAmount = text.substring(text.indexOf(PDFAppConfig.Hawaii_Format2.monthlyRentTaxAmount)+PDFAppConfig.Hawaii_Format2.monthlyRentTaxAmount.length()).split(" ")[0].trim();
+	    	if(PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase("0.00")||PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase("N/A")||PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase("n/a")||PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase("na")||PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase(""))
+	    	{
+	    		PDFReader.monthlyRentTaxFlag = false;
+	    	}
+	    	else
+	    	{
+	    		PDFReader.monthlyRentTaxFlag = true;
+	    		PDFReader.totalMonthlyRentWithTax = text.substring(text.indexOf(PDFAppConfig.Hawaii_Format2.totalMonthlyRent)+PDFAppConfig.Hawaii_Format2.totalMonthlyRent.length()).split(" ")[0].trim();
+	    		if(PDFReader.totalMonthlyRentWithTax.matches(".*[a-zA-Z]+.*"))
+			    {
+	    			PDFReader.totalMonthlyRentWithTax = text.substring(text.indexOf(PDFAppConfig.Hawaii_Format2.totalMonthlyRent2)+PDFAppConfig.Hawaii_Format2.totalMonthlyRent2.length()).split(" ")[0].trim();
+			    }
+	    	}
+	    }
+	    catch(Exception e)
+	    {
+	    	PDFReader.monthlyRentTaxFlag = false;
+	    	PDFReader.monthlyRentTaxAmount = "";
+	    }
+	    System.out.println("Monthly Rent Tax Amount = "+PDFReader.monthlyRentTaxAmount);
+    	System.out.println("Monthly Rent Tax Amount = "+PDFReader.monthlyRentTaxFlag);
+    	System.out.println("Monthly Rent Tax Amount = "+PDFReader.totalMonthlyRentWithTax);
+	   
+	    
 	    try
 	    {
 	    	PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.Hawaii_Format2.adminFee_prior)+PDFAppConfig.Hawaii_Format2.adminFee_prior.length()).split(" ")[0].trim();
@@ -290,6 +318,29 @@ public class Hawaii_Format2
 		    	e1.printStackTrace();
 		    }
 	    	System.out.println("Pet rent= "+PDFReader.petRent.trim());
+	    	
+	    	//Pet Rent with Taxes
+	    	 try
+	 	    {
+	 	    	PDFReader.petRentTaxAmount = text.substring(text.indexOf(PDFAppConfig.Hawaii_Format2.petRentTaxAmount_Prior)+PDFAppConfig.Hawaii_Format2.petRentTaxAmount_Prior.length()).split(" ")[0].trim().replace(",", "");
+	 	    	if(PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("0.00")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("N/A")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("n/a")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("na")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase(""))
+	 	    	{
+	 	    		PDFReader.petRentTaxFlag = false;
+	 	    	}
+	 	    	else
+	 	    	{
+	 	    		PDFReader.petRentTaxFlag = true;
+	 	    		PDFReader.totalPetRentWithTax = text.substring(text.indexOf(PDFAppConfig.Hawaii_Format2.petRentTaxAmount_Prior)).substring(text.substring(text.indexOf(PDFAppConfig.Hawaii_Format2.petRentTaxAmount_Prior)).indexOf(PDFAppConfig.Hawaii_Format2.totalPetRentAmountWithTax)+PDFAppConfig.Hawaii_Format2.totalPetRentAmountWithTax.length()).split(" ")[0].trim();
+	 	    	}
+	 	    }
+	 	    catch(Exception e)
+	 	    {
+	 	    	PDFReader.petRentTaxFlag = false;
+	 	    	PDFReader.petRentTaxAmount = "";
+	 	    }
+	 	    System.out.println("Pet Rent Tax Amount = "+PDFReader.petRentTaxAmount);
+	     	System.out.println("Pet Rent Tax Amount = "+PDFReader.petRentTaxFlag);
+	     	System.out.println("Pet Rent Tax Amount = "+PDFReader.totalPetRentWithTax);
 	    	
 	    	//Pet Security Deposit -- Need to find the text of Pet Security Deposit for the format PDF, until then, it is commented
 	    	/*

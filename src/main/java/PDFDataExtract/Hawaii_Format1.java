@@ -116,7 +116,7 @@ public class Hawaii_Format1
 	    try
 	    {
 		    PDFReader.monthlyRent = text.substring(text.indexOf(PDFAppConfig.Hawaii_Format1.AB_fullRent_Prior)+PDFAppConfig.Hawaii_Format1.AB_fullRent_Prior.length()).trim().split(" ")[0].trim();//,text.indexOf(PDFAppConfig.Hawaii_Format1.AB_fullRent_After)).substring(1).replaceAll("[^.0-9]", "");;
-		    if(RunnerClass.onlyDigits(PDFReader.monthlyRent.replace(".", "").replace(",", ""))==false)
+		    if(RunnerClass.onlyDigits(PDFReader.monthlyRent.replace(".", "").replace(",", ""))==false||PDFReader.monthlyRent.replace(".", "").trim().length()==1)
 		    {
 		    	PDFReader.monthlyRent = text.substring(text.indexOf(PDFAppConfig.Hawaii_Format1.AB_fullRent2_Prior)+PDFAppConfig.Hawaii_Format1.AB_fullRent2_Prior.length()).trim().split(" ")[0].trim();
 		    }
@@ -139,6 +139,42 @@ public class Hawaii_Format1
 	    	 e.printStackTrace();
 	    }
 	    System.out.println("Monthly Rent "+PDFReader.monthlyRent.trim());
+	    
+	  //Monthly Rent Tax Check
+	    try
+	    {
+	    	PDFReader.monthlyRentTaxAmount = text.substring(text.indexOf(PDFAppConfig.Hawaii_Format1.monthlyRentTaxAmount)+PDFAppConfig.Hawaii_Format1.monthlyRentTaxAmount.length()).split(" ")[0].trim();
+	    	if(PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase("0.00")||PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase("N/A")||PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase("n/a")||PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase("na")||PDFReader.monthlyRentTaxAmount.trim().equalsIgnoreCase(""))
+	    	{
+	    		PDFReader.monthlyRentTaxFlag = false;
+	    	}
+	    	else
+	    	{
+	    		PDFReader.monthlyRentTaxFlag = true;
+	    		try
+	    		{
+	    		PDFReader.totalMonthlyRentWithTax = text.substring(text.indexOf(PDFAppConfig.Hawaii_Format1.totalMonthlyRent)+PDFAppConfig.Hawaii_Format1.totalMonthlyRent.length()).split(" ")[0].trim();
+	    		if(PDFReader.totalMonthlyRentWithTax.matches(".*[a-zA-Z]+.*")||PDFReader.totalMonthlyRentWithTax.replace(".", "").trim().length()==1)
+			    {
+	    			PDFReader.totalMonthlyRentWithTax = text.substring(text.indexOf(PDFAppConfig.Hawaii_Format2.totalMonthlyRent2,1)+PDFAppConfig.Hawaii_Format2.totalMonthlyRent2.length()).split(" ")[0].trim();
+			    }
+	    		}
+	    		catch(Exception e)
+	    		{
+	    			PDFReader.totalMonthlyRentWithTax ="Error";
+	    		}
+	    		
+	    	}
+	    }
+	    catch(Exception e)
+	    {
+	    	PDFReader.monthlyRentTaxFlag = false;
+	    	PDFReader.monthlyRentTaxAmount = "";
+	    }
+	    System.out.println("Monthly Rent Tax Amount = "+PDFReader.monthlyRentTaxAmount);
+    	System.out.println("Monthly Rent Tax Flag = "+PDFReader.monthlyRentTaxFlag);
+    	System.out.println("Total Monthly Rent Tax Amount  = "+PDFReader.totalMonthlyRentWithTax);
+    	
 	    
 	  //Increased Rent Check
 	    try
@@ -401,6 +437,30 @@ public class Hawaii_Format1
 			    }
 		    }
 	    	System.out.println("Pet rent = "+PDFReader.petRent.trim());
+	    	
+	    	//Pet Rent with Taxes
+	    	 try
+	 	    {
+	 	    	PDFReader.petRentTaxAmount = text.substring(text.indexOf(PDFAppConfig.Hawaii_Format1.petRentTaxAmount_Prior)+PDFAppConfig.Hawaii_Format1.petRentTaxAmount_Prior.length()).split(" ")[0].trim().replace(",", "");
+	 	    	if(PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("0.00")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("N/A")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("n/a")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase("na")||PDFReader.petRentTaxAmount.trim().equalsIgnoreCase(""))
+	 	    	{
+	 	    		PDFReader.petRentTaxFlag = false;
+	 	    	}
+	 	    	else
+	 	    	{
+	 	    		PDFReader.petRentTaxFlag = true;
+	 	    		PDFReader.totalPetRentWithTax = text.substring(text.indexOf(PDFAppConfig.Hawaii_Format1.petRentTaxAmount_Prior)).substring(text.substring(text.indexOf(PDFAppConfig.Hawaii_Format1.petRentTaxAmount_Prior)).indexOf(PDFAppConfig.Hawaii_Format1.totalPetRentAmountWithTax)+PDFAppConfig.Hawaii_Format1.totalPetRentAmountWithTax.length()).split(" ")[0].trim();
+	 	    	}
+	 	    }
+	 	    catch(Exception e)
+	 	    {
+	 	    	PDFReader.petRentTaxFlag = false;
+	 	    	PDFReader.petRentTaxAmount = "";
+	 	    }
+	 	    System.out.println("Pet Rent Tax Amount = "+PDFReader.petRentTaxAmount);
+	     	System.out.println("Pet Rent Tax Amount = "+PDFReader.petRentTaxFlag);
+	     	System.out.println("Pet Rent Tax Amount = "+PDFReader.totalPetRentWithTax);
+	    	
 		    	//PDFReader.petRent = "Error";  
 		    	//e.printStackTrace();
 		   /* 

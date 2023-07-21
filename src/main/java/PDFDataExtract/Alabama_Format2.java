@@ -150,6 +150,10 @@ public class Alabama_Format2
 	    	{
 	    		PDFReader.monthlyRentTaxFlag = true;
 	    		PDFReader.totalMonthlyRentWithTax = text.substring(text.indexOf(PDFAppConfig.Alabama_Format2.totalMonthlyRent)+PDFAppConfig.Alabama_Format2.totalMonthlyRent.length()).split(" ")[0].trim();
+	    		if(PDFReader.totalMonthlyRentWithTax.matches(".*[a-zA-Z]+.*"))
+			    {
+	    			PDFReader.totalMonthlyRentWithTax = text.substring(text.indexOf(PDFAppConfig.Alabama_Format2.totalMonthlyRent2)+PDFAppConfig.Alabama_Format2.totalMonthlyRent2.length()).split(" ")[0].trim();
+			    }
 	    	}
 	    }
 	    catch(Exception e)

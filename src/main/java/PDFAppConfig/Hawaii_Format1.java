@@ -197,6 +197,13 @@ public class Hawaii_Format1
 		public static  String PDFFormat2ConfirmationText = "RESIDENTIAL LEASE AGREEMENT";
 		public static String serviceAnimalText = "SERVICE/SUPPORT ANIMAL AGREEMENT";
 		public static String HVACFilterAddendumTextAvailabilityCheck = "HVAC Filter Maintenance Program and Fee";
+		
+		public static String monthlyRentTaxAmount = "(GET) of $";
+		public static String totalMonthlyRent = "for a total monthly Rent of $";
+		public static String totalMonthlyRent2 = ", for a total of $";
+		
+		public static String petRentTaxAmount_Prior = "tax and administrative fees of $";
+		public static String totalPetRentAmountWithTax = "for a total of $";
 
 
 
