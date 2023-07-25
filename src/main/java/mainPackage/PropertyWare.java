@@ -73,7 +73,7 @@ public class PropertyWare
 	{
 		try
 		{
-	    RunnerClass.driver.findElement(Locators.dashboardsTab).click();
+	    //RunnerClass.driver.findElement(Locators.dashboardsTab).click();
 		RunnerClass.driver.findElement(Locators.searchbox).clear();
 		RunnerClass.driver.findElement(Locators.searchbox).sendKeys(building);
 			try
