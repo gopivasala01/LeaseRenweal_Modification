@@ -395,7 +395,7 @@ public class PropertyWare_updateValues
 			//Alabama Monthly Rent tax Charge changing
 			if(RunnerClass.company.equals("Alabama")&&PDFReader.monthlyRentTaxFlag==true)
 			{
-				moveInCharges = moveInCharges.replace("1,", "15,");
+				moveInCharges = moveInCharges.replace("1,", "15,").replace("2,", "16,");
 				autoCharges = autoCharges.replace("2,", "16,");
 			}
 			
