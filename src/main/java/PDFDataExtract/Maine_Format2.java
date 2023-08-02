@@ -143,7 +143,11 @@ public class Maine_Format2
 	    	PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.Maine_Format2.adminFee_prior)+PDFAppConfig.Maine_Format2.adminFee_prior.length()).split(" ")[0].trim();
 	    	if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
 		    {
-		    	PDFReader.adminFee = "Error";
+	    		PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.Maine_Format2.adminFee_prior2)+PDFAppConfig.Maine_Format2.adminFee_prior2.length()).split(" ")[0].trim();
+	    		if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
+			    {
+			    	PDFReader.adminFee = "Error";
+			    }
 		    }
 	    }
 	    catch(Exception e)

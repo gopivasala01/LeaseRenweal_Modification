@@ -143,7 +143,11 @@ public class California_Format2
 	    	PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.California_Format2.adminFee_prior)+PDFAppConfig.California_Format2.adminFee_prior.length()).split(" ")[0].trim();
 	    	if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
 		    {
-		    	PDFReader.adminFee = "Error";
+	    		PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.California_Format2.adminFee_prior2)+PDFAppConfig.California_Format2.adminFee_prior2.length()).split(" ")[0].trim();
+	    		if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
+			    {
+			    	PDFReader.adminFee = "Error";
+			    }
 		    }
 	    }
 	    catch(Exception e)

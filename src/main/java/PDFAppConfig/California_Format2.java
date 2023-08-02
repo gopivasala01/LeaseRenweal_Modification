@@ -17,6 +17,7 @@ public class California_Format2
 	public static String monthlyRent_Prior2 = "Tenant will pay Landlord monthly rent in the amount of $";
 	
 	public static String adminFee_prior = "Annual Lease Preparation Fee in the amount of $";
+	public static String adminFee_prior2 = "preparation fee in the amount of $";
 	
 	public static String HVACAirFilter_prior = "HVAC Filter Maintenance Program Fee of $";
 	

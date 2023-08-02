@@ -28,7 +28,7 @@ public class Chattanooga_Format2
 	    
 	    try
 	    {
-	    	String commensementRaw = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.commensementDate_Prior)+PDFAppConfig.Austin_Format2.commensementDate_Prior.length()+1).trim();//,text.indexOf(PDFAppConfig.Austin_Format2.commensementDate_After)).trim();
+	    	String commensementRaw = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.commensementDate_Prior)+PDFAppConfig.Chattanooga_Format2.commensementDate_Prior.length()+1).trim();//,text.indexOf(PDFAppConfig.Chattanooga_Format2.commensementDate_After)).trim();
 	    	 PDFReader.commencementDate = commensementRaw.substring(0, commensementRaw.indexOf('(')).trim();
 	    	 PDFReader.commencementDate = PDFReader.commencementDate.trim().replaceAll(" +", " ");
 		    System.out.println("Commensement Date = "+PDFReader.commencementDate);//.substring(commensementDate.lastIndexOf(":")+1));
@@ -41,7 +41,7 @@ public class Chattanooga_Format2
 	    
 	    try
 	    {
-	    	String expirationDateRaw  = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.expirationDate_Prior)+PDFAppConfig.Austin_Format2.expirationDate_Prior.length()).trim();//,text.indexOf(PDFAppConfig.Austin_Format2.expirationDate_After)).trim();
+	    	String expirationDateRaw  = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.expirationDate_Prior)+PDFAppConfig.Chattanooga_Format2.expirationDate_Prior.length()).trim();//,text.indexOf(PDFAppConfig.Chattanooga_Format2.expirationDate_After)).trim();
 	    	PDFReader.expirationDate = expirationDateRaw.substring(0,expirationDateRaw.indexOf('(')).trim();
 	    	PDFReader.expirationDate = PDFReader.expirationDate.trim().replaceAll(" +", " ");
 	    	System.out.println("Expiration Date = "+PDFReader.expirationDate);//.substring(commensementDate.lastIndexOf(":")+1));
@@ -54,7 +54,7 @@ public class Chattanooga_Format2
 	    
 	    try
 	    {
-	    	PDFReader.proratedRentDate = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.proratedRentDate_Prior)+PDFAppConfig.Austin_Format2.proratedRentDate_Prior.length()+1,text.indexOf(PDFAppConfig.Austin_Format2.proratedRentDate_After)).trim();
+	    	PDFReader.proratedRentDate = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.proratedRentDate_Prior)+PDFAppConfig.Chattanooga_Format2.proratedRentDate_Prior.length()+1,text.indexOf(PDFAppConfig.Chattanooga_Format2.proratedRentDate_After)).trim();
 		    System.out.println("prorated Rent Date = "+PDFReader.proratedRentDate);//.substring(commensementDate.lastIndexOf(":")+1));
 	    }
 	    catch(Exception e)
@@ -65,7 +65,7 @@ public class Chattanooga_Format2
 	    
 	    try
 	    {
-	    	PDFReader.proratedRent = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.proratedRent_Prior)+PDFAppConfig.Austin_Format2.proratedRent_Prior.length()).split(" ")[0].trim();
+	    	PDFReader.proratedRent = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.proratedRent_Prior)+PDFAppConfig.Chattanooga_Format2.proratedRent_Prior.length()).split(" ")[0].trim();
 	    	if(PDFReader.proratedRent.matches(".*[a-zA-Z]+.*"))
 		    {
 		    	PDFReader.proratedRent = "Error";
@@ -80,14 +80,14 @@ public class Chattanooga_Format2
 	    
 	    try
 	    {
-	    	PDFReader.monthlyRent = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.monthlyRent_Prior)+PDFAppConfig.Austin_Format2.monthlyRent_Prior.length()).split(" ")[0].trim();
+	    	PDFReader.monthlyRent = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.monthlyRent_Prior)+PDFAppConfig.Chattanooga_Format2.monthlyRent_Prior.length()).split(" ")[0].trim();
 	    	if(!PDFReader.monthlyRent.contains("."))
-	    		PDFReader.monthlyRent = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.monthlyRent_Prior2)+PDFAppConfig.Austin_Format2.monthlyRent_Prior2.length()).split(" ")[0].trim();
+	    		PDFReader.monthlyRent = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.monthlyRent_Prior2)+PDFAppConfig.Chattanooga_Format2.monthlyRent_Prior2.length()).split(" ")[0].trim();
 	    	if(PDFReader.monthlyRent.matches(".*[a-zA-Z]+.*"))
 		    {
 		    	PDFReader.monthlyRent = "Error";
 		    }
-	    	if(PDFReader.monthlyRent.contains("*")||text.contains(PDFAppConfig.Austin_Format2.monthlyRentAvailabilityCheck)==true)
+	    	if(PDFReader.monthlyRent.contains("*")||text.contains(PDFAppConfig.Chattanooga_Format2.monthlyRentAvailabilityCheck)==true)
 	    	{
 	    		PDFReader.incrementRentFlag = true;
 	    		PDFReader.monthlyRent = PDFReader.monthlyRent.replace("*", "");
@@ -101,11 +101,11 @@ public class Chattanooga_Format2
 	    		  PDFReader.increasedRent_previousRentEndDate = endDateArray[0]+" "+endDateArray[1]+" "+endDateArray[2];
 	    		  System.out.println("Increased Rent - Previous rent end date = "+PDFReader.increasedRent_previousRentEndDate);
 	    		 
-	    		  String newRentStartDate[] = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.increasedRent_newStartDate_Prior)+PDFAppConfig.Austin_Format2.increasedRent_newStartDate_Prior.length()).trim().split(" ");
+	    		  String newRentStartDate[] = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.increasedRent_newStartDate_Prior)+PDFAppConfig.Chattanooga_Format2.increasedRent_newStartDate_Prior.length()).trim().split(" ");
 	    		  PDFReader.increasedRent_newStartDate = newRentStartDate[0]+" "+newRentStartDate[1]+" "+newRentStartDate[2];
 	    		  System.out.println("Increased Rent - New Rent Start date = "+PDFReader.increasedRent_newStartDate);
 	    		  
-	    		  String increasedRentRaw = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.increasedRent_newStartDate_Prior)+PDFAppConfig.Austin_Format2.increasedRent_newStartDate_Prior.length()).trim();
+	    		  String increasedRentRaw = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.increasedRent_newStartDate_Prior)+PDFAppConfig.Chattanooga_Format2.increasedRent_newStartDate_Prior.length()).trim();
 	    		  PDFReader.increasedRent_amount = increasedRentRaw.substring(increasedRentRaw.indexOf("shall be $")+"shall be $".length()).trim().split(" ")[0];
 	    		  System.out.println("Increased Rent - Amount = "+PDFReader.increasedRent_amount); 
 	    		}
@@ -120,11 +120,11 @@ public class Chattanooga_Format2
 		    		  PDFReader.increasedRent_previousRentEndDate = endDateArray2[0]+" "+endDateArray2[1]+" "+endDateArray2[2];
 		    		  System.out.println("Increased Rent - Previous rent end date = "+PDFReader.increasedRent_previousRentEndDate);
 		    		 
-		    		  String newRentStartDate[] = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.increasedRent_newStartDate_Prior)+PDFAppConfig.Austin_Format2.increasedRent_newStartDate_Prior.length()).trim().split(" ");
+		    		  String newRentStartDate[] = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.increasedRent_newStartDate_Prior)+PDFAppConfig.Chattanooga_Format2.increasedRent_newStartDate_Prior.length()).trim().split(" ");
 		    		  PDFReader.increasedRent_newStartDate = newRentStartDate[0]+" "+newRentStartDate[1]+" "+newRentStartDate[2];
 		    		  System.out.println("Increased Rent - New Rent Start date = "+PDFReader.increasedRent_newStartDate);
 		    		  
-		    		  String increasedRentRaw = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.increasedRent_newStartDate_Prior)+PDFAppConfig.Austin_Format2.increasedRent_newStartDate_Prior.length()).trim();
+		    		  String increasedRentRaw = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.increasedRent_newStartDate_Prior)+PDFAppConfig.Chattanooga_Format2.increasedRent_newStartDate_Prior.length()).trim();
 		    		  PDFReader.increasedRent_amount = increasedRentRaw.substring(increasedRentRaw.indexOf("shall be $")+"shall be $".length()).trim().split(" ")[0];
 		    		  System.out.println("Increased Rent - Amount = "+PDFReader.increasedRent_amount); 
 		    		 }
@@ -140,10 +140,14 @@ public class Chattanooga_Format2
 	   
 	    try
 	    {
-	    	PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.adminFee_prior)+PDFAppConfig.Austin_Format2.adminFee_prior.length()).split(" ")[0].trim();
+	    	PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.adminFee_prior)+PDFAppConfig.Chattanooga_Format2.adminFee_prior.length()).split(" ")[0].trim();
 	    	if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
 		    {
-		    	PDFReader.adminFee = "Error";
+	    		PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.adminFee_prior2)+PDFAppConfig.Chattanooga_Format2.adminFee_prior2.length()).split(" ")[0].trim();
+	    		if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
+			    {
+			    	PDFReader.adminFee = "Error";
+			    }
 		    }
 	    }
 	    catch(Exception e)
@@ -153,12 +157,12 @@ public class Chattanooga_Format2
 	    }
 	    System.out.println("Admin Fee = "+PDFReader.adminFee);//.substring(commensementDate.lastIndexOf(":")+1));
 	  //Resident Benefits Package 
-	    if(text.contains(PDFAppConfig.Austin_Format2.residentBenefitsPackageAddendumCheck))
+	    if(text.contains(PDFAppConfig.Chattanooga_Format2.residentBenefitsPackageAddendumCheck))
 	    {
 	    	PDFReader.residentBenefitsPackageAvailabilityCheck = true;
 	    	 try
 	 	    {
-	 		    PDFReader.residentBenefitsPackage = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.AB1_residentBenefitsPackage_Prior)+PDFAppConfig.Austin_Format2.AB1_residentBenefitsPackage_Prior.length()).split(" ")[0].replaceAll("[^0-9a-zA-Z.]", "");
+	 		    PDFReader.residentBenefitsPackage = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.AB1_residentBenefitsPackage_Prior)+PDFAppConfig.Chattanooga_Format2.AB1_residentBenefitsPackage_Prior.length()).split(" ")[0].replaceAll("[^0-9a-zA-Z.]", "");
 	 		    if(PDFReader.residentBenefitsPackage.matches(".*[a-zA-Z]+.*"))
 	 		    {
 	 		    	PDFReader.residentBenefitsPackage = "Error";
@@ -174,7 +178,7 @@ public class Chattanooga_Format2
 	    }
 	    else
 	    {
-		    if(text.contains(PDFAppConfig.Austin_Format2.HVACFilterAddendumTextAvailabilityCheck)==true)
+		    if(text.contains(PDFAppConfig.Chattanooga_Format2.HVACFilterAddendumTextAvailabilityCheck)==true)
 		    {
 		    	PDFReader.HVACFilterFlag =true;
 		    }
@@ -183,7 +187,7 @@ public class Chattanooga_Format2
 		    try
 		    {
 		    	PDFReader.HVACFilterFlag =true;
-		    	PDFReader.airFilterFee = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.HVACAirFilter_prior)+PDFAppConfig.Austin_Format2.HVACAirFilter_prior.length()).split(" ")[0].trim();
+		    	PDFReader.airFilterFee = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.HVACAirFilter_prior)+PDFAppConfig.Chattanooga_Format2.HVACAirFilter_prior.length()).split(" ")[0].trim();
 		    	if(PDFReader.airFilterFee.matches(".*[a-zA-Z]+.*"))
 			    {
 			    	PDFReader.airFilterFee = "Error";
@@ -199,7 +203,7 @@ public class Chattanooga_Format2
 	    }
 	    try
 	    {
-	    	PDFReader.occupants = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.occupants_Prior)+PDFAppConfig.Austin_Format2.occupants_Prior.length(),text.indexOf(PDFAppConfig.Austin_Format2.occupants_After)).trim();
+	    	PDFReader.occupants = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.occupants_Prior)+PDFAppConfig.Chattanooga_Format2.occupants_Prior.length(),text.indexOf(PDFAppConfig.Chattanooga_Format2.occupants_After)).trim();
 		    System.out.println("Occupants = "+PDFReader.occupants);//.substring(commensementDate.lastIndexOf(":")+1));
 	    }
 	    catch(Exception e)
@@ -232,7 +236,7 @@ public class Chattanooga_Format2
 	    //Early Termination
 		try
 	    {
-	    	String[] earlyTerminationRaw = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.earlyTermination_Prior)+PDFAppConfig.Austin_Format2.earlyTermination_Prior.length()).split(" ");
+	    	String[] earlyTerminationRaw = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.earlyTermination_Prior)+PDFAppConfig.Chattanooga_Format2.earlyTermination_Prior.length()).split(" ");
 	    	
 		   PDFReader.earlyTermination = earlyTerminationRaw[0]+earlyTerminationRaw[1]; //text.substring(text.indexOf(OKC_PDFAppConfig.AB_earlyTerminationFee_Prior)+OKC_PDFAppConfig.AB_earlyTerminationFee_Prior.length(),text.indexOf(OKC_PDFAppConfig.AB_earlyTerminationFee_After));
 	    }
@@ -244,9 +248,9 @@ public class Chattanooga_Format2
 		System.out.println("Early Termination = "+PDFReader.earlyTermination);
 	    // Checking Pet Addendum is available or not
 	    
-	    if(text.contains(PDFAppConfig.Austin_Format2.petAgreementAvailabilityCheck)==true)
+	    if(text.contains(PDFAppConfig.Chattanooga_Format2.petAgreementAvailabilityCheck)==true)
 	    	PDFReader.petFlag =  true;
-	    else if(PDFReader.petFlag = text.contains(PDFAppConfig.Austin_Format2.petAgreementAvailabilityCheck2)==true)
+	    else if(PDFReader.petFlag = text.contains(PDFAppConfig.Chattanooga_Format2.petAgreementAvailabilityCheck2)==true)
 	    	PDFReader.petFlag =  true;
 	    else PDFReader.petFlag =  false;
 	    
@@ -272,11 +276,11 @@ public class Chattanooga_Format2
 	    	System.out.println("Prorated Pet rent= "+PDFReader.proratedPetRent.trim());
 	    	try
     		{
-    			PDFReader.petRent = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.petRent_Prior)+PDFAppConfig.Austin_Format2.petRent_Prior.length()).split(" ")[0].trim();
+    			PDFReader.petRent = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.petRent_Prior)+PDFAppConfig.Chattanooga_Format2.petRent_Prior.length()).split(" ")[0].trim();
 				 //System.out.println("Pet rent = "+PDFReader.petRent.trim());
 				 if(RunnerClass.onlyDigits(PDFReader.petRent)==false)
 				    {
-				    	 PDFReader.petRent = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.petRent_Prior2)+PDFAppConfig.Austin_Format2.petRent_Prior2.length()).trim().split(" ")[0];
+				    	 PDFReader.petRent = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.petRent_Prior2)+PDFAppConfig.Chattanooga_Format2.petRent_Prior2.length()).trim().split(" ")[0];
 				    }
 				 if(PDFReader.petRent.matches(".*[a-zA-Z]+.*"))
 				    {
@@ -295,7 +299,7 @@ public class Chattanooga_Format2
 	    	/*
 	    	try
 	    	{
-	    	OKC_PropertyWare.petSecurityDeposit = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.securityDeposit_Prior)+PDFAppConfig.Austin_Format2.securityDeposit_Prior.length()).trim().split(" ")[0];//,text.indexOf(PDFAppConfig.Austin_Format2.securityDeposit_After));
+	    	OKC_PropertyWare.petSecurityDeposit = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.securityDeposit_Prior)+PDFAppConfig.Chattanooga_Format2.securityDeposit_Prior.length()).trim().split(" ")[0];//,text.indexOf(PDFAppConfig.Chattanooga_Format2.securityDeposit_After));
 		    System.out.println("Security Deposit = "+OKC_PropertyWare.securityDeposit.trim());
 		    if(RunnerClass.onlyDigits(OKC_PropertyWare.petSecurityDeposit)==true)
 		    {
@@ -312,19 +316,19 @@ public class Chattanooga_Format2
 	    	String typeSubString = "";
 	    	try
 	    	{
-	    	typeSubString = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.typeWord_Prior)+PDFAppConfig.Austin_Format2.typeWord_Prior.length(),text.indexOf(PDFAppConfig.Austin_Format2.typeWord_After));
+	    	typeSubString = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.typeWord_Prior)+PDFAppConfig.Chattanooga_Format2.typeWord_Prior.length(),text.indexOf(PDFAppConfig.Chattanooga_Format2.typeWord_After));
 	    	}
 	    	catch(Exception e)
 	    	{
 	    		try
 	    		{
-	    		typeSubString = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.typeWord_Prior)+PDFAppConfig.Austin_Format2.typeWord_Prior.length(),text.indexOf(PDFAppConfig.Austin_Format2.typeWord_After2));
+	    		typeSubString = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.typeWord_Prior)+PDFAppConfig.Chattanooga_Format2.typeWord_Prior.length(),text.indexOf(PDFAppConfig.Chattanooga_Format2.typeWord_After2));
 	    		}
 	    		catch(Exception e2)
 	    		{
 	    			try
 	    			{
-	    				typeSubString = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.typeWord_Prior2)+PDFAppConfig.Austin_Format2.typeWord_Prior2.length(),text.indexOf(PDFAppConfig.Austin_Format2.typeWord_After3));
+	    				typeSubString = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.typeWord_Prior2)+PDFAppConfig.Chattanooga_Format2.typeWord_Prior2.length(),text.indexOf(PDFAppConfig.Chattanooga_Format2.typeWord_After3));
 	    			}
 	    			catch(Exception e3)
 	    			{
@@ -341,7 +345,7 @@ public class Chattanooga_Format2
 		    PDFReader.petWeight = new ArrayList();
 		    for(int i =0;i<countOfTypeWordInText;i++)
 		    {
-		    	String type = typeSubString.substring(RunnerClass.nthOccurrence(typeSubString, "Type:", i+1)+PDFAppConfig.Austin_Format2.AB_pet1Type_Prior.length(),RunnerClass.nthOccurrence(typeSubString, "Breed:", i+1)).trim();
+		    	String type = typeSubString.substring(RunnerClass.nthOccurrence(typeSubString, "Type:", i+1)+PDFAppConfig.Chattanooga_Format2.AB_pet1Type_Prior.length(),RunnerClass.nthOccurrence(typeSubString, "Breed:", i+1)).trim();
 		    	if(type.contains("N/A")||type.contains("n/a"))
 		    		break;
 		    	System.out.println(type);
@@ -365,7 +369,7 @@ public class Chattanooga_Format2
 	    	
 		    try
 		    {
-		    	PDFReader.petOneTimeNonRefundableFee = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.petOneTimeNonRefundable_Prior)+PDFAppConfig.Austin_Format2.petOneTimeNonRefundable_Prior.length(),text.indexOf(PDFAppConfig.Austin_Format2.petOneTimeNonRefundable_After)).trim();
+		    	PDFReader.petOneTimeNonRefundableFee = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.petOneTimeNonRefundable_Prior)+PDFAppConfig.Chattanooga_Format2.petOneTimeNonRefundable_Prior.length(),text.indexOf(PDFAppConfig.Chattanooga_Format2.petOneTimeNonRefundable_After)).trim();
 		    	if(PDFReader.petOneTimeNonRefundableFee.matches(".*[a-zA-Z]+.*"))
 			    {
 			    	PDFReader.petOneTimeNonRefundableFee = "Error";
@@ -375,7 +379,7 @@ public class Chattanooga_Format2
 		    {
 		    	try
 		    	{
-		    		PDFReader.petOneTimeNonRefundableFee = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.petOneTimeNonRefundable_Prior2)+PDFAppConfig.Austin_Format2.petOneTimeNonRefundable_Prior2.length()).trim().split(",")[0];
+		    		PDFReader.petOneTimeNonRefundableFee = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.petOneTimeNonRefundable_Prior2)+PDFAppConfig.Chattanooga_Format2.petOneTimeNonRefundable_Prior2.length()).trim().split(",")[0];
 				    //System.out.println("pet one time non refundable = "+PDFReader.petOneTimeNonRefundableFee.trim());
 		    		if(PDFReader.petOneTimeNonRefundableFee.matches(".*[a-zA-Z]+.*"))
 				    {
@@ -398,12 +402,12 @@ public class Chattanooga_Format2
 	  //Service Animal Addendum check
 	    try
 	    {
-	    if(text.contains(PDFAppConfig.Austin_Format2.serviceAnimalText))
+	    if(text.contains(PDFAppConfig.Chattanooga_Format2.serviceAnimalText))
 	    {
 	    	PDFReader.serviceAnimalFlag = true;
     		System.out.println("Service Animal Addendum is available");
     		
-            String typeSubString = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.AB_serviceAnimal_typeWord_Prior)+PDFAppConfig.Austin_Format2.AB_serviceAnimal_typeWord_Prior.length(),text.indexOf(PDFAppConfig.Austin_Format2.AB_serviceAnimal_typeWord_After));
+            String typeSubString = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.AB_serviceAnimal_typeWord_Prior)+PDFAppConfig.Chattanooga_Format2.AB_serviceAnimal_typeWord_Prior.length(),text.indexOf(PDFAppConfig.Chattanooga_Format2.AB_serviceAnimal_typeWord_After));
 	    	
 	    	String newText = typeSubString.replace("Type:","");
 		    int  countOftypeWords_ServiceAnimal = ((typeSubString.length() - newText.length())/"Type:".length());
@@ -414,7 +418,7 @@ public class Chattanooga_Format2
 		    PDFReader.serviceAnimalPetWeight = new ArrayList();
 		    for(int i =0;i<countOftypeWords_ServiceAnimal;i++)
 		    {
-		    	String type = typeSubString.substring(RunnerClass.nthOccurrence(typeSubString, "Type:", i+1)+PDFAppConfig.Austin_Format2.AB_pet1Type_Prior.length(),RunnerClass.nthOccurrence(typeSubString, "Breed:", i+1)).trim();
+		    	String type = typeSubString.substring(RunnerClass.nthOccurrence(typeSubString, "Type:", i+1)+PDFAppConfig.Chattanooga_Format2.AB_pet1Type_Prior.length(),RunnerClass.nthOccurrence(typeSubString, "Breed:", i+1)).trim();
 		    	if(type.contains("N/A")||type.contains("n/a"))
 		    		break;
 		    	System.out.println(type);
@@ -446,7 +450,7 @@ public class Chattanooga_Format2
 	    
 	    try
 	    {
-	    	if(text.contains(PDFAppConfig.Austin_Format2.concessionAddendumText))
+	    	if(text.contains(PDFAppConfig.Chattanooga_Format2.concessionAddendumText))
 	    	{
 	    		PDFReader.concessionAddendumFlag = true;
 	    		System.out.println("Concession Addendum is available");
@@ -463,20 +467,20 @@ public class Chattanooga_Format2
 		String lateFeeRuleText ="";
 		try
 		{
-		 lateFeeRuleText = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.lateFeeRuleText_Prior)+PDFAppConfig.Austin_Format2.lateFeeRuleText_Prior.length(),text.indexOf(PDFAppConfig.Austin_Format2.lateFeeRuleText_After));
+		 lateFeeRuleText = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.lateFeeRuleText_Prior)+PDFAppConfig.Chattanooga_Format2.lateFeeRuleText_Prior.length(),text.indexOf(PDFAppConfig.Chattanooga_Format2.lateFeeRuleText_After));
 		}
 		catch(Exception e)
 		{
 			try
 			{
-			lateFeeRuleText = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.lateFeeRuleText_Prior)+PDFAppConfig.Austin_Format2.lateFeeRuleText_Prior.length(),text.indexOf(PDFAppConfig.Austin_Format2.lateFeeRuleText_After2));
+			lateFeeRuleText = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.lateFeeRuleText_Prior)+PDFAppConfig.Chattanooga_Format2.lateFeeRuleText_Prior.length(),text.indexOf(PDFAppConfig.Chattanooga_Format2.lateFeeRuleText_After2));
 			}
 			catch(Exception e2)
 			{
 			return false;
 			}
 		}
-		if(lateFeeRuleText.contains(PDFAppConfig.Austin_Format2.lateFeeRule_whicheverIsGreater))
+		if(lateFeeRuleText.contains(PDFAppConfig.Chattanooga_Format2.lateFeeRule_whicheverIsGreater))
 		{
 			RunnerClass.lateFeeRuleType = "GreaterOfFlatFeeOrPercentage";
 			RunnerClass.lateFeeType = "GreaterOfFlatFeeOrPercentage";
@@ -485,7 +489,7 @@ public class Chattanooga_Format2
 			try
 			{
 		   // PDFReader.lateChargeDay =  lateFeeRuleText.substring(lateFeeRuleText.indexOf(OKC_PDFAppConfig.lateFeeRule_whicheverIsGreater_dueDay_Prior)+OKC_PDFAppConfig.lateFeeRule_whicheverIsGreater_dueDay_Prior.length()).trim().split(" ")[0];
-				PDFReader.lateChargeDay =  lateFeeRuleText.split(PDFAppConfig.Austin_Format2.lateFeeRule_whicheverIsGreater_dueDay_After)[0].trim();
+				PDFReader.lateChargeDay =  lateFeeRuleText.split(PDFAppConfig.Chattanooga_Format2.lateFeeRule_whicheverIsGreater_dueDay_After)[0].trim();
 				PDFReader.lateChargeDay =PDFReader.lateChargeDay.substring(PDFReader.lateChargeDay.lastIndexOf(" ")+1);
 		    PDFReader.lateChargeDay =  PDFReader.lateChargeDay.replaceAll("[^0-9]", "");
 			}
@@ -498,7 +502,7 @@ public class Chattanooga_Format2
 		//Late Fee Percentage
 			try
 			{
-		    PDFReader.lateFeePercentage =  lateFeeRuleText.substring(lateFeeRuleText.indexOf(PDFAppConfig.Austin_Format2.lateFeeRule_whicheverIsGreater_lateFeePercentage)+PDFAppConfig.Austin_Format2.lateFeeRule_whicheverIsGreater_lateFeePercentage.length()).trim().split(" ")[0];
+		    PDFReader.lateFeePercentage =  lateFeeRuleText.substring(lateFeeRuleText.indexOf(PDFAppConfig.Chattanooga_Format2.lateFeeRule_whicheverIsGreater_lateFeePercentage)+PDFAppConfig.Chattanooga_Format2.lateFeeRule_whicheverIsGreater_lateFeePercentage.length()).trim().split(" ")[0];
 		    PDFReader.lateFeePercentage = PDFReader.lateFeePercentage.replaceAll("[^0-9]", "");
 			}
 			catch(Exception e)
@@ -510,7 +514,7 @@ public class Chattanooga_Format2
          //Late Fee Amount
          try
          {
-         String lateFeeAmount  = lateFeeRuleText.substring(lateFeeRuleText.indexOf(PDFAppConfig.Austin_Format2.lateFeeRule_whicheverIsGreater_lateFeeAmount)+PDFAppConfig.Austin_Format2.lateFeeRule_whicheverIsGreater_lateFeeAmount.length()).trim().split(" ")[0];
+         String lateFeeAmount  = lateFeeRuleText.substring(lateFeeRuleText.indexOf(PDFAppConfig.Chattanooga_Format2.lateFeeRule_whicheverIsGreater_lateFeeAmount)+PDFAppConfig.Chattanooga_Format2.lateFeeRule_whicheverIsGreater_lateFeeAmount.length()).trim().split(" ")[0];
         PDFReader.flatFeeAmount = lateFeeAmount.replaceAll("[^.0-9]", "");
          }
          catch(Exception e)
@@ -522,7 +526,7 @@ public class Chattanooga_Format2
          return true;
 		}
 		else 
-		if(lateFeeRuleText.contains(PDFAppConfig.Austin_Format2.lateFeeRule_mayNotExceedMoreThan30Days))
+		if(lateFeeRuleText.contains(PDFAppConfig.Chattanooga_Format2.lateFeeRule_mayNotExceedMoreThan30Days))
 		{
 			RunnerClass.lateFeeRuleType = "initialFeePluPerDayFee";
 			//RunnerClass.lateFeeRuleType = "Initial Fee + Per Day Fee";
@@ -530,7 +534,7 @@ public class Chattanooga_Format2
 			PDFReader.lateFeeType ="initialFeePluPerDayFee"; 
 	         try
 	 	    {
-	 		    PDFReader.lateChargeFee = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.AB_lateFee_Prior)+PDFAppConfig.Austin_Format2.AB_lateFee_Prior.length()).trim().split(" ")[0];
+	 		    PDFReader.lateChargeFee = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.AB_lateFee_Prior)+PDFAppConfig.Chattanooga_Format2.AB_lateFee_Prior.length()).trim().split(" ")[0];
 	 		    //PDFReader.lateChargeFee =  PDFReader.lateChargeFee.substring(0,PDFReader.lateChargeFee.length()-1);
 	 	    }
 	 	    catch(Exception e)
@@ -543,7 +547,7 @@ public class Chattanooga_Format2
 	 	    //Per Day Fee
 	 	    try
 	 	    {
-	 	    	PDFReader.lateFeeChargePerDay = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.AB_additionalLateChargesPerDay_Prior)+PDFAppConfig.Austin_Format2.AB_additionalLateChargesPerDay_Prior.length()).split(" ")[0].trim();//,text.indexOf(OKC_PDFAppConfig.AB_additionalLateChargesPerDay_After));
+	 	    	PDFReader.lateFeeChargePerDay = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.AB_additionalLateChargesPerDay_Prior)+PDFAppConfig.Chattanooga_Format2.AB_additionalLateChargesPerDay_Prior.length()).split(" ")[0].trim();//,text.indexOf(OKC_PDFAppConfig.AB_additionalLateChargesPerDay_After));
 	 	    }
 	 	    catch(Exception e)
 	 	    {
@@ -555,7 +559,7 @@ public class Chattanooga_Format2
 	 	    //Additional Late Charges Limit
 	 	    try
 	 	    {
-	 	    	PDFReader.additionalLateChargesLimit = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.AB_additionalLateChargesLimit_Prior)+PDFAppConfig.Austin_Format2.AB_additionalLateChargesLimit_Prior.length()).trim().split(" ")[0]; //,text.indexOf(OKC_PDFAppConfig.AB_additionalLateChargesLimit_After));
+	 	    	PDFReader.additionalLateChargesLimit = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.AB_additionalLateChargesLimit_Prior)+PDFAppConfig.Chattanooga_Format2.AB_additionalLateChargesLimit_Prior.length()).trim().split(" ")[0]; //,text.indexOf(OKC_PDFAppConfig.AB_additionalLateChargesLimit_After));
 	 	    }
 	 	    catch(Exception e)
 	 	    {
@@ -579,7 +583,7 @@ public class Chattanooga_Format2
 	 	    RunnerClass.dueDay_initialFee = PDFReader.lateChargeDay;
 	 	   return true;
 		}
-		else if(lateFeeRuleText.contains(PDFAppConfig.Austin_Format2.lateFeeRule_mayNotExceedAmount))
+		else if(lateFeeRuleText.contains(PDFAppConfig.Chattanooga_Format2.lateFeeRule_mayNotExceedAmount))
 			{
 			RunnerClass.lateFeeRuleType = "initialFeePluPerDayFee";
 			RunnerClass.lateFeeRuleType = "Initial Fee + Per Day Fee";
@@ -639,7 +643,7 @@ public class Chattanooga_Format2
 			return true;
 			}
 		else 
-			if(lateFeeRuleText.contains(PDFAppConfig.Austin_Format2.lateFeeRule_totalDelinquentRentDueToTheTenantAccount))
+			if(lateFeeRuleText.contains(PDFAppConfig.Chattanooga_Format2.lateFeeRule_totalDelinquentRentDueToTheTenantAccount))
 			{
 				RunnerClass.lateFeeRuleType = "GreaterOfFlatFeeOrPercentage";
 				RunnerClass.lateFeeType = "GreaterOfFlatFeeOrPercentage";
@@ -714,7 +718,7 @@ public class Chattanooga_Format2
 		//Late Charge Day
 		try
 	    {
-	    	PDFReader.lateChargeDay = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.lateFeeDay_Prior)+PDFAppConfig.Austin_Format2.lateFeeDay_Prior.length()).trim().split(" ")[0].trim().replace("[^0-9]", "");
+	    	PDFReader.lateChargeDay = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.lateFeeDay_Prior)+PDFAppConfig.Chattanooga_Format2.lateFeeDay_Prior.length()).trim().split(" ")[0].trim().replace("[^0-9]", "");
 	    	PDFReader.lateChargeDay = PDFReader.lateChargeDay.replaceAll("[^\\d]", "");
 	    	System.out.println("Late Charge Day = "+PDFReader.lateChargeDay);//.substring(commensementDate.lastIndexOf(":")+1));
 	    }
@@ -727,7 +731,7 @@ public class Chattanooga_Format2
 	    //Late Charge Fee
 	    try
 	    {
-	    	PDFReader.lateChargeFee = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.lateChargePerDayFee)+PDFAppConfig.Austin_Format2.lateChargePerDayFee.length()).trim().split(" ")[0].trim();
+	    	PDFReader.lateChargeFee = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.lateChargePerDayFee)+PDFAppConfig.Chattanooga_Format2.lateChargePerDayFee.length()).trim().split(" ")[0].trim();
 	    	//PDFReader.lateChargeFee = PDFReader.lateChargeFee.replaceAll("[^.0-9]", "");
 	    }
 	    catch(Exception e)
@@ -740,7 +744,7 @@ public class Chattanooga_Format2
 	    //Per Day Fee
 	    try
 	    {
-	    	PDFReader.additionalLateCharges = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.additionaLateCharge_Prior)+PDFAppConfig.Austin_Format2.additionaLateCharge_Prior.length()).trim().split(" ")[0].trim();
+	    	PDFReader.additionalLateCharges = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.additionaLateCharge_Prior)+PDFAppConfig.Chattanooga_Format2.additionaLateCharge_Prior.length()).trim().split(" ")[0].trim();
 	    	PDFReader.additionalLateCharges = PDFReader.additionalLateCharges.replaceAll("[^.0-9]", "");
 	    }
 	    catch(Exception e)
@@ -754,7 +758,7 @@ public class Chattanooga_Format2
 	    {
 	    if(OKC_RunnerClass.pdfFormatType.equalsIgnoreCase("Format1"))
 	    {
-	    	PDFReader.additionalLateChargesLimit = text.substring(text.indexOf(PDFAppConfig.Austin_Format2.additionaLateCharge_Prior)+PDFAppConfig.Austin_Format2.additionaLateCharge_Prior.length()).split(" ")[0].trim();
+	    	PDFReader.additionalLateChargesLimit = text.substring(text.indexOf(PDFAppConfig.Chattanooga_Format2.additionaLateCharge_Prior)+PDFAppConfig.Chattanooga_Format2.additionaLateCharge_Prior.length()).split(" ")[0].trim();
 		    System.out.println("Additional Late Charges  = "+PDFReader.additionalLateChargesLimit);//.substring(commensementDate.lastIndexOf(":")+1));
 	    }
 	    }
