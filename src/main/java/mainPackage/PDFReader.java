@@ -1002,7 +1002,7 @@ public class PDFReader
 			}
 			
 			//Prepayment charge 
-			if((RunnerClass.company.equals("Alabama")||RunnerClass.company.equals("Hawaii")&&PDFReader.monthlyRentTaxFlag==true))
+			if(((RunnerClass.company.equals("Alabama")||RunnerClass.company.equals("Hawaii"))&&PDFReader.monthlyRentTaxFlag==true))
 			{
 				try
 				{

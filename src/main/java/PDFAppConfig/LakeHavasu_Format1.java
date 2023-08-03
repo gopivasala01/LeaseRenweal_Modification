@@ -31,6 +31,7 @@ public class LakeHavasu_Format1
 		public static String AB_fullRentDate1_After = ".   Thereafter, Tenant will pay";
 		
 		public static String AB_adminFee_Prior = "Annual Lease Preparation Fee in the amount of $";
+		public static String adminFee_prior2 = "preparation fee in the amount of $";
 		public static String AB_adminFee_After = "prior to the Commencement Date of this lease";
 		
 		public static String AB_adminFee_Prior2 = "initial lease preparation fee in the amount of $";

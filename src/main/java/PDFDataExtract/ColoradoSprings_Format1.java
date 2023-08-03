@@ -159,7 +159,11 @@ public class ColoradoSprings_Format1
 		    PDFReader.adminFee = text.toLowerCase().substring(text.toLowerCase().indexOf(PDFAppConfig.ColoradoSprings_Format1.AB_adminFee_Prior.toLowerCase())+PDFAppConfig.ColoradoSprings_Format1.AB_adminFee_Prior.length()).trim().split(" ")[0];
 		    if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
 		    {
-		    	PDFReader.adminFee = "Error";
+		    	PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.ColoradoSprings_Format1.adminFee_prior2)+PDFAppConfig.ColoradoSprings_Format1.adminFee_prior2.length()).split(" ")[0].trim();
+	    		if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
+			    {
+			    	PDFReader.adminFee = "Error";
+			    }
 		    }
 	    }
 	    catch(Exception e)

@@ -177,7 +177,11 @@ public class IdahoFalls_Format1
 		    PDFReader.adminFee = text.toLowerCase().substring(text.toLowerCase().indexOf(PDFAppConfig.IdahoFalls_Format1.AB_adminFee_Prior.toLowerCase())+PDFAppConfig.IdahoFalls_Format1.AB_adminFee_Prior.length()).trim().split(" ")[0];
 		    if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
 		    {
-		    	PDFReader.adminFee = "Error";
+		    	PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.IdahoFalls_Format1.adminFee_prior2)+PDFAppConfig.IdahoFalls_Format1.adminFee_prior2.length()).split(" ")[0].trim();
+	    		if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
+			    {
+			    	PDFReader.adminFee = "Error";
+			    }
 		    }
 		    if(PDFReader.adminFee.equals("Error"))
 		    {

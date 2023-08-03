@@ -216,7 +216,11 @@ public class Hawaii_Format1
 		    	PDFReader.adminFee = text.toLowerCase().substring(text.toLowerCase().indexOf(PDFAppConfig.Hawaii_Format1.AB_adminFee_Prior2.toLowerCase())+PDFAppConfig.Hawaii_Format1.AB_adminFee_Prior2.length()).trim().split(" ")[0];
 		    	if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
 			    {
-		    	PDFReader.adminFee = "Error";
+		    		PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.Hawaii_Format1.adminFee_prior2)+PDFAppConfig.Hawaii_Format1.adminFee_prior2.length()).split(" ")[0].trim();
+		    		if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
+				    {
+				    	PDFReader.adminFee = "Error";
+				    }
 			    }
 		    }
 	    }
