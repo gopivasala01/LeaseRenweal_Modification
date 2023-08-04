@@ -1044,7 +1044,7 @@ public class PDFReader
 			System.out.println("Prepayment Charge = "+PDFReader.prepaymentCharge);
 			
 			//Prorate pet Rent when Taxes available in Alabama and Hawaii
-			if((RunnerClass.company.equals("Alabama")||RunnerClass.company.equals("Hawaii")&&PDFReader.petRentTaxFlag==true))
+			if(((RunnerClass.company.equals("Alabama")||RunnerClass.company.equals("Hawaii"))&&PDFReader.petRentTaxFlag==true))
 			{
 			if(!PDFReader.proratedPetRent.equalsIgnoreCase("n/a")||!PDFReader.proratedPetRent.equalsIgnoreCase("na")||!PDFReader.proratedPetRent.equalsIgnoreCase("n/a.")||!PDFReader.proratedPetRent.equalsIgnoreCase("0.00"))
 			try
