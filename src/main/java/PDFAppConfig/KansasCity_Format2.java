@@ -18,7 +18,7 @@ public class KansasCity_Format2
 	
 	public static String adminFee_prior = "Annual Lease Preparation Fee in the amount of $";
 	public static String adminFee_prior2 = "preparation fee in the amount of $";
-	
+	public static String adminFee_prior3 = "Preparation Fee in the amount of $";
 	public static String HVACAirFilter_prior = "HVAC Filter Maintenance Program Fee of $";
 	
 	public static String occupants_Prior = "Name, Age ";

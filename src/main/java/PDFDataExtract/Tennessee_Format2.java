@@ -145,7 +145,11 @@ public class Tennessee_Format2 {
 	    		PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.Tennessee_Format2.adminFee_prior2)+PDFAppConfig.Tennessee_Format2.adminFee_prior2.length()).split(" ")[0].trim();
 	    		if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
 			    {
-			    	PDFReader.adminFee = "Error";
+	    			PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.Tennessee_Format1.adminFee_prior3)+PDFAppConfig.Tennessee_Format1.adminFee_prior3.length()).split(" ")[0].trim();
+		    		if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
+				    {
+				    	PDFReader.adminFee = "Error";
+				    }
 			    }
 		    }
 	    }

@@ -146,7 +146,11 @@ public class KansasCity_Format2
 	    		PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.KansasCity_Format2.adminFee_prior2)+PDFAppConfig.KansasCity_Format2.adminFee_prior2.length()).split(" ")[0].trim();
 	    		if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
 			    {
-			    	PDFReader.adminFee = "Error";
+	    			PDFReader.adminFee = text.substring(text.indexOf(PDFAppConfig.KansasCity_Format2.adminFee_prior3)+PDFAppConfig.KansasCity_Format2.adminFee_prior3.length()).split(" ")[0].trim();
+		    		if(PDFReader.adminFee.matches(".*[a-zA-Z]+.*"))
+				    {
+				    	PDFReader.adminFee = "Error";
+				    }
 			    }
 		    }
 	    }

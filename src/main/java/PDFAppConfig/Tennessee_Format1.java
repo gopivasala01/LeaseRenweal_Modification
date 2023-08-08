@@ -22,14 +22,14 @@ public class Tennessee_Format1
 		public static String AB_fullRent_After = " for each full month during";
 		
 		public static String AB_fullRent2_Prior = "Tenant will pay Landlord monthly rent in the amount of $";
-		
+		public static String adminFee_prior3 = "Preparation Fee in the amount of $";
 		public static String AB_fullRentDate_Prior = "The first full month�s rent is due and payable no later than ";
 		public static String AB_fullRentDate_After = "   Thereafter, Tenant will \r\n"
 				+ "pay ";
 		
 		public static String AB_fullRentDate1_After = ".   Thereafter, Tenant will pay";
 		
-		public static String AB_adminFee_Prior = "Annual Lease Preparation Fee in the amount of $";
+		public static String AB_adminFee_Prior = "Lease Preparation Fee in the amount of $";
 		public static String adminFee_prior2 = "preparation fee in the amount of $";
 		public static String AB_adminFee_After = "prior to the Commencement Date of this lease";
 		
