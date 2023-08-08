@@ -158,7 +158,7 @@ public class SaintLouis_Format2
 	    }
 	    System.out.println("Admin Fee = "+PDFReader.adminFee);//.substring(commensementDate.lastIndexOf(":")+1));
 	  //Resident Benefits Package 
-	    if(text.contains(PDFAppConfig.SaintLouis_Format2.residentBenefitsPackageAddendumCheck))
+	    if(text.contains(PDFAppConfig.SaintLouis_Format2.residentBenefitsPackageAddendumCheck)&&!text.contains("Resident Benefits Package Opt-Out Addendum"))
 	    {
 	    	PDFReader.residentBenefitsPackageAvailabilityCheck = true;
 	    	 try

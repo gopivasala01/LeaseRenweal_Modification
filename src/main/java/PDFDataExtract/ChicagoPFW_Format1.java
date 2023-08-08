@@ -174,7 +174,7 @@ public class ChicagoPFW_Format1
 	    System.out.println("Admin Fee = "+PDFReader.adminFee.trim());
 	    
 	  //Resident Benefits Package 
-	    if(text.contains(PDFAppConfig.ChicagoPFW_Format1.residentBenefitsPackageAddendumCheck))
+	    if(text.contains(PDFAppConfig.ChicagoPFW_Format1.residentBenefitsPackageAddendumCheck)&&!text.contains("Resident Benefits Package Opt-Out Addendum"))
 	    {
 	    	PDFReader.residentBenefitsPackageAvailabilityCheck = true;
 	    	 try

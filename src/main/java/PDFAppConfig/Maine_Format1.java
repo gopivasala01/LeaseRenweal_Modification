@@ -177,6 +177,7 @@ public class Maine_Format1
 		public static String lateFeeRule_whicheverIsGreater_lateFeeAmount2 ="late fee in the amount of $";
 		
 		public static String residentBenefitsPackageAddendumCheck ="Resident Benefits Package (RBP) Lease Addendum";
+		public static String residentBenefitsPackageOptOutAddendum = "Resident Benefits Package Opt-Out Addendum";
 		public static String AB1_residentBenefitsPackage_Prior = "Resident Benefits Package Fee of $";
 		public static  String PDFFormatConfirmationText = "SINGLE FAMILY RESIDENCE OR CONDOMINIUM LEASE";
 		public static  String PDFFormat2ConfirmationText = "RESIDENTIAL LEASE AGREEMENT";

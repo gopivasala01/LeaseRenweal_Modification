@@ -174,7 +174,7 @@ public class Maine_Format1
 	    System.out.println("Admin Fee = "+PDFReader.adminFee.trim());
 	    
 	  //Resident Benefits Package 
-	    if(text.contains(PDFAppConfig.Maine_Format1.residentBenefitsPackageAddendumCheck))
+	    if(text.contains(PDFAppConfig.Maine_Format1.residentBenefitsPackageAddendumCheck)&&!text.contains(PDFAppConfig.Maine_Format1.residentBenefitsPackageOptOutAddendum))
 	    {
 	    	PDFReader.residentBenefitsPackageAvailabilityCheck = true;
 	    	 try
