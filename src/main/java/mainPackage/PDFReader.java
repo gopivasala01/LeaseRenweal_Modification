@@ -1149,7 +1149,7 @@ public class PDFReader
 			{
 				double monthlyRent = Double.parseDouble(PDFReader.monthlyRent.replace(",", ""));
 				double onePercentOfRent = monthlyRent*0.01;
-				PDFReader.OnePercentOfRentAmount = String.valueOf(onePercentOfRent);
+				PDFReader.OnePercentOfRentAmount =String.valueOf(RunnerClass.round( onePercentOfRent,2));
 			}
 			catch(Exception e)
 			{
@@ -1160,7 +1160,7 @@ public class PDFReader
 			{
 				double proratedRent = Double.parseDouble(PDFReader.proratedRent.replace(",", ""));
 				double onePercentOfProrateRent = proratedRent*0.01;
-				PDFReader.OnePercentOfProrateRentAmount = String.valueOf(onePercentOfProrateRent);
+				PDFReader.OnePercentOfProrateRentAmount = String.valueOf(RunnerClass.round(onePercentOfProrateRent,2));
 			}
 			catch(Exception e)
 			{
@@ -1171,7 +1171,7 @@ public class PDFReader
 			{
 				double petRent = Double.parseDouble(PDFReader.petRent.replace(",", ""));
 				double onePercentOfPetRent = petRent*0.01;
-				PDFReader.OnePercentOfPetRentAmount = String.valueOf(onePercentOfPetRent);
+				PDFReader.OnePercentOfPetRentAmount = String.valueOf(RunnerClass.round(onePercentOfPetRent,2));
 			}
 			catch(Exception e)
 			{
@@ -1182,7 +1182,7 @@ public class PDFReader
 			{
 				double proratePetRent = Double.parseDouble(PDFReader.proratedPetRent.replace(",", ""));
 				double onePercentOfProratedPetRent = proratePetRent*0.01;
-				PDFReader.OnePercentOfProratePetRentAmount = String.valueOf(onePercentOfProratedPetRent);
+				PDFReader.OnePercentOfProratePetRentAmount = String.valueOf(RunnerClass.round(onePercentOfProratedPetRent,2));
 			}
 			catch(Exception e)
 			{
