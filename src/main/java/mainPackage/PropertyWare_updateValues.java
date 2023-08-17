@@ -4,6 +4,11 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
+
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class PropertyWare_updateValues 
 {
@@ -26,6 +31,10 @@ public class PropertyWare_updateValues
 	//ConfigureValues
 		public static boolean configureValues() throws Exception
 		{
+			//For Arizona - To get Rent Charge codes
+			if(RunnerClass.company.equals("Arizona"))
+			PropertyWare_updateValues.getRentCodeForArizona();
+			
 			//Clear all values Configuration table first
 			String query1 = "update  automation.LeaseCloseOutsChargeChargesConfiguration Set Amount=NULL, StartDate=NUll, EndDate=NUll, MoveInCharge=NULL, AutoCharge=NULL, autoCharge_StartDate=NULL";
 			DataBase.updateTable(query1);
@@ -108,7 +117,7 @@ public class PropertyWare_updateValues
 			try
 			{
 			String query =null;
-			for(int i=1;i<=20;i++)
+			for(int i=1;i<=24;i++)
 			{
 				switch(i)
 				{
@@ -179,6 +188,18 @@ public class PropertyWare_updateValues
 					break;
 				case 20: 
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getMonthlyRentGETCode(RunnerClass.company)+"',Amount = '"+PDFReader.monthlyRentTaxAmount+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=20";
+					break;
+				case 21: 
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getMonthlyRentTaxCode(RunnerClass.company)+"',Amount = '"+PDFReader.OnePercentOfRentAmount+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=21";
+					break;
+				case 22: 
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getMonthlyRentTaxCode(RunnerClass.company)+"',Amount = '"+PDFReader.OnePercentOfProrateRentAmount+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=22";
+					break;
+				case 23: 
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getPetRentTaxCode(RunnerClass.company)+"',Amount = '"+PDFReader.OnePercentOfPetRentAmount+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=23";
+					break;
+				case 24: 
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getPetRentTaxCode(RunnerClass.company)+"',Amount = '"+PDFReader.OnePercentOfProratePetRentAmount+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=24";
 					break;
 				}
 			}
@@ -438,6 +459,51 @@ public class PropertyWare_updateValues
 				}
 			}
 			
+			// Arizona
+			if(RunnerClass.company.equals("Arizona")&&PDFReader.monthlyRentTaxFlag==true)
+			{
+				String[] moveInCodes = moveInCharges.split(",");
+				for(int i=0;i<moveInCodes.length;i++)
+				{
+					String code = moveInCodes[i];
+					switch(code)
+					{
+					case "1":
+						moveInCharges = moveInCharges.substring(0, moveInCharges.indexOf(code))+"1,22"+moveInCharges.substring(moveInCharges.indexOf(code)+1);
+						break;
+					case "2":
+						moveInCharges = moveInCharges.substring(0, moveInCharges.indexOf(code))+"2,21"+moveInCharges.substring(moveInCharges.indexOf(code)+1);
+						break;
+					case "8":
+						moveInCharges = moveInCharges.substring(0, moveInCharges.indexOf(code))+"8,23"+moveInCharges.substring(moveInCharges.indexOf(code)+1);
+						break;
+					case "4":
+						moveInCharges = moveInCharges.substring(0, moveInCharges.indexOf(code))+"4,24"+moveInCharges.substring(moveInCharges.indexOf(code)+1);
+						break;
+					}
+				}
+				String[] autoCodes = autoCharges.split(",");
+				for(int i=0;i<autoCodes.length;i++)
+				{
+					String code = autoCodes[i];
+					switch(code)
+					{
+					case "1":
+						autoCharges = autoCharges.substring(0, autoCharges.indexOf(code))+"1,22"+autoCharges.substring(autoCharges.indexOf(code)+1);
+						break;
+					case "2":
+						autoCharges = autoCharges.substring(0, autoCharges.indexOf(code))+"2,21"+autoCharges.substring(autoCharges.indexOf(code)+1);
+						break;
+					case "8":
+						autoCharges = autoCharges.substring(0, autoCharges.indexOf(code))+"8,23"+autoCharges.substring(autoCharges.indexOf(code)+1);
+						break;
+					case "4":
+						autoCharges = autoCharges.substring(0, autoCharges.indexOf(code))+"4,24"+autoCharges.substring(autoCharges.indexOf(code)+1);
+						break;
+					}
+				}
+			}
+			
 			DataBase.assignChargeCodes(moveInCharges, autoCharges);
 		}
 		
@@ -616,6 +682,31 @@ public class PropertyWare_updateValues
 				}
 				
 			}
+		}
+		public static void getRentCodeForArizona() throws Exception
+		{
+			RunnerClass.js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+			RunnerClass.driver.findElement(Locators.ledgerTab).click();
+			Thread.sleep(2000);
+			RunnerClass.actions.sendKeys(Keys.ESCAPE).build().perform();
+			RunnerClass.driver.findElement(Locators.newCharge).click();
+			Thread.sleep(2000);
+			//Account code
+			RunnerClass.driver.findElement(Locators.accountDropdown).click();
+			List<WebElement> chargeCodes = RunnerClass.driver.findElements(Locators.chargeCodesList);
+			for(int i=0;i<chargeCodes.size();i++)
+			{
+				String code = chargeCodes.get(i).getText();
+				if(code.contains(RunnerClass.arizonaCityFromBuildingAddress))
+				{
+					RunnerClass.arizonaRentCode = code;
+					RunnerClass.arizonaCodeAvailable = true;
+					break;
+					
+				}
+			}
+			RunnerClass.driver.findElement(Locators.moveInChargeCancel).click();
+			
 		}
 		
 }

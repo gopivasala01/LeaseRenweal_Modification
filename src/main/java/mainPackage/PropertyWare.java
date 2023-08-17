@@ -63,6 +63,7 @@ public class PropertyWare
 		}
 		catch(Exception e)
 		{
+			e.printStackTrace();
 			System.out.println("Login failed");
 		    RunnerClass.failedReason = RunnerClass.failedReason+","+ "Login failed";
 			return false;
@@ -235,6 +236,21 @@ public class PropertyWare
 	
 	public static boolean downloadLeaseAgreement(String building, String ownerName) throws Exception
 	{
+		//City from Building Address for Arizona rent code
+		try
+		{
+			String buildingAddress = RunnerClass.driver.findElement(Locators.buildingAddress).getText();
+			String[] lines = buildingAddress.split("\\n");
+			String city = lines[1].split(" ")[0].trim();
+			RunnerClass.arizonaCityFromBuildingAddress = city;
+			System.out.println("Building Address = "+buildingAddress);
+			System.out.println("Building City = "+city);
+		}
+		catch(Exception e)
+		{
+			
+		}
+		
 		PropertyWare.intermittentPopUp();
 		PDFReader.RCDetails = "";
 		RunnerClass.driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);

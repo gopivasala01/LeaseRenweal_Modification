@@ -18,7 +18,7 @@ public class PropertyWare_OtherInformation
 		RunnerClass.driver.navigate().refresh();
 		//Pop up after clicking Lease Name
 		PropertyWare.intermittentPopUp();
-		RunnerClass.js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+		RunnerClass.js.executeScript("window.scrollBy(0,-document.body.scrollHeight)");
 		RunnerClass.driver.findElement(Locators.summaryEditButton).click();
 		
 		try

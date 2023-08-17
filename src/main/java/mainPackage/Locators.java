@@ -34,6 +34,7 @@ public class Locators
     public static By ledgerTab = By.id("tab2");
     public static By newCharge = By.xpath("//*[@value='New Charge']");
     public static By accountDropdown = By.name("charge.GLAccountID");
+    public static By chargeCodesList = By.xpath("//*[@name='charge.GLAccountID']/optgroup/option");
     public static By accountList = By.xpath("(//*[@class='edit'])[9]/descendant::select[1]/optgroup/option");
     public static By referenceName = By.name("charge.refNo");
     public static By moveInCharges_List =By.xpath("//*[@id='ledgerDataTable']/tbody/tr/td[5]");
@@ -116,7 +117,7 @@ public class Locators
     public static By advancedSearch_buildingAddresses = By.xpath("//*[@id='searchResultTable_buildings']/following::table[1]/tbody/tr/td[2]/a");
     
     public static By baseRent = By.xpath("//*[text()='Base Rent']/following::input[1]");
-    
+    public static By buildingAddress = By.xpath("//*[@title='This address has been validated']/following::td[1]");
     
    
 

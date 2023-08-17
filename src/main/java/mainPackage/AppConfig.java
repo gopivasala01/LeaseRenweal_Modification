@@ -119,6 +119,12 @@ public class AppConfig
 			   if(PDFReader.monthlyRentTaxFlag==false)
 			   return "40010 - Rent Income";
 			   else return "40061 - Rent - Kona";
+		   case "Arizona":
+			   if(RunnerClass.arizonaCodeAvailable==false&&RunnerClass.arizonaCityFromBuildingAddress.contains("Phoenix"))
+				   return "40018 - Rent-PHX";
+			   else if(RunnerClass.arizonaCodeAvailable==false)
+			   return "40010 - Rent Income";
+			   else return RunnerClass.arizonaRentCode;
 			      
 		   }
 		   return "";
@@ -200,6 +206,12 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "Hawaii":
 			   return "40230 - Pet Rent";
+		   case "Arizona":
+			   if(RunnerClass.arizonaCodeAvailable==false&&RunnerClass.arizonaCityFromBuildingAddress.contains("Phoenix"))
+				   return "40018 - Rent-PHX";
+			   else if(RunnerClass.arizonaCodeAvailable==false)
+			   return "40010 - Rent Income";
+			   else return RunnerClass.arizonaRentCode;
 			   
 		   }
 		   return "";
@@ -279,6 +291,8 @@ public class AppConfig
 		   case "Washington DC":
 			   return "43030 - Tenant Admin Fee";
 		   case "Hawaii":
+			   return "43030 - Tenant Admin Fee";
+		   case "Arizona":
 			   return "43030 - Tenant Admin Fee";
 			   
 		   }
@@ -363,6 +377,12 @@ public class AppConfig
 			   if(PDFReader.monthlyRentTaxFlag==false)
 				   return "40010 - Rent Income";
 				   else return "40061 - Rent - Kona";
+		   case "Arizona":
+			   if(RunnerClass.arizonaCodeAvailable==false&&RunnerClass.arizonaCityFromBuildingAddress.contains("Phoenix"))
+				   return "40018 - Rent-PHX";
+			   else if(RunnerClass.arizonaCodeAvailable==false)
+			   return "40010 - Rent Income";
+			   else return RunnerClass.arizonaRentCode;
 		   }
 		   return "";
 	   }
@@ -444,6 +464,12 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "Hawaii":
 			   return "40230 - Pet Rent";
+		   case "Arizona":
+			   if(RunnerClass.arizonaCodeAvailable==false&&RunnerClass.arizonaCityFromBuildingAddress.contains("Phoenix"))
+				   return "40018 - Rent-PHX";
+			   else if(RunnerClass.arizonaCodeAvailable==false)
+			   return "40010 - Rent Income";
+			   else return RunnerClass.arizonaRentCode;
 		   }
 		   return "";
 	   }
@@ -525,6 +551,12 @@ public class AppConfig
 			   if(PDFReader.monthlyRentTaxFlag==false)
 				   return "40010 - Rent Income";
 				   else return "40061 - Rent - Kona";
+		   case "Arizona":
+			   if(RunnerClass.arizonaCodeAvailable==false&&RunnerClass.arizonaCityFromBuildingAddress.contains("Phoenix"))
+				   return "40018 - Rent-PHX";
+			   else if(RunnerClass.arizonaCodeAvailable==false)
+			   return "40010 - Rent Income";
+			   else return RunnerClass.arizonaRentCode;
 		   }
 		   return "";
 	   }
@@ -603,6 +635,8 @@ public class AppConfig
 		   case "Washington DC":
 			   return "43060 - Filter Fee";
 		   case "Hawaii":
+			   return "43060 - Filter Fee";
+		   case "Arizona":
 			   return "43060 - Filter Fee";
 		   }
 		   return "";
@@ -684,6 +718,8 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Hawaii":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Arizona":
+			   return "44010 - Non-Refundable Pet Fee";
 			   
 		   }
 		   return "";
@@ -763,6 +799,8 @@ public class AppConfig
 		   case "Washington DC":
 			   return "20030 - Prepayments";
 		   case "Hawaii":
+			   return "20030 - Prepayments";
+		   case "Arizona":
 			   return "20030 - Prepayments";
 		   }
 		   return "";
@@ -844,6 +882,8 @@ public class AppConfig
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Hawaii":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "Arizona":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -922,6 +962,8 @@ public class AppConfig
 		   case "Washington DC":
 			   return "20020 - Security Deposit";
 		   case "Hawaii":
+			   return "20020 - Security Deposit";
+		   case "Arizona":
 			   return "20020 - Security Deposit";
 		   }
 		   return "";
@@ -1002,6 +1044,8 @@ public class AppConfig
 			   return "44040 - Resident Utility Bill Serv Rev";
 		   case "Hawaii":
 			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Arizona":
+			   return "44040 - Resident Utility Bill Serv Rev";
 		   }
 		return "";
 	   }
@@ -1081,6 +1125,8 @@ public class AppConfig
 			   return "40051 - Rent-St. Clair";
 		   case "Hawaii":
 			   return "40061 - Rent - Kona";
+		   case "Arizona":
+			   return "43050 - Month-to-Month Admin Fee";
 		   }
 		return "";
 	   }
@@ -1160,6 +1206,8 @@ public class AppConfig
 		   case "Washington DC":
 			   return "42100 - GET Tenant Recovery";
 		   case "Hawaii":
+			   return "42100 - GET Tenant Recovery";
+		   case "Arizona":
 			   return "42100 - GET Tenant Recovery";
 		   }
 		return "";
@@ -1241,6 +1289,8 @@ public class AppConfig
 			   return "42100 - GET Tenant Recovery";
 		   case "Hawaii":
 			   return "42100 - GET Tenant Recovery";
+		   case "Arizona":
+			   return "42100 - GET Tenant Recovery";
 		   }
 		return "";
 	   }
@@ -1321,6 +1371,8 @@ public class AppConfig
 			   return "40231 - Pet Rent-St. Clair";
 		   case "Hawaii":
 			   return "40231 - Pet Rent-St. Clair";
+		   case "Arizona":
+			   return "43050 - Month-to-Month Admin Fee";
 		   }
 		return "";
 	   }
@@ -1401,6 +1453,8 @@ public class AppConfig
 			   return "40231 - Pet Rent-St. Clair";
 		   case "Hawaii":
 			   return "40231 - Pet Rent-St. Clair";
+		   case "Arizona":
+			   return "43050 - Month-to-Month Admin Fee";
 		   }
 		return "";
 	   }
@@ -1481,6 +1535,8 @@ public class AppConfig
 			   return "YES";
 		   case "Hawaii":
 			   return "YES";
+		   case "Arizona":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -1559,6 +1615,8 @@ public class AppConfig
 		   case "Washington DC":
 			   return "Yes";
 		   case "Hawaii":
+			   return "Yes";
+		   case "Arizona":
 			   return "Yes";
 		   }
 		   return "";
@@ -1640,6 +1698,8 @@ public class AppConfig
 			   return "Yes";
 		   case "Hawaii":
 			   return "Yes";
+		   case "Arizona":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -1720,6 +1780,8 @@ public class AppConfig
 			   return "NO";
 		   case "Hawaii":
 			   return "No";
+		   case "Arizona":
+			   return "NO";
 		   }
 		   return "";
 	   }

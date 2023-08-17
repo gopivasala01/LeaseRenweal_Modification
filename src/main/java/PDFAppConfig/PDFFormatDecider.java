@@ -149,5 +149,9 @@ public class PDFFormatDecider
 		//Hawaii
 		public static String Hawaii_Format1 = "The parties to this Lease are".toLowerCase();
 		public static String Hawaii_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT".toLowerCase();
+		
+		//Arizona
+		public static String Arizona_Format1 = "The parties to this Lease are".toLowerCase();
+		public static String Arizona_Format2 = "THIS RESIDENTIAL LEASE AGREEMENT".toLowerCase();
 
 }

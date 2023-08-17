@@ -91,6 +91,13 @@ public class PDFReader
 	public static String prorateRentGET = ""; //For Hawaii tax
 	public static String monthlyRentGET = ""; //For Hawaii tax
 	
+	public static String OnePercentOfRentAmount = "";
+	public static String OnePercentOfProrateRentAmount = "";
+	public static String OnePercentOfPetRentAmount = "";
+	public static String OnePercentOfProratePetRentAmount = "";
+	
+	
+	
 		public static boolean readPDFPerMarket(String market) throws Exception  
 		{
 			//Initialize all PDF data variables
@@ -146,6 +153,10 @@ public class PDFReader
 			totalPetRentWithTax = "";
 			prorateRentGET = ""; 
 			monthlyRentGET = ""; 
+			OnePercentOfRentAmount = "";
+			OnePercentOfProrateRentAmount = "";
+			OnePercentOfPetRentAmount = "";
+			OnePercentOfProratePetRentAmount = "";
 		    
 		    //Runner Class Late Fee Variables
 		 // All fields required for Late Fee Rule
@@ -999,10 +1010,70 @@ public class PDFReader
 					    
 					break;
 					
+				case "Arizona":
+					String pdfFormatType_Arizona = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_Arizona);
+					if(pdfFormatType_Arizona=="Format1")
+					{
+						if(PDFDataExtract.Arizona_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_Arizona=="Format2")
+					     {
+						if(PDFDataExtract.Arizona_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
+					
 			}
 			
+			//Converting amounts in proper format if they have more than one dot
+			try
+			{
+				if(PDFReader.totalMonthlyRentWithTax.replace(",", "").matches(".*\\..*\\..*"))
+					PDFReader.totalMonthlyRentWithTax = PDFReader.totalMonthlyRentWithTax.replace(",", "").replaceFirst("[.]", "");
+			}
+			catch(Exception e)
+			{}
+			try
+			{
+				if(PDFReader.monthlyRent.replace(",", "").matches(".*\\..*\\..*"))
+					PDFReader.monthlyRent = PDFReader.monthlyRent.replace(",", "").replaceFirst("[.]", "");
+			}
+			catch(Exception e)
+			{}
+			try
+			{
+				if(PDFReader.proratedRent.replace(",", "").matches(".*\\..*\\..*"))
+					PDFReader.proratedRent = PDFReader.proratedRent.replace(",", "").replaceFirst("[.]", "");
+			}
+			catch(Exception e)
+			{}
+			try
+			{
+				if(PDFReader.petRent.replace(",", "").matches(".*\\..*\\..*"))
+					PDFReader.petRent = PDFReader.petRent.replace(",", "").replaceFirst("[.]", "");
+			}
+			catch(Exception e)
+			{}
+			try
+			{
+				if(PDFReader.proratedPetRent.replace(",", "").matches(".*\\..*\\..*"))
+					PDFReader.proratedPetRent = PDFReader.proratedPetRent.replace(",", "").replaceFirst("[.]", "");
+			}
+			catch(Exception e)
+			{}
+			
 			//Prepayment charge 
-			if(((RunnerClass.company.equals("Alabama")||RunnerClass.company.equals("Hawaii"))&&PDFReader.monthlyRentTaxFlag==true))
+			if(((RunnerClass.company.equals("Alabama")||RunnerClass.company.equals("Hawaii")||RunnerClass.company.equals("Arizona"))&&PDFReader.monthlyRentTaxFlag==true))
 			{
 				try
 				{
@@ -1044,7 +1115,7 @@ public class PDFReader
 			System.out.println("Prepayment Charge = "+PDFReader.prepaymentCharge);
 			
 			//Prorate pet Rent when Taxes available in Alabama and Hawaii
-			if(((RunnerClass.company.equals("Alabama")||RunnerClass.company.equals("Hawaii"))&&PDFReader.petRentTaxFlag==true))
+			if(((RunnerClass.company.equals("Alabama")||RunnerClass.company.equals("Hawaii")||RunnerClass.company.equals("Arizona"))&&PDFReader.petRentTaxFlag==true))
 			{
 			if(!PDFReader.proratedPetRent.equalsIgnoreCase("n/a")||!PDFReader.proratedPetRent.equalsIgnoreCase("na")||!PDFReader.proratedPetRent.equalsIgnoreCase("n/a.")||!PDFReader.proratedPetRent.equalsIgnoreCase("0.00"))
 			try
@@ -1072,6 +1143,55 @@ public class PDFReader
 				PDFReader.increasedRent_newStartDate = "Error";
 			}
 			System.out.println("Increased Rent New Start Date = "+PDFReader.increasedRent_newStartDate);
+			
+			// 1% of Monthly rent
+			try
+			{
+				double monthlyRent = Double.parseDouble(PDFReader.monthlyRent.replace(",", ""));
+				double onePercentOfRent = monthlyRent*0.01;
+				PDFReader.OnePercentOfRentAmount = String.valueOf(onePercentOfRent);
+			}
+			catch(Exception e)
+			{
+				PDFReader.OnePercentOfRentAmount = "Error";
+			}
+			// 1% of Prorate rent
+			try
+			{
+				double proratedRent = Double.parseDouble(PDFReader.proratedRent.replace(",", ""));
+				double onePercentOfProrateRent = proratedRent*0.01;
+				PDFReader.OnePercentOfProrateRentAmount = String.valueOf(onePercentOfProrateRent);
+			}
+			catch(Exception e)
+			{
+				PDFReader.OnePercentOfProrateRentAmount = "Error";
+			}
+			// 1% of Pet rent
+			try
+			{
+				double petRent = Double.parseDouble(PDFReader.petRent.replace(",", ""));
+				double onePercentOfPetRent = petRent*0.01;
+				PDFReader.OnePercentOfPetRentAmount = String.valueOf(onePercentOfPetRent);
+			}
+			catch(Exception e)
+			{
+				PDFReader.OnePercentOfPetRentAmount = "Error";
+			}
+			// 1% of Prorate Pet rent
+			try
+			{
+				double proratePetRent = Double.parseDouble(PDFReader.proratedPetRent.replace(",", ""));
+				double onePercentOfProratedPetRent = proratePetRent*0.01;
+				PDFReader.OnePercentOfProratePetRentAmount = String.valueOf(onePercentOfProratedPetRent);
+			}
+			catch(Exception e)
+			{
+				PDFReader.OnePercentOfProratePetRentAmount = "Error";
+		    }
+			System.out.println("1% of Monthly Rent = "+OnePercentOfRentAmount);
+			System.out.println("1% of Prorate Rent = "+OnePercentOfProrateRentAmount);
+			System.out.println("1% of Pet Rent = "+OnePercentOfPetRentAmount);
+			System.out.println("1% of Prorate Pet Rent = "+OnePercentOfProratePetRentAmount);
 			return true;
 			
 		}
@@ -1210,6 +1330,9 @@ public class PDFReader
 			case "Hawaii":
 		        format1Text = PDFAppConfig.PDFFormatDecider.Hawaii_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.Hawaii_Format2;
+			case "Arizona":
+		        format1Text = PDFAppConfig.PDFFormatDecider.Arizona_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.Arizona_Format2;
 			}
 			
 			File file = RunnerClass.getLastModified();

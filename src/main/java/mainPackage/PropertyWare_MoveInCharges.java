@@ -21,10 +21,11 @@ public class PropertyWare_MoveInCharges
 		RunnerClass.driver.navigate().refresh();
 		//Pop up after clicking Lease Name
 		PropertyWare.intermittentPopUp();
-		
-		RunnerClass.js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+		if(!RunnerClass.company.equals("Arizona")) //Screen is already in Ledger for Arizona while getting Monthly rent in "PropertyWare_UpdateValues" class
+		{
+		RunnerClass.js.executeScript("window.scrollBy(document.body.scrollHeight,0)");
 		RunnerClass.driver.findElement(Locators.ledgerTab).click();
-		
+		}
 		Thread.sleep(2000);
 		RunnerClass.actions.sendKeys(Keys.ESCAPE).build().perform();
 		List<WebElement> existingMoveInCharges_ChargeCodes = RunnerClass.driver.findElements(Locators.moveInCharges_List);

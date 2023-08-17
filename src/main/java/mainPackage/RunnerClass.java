@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -63,6 +64,9 @@ public class RunnerClass
 	public static String currentTime;
 	public static int statusID;
 	public static String completeBuildingAbbreviation;
+	public static String arizonaCityFromBuildingAddress = "";
+	public static String arizonaRentCode = "";
+	public static boolean arizonaCodeAvailable = false;
 	
 	// All fields required for Late Fee Rule
 	    public static String lateFeeRuleType;
@@ -91,6 +95,8 @@ public class RunnerClass
 	
 	public static void main(String[] args) throws Exception 
 	{
+		
+		
 		//Get In Progress Leases
 		//Company,BuildingAbbreviation, LeaseNae
 		DataBase.getBuildingsList();
@@ -106,13 +112,38 @@ public class RunnerClass
 		  RunnerClass.portfolioType = "";
 		  RunnerClass.PDFFormatType = "";
 		  PDFReader.RCDetails= "";
+		  arizonaCityFromBuildingAddress = "";
+		  arizonaRentCode = "";
+		  arizonaCodeAvailable = false;
 		  
-		  if(company.contains("Austin")||company.contains("California")||company.contains("Chattanooga")||company.contains("Chicago")||company.contains("Colorado")||company.contains("Kansas City")||company.contains("Houston")||company.contains("Maine")||company.contains("Savannah")||company.contains("North Carolina")||company.contains("Alabama")||company.contains("Arkansas")||company.contains("Dallas/Fort Worth")||company.contains("Indiana")||company.contains("Little Rock")||company.contains("San Antonio")||company.contains("Tulsa")||company.contains("Georgia")||company.contains("OKC")||company.contains("South Carolina")||company.contains("Tennessee")||company.contains("Florida")||company.contains("New Mexico")||company.contains("Ohio")||company.contains("Pennsylvania")||company.contains("Lake Havasu")||company.contains("Saint Louis")||company.contains("Maryland")||company.contains("Virginia")||company.contains("Boise")||company.contains("Idaho Falls")||company.contains("Utah")||company.contains("Spokane")||company.contains("Washington DC")||company.contains("Hawaii")) 
+		  
+		  //Delete files in the folder before starting a lease
+		  try
+			{
+			FileUtils.cleanDirectory(new File(AppConfig.downloadFilePath));
+			}
+			catch(Exception e) {}
+		  
+		  
+		  if(company.contains("Austin")||company.contains("California")||company.contains("Chattanooga")||company.contains("Chicago")||company.contains("Colorado")||company.contains("Kansas City")||company.contains("Houston")||company.contains("Maine")||company.contains("Savannah")||company.contains("North Carolina")||company.contains("Alabama")||company.contains("Arkansas")||company.contains("Dallas/Fort Worth")||company.contains("Indiana")||company.contains("Little Rock")||company.contains("San Antonio")||company.contains("Tulsa")||company.contains("Georgia")||company.contains("OKC")||company.contains("South Carolina")||company.contains("Tennessee")||company.contains("Florida")||company.contains("New Mexico")||company.contains("Ohio")||company.contains("Pennsylvania")||company.contains("Lake Havasu")||company.contains("Saint Louis")||company.contains("Maryland")||company.contains("Virginia")||company.contains("Boise")||company.contains("Idaho Falls")||company.contains("Utah")||company.contains("Spokane")||company.contains("Washington DC")||company.contains("Hawaii")||company.contains("Arizona")) 
 	     {
 		  //Change the Status of the Lease to Started so that it won't run again in the Jenkins scheduling Process
 		           DataBase.insertData(buildingAbbreviation,"Started",6);
 		            completeBuildingAbbreviation = buildingAbbreviation;  //This will be used when Building not found in first attempt
-					buildingAbbreviation = buildingAbbreviation.split("-")[0].trim();
+		           try
+		           {
+		            String a = buildingAbbreviation;
+		            a = a.replace(" " , "");
+		            int b = a.length()-1;
+		           char c =  a.charAt(a.indexOf('-')+1);
+		            if(a.indexOf('-')>=1&&a.indexOf('-')==(b-1))
+						buildingAbbreviation = buildingAbbreviation;
+					else
+						if(a.indexOf('-')>=1&&a.charAt(a.indexOf('-')+1)=='(')
+		            buildingAbbreviation = buildingAbbreviation.split("-")[0].trim();
+						else buildingAbbreviation = buildingAbbreviation;
+		           }
+		           catch(Exception e) {}
           // Login to the PropertyWare		  
 		  try
 		  {
