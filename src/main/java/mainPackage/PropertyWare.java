@@ -178,6 +178,28 @@ public class PropertyWare
 						
 						List<WebElement> leaseList = RunnerClass.driver.findElements(By.xpath("(//*[@class='section'])["+(i+1)+"]/ul/li/a"));
 						//System.out.println(leaseList.size());
+						//Check if displayed leases list has the building name completely first
+						for(int j=0;j<leaseList.size();j++)
+						{
+							String lease = leaseList.get(j).getText();
+							if(lease.toLowerCase().contains(RunnerClass.completeBuildingAbbreviation.toLowerCase()))
+							{
+								
+								try
+								{
+								RunnerClass.portfolioType = RunnerClass.driver.findElement(By.xpath("(//*[@class='section'])["+(i+1)+"]/ul/li["+(j+1)+"]/a")).getText().trim().split(":")[0];
+								System.out.println("Portfolio type = "+RunnerClass.portfolioType);
+								}
+								catch(Exception e) 
+								{}
+								
+								RunnerClass.driver.findElement(By.xpath("(//*[@class='section'])["+(i+1)+"]/ul/li["+(j+1)+"]/a")).click();
+								leaseSelected = true;
+								break;
+							}
+						}
+						if(leaseSelected == false)
+						{
 						for(int j=0;j<leaseList.size();j++)
 						{
 							String lease = leaseList.get(j).getText();
@@ -196,6 +218,7 @@ public class PropertyWare
 								leaseSelected = true;
 								break;
 							}
+						}
 						}
 					}
 					if(leaseSelected==true)
