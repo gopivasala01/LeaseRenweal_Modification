@@ -131,8 +131,25 @@ public class PropertyWare_updateValues
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getTenentAdminReveueChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.adminFee+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=3";
 					break;
 				case 4: 
-					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getProratePetRentChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.proratedPetRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',Description = '"+PDFReader.proratePetRentDescription+"' where ID=4";	
+					String chargeCode=AppConfig.getPetRentChargeCode(RunnerClass.company);
+					String description = "";
+					if(RunnerClass.company.equals("Idaho Falls")||RunnerClass.company.equals("Utah"))
+					{
+						if(PDFReader.petInspectionFeeFlag==true)
+						{
+						chargeCode = AppConfig.getPetRentChargeCode(RunnerClass.company).split(",")[1];
+						description = "Pet Inspection Fee";
+						}
+						else
+						{
+						chargeCode = AppConfig.getPetRentChargeCode(RunnerClass.company).split(",")[0];
+						description = "Prorate Pet Rent";
+						}
+					}
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+chargeCode+"',Amount = '"+PDFReader.proratedPetRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"',Description = '"+description+"' where ID=4";
 					break;
+					//query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getProratePetRentChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.proratedPetRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',Description = '"+PDFReader.proratePetRentDescription+"' where ID=4";	
+					//break;
 				case 5:
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getpetSecurityDepositChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.petSecurityDeposit+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=5";
 					break;
@@ -143,15 +160,22 @@ public class PropertyWare_updateValues
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getHVACAirFilterFeeChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.airFilterFee+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=7";
 					break;
 				case 8: 
-					String chargeCode=AppConfig.getPetRentChargeCode(RunnerClass.company);
+					String chargeCode2=AppConfig.getPetRentChargeCode(RunnerClass.company);
+					String description2 = "";
 					if(RunnerClass.company.equals("Idaho Falls")||RunnerClass.company.equals("Utah"))
 					{
 						if(PDFReader.petInspectionFeeFlag==true)
-						chargeCode = AppConfig.getPetRentChargeCode(RunnerClass.company).split(",")[1];
+						{
+						chargeCode2 = AppConfig.getPetRentChargeCode(RunnerClass.company).split(",")[1];
+						description2 = "Pet Inspection Fee";
+						}
 						else
-						chargeCode = AppConfig.getPetRentChargeCode(RunnerClass.company).split(",")[0];
+						{
+						chargeCode2 = AppConfig.getPetRentChargeCode(RunnerClass.company).split(",")[0];
+						description2 = "Pet Rent";
+						}
 					}
-					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+chargeCode+"',Amount = '"+PDFReader.petRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=8";
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+chargeCode2+"',Amount = '"+PDFReader.petRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"',Description = '"+description2+"' where ID=8";
 					break;
 				case 9: 
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getPrepaymentChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.prepaymentCharge+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=9";
