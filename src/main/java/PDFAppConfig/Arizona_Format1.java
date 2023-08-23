@@ -204,7 +204,7 @@ public class Arizona_Format1
 		public static String totalMonthlyRent2 = ", for a total of $";
 		
 		public static String petRentTaxAmount_Prior = "tax and administrative fees of $";
-		public static String totalPetRentAmountWithTax = "for a total of $";
+		public static String totalPetRentAmountWithTax = "of the Lease, for a total of $";
 
 
 

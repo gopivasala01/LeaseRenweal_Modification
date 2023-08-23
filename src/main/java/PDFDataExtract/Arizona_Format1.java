@@ -454,7 +454,7 @@ public class Arizona_Format1
 	 	    	else
 	 	    	{
 	 	    		PDFReader.petRentTaxFlag = true;
-	 	    		PDFReader.totalPetRentWithTax = text.substring(text.indexOf(PDFAppConfig.Arizona_Format1.petRentTaxAmount_Prior)).substring(text.substring(text.indexOf(PDFAppConfig.Arizona_Format1.petRentTaxAmount_Prior)).indexOf(PDFAppConfig.Arizona_Format1.totalPetRentAmountWithTax)+PDFAppConfig.Arizona_Format1.totalPetRentAmountWithTax.length()).split(" ")[0].trim();
+	 	    		PDFReader.totalPetRentWithTax = text.substring(text.indexOf(PDFAppConfig.Arizona_Format1.totalPetRentAmountWithTax)+PDFAppConfig.Arizona_Format1.totalPetRentAmountWithTax.length()).split(" ")[0].trim().replace(",", "");
 	 	    	}
 	 	    }
 	 	    catch(Exception e)

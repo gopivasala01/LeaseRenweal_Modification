@@ -1180,8 +1180,8 @@ public class PDFReader
 			// 1% of Prorate Pet rent
 			try
 			{
-				double proratePetRent = Double.parseDouble(PDFReader.proratedPetRent.replace(",", ""));
-				double onePercentOfProratedPetRent = proratePetRent*0.01;
+				double proratePetRent2 = Double.parseDouble(PDFReader.proratedPetRent.replace(",", ""));
+				double onePercentOfProratedPetRent = proratePetRent2*0.01;
 				PDFReader.OnePercentOfProratePetRentAmount = String.valueOf(RunnerClass.round(onePercentOfProratedPetRent,2));
 			}
 			catch(Exception e)
