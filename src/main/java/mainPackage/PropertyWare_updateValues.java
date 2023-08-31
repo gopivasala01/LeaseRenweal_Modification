@@ -146,6 +146,7 @@ public class PropertyWare_updateValues
 						description = "Prorate Pet Rent";
 						}
 					}
+					else description = "Prorate Pet Rent";
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+chargeCode+"',Amount = '"+PDFReader.proratedPetRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"',Description = '"+description+"' where ID=4";
 					break;
 					//query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getProratePetRentChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.proratedPetRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',Description = '"+PDFReader.proratePetRentDescription+"' where ID=4";	
@@ -175,6 +176,7 @@ public class PropertyWare_updateValues
 						description2 = "Pet Rent";
 						}
 					}
+					else description2 = "Pet Rent";
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+chargeCode2+"',Amount = '"+PDFReader.petRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"',Description = '"+description2+"' where ID=8";
 					break;
 				case 9: 
