@@ -216,7 +216,7 @@ public class PropertyWare_updateValues
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getMonthlyRentGETCode(RunnerClass.company)+"',Amount = '"+PDFReader.monthlyRentTaxAmount+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=20";
 					break;
 				case 21: 
-					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getMonthlyRentTaxCode(RunnerClass.company)+"',Amount = '"+PDFReader.OnePercentOfRentAmount+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=21";
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getMonthlyRentTaxCode(RunnerClass.company)+"',Amount = '"+PDFReader.OnePercentOfRentAmount+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+autoCharge_startDate_MonthlyRent+"' where ID=21";
 					break;
 				case 22: 
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getMonthlyRentTaxCode(RunnerClass.company)+"',Amount = '"+PDFReader.OnePercentOfProrateRentAmount+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=22";
