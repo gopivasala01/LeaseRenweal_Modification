@@ -4,7 +4,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -456,6 +458,19 @@ public class PropertyWare_updateValues
 			//Hawaii Monthly Rent tax Charge changing
 			if(RunnerClass.company.equals("Hawaii")&&PDFReader.monthlyRentTaxFlag==true)
 			{
+				// Create a map to store replacement values for each number
+		        Map<String, String> replacements = new HashMap<>();
+		        replacements.put("1", "1,19");
+		        replacements.put("2", "2,20");
+		        //Move In Charges
+		        String replacedString = replaceNumbers(moveInCharges, replacements);
+		        moveInCharges = replacedString;
+		        //Auto Charges
+		        String replacedString2 = replaceNumbers(autoCharges, replacements);
+		        autoCharges = replacedString2;
+				
+				/*
+				
 				String[] moveInCodes = moveInCharges.split(",");
 				for(int i=0;i<moveInCodes.length;i++)
 				{
@@ -483,51 +498,28 @@ public class PropertyWare_updateValues
 						break;
 					}
 				}
+				*/
 			}
 			
 			// Arizona
 			if(RunnerClass.company.equals("Arizona")&&PDFReader.monthlyRentTaxFlag==true)
 			{
-				String[] moveInCodes = moveInCharges.split(",");
-				for(int i=0;i<moveInCodes.length;i++)
-				{
-					String code = moveInCodes[i];
-					switch(code)
-					{
-					case "1":
-						moveInCharges = moveInCharges.substring(0, moveInCharges.indexOf(code))+"1,22"+moveInCharges.substring(moveInCharges.indexOf(code)+1);
-						break;
-					case "2":
-						moveInCharges = moveInCharges.substring(0, moveInCharges.indexOf(code))+"2,21"+moveInCharges.substring(moveInCharges.indexOf(code)+1);
-						break;
-					case "8":
-						moveInCharges = moveInCharges.substring(0, moveInCharges.indexOf(code))+"8,23"+moveInCharges.substring(moveInCharges.indexOf(code)+1);
-						break;
-					case "4":
-						moveInCharges = moveInCharges.substring(0, moveInCharges.indexOf(code))+"4,24"+moveInCharges.substring(moveInCharges.indexOf(code)+1);
-						break;
-					}
-				}
-				String[] autoCodes = autoCharges.split(",");
-				for(int i=0;i<autoCodes.length;i++)
-				{
-					String code = autoCodes[i];
-					switch(code)
-					{
-					case "1":
-						autoCharges = autoCharges.substring(0, autoCharges.indexOf(code))+"1,22"+autoCharges.substring(autoCharges.indexOf(code)+1);
-						break;
-					case "2":
-						autoCharges = autoCharges.substring(0, autoCharges.indexOf(code))+"2,21"+autoCharges.substring(autoCharges.indexOf(code)+1);
-						break;
-					case "8":
-						autoCharges = autoCharges.substring(0, autoCharges.indexOf(code))+"8,23"+autoCharges.substring(autoCharges.indexOf(code)+1);
-						break;
-					case "4":
-						autoCharges = autoCharges.substring(0, autoCharges.indexOf(code))+"4,24"+autoCharges.substring(autoCharges.indexOf(code)+1);
-						break;
-					}
-				}
+				
+		        
+		        // Create a map to store replacement values for each number
+		        Map<String, String> replacements = new HashMap<>();
+		        replacements.put("1", "1,22");
+		        replacements.put("2", "2,21");
+		        replacements.put("8", "8,23");
+		        replacements.put("4", "4,24");
+		        //Move In Charges
+		        String replacedString = replaceNumbers(moveInCharges, replacements);
+		        moveInCharges = replacedString;
+		        //Auto Charges
+		        String replacedString2 = replaceNumbers(autoCharges, replacements);
+		        autoCharges = replacedString2;
+		        
+		        
 			}
 			
 			DataBase.assignChargeCodes(moveInCharges, autoCharges);
@@ -734,5 +726,36 @@ public class PropertyWare_updateValues
 			RunnerClass.driver.findElement(Locators.moveInChargeCancel).click();
 			
 		}
+		
+		 public static String replaceNumbers(String input, Map<String, String> replacements) 
+		    {
+		        // Split the input string by commas to get individual numbers
+		        String[] numbers = input.split(",");
+		        
+		        // Initialize a StringBuilder to build the replaced string
+		        StringBuilder replacedString = new StringBuilder();
+		        
+		        // Iterate through the numbers and replace them
+		        for (String number : numbers) {
+		            // Check if the number has a replacement in the map
+		            if (replacements.containsKey(number)) {
+		                replacedString.append(replacements.get(number));
+		            } else {
+		                // If no replacement is found, keep the original number
+		                replacedString.append(number);
+		            }
+		            
+		            // Append a comma to separate numbers
+		            replacedString.append(",");
+		        }
+		        
+		        // Remove the trailing comma
+		        if (replacedString.length() > 0) {
+		            replacedString.deleteCharAt(replacedString.length() - 1);
+		        }
+		        
+		        return replacedString.toString();
+		    }
+
 		
 }
