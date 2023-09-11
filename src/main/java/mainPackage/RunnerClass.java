@@ -95,28 +95,6 @@ public class RunnerClass
 	
 	public static void main(String[] args) throws Exception 
 	{
-		String autoCharges = "1,2,11";
-		String[] autoCodes = autoCharges.split(",");
-		String autoChargesModified = "";
-		for(int i=0;i<autoCodes.length;i++)
-		{
-			String code = autoCodes[i];
-			switch(code)
-			{
-			case "1":
-				autoCharges = autoCharges.substring(0, autoCharges.indexOf(code))+"1,22"+autoCharges.substring(autoCharges.indexOf(code)+1);
-				break;
-			case "2":
-				autoCharges = autoCharges.substring(0, autoCharges.indexOf(code))+"2,21"+autoCharges.substring(autoCharges.indexOf(code)+1);
-				break;
-			case "8":
-				autoCharges = autoCharges.substring(0, autoCharges.indexOf(code))+"8,23"+autoCharges.substring(autoCharges.indexOf(code)+1);
-				break;
-			case "4":
-				autoCharges = autoCharges.substring(0, autoCharges.indexOf(code))+"4,24"+autoCharges.substring(autoCharges.indexOf(code)+1);
-				break;
-			}
-		}
 		
 		//Get In Progress Leases
 		//Company,BuildingAbbreviation, LeaseNae
