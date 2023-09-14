@@ -806,7 +806,7 @@ public class PDFReader
 					    
 					break;
 					
-				case "Saint Louis":
+				case "Columbia - St Louis":
 					String pdfFormatType_SaintLouis = PDFReader.decidePDFFormat(market);
 					System.out.println("PDF Format Type = "+pdfFormatType_SaintLouis);
 					if(pdfFormatType_SaintLouis=="Format1")

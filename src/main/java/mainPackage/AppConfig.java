@@ -99,7 +99,7 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Lake Havasu":
 			   return "40010 - Rent Income";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "40010 - Rent Income";
 		   case "Maryland":
 			   return "40010 - Rent Income";
@@ -188,7 +188,7 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "Lake Havasu":
 			   return "40230 - Pet Rent";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "40230 - Pet Rent";
 		   case "Maryland":
 			   return "40230 - Pet Rent";
@@ -274,7 +274,7 @@ public class AppConfig
 			   return "43030 - Tenant Admin Fee";
 		   case "Lake Havasu":
 			   return "43030 - Tenant Admin Fee";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "43030 - Tenant Admin Fee";
 		   case "Maryland":
 			   return "43030 - Tenant Admin Fee";
@@ -357,7 +357,7 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Lake Havasu":
 			   return "40010 - Rent Income";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "40010 - Rent Income";
 		   case "Maryland":
 			   return "40010 - Rent Income";
@@ -446,7 +446,7 @@ public class AppConfig
 			   return "40230 - Pet Rent";
 		   case "Lake Havasu":
 			   return "40230 - Pet Rent";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "40230 - Pet Rent";
 		   case "Maryland":
 			   return "40230 - Pet Rent";
@@ -531,7 +531,7 @@ public class AppConfig
 			   return "40010 - Rent Income";
 		   case "Lake Havasu":
 			   return "40010 - Rent Income";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "40010 - Rent Income";
 		   case "Maryland":
 			   return "40010 - Rent Income";
@@ -618,7 +618,7 @@ public class AppConfig
 			   return "43060 - Filter Fee";
 		   case "Lake Havasu":
 			   return "43060 - Filter Fee";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "43060 - Filter Fee";
 		   case "Maryland":
 			   return "43060 - Filter Fee";
@@ -700,7 +700,7 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Lake Havasu":
 			   return "44010 - Non-Refundable Pet Fee";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Maryland":
 			   return "44010 - Non-Refundable Pet Fee";
@@ -782,7 +782,7 @@ public class AppConfig
 			   return "20030 - Prepayments";
 		   case "Lake Havasu":
 			   return "20030 - Prepayments";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "20030 - Prepayments";
 		   case "Maryland":
 			   return "20030 - Prepayments";
@@ -864,7 +864,7 @@ public class AppConfig
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Lake Havasu":
 			   return "43070 - Resident Benefit Package Fee";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Maryland":
 			   return "43070 - Resident Benefit Package Fee";
@@ -945,7 +945,7 @@ public class AppConfig
 			   return "20020 - Security Deposit";
 		   case "Lake Havasu":
 			   return "20020 - Security Deposit";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "20020 - Security Deposit";
 		   case "Maryland":
 			   return "20020 - Security Deposit";
@@ -1026,7 +1026,7 @@ public class AppConfig
 			   return "44040 - Resident Utility Bill Serv Rev";
 		   case "Lake Havasu":
 			   return "44040 - Resident Utility Bill Serv Rev";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "44040 - Resident Utility Bill Serv Rev";
 		   case "Maryland":
 			   return "44040 - Resident Utility Bill Serv Rev";
@@ -1107,7 +1107,7 @@ public class AppConfig
 			   return "40051 - Rent-St. Clair";
 		   case "Lake Havasu":
 			   return "40051 - Rent-St. Clair";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "40051 - Rent-St. Clair";
 		   case "Maryland":
 			   return "40051 - Rent-St. Clair";
@@ -1189,7 +1189,7 @@ public class AppConfig
 			   return "42100 - GET Tenant Recovery";
 		   case "Lake Havasu":
 			   return "42100 - GET Tenant Recovery";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "42100 - GET Tenant Recovery";
 		   case "Maryland":
 			   return "42100 - GET Tenant Recovery";
@@ -1271,7 +1271,7 @@ public class AppConfig
 			   return "42100 - GET Tenant Recovery";
 		   case "Lake Havasu":
 			   return "42100 - GET Tenant Recovery";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "42100 - GET Tenant Recovery";
 		   case "Maryland":
 			   return "42100 - GET Tenant Recovery";
@@ -1353,7 +1353,7 @@ public class AppConfig
 			   return "40231 - Pet Rent-St. Clair";
 		   case "Lake Havasu":
 			   return "40231 - Pet Rent-St. Clair";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "40231 - Pet Rent-St. Clair";
 		   case "Maryland":
 			   return "40231 - Pet Rent-St. Clair";
@@ -1435,7 +1435,7 @@ public class AppConfig
 			   return "40231 - Pet Rent-St. Clair";
 		   case "Lake Havasu":
 			   return "40231 - Pet Rent-St. Clair";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "40231 - Pet Rent-St. Clair";
 		   case "Maryland":
 			   return "40231 - Pet Rent-St. Clair";
@@ -1517,7 +1517,7 @@ public class AppConfig
 			   return "YES";
 		   case "Lake Havasu":
 			   return "YES";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "YES";
 		   case "Maryland":
 			   return "YES";
@@ -1598,7 +1598,7 @@ public class AppConfig
 			   return "Yes";
 		   case "Lake Havasu":
 			   return "Yes";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "Yes";
 		   case "Maryland":
 			   return "Yes";
@@ -1680,7 +1680,7 @@ public class AppConfig
 			   return "YES";
 		   case "Lake Havasu":
 			   return "Yes";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "Yes";
 		   case "Maryland":
 			   return "Yes";
@@ -1762,7 +1762,7 @@ public class AppConfig
 			   return "No";
 		   case "Lake Havasu":
 			   return "No";
-		   case "Saint Louis":
+		   case "Columbia - St Louis":
 			   return "NO";
 		   case "Maryland":
 			   return "NO";
