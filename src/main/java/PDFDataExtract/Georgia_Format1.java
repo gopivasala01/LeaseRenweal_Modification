@@ -151,10 +151,16 @@ public class Georgia_Format1
 	    		
 	    		//PDFReader.increasedRent_amount = text.substring(text.indexOf(". $")+". $".length()).trim().split(" ")[0];
 	    		String increasedRent_ProviousRentEndDate = "Per the Landlord, Monthly Rent from "+PDFReader.commencementDate.trim()+", through ";
+	    			
 	    		 //String endDateArray[] = text.substring(text.indexOf(". $")+". $".length()).split(" ");
 	    		//if(endDateArray[2].trim().length()==4)//&&RunnerClass.onlyDigits(endDateArray[2]))
 	    		 //{
 	    		  PDFReader.increasedRent_previousRentEndDate = text.substring(text.indexOf(increasedRent_ProviousRentEndDate)+increasedRent_ProviousRentEndDate.length(),text.indexOf(" shall be $"));
+	    		  if(PDFReader.increasedRent_previousRentEndDate.split(" ").length>5)
+	    		  {
+	    			  increasedRent_ProviousRentEndDate = "Per the Landlord, Monthly Rent from "+PDFReader.commencementDate.trim()+" through "; 
+	    			  PDFReader.increasedRent_previousRentEndDate = text.substring(text.indexOf(increasedRent_ProviousRentEndDate)+increasedRent_ProviousRentEndDate.length(),text.indexOf(" shall be $"));
+	    		  }
 	    				  //endDateArray[0]+" "+endDateArray[1]+" "+endDateArray[2];
 	    		  System.out.println("Increased Rent - Previous rent end date = "+PDFReader.increasedRent_previousRentEndDate);
 	    		 
