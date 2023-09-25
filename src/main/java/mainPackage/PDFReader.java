@@ -1033,6 +1033,29 @@ public class PDFReader
 					    
 					break;
 					
+				case "New Jersey":
+					String pdfFormatType_NewJersey = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_NewJersey);
+					if(pdfFormatType_NewJersey=="Format1")
+					{
+						if(PDFDataExtract.NewJersey_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_NewJersey=="Format2")
+					     {
+						if(PDFDataExtract.NewJersey_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
+					
 			}
 			
 			//Converting amounts in proper format if they have more than one dot
@@ -1333,6 +1356,9 @@ public class PDFReader
 			case "Arizona":
 		        format1Text = PDFAppConfig.PDFFormatDecider.Arizona_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.Arizona_Format2;
+			case "New Jersey":
+		        format1Text = PDFAppConfig.PDFFormatDecider.NewJersey_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.NewJersey_Format2;
 			}
 			
 			File file = RunnerClass.getLastModified();

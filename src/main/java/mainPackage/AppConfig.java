@@ -125,7 +125,8 @@ public class AppConfig
 			   else if(RunnerClass.arizonaCodeAvailable==false)
 			   return "40010 - Rent Income";
 			   else return RunnerClass.arizonaRentCode;
-			      
+		   case "New Jersey":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -212,7 +213,8 @@ public class AppConfig
 			   else if(RunnerClass.arizonaCodeAvailable==false)
 			   return "40010 - Rent Income";
 			   else return RunnerClass.arizonaRentCode;
-			   
+		   case "New Jersey":
+			   return "40230 - Pet Rent";
 		   }
 		   return "";
 	   }
@@ -294,7 +296,8 @@ public class AppConfig
 			   return "43030 - Tenant Admin Fee";
 		   case "Arizona":
 			   return "43030 - Tenant Admin Fee";
-			   
+		   case "New Jersey":
+			   return "43030 - Tenant Admin Fee";
 		   }
 		   return "";
 	   }
@@ -383,6 +386,8 @@ public class AppConfig
 			   else if(RunnerClass.arizonaCodeAvailable==false)
 			   return "40010 - Rent Income";
 			   else return RunnerClass.arizonaRentCode;
+		   case "New Jersey":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -470,6 +475,8 @@ public class AppConfig
 			   else if(RunnerClass.arizonaCodeAvailable==false)
 			   return "40010 - Rent Income";
 			   else return RunnerClass.arizonaRentCode;
+		   case "New Jersey":
+			   return "40230 - Pet Rent";
 		   }
 		   return "";
 	   }
@@ -557,6 +564,8 @@ public class AppConfig
 			   else if(RunnerClass.arizonaCodeAvailable==false)
 			   return "40010 - Rent Income";
 			   else return RunnerClass.arizonaRentCode;
+		   case "New Jersey":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -637,6 +646,8 @@ public class AppConfig
 		   case "Hawaii":
 			   return "43060 - Filter Fee";
 		   case "Arizona":
+			   return "43060 - Filter Fee";
+		   case "New Jersey":
 			   return "43060 - Filter Fee";
 		   }
 		   return "";
@@ -720,7 +731,8 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "Arizona":
 			   return "44010 - Non-Refundable Pet Fee";
-			   
+		   case "New Jersey":
+			   return "44010 - Non-Refundable Pet Fee";
 		   }
 		   return "";
 	   }
@@ -801,6 +813,8 @@ public class AppConfig
 		   case "Hawaii":
 			   return "20030 - Prepayments";
 		   case "Arizona":
+			   return "20030 - Prepayments";
+		   case "New Jersey":
 			   return "20030 - Prepayments";
 		   }
 		   return "";
@@ -884,6 +898,8 @@ public class AppConfig
 			   return "43070 - Resident Benefit Package Fee";
 		   case "Arizona":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "New Jersey":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
@@ -964,6 +980,8 @@ public class AppConfig
 		   case "Hawaii":
 			   return "20020 - Security Deposit";
 		   case "Arizona":
+			   return "20020 - Security Deposit";
+		   case "New Jersey":
 			   return "20020 - Security Deposit";
 		   }
 		   return "";
@@ -1046,6 +1064,8 @@ public class AppConfig
 			   return "44040 - Resident Utility Bill Serv Rev";
 		   case "Arizona":
 			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "New Jersey":
+			   return "44040 - Resident Utility Bill Serv Rev";
 		   }
 		return "";
 	   }
@@ -1127,6 +1147,8 @@ public class AppConfig
 			   return "40061 - Rent - Kona";
 		   case "Arizona":
 			   return "43050 - Month-to-Month Admin Fee";
+		   case "New Jersey":
+			   return "40061 - Rent - Kona";
 		   }
 		return "";
 	   }
@@ -1208,6 +1230,8 @@ public class AppConfig
 		   case "Hawaii":
 			   return "42100 - GET Tenant Recovery";
 		   case "Arizona":
+			   return "42100 - GET Tenant Recovery";
+		   case "New Jersey":
 			   return "42100 - GET Tenant Recovery";
 		   }
 		return "";
@@ -1291,6 +1315,8 @@ public class AppConfig
 			   return "42100 - GET Tenant Recovery";
 		   case "Arizona":
 			   return "42100 - GET Tenant Recovery";
+		   case "New Jersey":
+			   return "42100 - GET Tenant Recovery";
 		   }
 		return "";
 	   }
@@ -1373,6 +1399,8 @@ public class AppConfig
 			   return "40231 - Pet Rent-St. Clair";
 		   case "Arizona":
 			   return "43050 - Month-to-Month Admin Fee";
+		   case "New Jersey":
+			   return "40231 - Pet Rent-St. Clair";
 		   }
 		return "";
 	   }
@@ -1455,6 +1483,8 @@ public class AppConfig
 			   return "40231 - Pet Rent-St. Clair";
 		   case "Arizona":
 			   return "43050 - Month-to-Month Admin Fee";
+		   case "New Jersey":
+			   return "40231 - Pet Rent-St. Clair";
 		   }
 		return "";
 	   }
@@ -1537,6 +1567,8 @@ public class AppConfig
 			   return "YES";
 		   case "Arizona":
 			   return "YES";
+		   case "New Jersey":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -1617,6 +1649,8 @@ public class AppConfig
 		   case "Hawaii":
 			   return "Yes";
 		   case "Arizona":
+			   return "Yes";
+		   case "New Jersey":
 			   return "Yes";
 		   }
 		   return "";
@@ -1700,6 +1734,8 @@ public class AppConfig
 			   return "Yes";
 		   case "Arizona":
 			   return "Yes";
+		   case "New Jersey":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -1782,6 +1818,8 @@ public class AppConfig
 			   return "No";
 		   case "Arizona":
 			   return "NO";
+		   case "New Jersey":
+			   return "NO";
 		   }
 		   return "";
 	   }
@@ -1832,6 +1870,8 @@ public class AppConfig
 				return "ME";
 			case "Savannah":
 				return "SAV";
+			case "New Jersey":
+				return "NJ";
 				
 			}
 			return "";

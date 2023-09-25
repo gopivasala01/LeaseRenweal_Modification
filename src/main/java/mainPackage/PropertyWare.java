@@ -431,6 +431,15 @@ public class PropertyWare
 	        String buildingPageURL = AppConfig.buildingPageURL+buildingEntityID;
 	        RunnerClass.driver.navigate().to(buildingPageURL);
 	        PropertyWare.intermittentPopUp();
+	        try
+	        {
+	        	RunnerClass.portfolioType = RunnerClass.driver.findElement(Locators.checkPortfolioType).getText().trim().split(":")[0];
+				System.out.println("Portfolio type = "+RunnerClass.portfolioType);
+	        }
+	        catch(Exception e)
+	        {
+	        	
+	        }
 	        return true;
 			}
 	        /*
