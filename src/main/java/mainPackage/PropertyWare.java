@@ -210,6 +210,7 @@ public class PropertyWare
 								try
 								{
 								RunnerClass.portfolioType = RunnerClass.driver.findElement(By.xpath("(//*[@class='section'])["+(i+1)+"]/ul/li["+(j+1)+"]/a")).getText().trim().split(":")[0];
+								RunnerClass.portfolioName = RunnerClass.portfolioType;
 								System.out.println("Portfolio type = "+RunnerClass.portfolioType);
 								}
 								catch(Exception e) 
@@ -434,6 +435,7 @@ public class PropertyWare
 	        try
 	        {
 	        	RunnerClass.portfolioType = RunnerClass.driver.findElement(Locators.checkPortfolioType).getText().trim().split(":")[0];
+	        	RunnerClass.portfolioName = RunnerClass.portfolioType;
 				System.out.println("Portfolio type = "+RunnerClass.portfolioType);
 	        }
 	        catch(Exception e)

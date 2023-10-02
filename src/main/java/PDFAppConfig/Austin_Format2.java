@@ -97,6 +97,6 @@ public class Austin_Format2
 	public static String AB_additionalLateChargesLimit_After = "B. For the purposes of paying rent and late charges, the mailbox is not the agent for receipt for Landlord and the";
 
 	
-
+	public static String smartHomeAgreementCheck = "This Smart Home Agreement is subject";
 
 }

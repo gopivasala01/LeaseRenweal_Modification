@@ -119,7 +119,7 @@ public class PropertyWare_updateValues
 			try
 			{
 			String query =null;
-			for(int i=1;i<=24;i++)
+			for(int i=1;i<=25;i++)
 			{
 				switch(i)
 				{
@@ -228,6 +228,9 @@ public class PropertyWare_updateValues
 					break;
 				case 24: 
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getPetRentTaxCode(RunnerClass.company)+"',Amount = '"+PDFReader.OnePercentOfProratePetRentAmount+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=24";
+					break;
+				case 25: 
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getSmartHomeAgreementCode(RunnerClass.company)+"',Amount = '"+PDFReader.smartHomeAgreementFee+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=25";
 					break;
 				}
 			}
@@ -521,6 +524,14 @@ public class PropertyWare_updateValues
 		        
 		        
 			}
+			
+			//If Smart Home Agreement is available and Portfolio type is ATX, add that charge in both Move in Auto Charges
+			if(PDFReader.smartHomeAgreementCheck==true&&RunnerClass.portfolioName.contains("ATX."))
+			{
+				moveInCharges = moveInCharges+",25";
+				autoCharges = autoCharges+",25";
+			}
+			
 			
 			DataBase.assignChargeCodes(moveInCharges, autoCharges);
 		}

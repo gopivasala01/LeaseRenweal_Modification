@@ -1489,6 +1489,91 @@ public class AppConfig
 		return "";
 	   }
 	   
+	   public static String getSmartHomeAgreementCode(String company)
+	   {
+		   switch(company)
+		   {
+		   case "Austin":
+			   return "43200 - Smart Home Fee";
+		   case "Alabama":
+			   return "43200 - Smart Home Fee";
+		   case "North Carolina":
+			   return "43200 - Smart Home Fee";
+		   case "Chattanooga":
+			   return "43200 - Smart Home Fee";
+		   case "California":
+			   return "43200 - Smart Home Fee";
+		   case "California PFW":
+			   return "43200 - Smart Home Fee";
+		   case "Chicago PFW":
+			   return "43200 - Smart Home Fee";
+		   case "Colorado Springs":
+			   return "43200 - Smart Home Fee";
+		   case "Kansas City":
+			   return "43200 - Smart Home Fee";
+		   case "Houston":
+			   return "43200 - Smart Home Fee";
+		   case "Maine":
+			   return "43200 - Smart Home Fee";
+		   case "Savannah":
+			   return "43200 - Smart Home Fee";
+		   case "Arkansas":
+			   return "43200 - Smart Home Fee";
+		   case "Dallas/Fort Worth":
+			   return "43200 - Smart Home Fee";
+		   case "Indiana":
+			   return "43200 - Smart Home Fee";
+		   case "Little Rock":
+			   return "43200 - Smart Home Fee";
+		   case "San Antonio":
+			   return "43200 - Smart Home Fee";
+		   case "Tulsa":
+			   return "43200 - Smart Home Fee";
+		   case "Georgia":
+			   return "43200 - Smart Home Fee";
+		   case "OKC":
+			   return "43200 - Smart Home Fee";
+		   case "South Carolina":
+			   return "43200 - Smart Home Fee";
+		   case "Florida":
+			   return "43200 - Smart Home Fee";
+		   case "Tennessee":
+			   return "43200 - Smart Home Fee";
+		   case "New Mexico":
+			   return "43200 - Smart Home Fee";
+		   case "Ohio":
+			   return "43200 - Smart Home Fee";
+		   case "Pennsylvania":
+			   return "43200 - Smart Home Fee";
+		   case "Lake Havasu":
+			   return "43200 - Smart Home Fee";
+		   case "Columbia - St Louis":
+			   return "43200 - Smart Home Fee";
+		   case "Maryland":
+			   return "43200 - Smart Home Fee";
+		   case "Virginia":
+			   return "43200 - Smart Home Fee";
+		   case "Boise":
+			   return "43200 - Smart Home Fee";
+		   case "Idaho Falls":
+			   return "43200 - Smart Home Fee";
+		   case "Utah":
+			   return "43200 - Smart Home Fee";
+		   case "Spokane":
+			   return "43200 - Smart Home Fee";
+		   case "Washington DC":
+			   return "43200 - Smart Home Fee";
+		   case "Hawaii":
+			   return "43200 - Smart Home Fee";
+		   case "Arizona":
+			   return "43200 - Smart Home Fee";
+		   case "New Jersey":
+			   return "43200 - Smart Home Fee";
+		   }
+		return "";
+	   }
+	   
+	   
 	   public static String getEnrolledINRBPForPMUse(String company)
 	   {
 		   switch(company)

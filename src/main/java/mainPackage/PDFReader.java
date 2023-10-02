@@ -96,6 +96,9 @@ public class PDFReader
 	public static String OnePercentOfPetRentAmount = "";
 	public static String OnePercentOfProratePetRentAmount = "";
 	
+	public static boolean smartHomeAgreementCheck = false;
+	public static String smartHomeAgreementFee = "";
+	
 	
 	
 		public static boolean readPDFPerMarket(String market) throws Exception  
@@ -157,6 +160,8 @@ public class PDFReader
 			OnePercentOfProrateRentAmount = "";
 			OnePercentOfPetRentAmount = "";
 			OnePercentOfProratePetRentAmount = "";
+			smartHomeAgreementCheck = false;
+			smartHomeAgreementFee = "";
 		    
 		    //Runner Class Late Fee Variables
 		 // All fields required for Late Fee Rule

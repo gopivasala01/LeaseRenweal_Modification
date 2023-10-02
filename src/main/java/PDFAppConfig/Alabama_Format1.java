@@ -186,6 +186,8 @@ public class Alabama_Format1
 		public static  String PDFFormat2ConfirmationText = "RESIDENTIAL LEASE AGREEMENT";
 		public static String serviceAnimalText = "SERVICE/SUPPORT ANIMAL AGREEMENT";
 		public static String HVACFilterAddendumTextAvailabilityCheck = "HVAC FILTER MAINTENANCE PROGRAM OPT-OUT ADDENDUM";
+		
+		public static String smartHomeAgreementCheck = "This Smart Home Agreement is subject";
 
 
 

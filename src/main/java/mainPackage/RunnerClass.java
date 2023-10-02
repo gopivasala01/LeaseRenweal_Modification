@@ -59,6 +59,7 @@ public class RunnerClass
 	public static String startDateInPW;
 	public static String endDateInPW;
 	public static String portfolioType;
+	public static String portfolioName;
 	public static boolean published;
 	public static boolean listingAgent;
 	public static String currentTime;
@@ -109,6 +110,7 @@ public class RunnerClass
 		  statusID =0;
 		  failedReason = "";
 		  RunnerClass.portfolioType = "";
+		  portfolioName = "";
 		  RunnerClass.PDFFormatType = "";
 		  PDFReader.RCDetails= "";
 		  arizonaCityFromBuildingAddress = "";
