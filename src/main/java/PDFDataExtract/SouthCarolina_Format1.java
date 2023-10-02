@@ -552,7 +552,37 @@ public class SouthCarolina_Format1
 	    }
 	    catch(Exception e)
 	    {}
+//RBP when Portfolio is ATX
 	    
+	    try
+	    {
+	    	if(RunnerClass.portfolioName.contains("ATX."))
+	    	{
+	    		if(text.contains(PDFAppConfig.Austin_Format1.residentBenefitsPackageAddendumCheck)&&!text.contains("Resident Benefits Package Opt-Out Addendum"))
+	    	    {
+	    	    	PDFReader.residentBenefitsPackageAvailabilityCheck = true;
+	    	    	 try
+	    	 	    {
+	    	 		    PDFReader.residentBenefitsPackage = text.substring(text.indexOf(PDFAppConfig.Austin_Format1.RBPWhenPortfolioIsATX)+PDFAppConfig.Austin_Format1.RBPWhenPortfolioIsATX.length()).split(" ")[0].replaceAll("[^0-9a-zA-Z.]", "");
+                        if(PDFReader.residentBenefitsPackage.contains("month"))
+                        	PDFReader.residentBenefitsPackage = PDFReader.residentBenefitsPackage.substring(0,PDFReader.residentBenefitsPackage.indexOf("month")).trim();
+	    	 		    if(PDFReader.residentBenefitsPackage.matches(".*[a-zA-Z]+.*"))
+	    	 		    {
+	    	 		    	PDFReader.residentBenefitsPackage = "Error";
+	    	 		    }
+	    	 	    }
+	    	 	    catch(Exception e)
+	    	 	    {
+	    	 		    PDFReader.residentBenefitsPackage = "Error";
+	    	 		    e.printStackTrace();
+	    	 	    }
+	    	    	 System.out.println("Resident Benefits Package  = "+PDFReader.residentBenefitsPackage.trim());
+	    	    	//PDFAppConfig.Austin_Format1.AB1_residentBenefitsPackage_Prior
+	    	}
+	    	}
+	    }
+	    catch(Exception e)
+	    {}
 		return true;
 	    
 	 // document.close();

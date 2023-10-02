@@ -183,6 +183,8 @@ public class Austin_Format1
 		
 		public static String smartHomeAgreementCheck = "This Smart Home Agreement is subject";
 		public static String smartHomeAgreementFee_Prior = "Smart Home Agreement shall be $";
+		
+		public static String RBPWhenPortfolioIsATX = "second nature at a cost of $";
 
 
 }
