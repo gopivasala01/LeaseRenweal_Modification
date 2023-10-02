@@ -96,7 +96,8 @@ public class ChicagoPFW_Format2
 	public static String AB_additionalLateChargesLimit_Prior = "payment may not exceed more than";
 	public static String AB_additionalLateChargesLimit_After = "B. For the purposes of paying rent and late charges, the mailbox is not the agent for receipt for Landlord and the";
 
-	
+	public static String smartHomeAgreementCheck = "This Smart Home Agreement is subject";
+	public static String smartHomeAgreementFee_Prior = "Smart Home Agreement shall be $";
 
 
 

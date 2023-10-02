@@ -483,6 +483,28 @@ public class NorthCarolina_Format1
 	    }
 	    catch(Exception e)
 	    {}
+	    
+	  //Smart Home Agreement
+	    try
+	    {
+	    	if(text.contains(PDFAppConfig.NorthCarolina_Format1.smartHomeAgreementCheck))
+	    	{
+	    		PDFReader.smartHomeAgreementCheck = true;
+	    		System.out.println("Smart Home Agreement is available");
+	    		try
+	    		{
+	    			PDFReader.smartHomeAgreementFee=text.substring(text.indexOf(PDFAppConfig.NorthCarolina_Format1.smartHomeAgreementFee_Prior)+PDFAppConfig.NorthCarolina_Format1.smartHomeAgreementFee_Prior.length()).trim().split(" ")[0];
+	    		}
+	    		catch(Exception e)
+	    		{
+	    			PDFReader.smartHomeAgreementFee= "Error";
+	    		}
+	    	}
+	    }
+	    catch(Exception e)
+	    {}
+	    
+	    
 		return true;
 	    
 	 // document.close();

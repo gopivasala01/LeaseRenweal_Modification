@@ -458,6 +458,27 @@ public class Virginia_Format2
 	    }
 	    catch(Exception e)
 	    {}
+	    
+	  //Smart Home Agreement
+	    try
+	    {
+	    	if(text.contains(PDFAppConfig.Virginia_Format2.smartHomeAgreementCheck))
+	    	{
+	    		PDFReader.smartHomeAgreementCheck = true;
+	    		System.out.println("Smart Home Agreement is available");
+	    		try
+	    		{
+	    			PDFReader.smartHomeAgreementFee=text.substring(text.indexOf(PDFAppConfig.Virginia_Format2.smartHomeAgreementFee_Prior)+PDFAppConfig.Virginia_Format2.smartHomeAgreementFee_Prior.length()).trim().split(" ")[0];
+	    		}
+	    		catch(Exception e)
+	    		{
+	    			PDFReader.smartHomeAgreementFee= "Error";
+	    		}
+	    	}
+	    }
+	    catch(Exception e)
+	    {}
+	    
 	    //document.close();
 		return true;
 	}

@@ -497,6 +497,8 @@ public class Austin_Format1
 	    catch(Exception e)
 	    {}
 	    
+	    
+	    
 		return true;
 	    
 	 // document.close();

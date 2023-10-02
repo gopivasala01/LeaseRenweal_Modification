@@ -102,6 +102,9 @@ public class Alabama_Format2
 	public static String monthlyRentTaxAmount = "plus the additional amount of $";
 	public static String totalMonthlyRent = "for a total monthly Rent of $";
 	public static String totalMonthlyRent2 = "assessed, for a total of $";
+	
+	public static String smartHomeAgreementCheck = "This Smart Home Agreement is subject";
+	public static String smartHomeAgreementFee_Prior = "Smart Home Agreement shall be $";
 
 	
 

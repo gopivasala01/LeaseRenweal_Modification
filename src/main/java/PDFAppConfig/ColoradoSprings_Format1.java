@@ -182,6 +182,7 @@ public class ColoradoSprings_Format1
 		public static String serviceAnimalText = "SERVICE/SUPPORT ANIMAL AGREEMENT";
 		public static String HVACFilterAddendumTextAvailabilityCheck = "HVAC FILTER MAINTENANCE PROGRAM OPT-OUT ADDENDUM";
 
-
+		public static String smartHomeAgreementCheck = "This Smart Home Agreement is subject";
+		public static String smartHomeAgreementFee_Prior = "Smart Home Agreement shall be $";
 
 }

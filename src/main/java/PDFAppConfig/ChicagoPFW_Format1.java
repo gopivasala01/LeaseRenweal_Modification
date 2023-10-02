@@ -183,7 +183,8 @@ public class ChicagoPFW_Format1
 		public static String HVACFilterAddendumTextAvailabilityCheck = "HVAC FILTER MAINTENANCE PROGRAM OPT-OUT ADDENDUM";
 		public static String HVACFilterAddendumTextAvailabilityCheck2= "HVAC Filter Maintenance Program and Fee";
 
-
+		public static String smartHomeAgreementCheck = "This Smart Home Agreement is subject";
+		public static String smartHomeAgreementFee_Prior = "Smart Home Agreement shall be $";
 
 
 }

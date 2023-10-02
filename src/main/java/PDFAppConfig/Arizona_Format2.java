@@ -103,6 +103,9 @@ public class Arizona_Format2
 	
 	public static String petRentTaxAmount_Prior = "tax and administrative fees of $";
 	public static String totalPetRentAmountWithTax = "for a total of $";
+	
+	public static String smartHomeAgreementCheck = "This Smart Home Agreement is subject";
+	public static String smartHomeAgreementFee_Prior = "Smart Home Agreement shall be $";
 
 
 }

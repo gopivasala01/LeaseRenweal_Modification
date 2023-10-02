@@ -476,6 +476,27 @@ public class California_Format1
 	    }
 	    catch(Exception e)
 	    {}
+	    
+	  //Smart Home Agreement
+	    try
+	    {
+	    	if(text.contains(PDFAppConfig.California_Format1.smartHomeAgreementCheck))
+	    	{
+	    		PDFReader.smartHomeAgreementCheck = true;
+	    		System.out.println("Smart Home Agreement is available");
+	    		try
+	    		{
+	    			PDFReader.smartHomeAgreementFee=text.substring(text.indexOf(PDFAppConfig.California_Format1.smartHomeAgreementFee_Prior)+PDFAppConfig.California_Format1.smartHomeAgreementFee_Prior.length()).trim().split(" ")[0];
+	    		}
+	    		catch(Exception e)
+	    		{
+	    			PDFReader.smartHomeAgreementFee= "Error";
+	    		}
+	    	}
+	    }
+	    catch(Exception e)
+	    {}
+	    
 		return true;
 	    
 	 // document.close();
