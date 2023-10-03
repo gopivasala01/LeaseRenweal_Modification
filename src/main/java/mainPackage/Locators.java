@@ -119,6 +119,8 @@ public class Locators
     public static By baseRent = By.xpath("//*[text()='Base Rent']/following::input[1]");
     public static By buildingAddress = By.xpath("//*[@title='This address has been validated']/following::td[1]");
     
+    public static By captiveInsurence = By.xpath("//*[text()='Captive Insurance']/following::select[1]");
+    
    
 
 

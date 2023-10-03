@@ -119,7 +119,7 @@ public class PropertyWare_updateValues
 			try
 			{
 			String query =null;
-			for(int i=1;i<=25;i++)
+			for(int i=1;i<=26;i++)
 			{
 				switch(i)
 				{
@@ -231,6 +231,9 @@ public class PropertyWare_updateValues
 					break;
 				case 25: 
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getSmartHomeAgreementCode(RunnerClass.company)+"',Amount = '"+PDFReader.smartHomeAgreementFee+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=25";
+					break;
+				case 26: 
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getCaptiveInsurenceATXChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.captiveInsurenceATXFee+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=26";
 					break;
 				}
 			}
@@ -531,7 +534,12 @@ public class PropertyWare_updateValues
 				moveInCharges = moveInCharges+",25";
 				autoCharges = autoCharges+",25";
 			}
-			
+			//If Option 1 is selected in RBP Lease Agreement, then add Captive Insurence ATX charge
+			if(PDFReader.captiveInsurenceATXFlag==true)
+			{
+				moveInCharges = moveInCharges+",26";
+				autoCharges = autoCharges+",26";
+			}
 			
 			DataBase.assignChargeCodes(moveInCharges, autoCharges);
 		}

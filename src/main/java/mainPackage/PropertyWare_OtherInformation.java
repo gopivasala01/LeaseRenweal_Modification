@@ -274,6 +274,43 @@ public class PropertyWare_OtherInformation
 			}
 			}
 		}
+		
+		//Captive Insurence
+		if(PDFReader.captiveInsurenceATXFlag==true) 
+		{
+			try
+			{
+			RunnerClass.actions.moveToElement(RunnerClass.driver.findElement(Locators.captiveInsurence)).build().perform();
+			RunnerClass.driver.findElement(Locators.captiveInsurence).click();
+			Select captiveInsurenceList = new Select(RunnerClass.driver.findElement(Locators.captiveInsurence));
+			try
+			{
+				captiveInsurenceList.selectByVisibleText("Yes");
+			}
+			catch(Exception e)
+			{
+				try
+				{
+				captiveInsurenceList.selectByVisibleText("YES");
+				}
+				catch(Exception e2)
+				{
+					RunnerClass.failedReason = RunnerClass.failedReason+",Captive Insurence";
+					//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Enrolled in FilterEasy"+'\n');
+					//temp=1;
+					e.printStackTrace();
+				}
+			}
+			}
+			catch(Exception e)
+			{
+				RunnerClass.failedReason = RunnerClass.failedReason+",Captive Insurence";
+				//DataBase.notAutomatedFields(RunnerClass.buildingAbbreviation, "Enrolled in FilterEasy"+'\n');
+				//temp=1;
+				e.printStackTrace();
+			}
+		}
+		
 		//Needs New Lease - No by default
 		//Thread.sleep(2000);
 		try

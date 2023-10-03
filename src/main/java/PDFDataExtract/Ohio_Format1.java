@@ -9,6 +9,7 @@ import org.apache.pdfbox.text.PDFTextStripper;
 
 import mainPackage.PDFReader;
 import mainPackage.RunnerClass;
+import mainPackage.TessaractTest;
 
 public class Ohio_Format1 
 {
@@ -580,6 +581,27 @@ public class Ohio_Format1
 	    	    	 System.out.println("Resident Benefits Package  = "+PDFReader.residentBenefitsPackage.trim());
 	    	    	//PDFAppConfig.Austin_Format1.AB1_residentBenefitsPackage_Prior
 	    	}
+// Check if Option 1 is selected in RBP Lease Agreement
+	    		
+	    		String optionValue = TessaractTest.pdfScreenShot(file);
+	    		if(optionValue.equals("Option 1"))
+	    		{
+	    			PDFReader.captiveInsurenceATXFlag = true;
+	    			 try
+		    	 	    {
+		    	 		    PDFReader.captiveInsurenceATXFee = text.substring(text.indexOf(PDFAppConfig.Austin_Format1.captiveInsurenceATXFee_Prior)+PDFAppConfig.Austin_Format1.captiveInsurenceATXFee_Prior.length()).split(" ")[0].replaceAll("[^0-9a-zA-Z.]", "");
+		    	 		    if(PDFReader.captiveInsurenceATXFee.matches(".*[a-zA-Z]+.*"))
+		    	 		    {
+		    	 		    	PDFReader.captiveInsurenceATXFee = "Error";
+		    	 		    }
+		    	 	    }
+		    	 	    catch(Exception e)
+		    	 	    {
+		    	 		    PDFReader.captiveInsurenceATXFee = "Error";
+		    	 		    e.printStackTrace();
+		    	 	    }
+		    	    	 System.out.println("Captive Insurence ATX Fee  = "+PDFReader.captiveInsurenceATXFee.trim());
+	    		}
 	    	}
 	    }
 	    catch(Exception e)

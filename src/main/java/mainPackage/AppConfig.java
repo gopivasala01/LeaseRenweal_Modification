@@ -9,6 +9,8 @@ public class AppConfig
 		public static String[] Buildings= {"SABA2399"};
 		public static String[] Names= {"Baxter - Hernandez"};
 		
+		public static String pdfImage = "C:\\SantoshMurthyP\\Tessaract Images\\";
+		
 		public static String test ="";
 	    public static String pendingRenewalLeases = "Select  Company,buildingName,OwnerName from Automation.LeaseInfo where Status = 'In Progress'";
 			   //"Select  Company,buildingabbreviation,LeaseName from LeaseFact_dashboard where DATEDIFF(month, StartDate, GETDATE()) = 1 and Company ='Florida'  order by id asc";
@@ -1573,6 +1575,89 @@ public class AppConfig
 		return "";
 	   }
 	   
+	   public static String getCaptiveInsurenceATXChargeCode(String company)
+	   {
+		   switch(company)
+		   {
+		   case "Austin":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Alabama":
+			   return "42060 - Captive Insurance - ATX";
+		   case "North Carolina":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Chattanooga":
+			   return "42060 - Captive Insurance - ATX";
+		   case "California":
+			   return "42060 - Captive Insurance - ATX";
+		   case "California PFW":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Chicago PFW":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Colorado Springs":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Kansas City":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Houston":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Maine":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Savannah":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Arkansas":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Dallas/Fort Worth":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Indiana":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Little Rock":
+			   return "42060 - Captive Insurance - ATX";
+		   case "San Antonio":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Tulsa":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Georgia":
+			   return "42060 - Captive Insurance - ATX";
+		   case "OKC":
+			   return "42060 - Captive Insurance - ATX";
+		   case "South Carolina":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Florida":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Tennessee":
+			   return "42060 - Captive Insurance - ATX";
+		   case "New Mexico":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Ohio":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Pennsylvania":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Lake Havasu":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Columbia - St Louis":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Maryland":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Virginia":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Boise":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Idaho Falls":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Utah":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Spokane":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Washington DC":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Hawaii":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Arizona":
+			   return "42060 - Captive Insurance - ATX";
+		   case "New Jersey":
+			   return "42060 - Captive Insurance - ATX";
+		   }
+		return "";
+	   }
 	   
 	   public static String getEnrolledINRBPForPMUse(String company)
 	   {

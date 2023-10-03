@@ -9,6 +9,7 @@ import org.apache.pdfbox.text.PDFTextStripper;
 
 import mainPackage.PDFReader;
 import mainPackage.RunnerClass;
+import mainPackage.TessaractTest;
 
 public class Maine_Format2 
 {
@@ -478,7 +479,58 @@ public class Maine_Format2
 	    }
 	    catch(Exception e)
 	    {}
+//RBP when Portfolio is ATX
 	    
+	    try
+	    {
+	    	if(RunnerClass.portfolioName.contains("ATX."))
+	    	{
+	    		if(text.contains(PDFAppConfig.Austin_Format1.residentBenefitsPackageAddendumCheck)&&!text.contains("Resident Benefits Package Opt-Out Addendum"))
+	    	    {
+	    	    	PDFReader.residentBenefitsPackageAvailabilityCheck = true;
+	    	    	 try
+	    	 	    {
+	    	 		    PDFReader.residentBenefitsPackage = text.substring(text.indexOf(PDFAppConfig.Austin_Format1.RBPWhenPortfolioIsATX)+PDFAppConfig.Austin_Format1.RBPWhenPortfolioIsATX.length()).split(" ")[0].replaceAll("[^0-9a-zA-Z.]", "");
+                        if(PDFReader.residentBenefitsPackage.contains("month"))
+                        	PDFReader.residentBenefitsPackage = PDFReader.residentBenefitsPackage.substring(0,PDFReader.residentBenefitsPackage.indexOf("month")).trim();
+	    	 		    if(PDFReader.residentBenefitsPackage.matches(".*[a-zA-Z]+.*"))
+	    	 		    {
+	    	 		    	PDFReader.residentBenefitsPackage = "Error";
+	    	 		    }
+	    	 	    }
+	    	 	    catch(Exception e)
+	    	 	    {
+	    	 		    PDFReader.residentBenefitsPackage = "Error";
+	    	 		    e.printStackTrace();
+	    	 	    }
+	    	    	 System.out.println("Resident Benefits Package  = "+PDFReader.residentBenefitsPackage.trim());
+	    	    	//PDFAppConfig.Austin_Format1.AB1_residentBenefitsPackage_Prior
+	    	}
+// Check if Option 1 is selected in RBP Lease Agreement
+	    		
+	    		String optionValue = TessaractTest.pdfScreenShot(file);
+	    		if(optionValue.equals("Option 1"))
+	    		{
+	    			PDFReader.captiveInsurenceATXFlag = true;
+	    			 try
+		    	 	    {
+		    	 		    PDFReader.captiveInsurenceATXFee = text.substring(text.indexOf(PDFAppConfig.Austin_Format1.captiveInsurenceATXFee_Prior)+PDFAppConfig.Austin_Format1.captiveInsurenceATXFee_Prior.length()).split(" ")[0].replaceAll("[^0-9a-zA-Z.]", "");
+		    	 		    if(PDFReader.captiveInsurenceATXFee.matches(".*[a-zA-Z]+.*"))
+		    	 		    {
+		    	 		    	PDFReader.captiveInsurenceATXFee = "Error";
+		    	 		    }
+		    	 	    }
+		    	 	    catch(Exception e)
+		    	 	    {
+		    	 		    PDFReader.captiveInsurenceATXFee = "Error";
+		    	 		    e.printStackTrace();
+		    	 	    }
+		    	    	 System.out.println("Captive Insurence ATX Fee  = "+PDFReader.captiveInsurenceATXFee.trim());
+	    		}
+	    	}
+	    }
+	    catch(Exception e)
+	    {}
 	    //document.close();
 		return true;
 	}
