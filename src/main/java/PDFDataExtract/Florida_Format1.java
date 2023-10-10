@@ -618,6 +618,14 @@ public class Florida_Format1
 	    }
 	    catch(Exception e)
 	    {}
+	    
+	    //Check if Option 1 is selected in Liquidized addendum
+	    String optionValue = TessaractTest.floridaLiquidizedAddendumOptionCheck(file);
+	    if(optionValue.equals("Option 1"))
+	    {
+	    	PDFReader.floridaLiquidizedAddendumOption1Check =  true;
+	    }
+	    
 		return true;
 	    
 	 // document.close();

@@ -100,6 +100,7 @@ public class PDFReader
 	public static String smartHomeAgreementFee = "";
 	public static boolean captiveInsurenceATXFlag = false;
 	public static String captiveInsurenceATXFee = "";
+	public static boolean floridaLiquidizedAddendumOption1Check =  false;
 	
 		public static boolean readPDFPerMarket(String market) throws Exception  
 		{
@@ -163,6 +164,7 @@ public class PDFReader
 			smartHomeAgreementCheck = false;
 			smartHomeAgreementFee = "";
 			captiveInsurenceATXFlag = false;
+			floridaLiquidizedAddendumOption1Check =  false;
 			
 		    //Runner Class Late Fee Variables
 		 // All fields required for Late Fee Rule

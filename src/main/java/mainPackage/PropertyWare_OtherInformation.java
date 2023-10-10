@@ -107,7 +107,7 @@ public class PropertyWare_OtherInformation
 			}
 			else
 			{
-			if(PDFReader.earlyTermination.contains("2"))
+			if(PDFReader.earlyTermination.contains("2")||PDFReader.floridaLiquidizedAddendumOption1Check==true)
 			{
 				if(RunnerClass.company.equals("San Antonio"))
 				{
