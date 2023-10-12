@@ -14,11 +14,13 @@ import net.sourceforge.tess4j.Tesseract;
 
 public class TessaractTest 
 {
-	
-	
+	/*
+	public static void main(String args[]) throws Exception
+	{
+		floridaLiquidizedAddendumOptionCheck(new File("F:\\Lease_1023_1024_455_Alt_19_S_Apt_81_FL_White (1).pdf"));
+	}*/
 	public static String pdfScreenShot(File newFile) throws Exception 
 	{
-		
 		
 		try
 		{
@@ -86,11 +88,14 @@ public class TessaractTest
 		 PDDocument pdfDocument = PDDocument.load(newFile);
 		 PDFRenderer pdfRenderer = new PDFRenderer(pdfDocument);
 		 String targetText1 = "[ X]1/We agree"; //Tenant will pay Landlord monthly rent in the amount of";
+		 String targetText2 = "[X ]1/We agree";
+		 String targetText3 = "[ x]11/We agree";
+		 String targetText4 = "[x ]1/We agree";
 		 //String targetText2 = "x Option 2: Purchase a Renters Insurance Policy";
 		// String targetText2 = "(X)) monthly installments,"; //on or before the 1° day of each month, in the amount";
 		 //Rectangle textCoordinates = textStripper.getTextBounds("monthly installments, Tenant will pay Landlord monthly rent in the amount of");
 		
-		 for (int page = 21; page < pdfDocument.getNumberOfPages(); ++page) {
+		 for (int page = 15; page < pdfDocument.getNumberOfPages(); ++page) {
 				 BufferedImage bim = pdfRenderer.renderImageWithDPI(page, 300, ImageType.RGB);
 		         // Crop the image based on the specified coordinates
 		        // BufferedImage croppedImage = bim.getSubimage(x, y, width, height);
@@ -103,16 +108,22 @@ public class TessaractTest
 				 tesseract.setDatapath("F:\\Eclipse Workspace\\Gopi\\Lease-Close-Outs-2.0\\tessdata");
 
 				 //image.setLanguage(“eng”);
-				 try {
+				 try 
+				 {
 				   String text= tesseract.doOCR(new File(AppConfig.pdfImage+"Image.jpeg"));
 				   System.out.print(text);
-				   if(text.contains(targetText1)) { //|| text.contains(targetText2)
+				   if(text.contains("Liquidated Damages Addendum"))
+				   {
+					   String x = text.substring(text.indexOf("[")+1,text.indexOf("]")).trim();
+					   if(x.equalsIgnoreCase("x"))
+					   {
 					   System.out.println("Option 1 is selected");
 					   return "Option 1";
+					   }
 				   }
 				   //else
 					  // return "Error";
-				   }
+				  }
 				 catch(Exception e) 
 				 {
 					 return "Error";
