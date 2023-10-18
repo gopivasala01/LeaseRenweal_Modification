@@ -18,7 +18,7 @@ public class AppConfig
 		//public static String lastMonthLeases = "Select  Company,buildingabbreviation,LeaseName from [Automation].[leaseAuditAutomation] where notes = 'Values did not match'";
 		public static String connectionUrl = "jdbc:sqlserver://azrsrv001.database.windows.net;databaseName=HomeRiverDB;user=service_sql02;password=xzqcoK7T;encrypt=true;trustServerCertificate=true;";
 	    public static String downloadFilePath = "C:\\SantoshMurthyP\\Lease Audit Automation";
-	    public static String[] LeaseAgreementFileNames = {"REVISED_Lease_","Lease_","_Lease"};
+	    public static String[] LeaseAgreementFileNames = {"REVISED_Lease_","Lease_","_Lease","Revised_TTA_Lease","TTA_Lease"};
 	    
 	    public static String buildingPageURL = "https://app.propertyware.com/pw/properties/building_detail.do?entityID=";
 	    
@@ -129,6 +129,8 @@ public class AppConfig
 			   else return RunnerClass.arizonaRentCode;
 		   case "New Jersey":
 			   return "40010 - Rent Income";
+		   case "Montana":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -217,6 +219,8 @@ public class AppConfig
 			   else return RunnerClass.arizonaRentCode;
 		   case "New Jersey":
 			   return "40230 - Pet Rent";
+		   case "Montana":
+			   return "40230 - Pet Rent";
 		   }
 		   return "";
 	   }
@@ -300,6 +304,8 @@ public class AppConfig
 			   return "43030 - Tenant Admin Fee";
 		   case "New Jersey":
 			   return "43030 - Tenant Admin Fee";
+		   case "Montana":
+			   return "43030 - Tenant Admin Revenue";
 		   }
 		   return "";
 	   }
@@ -390,6 +396,8 @@ public class AppConfig
 			   else return RunnerClass.arizonaRentCode;
 		   case "New Jersey":
 			   return "40010 - Rent Income";
+		   case "Montana":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -478,6 +486,8 @@ public class AppConfig
 			   return "40010 - Rent Income";
 			   else return RunnerClass.arizonaRentCode;
 		   case "New Jersey":
+			   return "40230 - Pet Rent";
+		   case "Montana":
 			   return "40230 - Pet Rent";
 		   }
 		   return "";
@@ -568,6 +578,8 @@ public class AppConfig
 			   else return RunnerClass.arizonaRentCode;
 		   case "New Jersey":
 			   return "40010 - Rent Income";
+		   case "Montana":
+			   return "40010 - Rent Income";
 		   }
 		   return "";
 	   }
@@ -650,6 +662,8 @@ public class AppConfig
 		   case "Arizona":
 			   return "43060 - Filter Fee";
 		   case "New Jersey":
+			   return "43060 - Filter Fee";
+		   case "Montana":
 			   return "43060 - Filter Fee";
 		   }
 		   return "";
@@ -735,6 +749,8 @@ public class AppConfig
 			   return "44010 - Non-Refundable Pet Fee";
 		   case "New Jersey":
 			   return "44010 - Non-Refundable Pet Fee";
+		   case "Montana":
+			   return "44010 - Non-Refundable Pet Fee";
 		   }
 		   return "";
 	   }
@@ -817,6 +833,8 @@ public class AppConfig
 		   case "Arizona":
 			   return "20030 - Prepayments";
 		   case "New Jersey":
+			   return "20030 - Prepayments";
+		   case "Montana":
 			   return "20030 - Prepayments";
 		   }
 		   return "";
@@ -902,9 +920,97 @@ public class AppConfig
 			   return "43070 - Resident Benefit Package Fee";
 		   case "New Jersey":
 			   return "43070 - Resident Benefit Package Fee";
+		   case "Montana":
+			   return "43070 - Resident Benefit Package Fee";
 		   }
 		   return "";
 	   }
+	   public static String getResidentBenefitsPackageTaxChargeCode(String company)
+	   {
+		   switch(company)
+		   {
+		   case "Austin":
+			   return "43030 - Tenant Admin Revenue";
+		   case "California":
+			   return "43030 - Tenant Admin Revenue";
+		   case "California PFW":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Alabama":
+			   return "43030 - Tenant Admin Revenue";
+		   case "North Carolina":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Chattanooga":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Chicago PFW":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Colorado Springs":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Kansas City":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Houston":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Maine":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Savannah":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Arkansas":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Dallas/Fort Worth":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Indiana":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Little Rock":
+			   return "43030 - Tenant Admin Revenue";
+		   case "San Antonio":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Tulsa":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Georgia":
+			   return "43030 - Tenant Admin Revenue";
+		   case "OKC":
+			   return "43030 - Tenant Admin Revenue";
+		   case "South Carolina":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Florida":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Tennessee":
+			   return "43030 - Tenant Admin Revenue";
+		   case "New Mexico":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Ohio":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Pennsylvania":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Lake Havasu":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Columbia - St Louis":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Maryland":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Virginia":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Boise":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Idaho Falls":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Utah":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Spokane":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Washington DC":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Hawaii":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Arizona":
+			   return "43030 - Tenant Admin Revenue";
+		   case "New Jersey":
+			   return "43030 - Tenant Admin Revenue";
+		   case "Montana":
+			   return "43030 - Tenant Admin Revenue";
+		   }
+		   return "";
+	   }
+	   
 	   public static String getpetSecurityDepositChargeCode(String company)
 	   {
 		   switch(company)
@@ -984,6 +1090,8 @@ public class AppConfig
 		   case "Arizona":
 			   return "20020 - Security Deposit";
 		   case "New Jersey":
+			   return "20020 - Security Deposit";
+		   case "Montana":
 			   return "20020 - Security Deposit";
 		   }
 		   return "";
@@ -1068,6 +1176,8 @@ public class AppConfig
 			   return "44040 - Resident Utility Bill Serv Rev";
 		   case "New Jersey":
 			   return "44040 - Resident Utility Bill Serv Rev";
+		   case "Montana":
+			   return "42030 - Utility Reimbursement";
 		   }
 		return "";
 	   }
@@ -1150,6 +1260,8 @@ public class AppConfig
 		   case "Arizona":
 			   return "43050 - Month-to-Month Admin Fee";
 		   case "New Jersey":
+			   return "40061 - Rent - Kona";
+		   case "Montana":
 			   return "40061 - Rent - Kona";
 		   }
 		return "";
@@ -1235,6 +1347,8 @@ public class AppConfig
 			   return "42100 - GET Tenant Recovery";
 		   case "New Jersey":
 			   return "42100 - GET Tenant Recovery";
+		   case "Montana":
+			   return "42100 - GET Tenant Recovery";
 		   }
 		return "";
 	   }
@@ -1318,6 +1432,8 @@ public class AppConfig
 		   case "Arizona":
 			   return "42100 - GET Tenant Recovery";
 		   case "New Jersey":
+			   return "42100 - GET Tenant Recovery";
+		   case "Montana":
 			   return "42100 - GET Tenant Recovery";
 		   }
 		return "";
@@ -1403,6 +1519,8 @@ public class AppConfig
 			   return "43050 - Month-to-Month Admin Fee";
 		   case "New Jersey":
 			   return "40231 - Pet Rent-St. Clair";
+		   case "Montana":
+			   return "40231 - Pet Rent-St. Clair";
 		   }
 		return "";
 	   }
@@ -1486,6 +1604,8 @@ public class AppConfig
 		   case "Arizona":
 			   return "43050 - Month-to-Month Admin Fee";
 		   case "New Jersey":
+			   return "40231 - Pet Rent-St. Clair";
+		   case "Montana":
 			   return "40231 - Pet Rent-St. Clair";
 		   }
 		return "";
@@ -1571,6 +1691,8 @@ public class AppConfig
 			   return "43200 - Smart Home Fee";
 		   case "New Jersey":
 			   return "43200 - Smart Home Fee";
+		   case "Montana":
+			   return "43200 - Smart Home Fee";
 		   }
 		return "";
 	   }
@@ -1654,6 +1776,8 @@ public class AppConfig
 		   case "Arizona":
 			   return "42060 - Captive Insurance - ATX";
 		   case "New Jersey":
+			   return "42060 - Captive Insurance - ATX";
+		   case "Montana":
 			   return "42060 - Captive Insurance - ATX";
 		   }
 		return "";
@@ -1739,6 +1863,8 @@ public class AppConfig
 			   return "YES";
 		   case "New Jersey":
 			   return "YES";
+		   case "Montana":
+			   return "YES";
 		   }
 		   return "";
 	   }
@@ -1821,6 +1947,8 @@ public class AppConfig
 		   case "Arizona":
 			   return "Yes";
 		   case "New Jersey":
+			   return "Yes";
+		   case "Montana":
 			   return "Yes";
 		   }
 		   return "";
@@ -1906,6 +2034,8 @@ public class AppConfig
 			   return "Yes";
 		   case "New Jersey":
 			   return "Yes";
+		   case "Montana":
+			   return "Yes";
 		   }
 		   return "";
 	   }
@@ -1989,6 +2119,8 @@ public class AppConfig
 		   case "Arizona":
 			   return "NO";
 		   case "New Jersey":
+			   return "NO";
+		   case "Montana":
 			   return "NO";
 		   }
 		   return "";

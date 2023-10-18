@@ -51,6 +51,8 @@ public class PDFReader
     public static boolean HVACFilterFlag = false;
     public static boolean residentBenefitsPackageAvailabilityCheck = false;
     public static String residentBenefitsPackage = "";
+    public static String residentBenefitsPackageTaxAmount = "";
+    public static boolean residentBenefitsPackageTaxAvailabilityCheck = false;
     public static String leaseRenewalFee = "";
     public static String startDate = "";
     public static String endDate = "";
@@ -111,6 +113,8 @@ public class PDFReader
 			HVACFilterFlag = false;
 			residentBenefitsPackageAvailabilityCheck = false;
 			residentBenefitsPackage = "";
+			residentBenefitsPackageTaxAmount = "";
+			residentBenefitsPackageTaxAvailabilityCheck = false;
 			proratedRent ="";
 		    proratedRentDate ="";
 		    petFlag = false;
@@ -1064,6 +1068,29 @@ public class PDFReader
 					    
 					break;
 					
+				case "Montana":
+					String pdfFormatType_Montana = PDFReader.decidePDFFormat(market);
+					System.out.println("PDF Format Type = "+pdfFormatType_Montana);
+					if(pdfFormatType_Montana=="Format1")
+					{
+						if(PDFDataExtract.Montana_Format1.format1()==false)
+							return false;
+					}
+					
+					else 
+						if(pdfFormatType_Montana=="Format2")
+					     {
+						if(PDFDataExtract.Montana_Format2.format2()==false)
+							return false;
+				        }
+					    else 
+					   {
+						RunnerClass.failedReason = RunnerClass.failedReason+","+ "Wrong PDF Format";
+						return false;
+					    }
+					    
+					break;
+					
 			}
 			
 			//Converting amounts in proper format if they have more than one dot
@@ -1223,6 +1250,26 @@ public class PDFReader
 			System.out.println("1% of Prorate Rent = "+OnePercentOfProrateRentAmount);
 			System.out.println("1% of Pet Rent = "+OnePercentOfPetRentAmount);
 			System.out.println("1% of Prorate Pet Rent = "+OnePercentOfProratePetRentAmount);
+			
+			//Splitting RBP Amounts when it has taxes for only Montana
+			if(PDFReader.residentBenefitsPackageTaxAvailabilityCheck==true&&RunnerClass.company.equals("Montana"))
+			{
+				try
+				{
+					double a = Double.parseDouble(PDFReader.residentBenefitsPackage.replace("$", "").trim());
+					double b = Double.parseDouble(PDFReader.residentBenefitsPackageTaxAmount.replace("$", "").trim());
+					double c = a-b;
+					PDFReader.residentBenefitsPackage = String.valueOf(c);
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();
+					PDFReader.residentBenefitsPackage = "Error";
+					PDFReader.residentBenefitsPackageTaxAmount = "Error";
+				}
+				
+			}
+			
 			return true;
 			
 		}
@@ -1367,6 +1414,9 @@ public class PDFReader
 			case "New Jersey":
 		        format1Text = PDFAppConfig.PDFFormatDecider.NewJersey_Format1;
 		        format2Text = PDFAppConfig.PDFFormatDecider.NewJersey_Format2;
+			case "Montana":
+		        format1Text = PDFAppConfig.PDFFormatDecider.Montana_Format1;
+		        format2Text = PDFAppConfig.PDFFormatDecider.Montana_Format2;
 			}
 			
 			File file = RunnerClass.getLastModified();

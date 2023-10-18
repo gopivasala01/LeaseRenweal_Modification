@@ -119,7 +119,7 @@ public class PropertyWare_updateValues
 			try
 			{
 			String query =null;
-			for(int i=1;i<=26;i++)
+			for(int i=1;i<=27;i++)
 			{
 				switch(i)
 				{
@@ -235,6 +235,9 @@ public class PropertyWare_updateValues
 				case 26: 
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getCaptiveInsurenceATXChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.captiveInsurenceATXFee+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=26";
 					break;
+				case 27: 
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getResidentBenefitsPackageTaxChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.residentBenefitsPackageTaxAmount+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=27";
+					break;
 				}
 			}
 			DataBase.updateTable(query);
@@ -282,7 +285,7 @@ public class PropertyWare_updateValues
 			PropertyWare_updateValues.specificMarketMoveInAndAutoChargesAssignment(moveInCharges, autoCharges, prepaymentChargeOrMonthlyRent);
 			else
 			{*/
-			if(RunnerClass.portfolioType=="MCH")
+			if(RunnerClass.portfolioType=="MCH"||RunnerClass.company.equals("Montana"))
 			{
 				
 				if(PDFReader.petFlag==false)
@@ -345,6 +348,13 @@ public class PropertyWare_updateValues
 						}
 				    }
 				}
+				//If Company is Montana, do not add Prepayment charge
+				if(moveInCharges.contains("9"))
+					moveInCharges = moveInCharges.replace(",9", "");
+				if(moveInCharges.contains("12"))
+				moveInCharges = moveInCharges.replace(",12", "");
+				if(moveInCharges.contains(",2,"))
+					moveInCharges = moveInCharges.replace(",2", "");
 				
 			}
 			//Other Portfolios
@@ -441,8 +451,8 @@ public class PropertyWare_updateValues
 					moveInCharges = moveInCharges.replace(",12", "");
 			}
 			
-			//If Company is Boise,Idaho Falls
-			if((RunnerClass.company.equals("Boise")||RunnerClass.company.equals("Idaho Falls")||RunnerClass.company.equals("Utah"))&&PDFReader.residentUtilityBillFlag==true&&(!PDFReader.prorateRUBS.equals("Error")&&!PDFReader.RUBS.equals("Error")))
+			//If Company is Boise,Idaho Falls,Utah and California, add RUBS charge
+			if((RunnerClass.company.equals("Boise")||RunnerClass.company.equals("Idaho Falls")||RunnerClass.company.equals("Utah")||RunnerClass.company.equals("Montana"))&&PDFReader.residentUtilityBillFlag==true&&(!PDFReader.prorateRUBS.equals("Error")&&!PDFReader.RUBS.equals("Error")))
 			{
 				moveInCharges = moveInCharges+",13";
 				autoCharges = autoCharges+",14";
@@ -539,6 +549,20 @@ public class PropertyWare_updateValues
 			{
 				moveInCharges = moveInCharges+",26";
 				autoCharges = autoCharges+",26";
+			}
+			
+			//If RBP Has tax amount, add RBP in two charges
+			if(PDFReader.residentBenefitsPackageTaxAvailabilityCheck==true) 
+			{
+				 // Create a map to store replacement values for each number
+		        Map<String, String> replacements = new HashMap<>();
+		        replacements.put("11", "11,27");
+		        //Move In Charges
+		        String replacedString = replaceNumbers(moveInCharges, replacements);
+		        moveInCharges = replacedString;
+		        //Auto Charges
+		        String replacedString2 = replaceNumbers(autoCharges, replacements);
+		        autoCharges = replacedString2;
 			}
 			
 			DataBase.assignChargeCodes(moveInCharges, autoCharges);
