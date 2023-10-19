@@ -348,14 +348,16 @@ public class PropertyWare_updateValues
 						}
 				    }
 				}
+				if(RunnerClass.company.equals("Montana"))
+				{
 				//If Company is Montana, do not add Prepayment charge
 				if(moveInCharges.contains("9"))
 					moveInCharges = moveInCharges.replace(",9", "");
 				if(moveInCharges.contains("12"))
 				moveInCharges = moveInCharges.replace(",12", "");
-				if(moveInCharges.contains(",2,"))
-					moveInCharges = moveInCharges.replace(",2", "");
-				
+				//if(moveInCharges.contains(",2,"))
+					//moveInCharges = moveInCharges.replace(",2", "");
+				}
 			}
 			//Other Portfolios
 			else 
