@@ -1163,9 +1163,9 @@ public class AppConfig
 		   case "Boise":
 			   return "44040 - Resident Utility Bill Serv Rev";
 		   case "Idaho Falls":
-			   return "42030 - Utility Reimbursement";
+			   return "44040 - Resident Utility Bill Serv Rev";
 		   case "Utah":
-			   return "42030 - Utility Reimbursement";
+			   return "44040 - Resident Utility Bill Serv Rev";
 		   case "Spokane":
 			   return "44040 - Resident Utility Bill Serv Rev";
 		   case "Washington DC":

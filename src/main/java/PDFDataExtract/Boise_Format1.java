@@ -536,35 +536,40 @@ public class Boise_Format1
 	    catch(Exception e)
 	    {}
 	    
-	    //RUBS
-	    if(text.contains(PDFAppConfig.Boise_Format1.residentUtilityBillTextCheck))
+	  //RUBS
+	    if(text.contains(PDFAppConfig.Montana_Format1.residentUtilityBillTextCheck))
 	    {
+	    	String utilitiesText = text.substring(text.indexOf("UTILITIES:"));
 	    	PDFReader.residentUtilityBillFlag = true;
 	    	//Prorate RUBS
 	    	try
 		    {
-	    		 PDFReader.prorateRUBS = text.substring(text.indexOf(PDFAppConfig.Boise_Format1.prorateRUBS_Prior)+PDFAppConfig.Boise_Format1.prorateRUBS_Prior.length()).trim().split(" ")[0];
+	    		 PDFReader.prorateRUBS = utilitiesText.substring(utilitiesText.indexOf(PDFAppConfig.Montana_Format1.prorateRUBS_Prior)+PDFAppConfig.Montana_Format1.prorateRUBS_Prior.length()).trim().split(" ")[0];
 	    		 if(PDFReader.prorateRUBS.matches(".*[a-zA-Z]+.*"))
 	 		    {
-	    			 PDFReader.prorateRUBS = text.substring(text.indexOf(PDFAppConfig.Boise_Format1.prorateRUBS_Prior2)+PDFAppConfig.Boise_Format1.prorateRUBS_Prior2.length()).trim().split(" ")[0];
+	    			 PDFReader.prorateRUBS = "Error";
+	    			 //PDFReader.prorateRUBS = utilitiesText.substring(utilitiesText.indexOf(PDFAppConfig.Montana_Format1.prorateRUBS_Prior2)+PDFAppConfig.Montana_Format1.prorateRUBS_Prior2.length()).trim().split(" ")[0];
 	 		    }
 		    }
 	    	catch(Exception e)
 		    {
+	    		PDFReader.prorateRUBS = "Error";
+	    		/*
 	    		try
 	    		{
-	    			PDFReader.prorateRUBS = text.substring(text.indexOf(PDFAppConfig.Boise_Format1.prorateRUBS_Prior2)+PDFAppConfig.Boise_Format1.prorateRUBS_Prior2.length()).trim().split(" ")[0];
+	    			PDFReader.prorateRUBS = utilitiesText.substring(utilitiesText.indexOf(PDFAppConfig.Montana_Format1.prorateRUBS_Prior2)+PDFAppConfig.Montana_Format1.prorateRUBS_Prior2.length()).trim().split(" ")[0];
 	    		}
 	    		catch(Exception e2)
 	    		{
 	    		PDFReader.prorateRUBS = "Error";
 	    		}
+	    		*/
 		    }
 	    	System.out.println("Prorate RUBS = "+PDFReader.prorateRUBS);
 	    	//RUBS
 	    	try
 		    {
-	    		 PDFReader.RUBS = text.substring(text.indexOf(PDFAppConfig.Boise_Format1.RUBS_Prior)+PDFAppConfig.Boise_Format1.RUBS_Prior.length()).trim().split(" ")[0];
+	    		 PDFReader.RUBS = utilitiesText.substring(utilitiesText.indexOf(PDFAppConfig.Montana_Format1.RUBS_Prior)+PDFAppConfig.Montana_Format1.RUBS_Prior.length()).trim().split(" ")[0];
 		    }
 	    	catch(Exception e)
 		    {

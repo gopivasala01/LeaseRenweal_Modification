@@ -130,7 +130,7 @@ public class PropertyWare_updateValues
 					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getMonthlyRentChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.monthlyRent+"',StartDate='"+startDate_MoveInCharge+"',EndDate='"+endDate_MonthlyRent_WhenIncreasedRentAvailable+"',AutoCharge_StartDate='"+autoCharge_startDate_MonthlyRent+"' where ID=2";
 					break;
 				case 3:
-					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getTenentAdminReveueChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.adminFee+"',StartDate='"+startDate_MoveInCharge+"',EndDate='',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=3";
+					query = query+"\n Update automation.LeaseCloseOutsChargeChargesConfiguration Set ChargeCode = '"+AppConfig.getTenentAdminReveueChargeCode(RunnerClass.company)+"',Amount = '"+PDFReader.adminFee+"',StartDate='"+startDate_MoveInCharge+"',EndDate='"+endDate_ProrateRent+"',AutoCharge_StartDate='"+startDate_AutoCharge+"' where ID=3";
 					break;
 				case 4: 
 					String chargeCode=AppConfig.getPetRentChargeCode(RunnerClass.company);
@@ -442,6 +442,15 @@ public class PropertyWare_updateValues
 					}
 				}
 				
+			}
+			//If Company is Spokane, do not add Admin fee at Move In, add it in Auto charges with first full month and End Date
+			if(RunnerClass.company.equals("Spokane"))
+			{
+				if(moveInCharges.contains(",3"))
+				{
+					moveInCharges = moveInCharges.replace(",3", "");
+				    autoCharges = autoCharges+",3";
+				}
 			}
 			
 			//If Move In Date is less than 5 days to the end of the month, remove prepayments charge from the move in charges
