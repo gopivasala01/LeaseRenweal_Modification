@@ -238,7 +238,7 @@ public class PropertyWare_OtherInformation
 			}
 			}
 		}
-		else
+		/*else
 		{
 			//Enrolled in FilterEasy
 			if(PDFReader.airFilterFee!="Error")
@@ -273,7 +273,7 @@ public class PropertyWare_OtherInformation
 				}
 			}
 			}
-		}
+		}*/
 		
 		//Captive Insurence
 		if(PDFReader.captiveInsurenceATXFlag==true) 

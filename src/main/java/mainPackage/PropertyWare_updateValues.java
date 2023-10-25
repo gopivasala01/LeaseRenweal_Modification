@@ -443,6 +443,14 @@ public class PropertyWare_updateValues
 				}
 				
 			}
+			//If RBP flag is false, HVAC flag should also be false as we are not adding HVAC value anymore
+			if(PDFReader.residentBenefitsPackageAvailabilityCheck==false)
+			{
+				PDFReader.HVACFilterFlag = false;
+				if(autoCharges.contains(",7"))
+					autoCharges = autoCharges.replace(",7", "");
+			}
+			
 			//If Company is Spokane, do not add Admin fee at Move In, add it in Auto charges with first full month and End Date
 			if(RunnerClass.company.equals("Spokane"))
 			{
