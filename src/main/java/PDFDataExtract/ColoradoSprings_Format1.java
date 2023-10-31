@@ -109,7 +109,11 @@ public class ColoradoSprings_Format1
 		    }
 		    if(PDFReader.monthlyRent.matches(".*[a-zA-Z]+.*"))
 		    {
-		    	PDFReader.monthlyRent = "Error";
+		    	PDFReader.monthlyRent = text.substring(text.indexOf("Monthly Rent due in the amount of $")+"Monthly Rent due in the amount of $".length()).trim().split(" ")[0].trim();//,text.indexOf(PDFAppConfig.DFW_Format1.AB_fullRent_After)).substring(1).replaceAll("[^.0-9]", "");;
+		    	 if(PDFReader.monthlyRent.matches(".*[a-zA-Z]+.*"))
+				    {
+				    	PDFReader.monthlyRent = "Error";
+				    }
 		    }
 		    if(PDFReader.monthlyRent.endsWith(","))
 		    {
