@@ -71,6 +71,97 @@ public class PropertyWare
 		}
 	}
 	
+	
+	public static boolean getToLeasePageWithLeaseEntityID()
+	{
+		
+		try
+		{
+			RunnerClass.navigateToLeaseThroughLeaseEntityID = true;
+			RunnerClass.driver.manage().timeouts().implicitlyWait(100,TimeUnit.SECONDS);
+	        RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(100));
+	        RunnerClass.driver.navigate().refresh();
+	        intermittentPopUp();
+	        Thread.sleep(2000);
+	        RunnerClass.driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
+	        RunnerClass.driver.findElement(Locators.marketDropdown).click();
+			/*
+			 * if(RunnerClass.company.contains("Institutional Accounts")) {
+			 * 
+			 * RunnerClass.failedReason = "Institutional Accounts"; return false; }
+			 */
+	        RunnerClass.driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
+	        String marketName = "HomeRiver Group - "+RunnerClass.company.trim();
+	        Select marketDropdownList = new Select(RunnerClass.driver.findElement(Locators.marketDropdown));
+	        marketDropdownList.selectByVisibleText(marketName);
+	        Thread.sleep(2000);
+	        RunnerClass.driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
+	        //}
+	        String buildingPageURL = AppConfig.buildingPageURL+RunnerClass.leaseEntityID;
+	        if(RunnerClass.leaseEntityID== null || RunnerClass.leaseEntityID == "") {
+	        	RunnerClass.failedReason = "Building Not Available";
+	        	return false;
+	        }
+	        else {
+	        	 System.out.println(buildingPageURL);
+	 	        RunnerClass.driver.navigate().to(buildingPageURL);
+	        }
+	       
+			/*
+			 * if(PropertyWare.permissionDeniedPage()==true) {
+			 * System.out.println("Wrong building Entity ID"); RunnerClass.failedReason =
+			 * "Building Not Available"; return false; }
+			 */
+	        intermittentPopUp();
+	       
+	        //boolean portfolioCheck = false;
+	        
+	        return true;
+		}
+		catch(Exception e)
+		{
+			RunnerClass.failedReason= "Building Not Available";
+			return false;
+		}
+	}
+	
+	public static boolean navigatetoLease(String company,String completeBuilding, String buildingAbbreviation,String leaseName) {
+		RunnerClass.wait = new WebDriverWait(RunnerClass.driver, Duration.ofSeconds(10));
+		RunnerClass.driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		//Thread.sleep(3000);
+		
+		if(DataBase.getLeaseEntityID(leaseName, completeBuilding) == true){
+			try {
+				getToLeasePageWithLeaseEntityID();
+			}
+			catch(Exception e) {
+				
+				System.out.println("Building Not Found");
+			    RunnerClass.failedReason =  RunnerClass.failedReason+","+ "Building Not Found";
+				return false;
+			}
+		
+		}
+		else {
+			try {
+				searchBuilding(company, buildingAbbreviation);
+			}
+			catch(Exception e) {
+				
+				System.out.println("Building Not Found");
+			    RunnerClass.failedReason =  RunnerClass.failedReason+","+ "Building Not Found";
+				return false;
+			}
+			
+			
+		}
+		
+		
+		return true;
+	}
+	
+	
+	
 	public static boolean searchBuilding(String company, String building)
 	{
 		try
