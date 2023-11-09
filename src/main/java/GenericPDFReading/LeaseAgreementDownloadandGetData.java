@@ -54,6 +54,7 @@ public class LeaseAgreementDownloadandGetData {
 				 if(documents.get(i).getText().startsWith(GenericPDFReading.AppConfig.renewalLeaseAgreementFileNames[j])&&!documents.get(i).getText().contains("Termination")&&!documents.get(i).getText().contains("_Mod"))//&&documents.get(i).getText().contains(AppConfig.getCompanyCode(RunnerClass.company)))
 				 {
 				 	documents.get(i).click();
+				 	System.out.println(documents.get(i));
 					checkLeaseAgreementAvailable = true;
 					break;
 				 }
@@ -84,7 +85,7 @@ public class LeaseAgreementDownloadandGetData {
 	public static boolean getDataFromLeaseAgreement() throws Exception {
 	 	
 		File file;
-		file = RunnerClass.getLastModified();
+		Thread.sleep(10000);
 		if(RunnerClass.getLastModified() !=null) {
 			while (true) {
 		 	    file = RunnerClass.getLastModified();
@@ -92,6 +93,7 @@ public class LeaseAgreementDownloadandGetData {
 		 	        try {
 		 	            Thread.sleep(5000);
 		 	        } catch (InterruptedException e) {
+		 	            
 		 	        	e.printStackTrace();
 		 	            // Handle the InterruptedException if needed
 		 	        }
@@ -101,6 +103,8 @@ public class LeaseAgreementDownloadandGetData {
 		 	    }
 		 	}
 		}
+		file = RunnerClass.getLastModified();
+		
 	 	if(file !=null) {
 	 	 	FileInputStream fis = new FileInputStream(file);
 			PDDocument document = PDDocument.load(fis);
