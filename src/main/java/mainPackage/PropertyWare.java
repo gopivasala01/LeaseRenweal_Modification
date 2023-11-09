@@ -132,7 +132,12 @@ public class PropertyWare
 		
 		if(DataBase.getLeaseEntityID(leaseName, completeBuilding) == true){
 			try {
-				getToLeasePageWithLeaseEntityID();
+				if(getToLeasePageWithLeaseEntityID()==true) {
+					return true;
+				}
+				else {
+					return false;
+				}
 			}
 			catch(Exception e) {
 				
@@ -144,7 +149,12 @@ public class PropertyWare
 		}
 		else {
 			try {
-				searchBuilding(company, buildingAbbreviation);
+				if(searchBuilding(company, buildingAbbreviation)==true) {
+					return true;
+				}
+				else {
+					return false;
+				}
 			}
 			catch(Exception e) {
 				
@@ -157,7 +167,7 @@ public class PropertyWare
 		}
 		
 		
-		return true;
+		//return true;
 	}
 	
 	

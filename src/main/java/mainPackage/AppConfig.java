@@ -12,12 +12,12 @@ public class AppConfig
 		public static String pdfImage = "C:\\SantoshMurthyP\\Tessaract Images\\";
 		
 		public static String test ="";
-	    public static String pendingRenewalLeases = "Select  Company,buildingName,OwnerName from Automation.LeaseRenewalAutomation2 ";//where Status = 'In Progress'";
+	    public static String pendingRenewalLeases = "Select  Company,buildingName,OwnerName from Automation.LeaseRenewalAutomation2 where NotAutomatedFields != ',Unable to download Lease Agreement' ";//where NotAutomatedFields in ('Building Not Available',',Building Not Found') ";//where Status = 'In Progress'";
 			   //"Select  Company,buildingabbreviation,LeaseName from LeaseFact_dashboard where DATEDIFF(month, StartDate, GETDATE()) = 1 and Company ='Florida'  order by id asc";
 	   //public static String lastMonthLeases1 = "Select  Company,buildingabbreviation,LeaseName from LeaseFact_dashboard where DATEDIFF(month, StartDate, GETDATE()) = 1 and Company ='Alabama'  order by id asc";
 		//public static String lastMonthLeases = "Select  Company,buildingabbreviation,LeaseName from [Automation].[leaseAuditAutomation] where notes = 'Values did not match'";
 		public static String connectionUrl = "jdbc:sqlserver://azrsrv001.database.windows.net;databaseName=HomeRiverDB;user=service_sql02;password=xzqcoK7T;encrypt=true;trustServerCertificate=true;";
-	    public static String downloadFilePath = "C:\\SantoshMurthyP\\Lease Audit Automation";
+	    public static String downloadFilePath = "C:\\Users\\gopi\\Documents\\BaseRent Update Files\\New folder";
 	    public static String[] LeaseAgreementFileNames = {"REVISED_Lease_","Lease_","_Lease","Revised_TTA_Lease","TTA_Lease"};
 	    
 	    public static String buildingPageURL = "https://app.propertyware.com/pw/properties/building_detail.do?entityID=";

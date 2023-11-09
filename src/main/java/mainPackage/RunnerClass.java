@@ -122,12 +122,12 @@ public class RunnerClass
 		  
 		  
 		  //Delete files in the folder before starting a lease
-		  try
+		 /* try
 			{
 			FileUtils.cleanDirectory(new File(AppConfig.downloadFilePath));
 			}
 			catch(Exception e) {}
-		  
+		  */
 		  
 		  if(company.contains("Austin")||company.contains("California")||company.contains("Chattanooga")||company.contains("Chicago")||company.contains("Colorado")||company.contains("Kansas City")||company.contains("Houston")||company.contains("Maine")||company.contains("Savannah")||company.contains("North Carolina")||company.contains("Alabama")||company.contains("Arkansas")||company.contains("Dallas/Fort Worth")||company.contains("Indiana")||company.contains("Little Rock")||company.contains("San Antonio")||company.contains("Tulsa")||company.contains("Georgia")||company.contains("OKC")||company.contains("South Carolina")||company.contains("Tennessee")||company.contains("Florida")||company.contains("New Mexico")||company.contains("Ohio")||company.contains("Pennsylvania")||company.contains("Lake Havasu")||company.contains("Columbia - St Louis")||company.contains("Maryland")||company.contains("Virginia")||company.contains("Boise")||company.contains("Idaho Falls")||company.contains("Utah")||company.contains("Spokane")||company.contains("Washington DC")||company.contains("Hawaii")||company.contains("Arizona")||company.contains("New Jersey")||company.contains("Montana")) 
 	    {
@@ -157,8 +157,11 @@ public class RunnerClass
 		  //Search building in property Ware
 		   if(PropertyWare.navigatetoLease(company,completeBuildingAbbreviation, buildingAbbreviation, ownerName)==true)
 			{
+			  
+			   GenericPDFReading.LeaseAgreementDownloadandGetData.downloadLeaseAgreement();
+			   GenericPDFReading.LeaseAgreementDownloadandGetData.getDataFromLeaseAgreement();
 			   String updateSuccessStatus = "Update [Automation].LeaserenewalAutomation2 Set Status ='Completed',NotAutomatedFields='"+failedReason+"',LeaseCompletionDate= getDate() where BuildingName like '%"+completeBuildingAbbreviation+"%'";
-		    	DataBase.updateTable(updateSuccessStatus);
+			   DataBase.updateTable(updateSuccessStatus);
 				/*if(PropertyWare.downloadLeaseAgreement(buildingAbbreviation, ownerName)==true)
 				{
 					
